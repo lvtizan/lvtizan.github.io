@@ -6,7 +6,7 @@ Portfolio of an independent developer. Building websites, independent e-commerce
 stores, apps and WeChat mini programs for small businesses, plus custom software.
 
 - **Live site:** https://lvtizan.github.io/
-- **Contact:** tizancloude@gmail.com · WeChat: lvtizan
+- **Contact:** bbtizan@gmail.com · WeChat: lvtizan
 
 ## Deploy
 
