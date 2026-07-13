@@ -129,7 +129,7 @@ a:hover{color:#f4ffb0}
 ::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-thumb{background:#26262d;border:3px solid #0d0d0f;border-radius:20px}
 ::-webkit-scrollbar-track{background:#0d0d0f}
-@media(max-width:640px){.pcover{min-height:0 !important;aspect-ratio:16/10;border-left:0 !important;}}
+@media(max-width:640px){.pcover{min-height:0 !important;aspect-ratio:16/10;border-left:0 !important;}.pflip{display:flex !important;flex-direction:column-reverse;}}
 </style>
 </helmet>
 <div style="--acc:{{ accent }};background:#0d0d0f;color:#f2f2f0;font-family:'Space Grotesk','Noto Sans SC',sans-serif;min-height:100vh;overflow-x:hidden;">
@@ -204,7 +204,7 @@ a:hover{color:#f4ffb0}
           </div>
         </sc-if>
         <sc-if value="{{ p.flip }}" hint-placeholder-val="{{ false }}">
-          <div onClick="{{ p.open }}" style="cursor:pointer;border-top:1px solid #1c1c22;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:stretch;min-height:clamp(340px,56vh,600px);transition:background .25s;" style-hover="background:#101013;">
+          <div onClick="{{ p.open }}" class="pflip" style="cursor:pointer;border-top:1px solid #1c1c22;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:stretch;min-height:clamp(340px,56vh,600px);transition:background .25s;" style-hover="background:#101013;">
             <div class="pcover" style="position:relative;overflow:hidden;min-height:clamp(300px,42vh,540px);">
               <dc-import name="ProjectMock" kind="{{ p.id }}" style="position:absolute;inset:0;" hint-size="100%,100%"></dc-import>
             </div>
@@ -712,8 +712,8 @@ class Component extends DCLogic {
       laptopGallery: !!(current && current.hasLaptops),
       hasStats: !!(current && current.hasStats),
       heroBg: !!(current && current.id),
-      nextEntryStyle: next ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/avatar-home3.png', tarmeer: 'uploads/tarmeer-home.png', veinscope: 'uploads/veinscope-onsite4.png', nanhai: 'uploads/nanhai-banner3.png', oilfield: 'uploads/oilfield-equip.jpg' }[next.id] || 'uploads/nanhai-banner3.png') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5 } : {},
-      heroBgStyle: current ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/avatar-home3.png', tarmeer: 'uploads/tarmeer-home.png', veinscope: 'uploads/veinscope-onsite4.png', nanhai: 'uploads/nanhai-banner3.png', oilfield: 'uploads/oilfield-equip.jpg' }[current.id] || 'uploads/nanhai-banner3.png') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: (current.id === 'nanhai' ? 0.62 : 0.28) } : {},
+      nextEntryStyle: next ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/avatar-home3.png', tarmeer: 'uploads/tarmeer-home.png', veinscope: 'uploads/veinscope-onsite4.png', nanhai: 'uploads/nanhai-banner3.png', oilfield: 'uploads/oilfield-web-home.png' }[next.id] || 'uploads/nanhai-banner3.png') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5 } : {},
+      heroBgStyle: current ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/avatar-home3.png', tarmeer: 'uploads/tarmeer-home.png', veinscope: 'uploads/veinscope-onsite4.png', nanhai: 'uploads/nanhai-banner3.png', oilfield: 'uploads/oilfield-web-home.png' }[current.id] || 'uploads/nanhai-banner3.png') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: (current.id === 'nanhai' ? 0.62 : 0.28) } : {},
       mockGallery: !!(current && !current.hasScreens && !current.hasPhotos && !current.hasLaptops && !current.hasWide),
       langBtn: t.langBtn,
       heroL1: t.heroL1, heroL2: t.heroL2, heroL3: t.heroL3,
