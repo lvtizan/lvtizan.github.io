@@ -129,6 +129,7 @@ a:hover{color:#f4ffb0}
 ::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-thumb{background:#26262d;border:3px solid #0d0d0f;border-radius:20px}
 ::-webkit-scrollbar-track{background:#0d0d0f}
+@media(max-width:640px){.pcover{min-height:0 !important;aspect-ratio:16/10;border-left:0 !important;}}
 </style>
 </helmet>
 <div style="--acc:{{ accent }};background:#0d0d0f;color:#f2f2f0;font-family:'Space Grotesk','Noto Sans SC',sans-serif;min-height:100vh;overflow-x:hidden;">
@@ -197,14 +198,14 @@ a:hover{color:#f4ffb0}
                 </div>
               </div>
             </div>
-            <div style="position:relative;overflow:hidden;min-height:clamp(300px,42vh,540px);border-left:1px solid #1c1c22;">
+            <div class="pcover" style="position:relative;overflow:hidden;min-height:clamp(300px,42vh,540px);border-left:1px solid #1c1c22;">
               <dc-import name="ProjectMock" kind="{{ p.id }}" style="position:absolute;inset:0;" hint-size="100%,100%"></dc-import>
             </div>
           </div>
         </sc-if>
         <sc-if value="{{ p.flip }}" hint-placeholder-val="{{ false }}">
           <div onClick="{{ p.open }}" style="cursor:pointer;border-top:1px solid #1c1c22;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:stretch;min-height:clamp(340px,56vh,600px);transition:background .25s;" style-hover="background:#101013;">
-            <div style="position:relative;overflow:hidden;min-height:clamp(300px,42vh,540px);">
+            <div class="pcover" style="position:relative;overflow:hidden;min-height:clamp(300px,42vh,540px);">
               <dc-import name="ProjectMock" kind="{{ p.id }}" style="position:absolute;inset:0;" hint-size="100%,100%"></dc-import>
             </div>
             <div style="position:relative;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,5vw,80px);overflow:hidden;border-left:1px solid #1c1c22;">
