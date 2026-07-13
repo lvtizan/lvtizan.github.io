@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:relative;width:100%;height:100%;overflow:hidden;background:#0d0d10;font-family:'Space Grotesk','Noto Sans SC',sans-serif;">
+
+  <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;background:radial-gradient(130% 120% at 50% -15%,#211a2a,#0c0c10);display:flex;align-items:center;justify-content:center;gap:3.2%;padding:7% 4%;">
+    <div style="height:78%;aspect-ratio:9/19.5;background:#111116;border:5px solid #26262f;border-radius:22px;box-shadow:0 22px 44px rgba(0,0,0,.5);overflow:hidden;transform:translateY(7%) rotate(-3deg);">
+      <img src="uploads/avatar-home.png" alt="AVATAR discovery" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+    </div>
+    <div style="height:94%;aspect-ratio:9/19.5;background:#111116;border:6px solid #2a2a34;border-radius:28px;box-shadow:0 36px 68px rgba(0,0,0,.62);overflow:hidden;z-index:3;">
+      <img src="uploads/avatar-home2.png" alt="AVATAR home" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+    </div>
+    <div style="height:78%;aspect-ratio:9/19.5;background:#111116;border:5px solid #26262f;border-radius:22px;box-shadow:0 22px 44px rgba(0,0,0,.5);overflow:hidden;transform:translateY(7%) rotate(3deg);z-index:2;">
+      <img src="uploads/avatar-chat.png" alt="AVATAR chat" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isWeb }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 110% at 50% -10%,#211d16,#0b0b0e 72%);display:flex;align-items:center;justify-content:center;padding:8% 9%;">
+    <div style="width:100%;max-width:940px;">
+      <div style="background:linear-gradient(180deg,#2a2a2f,#161619);border-radius:22px 22px 6px 6px;padding:0.9%;box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05) inset;">
+        <div style="position:relative;background:#050506;border-radius:15px;padding:1.5%;">
+          <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:15%;max-width:130px;height:52%;max-height:16px;background:#050506;border-radius:0 0 9px 9px;z-index:2;display:flex;align-items:center;justify-content:center;"><span style="width:4px;height:4px;border-radius:50%;background:#1c1c22;"></span></div>
+          <div style="position:relative;aspect-ratio:16/10;border-radius:7px;overflow:hidden;background:#0c0c10;">
+            <img src="uploads/tarmeer-home.png" alt="Tarmeer 首页" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+          </div>
+        </div>
+      </div>
+      <div style="position:relative;height:clamp(9px,1.5vw,18px);margin:0 -7%;background:linear-gradient(180deg,#c2c6cc,#9a9ea6 55%,#75787f);border-radius:0 0 12px 12px;box-shadow:0 22px 34px rgba(0,0,0,.5);">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:15%;height:40%;background:#83868d;border-radius:0 0 7px 7px;"></div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isOilfield }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 120% at 80% -10%,#181820,#0c0c10);padding:4.5%;">
+    <div style="position:absolute;inset:4.5%;background:#fff;border:1px solid #26262e;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 34px 70px rgba(0,0,0,.55);color:#1f2933;font-family:'Space Grotesk','Noto Sans SC',sans-serif;">
+      <div style="display:flex;align-items:center;gap:6px;padding:9px 13px;background:#f5f6f7;border-bottom:1px solid #e5e7eb;">
+        <span style="width:9px;height:9px;border-radius:50%;background:#d2d5da;"></span><span style="width:9px;height:9px;border-radius:50%;background:#d2d5da;"></span><span style="width:9px;height:9px;border-radius:50%;background:#d2d5da;"></span>
+        <div style="flex:1;margin-left:10px;max-width:56%;height:15px;border-radius:8px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;padding:0 8px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:7px;color:#9aa1ab;">oilfield-equip.com</span></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:2px solid #E60012;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#E60012;"></span><span style="font-weight:700;font-size:14px;letter-spacing:.02em;color:#1f2933;">SJ · CUMMINS</span></div>
+        <div style="display:flex;align-items:center;gap:13px;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.04em;color:#5a6570;">
+          <span>Company</span><span>Generators</span><span>Engines</span><span style="color:#E60012;font-weight:600;">Oilfield</span><span>Service</span><span>Contact</span>
+        </div>
+      </div>
+      <div style="flex:1;position:relative;overflow:hidden;display:flex;align-items:center;">
+        <div style="position:absolute;inset:0;background-image:url('uploads/oilfield-equip.jpg');background-size:cover;background-position:center;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.82) 34%,rgba(255,255,255,.15) 60%,rgba(255,255,255,0) 100%);"></div>
+        <div style="position:relative;z-index:2;padding:0 20px;max-width:64%;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;color:#E60012;margin-bottom:10px;">OILFIELD & POWER EQUIPMENT</div>
+          <div style="font-weight:700;font-size:clamp(18px,3.4vw,38px);letter-spacing:-.02em;line-height:1.02;color:#1f2933;">Drilling, workover & power<br>systems for global fields.</div>
+          <div style="display:flex;gap:8px;margin-top:16px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:8px;padding:7px 13px;border-radius:5px;background:#E60012;color:#fff;font-weight:600;">Explore products</span><span style="font-family:'IBM Plex Mono',monospace;font-size:8px;padding:7px 13px;border-radius:5px;border:1px solid #cfd3d9;color:#5a6570;">Contact sales</span></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #e5e7eb;">
+        <div style="padding:11px 14px;border-right:1px solid #e5e7eb;"><div style="font-weight:700;font-size:16px;color:#1f2933;">6</div><div style="font-family:'IBM Plex Mono',monospace;font-size:6.5px;letter-spacing:.08em;color:#9aa1ab;margin-top:2px;">SECTIONS</div></div>
+        <div style="padding:11px 14px;border-right:1px solid #e5e7eb;"><div style="font-weight:700;font-size:16px;color:#1f2933;">2</div><div style="font-family:'IBM Plex Mono',monospace;font-size:6.5px;letter-spacing:.08em;color:#9aa1ab;margin-top:2px;">BRANDS</div></div>
+        <div style="padding:11px 14px;border-right:1px solid #e5e7eb;"><div style="font-weight:700;font-size:16px;color:#1f2933;">中/EN</div><div style="font-family:'IBM Plex Mono',monospace;font-size:6.5px;letter-spacing:.08em;color:#9aa1ab;margin-top:2px;">BILINGUAL</div></div>
+        <div style="padding:11px 14px;"><div style="font-weight:700;font-size:16px;color:#E60012;">SEO</div><div style="font-family:'IBM Plex Mono',monospace;font-size:6.5px;letter-spacing:.08em;color:#9aa1ab;margin-top:2px;">SEMANTIC</div></div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isNanhai }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;background:#efe6d0;overflow:hidden;">
+    <img src="uploads/nanhai-banner3.png" alt="南海风物 · 诗词科举主视觉" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isScope }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;background:#0b0b0e;overflow:hidden;">
+    <img src="uploads/veinscope-onsite1.png" alt="工业内窥镜现场检测" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,16,.28) 0%,rgba(13,13,16,0) 30%,rgba(13,13,16,.55) 100%);"></div>
+    <span style="position:absolute;top:16px;left:18px;display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#f2f2f0;background:rgba(13,13,16,.5);padding:5px 9px;border-radius:5px;backdrop-filter:blur(4px);"><span style="width:7px;height:7px;border-radius:50%;background:var(--acc,#e8fe5c);"></span>ON-SITE INSPECTION</span>
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:720,&quot;height&quot;:315},&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;avatar&quot;,&quot;meridian&quot;,&quot;veinscope&quot;],&quot;default&quot;:&quot;meridian&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const k = (this.props.kind || 'meridian').toLowerCase();
+    return {
+      isApp: k === 'avatar' || k === 'flowtime' || k === 'app',
+      isWeb: k === 'tarmeer' || k === 'meridian' || k === 'web',
+      isScope: k === 'veinscope' || k === 'scope',
+      isNanhai: k === 'nanhai',
+      isOilfield: k === 'oilfield'
+    };
+  }
+}
+</script>
+</body>
+</html>
