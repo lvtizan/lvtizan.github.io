@@ -10,14 +10,15 @@
 <div style="position:relative;width:100%;height:100%;overflow:hidden;background:#0d0d10;font-family:'Space Grotesk','Noto Sans SC',sans-serif;">
 
   <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
-  <div style="position:absolute;inset:0;background:radial-gradient(130% 120% at 50% -15%,#211a2a,#0c0c10);display:flex;align-items:center;justify-content:center;gap:3.2%;padding:7% 4%;">
-    <div style="height:78%;aspect-ratio:9/19.5;background:#111116;border:clamp(3px,0.5vw,5px) solid #26262f;border-radius:clamp(7px,2vw,22px);box-shadow:0 22px 44px rgba(0,0,0,.5);overflow:hidden;transform:translateY(7%) rotate(-3deg);">
+  <div style="position:absolute;inset:0;overflow:hidden;background:radial-gradient(120% 120% at 50% -8%,#2c2142,#170f26 52%,#07060d);display:flex;align-items:center;justify-content:center;perspective:1400px;perspective-origin:50% 42%;">
+    <div style="position:absolute;width:64%;height:78%;left:18%;top:8%;background:radial-gradient(closest-side,rgba(158,96,255,.32),rgba(232,254,92,.05) 46%,transparent 72%);filter:blur(26px);pointer-events:none;z-index:0;"></div>
+    <div style="position:relative;height:76%;aspect-ratio:9/19.5;background:#111116;border:clamp(3px,0.5vw,5px) solid #2a2436;border-radius:clamp(9px,2.3vw,26px);overflow:hidden;box-shadow:0 30px 64px rgba(0,0,0,.6);transform:translateX(38%) rotateY(34deg) rotate(-1.5deg);transform-style:preserve-3d;z-index:1;">
       <img src="uploads/avatar-home.png" alt="AVATAR discovery" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
     </div>
-    <div style="height:94%;aspect-ratio:9/19.5;background:#111116;border:clamp(3px,0.6vw,6px) solid #2a2a34;border-radius:clamp(8px,2.4vw,28px);box-shadow:0 36px 68px rgba(0,0,0,.62);overflow:hidden;z-index:3;">
+    <div style="position:relative;height:99%;aspect-ratio:9/19.5;background:#111116;border:clamp(3px,0.6vw,6px) solid #34303f;border-radius:clamp(10px,2.7vw,30px);overflow:hidden;box-shadow:0 46px 92px rgba(0,0,0,.74),0 0 78px rgba(158,96,255,.2);transform:translateY(-2%) scale(1.04);z-index:3;">
       <img src="uploads/avatar-home2.png" alt="AVATAR home" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
     </div>
-    <div style="height:78%;aspect-ratio:9/19.5;background:#111116;border:clamp(3px,0.5vw,5px) solid #26262f;border-radius:clamp(7px,2vw,22px);box-shadow:0 22px 44px rgba(0,0,0,.5);overflow:hidden;transform:translateY(7%) rotate(3deg);z-index:2;">
+    <div style="position:relative;height:76%;aspect-ratio:9/19.5;background:#111116;border:clamp(3px,0.5vw,5px) solid #2a2436;border-radius:clamp(9px,2.3vw,26px);overflow:hidden;box-shadow:0 30px 64px rgba(0,0,0,.6);transform:translateX(-38%) rotateY(-34deg) rotate(1.5deg);transform-style:preserve-3d;z-index:1;">
       <img src="uploads/avatar-chat.png" alt="AVATAR chat" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
     </div>
   </div>
