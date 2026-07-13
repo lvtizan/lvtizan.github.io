@@ -158,7 +158,7 @@ a:hover{color:#f4ffb0}
         <span style="color:var(--acc,#e8fe5c);">{{ t.tagline }}</span>
         <span>© 2026 — PORTFOLIO</span>
       </div>
-      <h1 style="margin:0;font-weight:700;letter-spacing:-.04em;line-height:.9;font-size:clamp(46px,8.6vw,132px);">
+      <h1 style="margin:0;font-weight:700;letter-spacing:-.04em;line-height:1.05;font-size:clamp(46px,8.6vw,132px);">
         <span style="display:block;">{{ heroL1 }}</span>
         <span style="display:block;">{{ heroL2 }}</span>
         <span style="display:block;color:var(--acc,#e8fe5c);">{{ heroL3 }}</span>
@@ -583,7 +583,7 @@ class Component extends DCLogic {
           photos: ['uploads/veinscope-onsite1.png', 'uploads/veinscope-onsite4.png', 'uploads/veinscope-onsite7.png', 'uploads/veinscope-onsite6.png', 'uploads/veinscope-onsite5.png']
         },
         {
-          id: 'nanhai', num: '04', title: '南海风物', year: '2025',
+          id: 'nanhai', num: '04', title: { zh: '南海风物', en: 'Nanhai Almanac' }, year: '2025',
           tag: { zh: '沉浸式文化互动装置 / 展陈', en: 'IMMERSIVE INSTALLATION / EXHIBIT' },
           subtitle: { zh: '佛山千灯湖魁星阁 · 南海风物美学空间', en: 'Nanhai aesthetic space · Kuixing Pavilion, Foshan' },
           roles: { zh: ['体验设计', '互动玩法', '国潮美术', '落地实施'], en: ['Experience', 'Interaction', 'Art Direction', 'On-site'] },
@@ -617,7 +617,7 @@ class Component extends DCLogic {
           ]
         },
         {
-          id: 'oilfield', num: '05', title: '油田装备', year: '2026',
+          id: 'oilfield', num: '05', title: { zh: '油田装备', en: 'Oilfield Equipment' }, year: '2026',
           tag: { zh: '外贸企业站 / 全栈', en: 'B2B EXPORT SITE / FULL-STACK' },
           subtitle: { zh: '石油钻采与动力装备 · 中英双语外贸展示站', en: 'Oilfield & power equipment · bilingual B2B export site' },
           roles: { zh: ['信息架构', 'Web 设计', '响应式前端', 'SEO'], en: ['IA', 'Web Design', 'Responsive', 'SEO'] },
@@ -679,7 +679,7 @@ class Component extends DCLogic {
     const available = this.props.available !== false;
 
     const projects = D.projects.map((p, i) => ({
-      id: p.id, num: p.num, title: p.title, year: p.year,
+      id: p.id, num: p.num, title: (typeof p.title === 'object') ? p.title[L] : p.title, year: p.year,
       tag: p.tag[L], subtitle: p.subtitle[L], overview: p.overview[L],
       roles: p.roles[L], roleStr: p.roles[L].join(' · '),
       contributions: p.contributions[L].map((text, i) => ({ n: String(i + 1).padStart(2, '0'), text })),
