@@ -671,7 +671,7 @@ class Component extends DCLogic {
       const _cjk = /[㐀-鿿]/.test(_title);
       const _marqueeBase = { fontWeight: 700, fontSize: 'clamp(36px,7vw,104px)', letterSpacing: '-.03em', lineHeight: 1, padding: '0 clamp(18px,2.6vw,46px)' };
       const marqueeStyle = _cjk
-        ? Object.assign({}, _marqueeBase, { color: '#3d3d45' })
+        ? Object.assign({}, _marqueeBase, { fontWeight: 400, color: 'transparent', WebkitTextStroke: '1px #6a6a74' })
         : Object.assign({}, _marqueeBase, { color: 'transparent', WebkitTextStroke: '1px #5a5a64' });
       return {
       id: p.id, num: p.num, title: _title, marqueeStyle, year: p.year,
