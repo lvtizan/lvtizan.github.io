@@ -102,11 +102,11 @@
     </ul>
     <h2>精选项目</h2>
     <ul>
-      <li><a href="/work/avatar/">AVATAR</a> — AI 角色陪伴聊天 App（移动应用设计与开发）</li>
-      <li><a href="/work/tarmeer/">Tarmeer</a> — 多国家 · 多语言室内设计垂直平台（Web 平台 / 独立站）</li>
-      <li><a href="/work/veinscope/">VeinScope</a> — 工业内窥镜检测系统（专业设备软件开发）</li>
-      <li><a href="/work/nanhai/">南海风物</a> — 佛山千灯湖魁星阁沉浸式文化互动装置（互动软件开发）</li>
-      <li><a href="/work/oilfield/">油田装备</a> — 石油钻采与动力装备中英双语外贸展示站（外贸独立站 / 企业官网）</li>
+      <li>AVATAR — AI 角色陪伴聊天 App（移动应用设计与开发）</li>
+      <li>Tarmeer — 多国家 · 多语言室内设计垂直平台（Web 平台 / 独立站）</li>
+      <li>VeinScope — 工业内窥镜检测系统（专业设备软件开发）</li>
+      <li>南海风物 — 佛山千灯湖魁星阁沉浸式文化互动装置（互动软件开发）</li>
+      <li>油田装备 — 石油钻采与动力装备中英双语外贸展示站（外贸独立站 / 企业官网）</li>
     </ul>
     <p>联系方式 · 邮箱：<a href="mailto:bbtizan@gmail.com">bbtizan@gmail.com</a> · 微信：lvtizan</p>
     <p><em>本作品集为交互式页面，请启用 JavaScript 以获得完整体验。</em></p>
@@ -171,7 +171,7 @@ a:hover{color:#f4ffb0}
 
     <div style="position:relative;overflow:hidden;border-top:1px solid #1a1a20;border-bottom:1px solid #1a1a20;padding:clamp(16px,2.4vw,32px) 0;">
       <div style="display:flex;align-items:center;width:max-content;animation:marquee 26s linear infinite;">
-        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3"><span style="font-weight:700;font-size:clamp(36px,7vw,104px);letter-spacing:-.03em;line-height:1;color:transparent;-webkit-text-stroke:1px #5a5a64;padding:0 clamp(18px,2.6vw,46px);">{{ p.title }}</span><span style="color:var(--acc,#e8fe5c);font-size:clamp(18px,2.6vw,40px);">✦</span></sc-for><sc-for list="{{ projects }}" as="p" hint-placeholder-count="3"><span style="font-weight:700;font-size:clamp(36px,7vw,104px);letter-spacing:-.03em;line-height:1;color:transparent;-webkit-text-stroke:1px #5a5a64;padding:0 clamp(18px,2.6vw,46px);">{{ p.title }}</span><span style="color:var(--acc,#e8fe5c);font-size:clamp(18px,2.6vw,40px);">✦</span></sc-for>
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3"><span style="{{ p.marqueeStyle }}">{{ p.title }}</span><span style="color:var(--acc,#e8fe5c);font-size:clamp(18px,2.6vw,40px);">✦</span></sc-for><sc-for list="{{ projects }}" as="p" hint-placeholder-count="3"><span style="{{ p.marqueeStyle }}">{{ p.title }}</span><span style="color:var(--acc,#e8fe5c);font-size:clamp(18px,2.6vw,40px);">✦</span></sc-for>
       </div>
     </div>
 
@@ -519,11 +519,11 @@ class Component extends DCLogic {
             en: ['Discovery feed & information architecture', 'Immersive chat interface', 'Favorability & interaction-mode system', 'Design system & motion']
           },
           modules: [
-            { label: { zh: '首页与发现', en: 'Home & Discovery' }, screens: ['uploads/webp/avatar-home3.webp', 'uploads/webp/avatar-home2.webp', 'uploads/webp/avatar-home.webp'] },
-            { label: { zh: '角色主页', en: 'Character Profile' }, screens: ['uploads/webp/avatar-charprofile.webp', 'uploads/webp/avatar-charinfo.webp', 'uploads/webp/avatar-setavatar.webp'] },
-            { label: { zh: '沉浸式聊天', en: 'Immersive Chat' }, screens: ['uploads/webp/avatar-chatposter.webp', 'uploads/webp/avatar-featured.webp', 'uploads/webp/avatar-chatactions.webp', 'uploads/webp/avatar-chat.webp'] },
-            { label: { zh: '榜单与世界', en: 'Ranking & World' }, screens: ['uploads/webp/avatar-ranking.webp', 'uploads/webp/avatar-world.webp'] },
-            { label: { zh: '订阅与会员', en: 'Subscription' }, screens: ['uploads/webp/avatar-sub-pro.webp', 'uploads/webp/avatar-sub-ultra.webp'] }
+            { label: { zh: '首页与发现', en: 'Home & Discovery' }, screens: ['uploads/avatar-home3.png', 'uploads/avatar-home2.png', 'uploads/avatar-home.png'] },
+            { label: { zh: '角色主页', en: 'Character Profile' }, screens: ['uploads/avatar-charprofile.png', 'uploads/avatar-charinfo.png', 'uploads/avatar-setavatar.png'] },
+            { label: { zh: '沉浸式聊天', en: 'Immersive Chat' }, screens: ['uploads/avatar-chatposter.png', 'uploads/avatar-featured.png', 'uploads/avatar-chatactions.png', 'uploads/avatar-chat.png'] },
+            { label: { zh: '榜单与世界', en: 'Ranking & World' }, screens: ['uploads/avatar-ranking.png', 'uploads/avatar-world.png'] },
+            { label: { zh: '订阅与会员', en: 'Subscription' }, screens: ['uploads/avatar-sub-pro.png', 'uploads/avatar-sub-ultra.png'] }
           ]
         },
         {
@@ -546,10 +546,10 @@ class Component extends DCLogic {
             { v: '$0', l: { zh: '图像标注 API 成本', en: 'Image-tagging API cost' } }
           ],
           laptops: [
-            { src: 'uploads/webp/tarmeer-home.webp', tilt: 0, label: { zh: '首页 · 业主入口', en: 'Home · Homeowner entry' } },
-            { src: 'uploads/webp/tarmeer-companies.webp', tilt: -1, label: { zh: '装企查找 · 筛选', en: 'Company finder · Filters' } },
-            { src: 'uploads/webp/tarmeer-company.webp', tilt: 1, label: { zh: '装企详情 · 作品集', en: 'Company detail · Portfolio' } },
-            { src: 'uploads/webp/tarmeer-auth.webp', tilt: 0, label: { zh: '登录 · 多渠道注册', en: 'Auth · Multi-provider sign-in' } }
+            { src: 'uploads/tarmeer-home.png', tilt: 0, label: { zh: '首页 · 业主入口', en: 'Home · Homeowner entry' } },
+            { src: 'uploads/tarmeer-companies.png', tilt: -1, label: { zh: '装企查找 · 筛选', en: 'Company finder · Filters' } },
+            { src: 'uploads/tarmeer-company.png', tilt: 1, label: { zh: '装企详情 · 作品集', en: 'Company detail · Portfolio' } },
+            { src: 'uploads/tarmeer-auth.png', tilt: 0, label: { zh: '登录 · 多渠道注册', en: 'Auth · Multi-provider sign-in' } }
           ]
         },
         {
@@ -558,21 +558,24 @@ class Component extends DCLogic {
           subtitle: { zh: '工业内窥镜检测系统', en: 'Industrial endoscope inspection system' },
           roles: { zh: ['工作流研究', '设备软件', '系统优化'], en: ['Workflow Research', 'Device Software', 'System Optimization'] },
           overview: {
-            zh: '工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集与标注工具，兼顾现场强光环境下的可读性与操作效率。',
-            en: 'Software and hardware interface for an industrial endoscope inspection system. A real-time image capture and annotation tool for inspecting narrow pipes and cavities, built for readability and speed in harsh on-site lighting.'
+            zh: '工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集、三维重建与精密测量工具——支持 2D/3D 视图切换、点到点 / 面积 / 剖面 / 角度多模式测量、深度伪彩图与 PLY 点云导出，兼顾现场强光环境下的可读性与操作效率。',
+            en: 'Software and hardware interface for an industrial endoscope inspection system. A real-time capture, 3D-reconstruction and precision-measurement tool for inspecting narrow pipes and cavities — with 2D/3D view switching, multi-mode measurement (point-to-point / area / section / angle), depth heat-maps and PLY point-cloud export, all built for readability and speed in harsh on-site lighting.'
           },
           contributions: {
-            zh: ['现场工作流研究', '采集与标注界面设计', '设备端交互与硬件按键映射', '系统优化与性能调优'],
-            en: ['On-site workflow research', 'Capture & annotation UI', 'Device interaction & hardware key mapping', 'System & performance optimization']
+            zh: ['现场工作流研究', '采集与测量界面设计', '三维重建与多模式测量（点到点 / 剖面 / 深度图 / PLY 导出）', '设备端交互与硬件按键映射', '系统优化与性能调优'],
+            en: ['On-site workflow research', 'Capture & measurement UI', '3D reconstruction & multi-mode measurement (point-to-point / section / depth map / PLY export)', 'Device interaction & hardware key mapping', 'System & performance optimization']
           },
-          photos: ['uploads/webp/veinscope-onsite1.webp', 'uploads/webp/veinscope-onsite4.webp', 'uploads/webp/veinscope-onsite7.webp', 'uploads/webp/veinscope-onsite6.webp', 'uploads/webp/veinscope-onsite5.webp']
+          wideModules: [
+            { label: { zh: '设备软件 · 三维测量工作流', en: 'Device software · 3D measurement workflow' }, screens: ['uploads/veinscope-ui-gallery.png', 'uploads/veinscope-ui-2d3d.png', 'uploads/veinscope-ui-depth.png', 'uploads/veinscope-ui-section.png'] }
+          ],
+          photos: ['uploads/veinscope-onsite1.png', 'uploads/veinscope-onsite4.png', 'uploads/veinscope-onsite7.png', 'uploads/veinscope-onsite6.png', 'uploads/veinscope-onsite5.png']
         },
         {
           id: 'nanhai', num: '04', title: { zh: '南海风物', en: 'Nanhai Almanac' }, year: '2025',
           tag: { zh: '沉浸式文化互动装置 / 展陈', en: 'IMMERSIVE INSTALLATION / EXHIBIT' },
           subtitle: { zh: '佛山千灯湖魁星阁 · 南海风物美学空间', en: 'Nanhai aesthetic space · Kuixing Pavilion, Foshan' },
           roles: { zh: ['体验设计', '互动玩法', '国潮美术', '落地实施'], en: ['Experience', 'Interaction', 'Art Direction', 'On-site'] },
-          keyVisual: 'uploads/webp/nanhai-keyvisual.webp',
+          keyVisual: 'uploads/nanhai-keyvisual.png',
           overview: {
             zh: '为佛山千灯湖魁星阁「南海风物美学空间」打造的沉浸式文化互动装置。以岭南龙舟竞渡为叙事主线，把南海的桥、庙、窑、街等在地风物拆解重构为三种可玩的文化体验——龙舟拼图、诗词书法、风物跑酷。观众在触屏前"划龙舟、拼地标、写楹联、闯古驿"，于游戏节奏中读懂一座水乡的记忆与科举文脉。',
             en: 'An immersive cultural installation for the "Nanhai Almanac" aesthetic space at Kuixing Pavilion, Qiandeng Lake, Foshan. With Lingnan dragon-boat racing as its narrative spine, it reworks Nanhai\'s bridges, temples, kilns and old streets into three playable experiences — dragon-boat jigsaw, poetry calligraphy, and a heritage runner — letting visitors race, assemble, write and dash through a water town\'s memory and its imperial-exam heritage.'
@@ -588,17 +591,17 @@ class Component extends DCLogic {
             { v: '2025', l: { zh: '千灯湖魁星阁 · 落地', en: 'Qiandeng Lake · Live' } }
           ],
           wideModules: [
-            { label: { zh: '玩法一 · 龙舟拼图', en: 'Mode 1 · Dragon-boat jigsaw' }, screens: ['uploads/webp/nanhai-puzzle.webp', 'uploads/webp/nanhai-map1.webp', 'uploads/webp/nanhai-map2.webp', 'uploads/webp/nanhai-map3.webp', 'uploads/webp/nanhai-success.webp', 'uploads/webp/nanhai-fail.webp'] },
-            { label: { zh: '玩法二 · 诗词书法', en: 'Mode 2 · Poetry calligraphy' }, screens: ['uploads/webp/nanhai-calligraphy.webp', 'uploads/webp/nanhai-score.webp'] },
-            { label: { zh: '序 · 书院屏保', en: 'Intro · Academy screensavers' }, screens: ['uploads/webp/nanhai-title.webp', 'uploads/webp/nanhai-saver1.webp', 'uploads/webp/nanhai-saver2.webp', 'uploads/webp/nanhai-saver3.webp', 'uploads/webp/nanhai-saver4.webp'] }
+            { label: { zh: '玩法一 · 龙舟拼图', en: 'Mode 1 · Dragon-boat jigsaw' }, screens: ['uploads/nanhai-puzzle.png', 'uploads/nanhai-map1.png', 'uploads/nanhai-map2.png', 'uploads/nanhai-map3.png', 'uploads/nanhai-success.png', 'uploads/nanhai-fail.png'] },
+            { label: { zh: '玩法二 · 诗词书法', en: 'Mode 2 · Poetry calligraphy' }, screens: ['uploads/nanhai-calligraphy.png', 'uploads/nanhai-score.png'] },
+            { label: { zh: '序 · 书院屏保', en: 'Intro · Academy screensavers' }, screens: ['uploads/nanhai-title.png', 'uploads/nanhai-saver1.png', 'uploads/nanhai-saver2.png', 'uploads/nanhai-saver3.png', 'uploads/nanhai-saver4.png'] }
           ],
           posters: [
-            { src: 'uploads/webp/nanhai-run1.webp', no: '01', name: '贪泉', pinyin: 'TANQUAN', desc: { zh: '一泓清泉，照见廉洁初心。', en: 'A clear spring that mirrors an honest heart.' } },
-            { src: 'uploads/webp/nanhai-run2.webp', no: '02', name: '西华寺', pinyin: 'XIHUA TEMPLE', desc: { zh: '古刹钟声，禅意入画。', en: 'Ancient bells, a temple painted in calm.' } },
-            { src: 'uploads/webp/nanhai-run3.webp', no: '03', name: '文头岭窑址', pinyin: 'WENTOULING KILN', desc: { zh: '千年窑火，陶韵犹存。', en: 'A thousand-year kiln, clay still warm with craft.' } },
-            { src: 'uploads/webp/nanhai-run4.webp', no: '04', name: '金山寺', pinyin: 'JINSHAN TEMPLE', desc: { zh: '半山楼阁，云深藏禅。', en: 'A hillside hall wrapped in cloud and Zen.' } },
-            { src: 'uploads/webp/nanhai-run5.webp', no: '05', name: '凤山古庙', pinyin: 'FENGSHAN TEMPLE', desc: { zh: '凤山庇佑，香火千年。', en: 'Under Phoenix Hill, incense of a thousand years.' } },
-            { src: 'uploads/webp/nanhai-run6.webp', no: '06', name: '官窑古驿道', pinyin: 'GUANYAO ROAD', desc: { zh: '一道通南北，商旅越千年。', en: 'One road, north to south, merchants across ages.' } }
+            { src: 'uploads/nanhai-run1.png', no: '01', name: '贪泉', pinyin: 'TANQUAN', desc: { zh: '一泓清泉，照见廉洁初心。', en: 'A clear spring that mirrors an honest heart.' } },
+            { src: 'uploads/nanhai-run2.png', no: '02', name: '西华寺', pinyin: 'XIHUA TEMPLE', desc: { zh: '古刹钟声，禅意入画。', en: 'Ancient bells, a temple painted in calm.' } },
+            { src: 'uploads/nanhai-run3.png', no: '03', name: '文头岭窑址', pinyin: 'WENTOULING KILN', desc: { zh: '千年窑火，陶韵犹存。', en: 'A thousand-year kiln, clay still warm with craft.' } },
+            { src: 'uploads/nanhai-run4.png', no: '04', name: '金山寺', pinyin: 'JINSHAN TEMPLE', desc: { zh: '半山楼阁，云深藏禅。', en: 'A hillside hall wrapped in cloud and Zen.' } },
+            { src: 'uploads/nanhai-run5.png', no: '05', name: '凤山古庙', pinyin: 'FENGSHAN TEMPLE', desc: { zh: '凤山庇佑，香火千年。', en: 'Under Phoenix Hill, incense of a thousand years.' } },
+            { src: 'uploads/nanhai-run6.png', no: '06', name: '官窑古驿道', pinyin: 'GUANYAO ROAD', desc: { zh: '一道通南北，商旅越千年。', en: 'One road, north to south, merchants across ages.' } }
           ]
         },
         {
@@ -620,7 +623,7 @@ class Component extends DCLogic {
             { v: 'ZH/EN', l: { zh: '双语 · SEO 友好', en: 'Bilingual · SEO-ready' } },
             { v: '100%', l: { zh: '响应式 · 纯静态', en: 'Responsive · static' } }
           ],
-          photos: ['uploads/webp/oilfield-web-home.webp', 'uploads/webp/oilfield-web-generators.webp', 'uploads/webp/oilfield-web-engines.webp', 'uploads/webp/oilfield-web-drilling.webp']
+          photos: ['uploads/oilfield-web-home.png', 'uploads/oilfield-web-generators.png', 'uploads/oilfield-web-engines.png', 'uploads/oilfield-web-drilling.png']
         }
       ],
       ui: {
@@ -663,8 +666,15 @@ class Component extends DCLogic {
     const accent = this.props.accent || '#e8fe5c';
     const available = this.props.available !== false;
 
-    const projects = D.projects.map((p, i) => ({
-      id: p.id, num: p.num, title: (typeof p.title === 'object') ? p.title[L] : p.title, year: p.year,
+    const projects = D.projects.map((p, i) => {
+      const _title = (typeof p.title === 'object') ? p.title[L] : p.title;
+      const _cjk = /[㐀-鿿]/.test(_title);
+      const _marqueeBase = { fontWeight: 700, fontSize: 'clamp(36px,7vw,104px)', letterSpacing: '-.03em', lineHeight: 1, padding: '0 clamp(18px,2.6vw,46px)' };
+      const marqueeStyle = _cjk
+        ? Object.assign({}, _marqueeBase, { color: '#3d3d45' })
+        : Object.assign({}, _marqueeBase, { color: 'transparent', WebkitTextStroke: '1px #5a5a64' });
+      return {
+      id: p.id, num: p.num, title: _title, marqueeStyle, year: p.year,
       tag: p.tag[L], subtitle: p.subtitle[L], overview: p.overview[L],
       roles: p.roles[L], roleStr: p.roles[L].join(' · '),
       contributions: p.contributions[L].map((text, i) => ({ n: String(i + 1).padStart(2, '0'), text })),
@@ -693,7 +703,8 @@ class Component extends DCLogic {
       flip: i % 2 === 1,
       straight: i % 2 === 0,
       open: () => this.go(p.id)
-    }));
+      };
+    });
 
     const page = this.state.page;
     const isHome = page === 'home';
@@ -712,8 +723,8 @@ class Component extends DCLogic {
       laptopGallery: !!(current && current.hasLaptops),
       hasStats: !!(current && current.hasStats),
       heroBg: !!(current && current.id),
-      nextEntryStyle: next ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/webp/avatar-home3.webp', tarmeer: 'uploads/webp/tarmeer-home.webp', veinscope: 'uploads/webp/veinscope-onsite4.webp', nanhai: 'uploads/webp/nanhai-banner3.webp', oilfield: 'uploads/webp/oilfield-web-home.webp' }[next.id] || 'uploads/webp/nanhai-banner3.webp') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5 } : {},
-      heroBgStyle: current ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/webp/avatar-home3.webp', tarmeer: 'uploads/webp/tarmeer-home.webp', veinscope: 'uploads/webp/veinscope-onsite4.webp', nanhai: 'uploads/webp/nanhai-banner3.webp', oilfield: 'uploads/webp/oilfield-web-home.webp' }[current.id] || 'uploads/webp/nanhai-banner3.webp') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: (current.id === 'nanhai' ? 0.62 : 0.28) } : {},
+      nextEntryStyle: next ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/avatar-home3.png', tarmeer: 'uploads/tarmeer-home.png', veinscope: 'uploads/veinscope-onsite4.png', nanhai: 'uploads/nanhai-banner3.png', oilfield: 'uploads/oilfield-web-home.png' }[next.id] || 'uploads/nanhai-banner3.png') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5 } : {},
+      heroBgStyle: current ? { position: 'absolute', inset: 0, backgroundImage: 'url("' + ({ avatar: 'uploads/avatar-home3.png', tarmeer: 'uploads/tarmeer-home.png', veinscope: 'uploads/veinscope-onsite4.png', nanhai: 'uploads/nanhai-banner3.png', oilfield: 'uploads/oilfield-web-home.png' }[current.id] || 'uploads/nanhai-banner3.png') + '")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: (current.id === 'nanhai' ? 0.62 : 0.28) } : {},
       mockGallery: !!(current && !current.hasScreens && !current.hasPhotos && !current.hasLaptops && !current.hasWide),
       langBtn: t.langBtn,
       heroL1: t.heroL1, heroL2: t.heroL2, heroL3: t.heroL3,
