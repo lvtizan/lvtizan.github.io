@@ -1,39 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://lvtizan.github.io/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://lvtizan.github.io/work/avatar/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-home3.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-home2.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-home.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-charprofile.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-charinfo.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-setavatar.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-chatposter.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-featured.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-chatactions.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-chat.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-ranking.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-world.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-sub-pro.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/avatar-sub-ultra.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://lvtizan.github.io/work/tarmeer/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/tarmeer-home.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/tarmeer-companies.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/tarmeer-company.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/tarmeer-auth.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://lvtizan.github.io/work/veinscope/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/veinscope-onsite1.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/veinscope-onsite4.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/veinscope-onsite7.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/veinscope-onsite6.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/veinscope-onsite5.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://lvtizan.github.io/work/nanhai/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-keyvisual.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-puzzle.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-map1.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-map2.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-map3.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-success.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-fail.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-calligraphy.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-score.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-title.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-saver1.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-saver2.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-saver3.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-saver4.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-run1.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-run2.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-run3.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-run4.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-run5.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/nanhai-run6.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://lvtizan.github.io/work/oilfield/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/oilfield-web-home.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/oilfield-web-generators.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/oilfield-web-engines.webp</image:loc></image:image>
+    <image:image><image:loc>https://lvtizan.github.io/uploads/webp/oilfield-web-drilling.webp</image:loc></image:image>
   </url>
 </urlset>

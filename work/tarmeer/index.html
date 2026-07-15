@@ -96,6 +96,7 @@ h1{margin:16px 0 0;font-weight:700;font-size:clamp(44px,9vw,120px);letter-spacin
 .sub{margin:18px 0 0;font-size:clamp(17px,2vw,26px);color:#cfcfd6;max-width:680px}
 section{padding:clamp(36px,5vw,72px) 0;border-top:1px solid #1a1a20}
 .k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e8fe5c;margin-bottom:18px}
+h2.k,h3.k{margin:0 0 18px;font-weight:500}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,64px)}
 .ov{font-size:clamp(17px,1.9vw,24px);line-height:1.6;color:#e6e6e8}
 .roles{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
@@ -144,13 +145,13 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 <div class="wrap"><section style="border-top:none;padding-top:0">
   <div class="grid2">
     <div>
-      <div class="k">项目概述</div>
+      <h2 class="k">项目概述</h2>
       <p class="ov">从零重建的多国家、多语言室内设计垂直平台，打通「业主找装企 / 专家 / 供应商 + 作品集展示 + 外勤问卷 + 招商」全链路，服务阿联酋（迪拜）与越南两国，严格数据隔离。技术栈：Next.js（App Router · SSR）+ TypeScript · Express · MySQL（阿里云 RDS 迪拜）· PM2 · Nginx · 自建 ONNX/CLIP 图像标注。</p>
     </div>
     <div>
-      <div class="k" style="color:#8f8f99">角色</div>
+      <h3 class="k" style="color:#8f8f99">角色</h3>
       <div class="roles"><span class="chip">全栈架构</span><span class="chip">国际化</span><span class="chip">图像 AI</span><span class="chip">质量工程</span></div>
-      <div class="k" style="color:#8f8f99">我的工作</div>
+      <h3 class="k" style="color:#8f8f99">我的工作</h3>
       <ul class="contrib">
         <li><span class="cn">01</span><span>多国家架构 + 数据隔离（P0 铁律，成对存储 ref_id/ref_source，14 用例回归守护）</span></li>
         <li><span class="cn">02</span><span>全站国际化（中/英/越），文案从约 40 文件抽入中央语言包</span></li>
@@ -163,11 +164,11 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
   </div>
 </section></div>
 <div class="wrap"><section>
-  <div class="k">数据</div><div class="stats">
+  <h2 class="k">数据</h2><div class="stats">
     <div class="stat"><div class="sv">1589</div><div class="sl">独立提交（4 个月）</div></div><div class="stat"><div class="sv">94</div><div class="sl">页面 · 双国双语</div></div><div class="stat"><div class="sv">2</div><div class="sl">国家站严格隔离</div></div><div class="stat"><div class="sv">$0</div><div class="sl">图像标注 API 成本</div></div>
   </div></section></div>
 <div class="wrap"><section>
-  <div class="k">界面展示 · Interface</div>
+  <h2 class="k">界面展示 · Interface</h2>
   <div class="gal" style="grid-template-columns:repeat(auto-fill,minmax(420px,1fr))">
       <figure><img loading="lazy" src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 室内设计平台首页 · 业主入口界面"><figcaption>Tarmeer 室内设计平台首页 · 业主入口界面</figcaption></figure>
       <figure><img loading="lazy" src="/uploads/webp/tarmeer-companies.webp" alt="Tarmeer 装修公司查找与筛选页面"><figcaption>Tarmeer 装修公司查找与筛选页面</figcaption></figure>
