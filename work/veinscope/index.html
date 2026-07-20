@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VeinScope — 工业内窥镜 / 软硬件 | lvtizan 作品集</title>
-<meta name="description" content="工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集与标注工具，兼顾现场强光环境下的可读性与操作效率。">
+<meta name="description" content="工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集、三维重建与精密测量工具——支持 2D/3D 视图切换、点到点 / 面积 / 剖面 / 角度多模式测量、深度伪彩图与 PLY 点云导出，兼顾现场强光环境下的可读性与操作效率。">
 <meta name="keywords" content="工业软件界面设计,设备软件开发,工业内窥镜,嵌入式界面设计,专业设备软件,软件定制开发,工业检测系统">
 <meta name="author" content="lvtizan">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="lvtizan 作品集">
 <meta property="og:title" content="VeinScope — 工业内窥镜检测系统">
-<meta property="og:description" content="工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集与标注工具，兼顾现场强光环境下的可读性与操作效率。">
+<meta property="og:description" content="工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集、三维重建与精密测量工具——支持 2D/3D 视图切换、点到点 / 面积 / 剖面 / 角度多模式测量、深度伪彩图与 PLY 点云导出，兼顾现场强光环境下的可读性与操作效率。">
 <meta property="og:url" content="https://lvtizan.github.io/work/veinscope/">
 <meta property="og:image" content="https://lvtizan.github.io/uploads/veinscope-onsite4.png">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="VeinScope — 工业内窥镜检测系统">
-<meta name="twitter:description" content="工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集与标注工具，兼顾现场强光环境下的可读性与操作效率。">
+<meta name="twitter:description" content="工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集、三维重建与精密测量工具——支持 2D/3D 视图切换、点到点 / 面积 / 剖面 / 角度多模式测量、深度伪彩图与 PLY 点云导出，兼顾现场强光环境下的可读性与操作效率。">
 <meta name="twitter:image" content="https://lvtizan.github.io/uploads/veinscope-onsite4.png">
 <script type="application/ld+json">
 {
@@ -29,7 +29,7 @@
       "@id": "https://lvtizan.github.io/work/veinscope/#work",
       "name": "VeinScope",
       "headline": "VeinScope — 工业内窥镜检测系统",
-      "description": "工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集与标注工具，兼顾现场强光环境下的可读性与操作效率。",
+      "description": "工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集、三维重建与精密测量工具——支持 2D/3D 视图切换、点到点 / 面积 / 剖面 / 角度多模式测量、深度伪彩图与 PLY 点云导出，兼顾现场强光环境下的可读性与操作效率。",
       "url": "https://lvtizan.github.io/work/veinscope/",
       "image": "https://lvtizan.github.io/uploads/veinscope-onsite4.png",
       "dateCreated": "2026",
@@ -146,7 +146,7 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
   <div class="grid2">
     <div>
       <h2 class="k">项目概述</h2>
-      <p class="ov">工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集与标注工具，兼顾现场强光环境下的可读性与操作效率。</p>
+      <p class="ov">工业内窥镜检测系统的软硬件界面。为狭窄管道与设备腔体检测设计的实时图像采集、三维重建与精密测量工具——支持 2D/3D 视图切换、点到点 / 面积 / 剖面 / 角度多模式测量、深度伪彩图与 PLY 点云导出，兼顾现场强光环境下的可读性与操作效率。</p>
     </div>
     <div>
       <h3 class="k" style="color:#8f8f99">角色</h3>
@@ -154,16 +154,34 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
       <h3 class="k" style="color:#8f8f99">我的工作</h3>
       <ul class="contrib">
         <li><span class="cn">01</span><span>现场工作流研究</span></li>
-        <li><span class="cn">02</span><span>采集与标注界面设计</span></li>
-        <li><span class="cn">03</span><span>设备端交互与硬件按键映射</span></li>
-        <li><span class="cn">04</span><span>系统优化与性能调优</span></li>
+        <li><span class="cn">02</span><span>采集与测量界面设计</span></li>
+        <li><span class="cn">03</span><span>三维重建与多模式测量（点到点 / 剖面 / 深度图 / PLY 导出）</span></li>
+        <li><span class="cn">04</span><span>设备端交互与硬件按键映射</span></li>
+        <li><span class="cn">05</span><span>系统优化与性能调优</span></li>
       </ul>
     </div>
   </div>
 </section></div>
 
 <div class="wrap"><section>
-  <h2 class="k">界面展示 · Interface</h2>
+  <h2 class="k">软件界面 · Software UI</h2>
+  <div class="gal">
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-01.webp" alt="VeinScope 2D/3D 分屏观察界面 · 实景图像与三维重建同屏"><figcaption>2D/3D 分屏观察 · 实景与三维重建</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-07.webp" alt="VeinScope 深度伪彩图 · 缺陷深度分布可视化"><figcaption>深度伪彩图 · 缺陷深度分布</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-02.webp" alt="VeinScope 测量界面 · 多模式测量工具栏"><figcaption>测量界面 · 多模式测量工具</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-03.webp" alt="VeinScope 放大镜取点 · 精准定位测量点"><figcaption>放大镜取点 · 精准定位</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-04.webp" alt="VeinScope 点到点距离测量"><figcaption>点到点测量 · 距离</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-05.webp" alt="VeinScope 面积周长测量 · 区域圈选"><figcaption>面积周长测量 · 区域圈选</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-06.webp" alt="VeinScope 剖面趋势图 · 截面轮廓分析"><figcaption>剖面趋势图 · 截面轮廓分析</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-08.webp" alt="VeinScope 测量图库 · 记录归档与分类"><figcaption>测量图库 · 记录归档与分类</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-09.webp" alt="VeinScope 图库全屏预览 · 测量结果查看"><figcaption>图库全屏预览 · 结果查看</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-10.webp" alt="VeinScope 删除确认弹窗 · 数据安全防护"><figcaption>删除确认 · 数据安全防护</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-11.webp" alt="VeinScope 设置界面 · 单位/线宽/配色自定义"><figcaption>设置 · 单位 / 线宽 / 配色</figcaption></figure>
+  </div>
+</section></div>
+
+<div class="wrap"><section>
+  <h2 class="k">现场检测 · On-site</h2>
   <div class="gal" style="grid-template-columns:repeat(auto-fill,minmax(380px,1fr))">
       <figure><img loading="lazy" src="/uploads/webp/veinscope-onsite1.webp" alt="VeinScope 工业内窥镜现场检测场景"><figcaption>VeinScope 工业内窥镜现场检测场景</figcaption></figure>
       <figure><img loading="lazy" src="/uploads/webp/veinscope-onsite4.webp" alt="VeinScope 工业内窥镜设备现场使用"><figcaption>VeinScope 工业内窥镜设备现场使用</figcaption></figure>
