@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VOYANT 远洋数字 — 企业出海数字增长伙伴 · 品牌官网 / 外贸独立站 / SEO 增长</title>
+<meta name="description" content="VOYANT 远洋数字：为中国企业构建面向全球的数字资产。从品牌官网、外贸独立站到 SEO 增长体系，手写静态高性能、多语言、Lighthouse 全绿，打造出海数字化营销入口。">
+<meta name="keywords" content="外贸独立站,企业出海,品牌官网建设,外贸网站建设,Google SEO,多语言网站,独立站开发,静态高性能网站,企业数字化,B2B外贸站">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VOYANT 远洋数字 — 企业出海数字增长伙伴">
+<meta property="og:description" content="为中国企业构建面向全球的数字资产：品牌官网 · 外贸独立站 · SEO 增长体系。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F0E8; --paper-2:#ECE6D9; --panel:#191712; --ink:#17140D; --ink-2:#3A352B;
+    --muted:#6F6858; --line:#D9D2C3; --line-2:#C2BAA7;
+    --accent:#0C5A46; --accent-ink:#083C2f; --accent-soft:#0c5a4614;
+    --gold:#B08328;
+    --serif:'Fraunces','Noto Serif SC',Georgia,serif;
+    --sans:'Manrope','Noto Sans SC',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --wrap:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background-image:radial-gradient(1200px 600px at 78% -10%, #efe7d6 0%, transparent 60%);}
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .kick{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .kick::before{content:"";width:22px;height:1px;background:var(--accent);display:inline-block}
+  .serif{font-family:var(--serif)}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;line-height:1.04}
+
+  /* ---------- NAV ---------- */
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;
+    border-bottom:1px solid transparent}
+  nav.top.scrolled{background:rgba(244,240,232,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:baseline;gap:10px}
+  .brand .wm{font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:.02em}
+  .brand .cn{font-size:12px;color:var(--muted);letter-spacing:.14em}
+  .brand .dot{color:var(--accent)}
+  .nav-links{display:flex;gap:34px}
+  .nav-links a{font-size:14px;color:var(--ink-2);position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:.3s}
+  .nav-links a:hover::after{width:100%}
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .lang{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted)}
+  .lang b{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:600;
+    padding:11px 20px;border-radius:2px;transition:.25s;border:1px solid var(--ink)}
+  .btn-solid{background:var(--ink);color:var(--paper)}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn .ar{transition:.25s}
+  .btn:hover .ar{transform:translateX(4px)}
+  @media(max-width:900px){.nav-links{display:none}}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:clamp(120px,17vh,190px) 0 clamp(50px,7vw,90px);position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4vw,64px);align-items:center}
+  .h-kick{margin-bottom:26px}
+  h1.h-title{font-size:clamp(40px,6.4vw,86px);line-height:1.0;letter-spacing:-.025em}
+  h1.h-title em{font-style:italic;color:var(--accent)}
+  .h-sub{margin-top:26px;font-size:clamp(16px,1.5vw,19px);color:var(--ink-2);max-width:520px}
+  .h-cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+  .h-meta{margin-top:44px;display:flex;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+  .h-meta div{max-width:180px}
+  .h-meta .n{font-family:var(--serif);font-size:15px;color:var(--ink)}
+  .h-meta .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+
+  /* hero visual */
+  .h-visual{position:relative;height:clamp(360px,42vw,500px)}
+  .meridian{position:absolute;inset:-10% -20% -10% -8%;z-index:0;opacity:.9}
+  .browser{position:absolute;top:8%;left:2%;width:86%;background:#fff;border:1px solid var(--line-2);
+    border-radius:9px;overflow:hidden;box-shadow:0 40px 80px -24px rgba(23,20,13,.42),0 6px 18px rgba(23,20,13,.1);
+    transform:rotate(-1.4deg);z-index:2}
+  .browser .bar{height:34px;background:#f3efe6;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 12px}
+  .browser .bar i{width:9px;height:9px;border-radius:50%;background:#d9d2c3;display:inline-block}
+  .browser .bar .u{margin-left:12px;flex:1;height:16px;border-radius:8px;background:#eae4d7;max-width:200px}
+  .browser img{width:100%;display:block;aspect-ratio:16/10.5;object-fit:cover;object-position:top}
+  .chip{position:absolute;z-index:3;background:var(--panel);color:var(--paper);border-radius:6px;
+    padding:12px 15px;box-shadow:0 20px 44px -14px rgba(23,20,13,.5)}
+  .chip .cn{font-family:var(--serif);font-size:22px;line-height:1;color:#fff}
+  .chip .cn i{color:#7ee0be;font-style:normal}
+  .chip .cl{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#b9b1a1;margin-top:5px}
+  .chip-1{right:-2%;top:2%}
+  .chip-2{left:-4%;bottom:6%}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.h-visual{height:380px;margin-top:20px}}
+
+  /* ---------- reveal ---------- */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---------- section frame ---------- */
+  section{padding:clamp(70px,9vw,128px) 0;position:relative}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(40px,5vw,66px);flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(30px,4.2vw,54px);max-width:15ch}
+  .sec-head p{color:var(--muted);max-width:340px;font-size:15px}
+
+  /* credibility band */
+  .band{background:var(--panel);color:var(--paper)}
+  .band .wrap{padding-top:clamp(46px,6vw,72px);padding-bottom:clamp(46px,6vw,72px)}
+  .band .lead{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8f8778;margin-bottom:30px}
+  .band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#2a271f;border:1px solid #2a271f}
+  .band-cell{background:var(--panel);padding:clamp(22px,2.4vw,34px) clamp(18px,2vw,28px)}
+  .band-cell .big{font-family:var(--serif);font-size:clamp(19px,1.7vw,24px);color:#fff;line-height:1.15}
+  .band-cell .big i{color:#7ee0be;font-style:normal}
+  .band-cell .sm{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#9a9284;margin-top:10px}
+  @media(max-width:760px){.band-grid{grid-template-columns:1fr 1fr}}
+
+  /* services */
+  .svc{border-top:1px solid var(--line)}
+  .svc-row{display:grid;grid-template-columns:80px 1fr 1.1fr auto;gap:24px;align-items:center;
+    padding:clamp(26px,3vw,42px) 0;border-bottom:1px solid var(--line);transition:.3s;position:relative}
+  .svc-row:hover{padding-left:14px}
+  .svc-row .no{font-family:var(--mono);font-size:13px;color:var(--accent)}
+  .svc-row h3{font-size:clamp(22px,2.4vw,32px)}
+  .svc-row .en{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .svc-row .desc{color:var(--ink-2);font-size:15px}
+  .svc-row .go{width:42px;height:42px;border:1px solid var(--line-2);border-radius:50%;display:grid;place-items:center;transition:.3s;flex:none}
+  .svc-row:hover .go{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(-45deg)}
+  @media(max-width:820px){.svc-row{grid-template-columns:44px 1fr;gap:12px}.svc-row .desc,.svc-row .go{display:none}}
+
+  /* method */
+  .method{background:var(--paper-2)}
+  .method .quote{font-family:var(--serif);font-size:clamp(26px,3.6vw,46px);line-height:1.18;max-width:20ch;margin-bottom:clamp(44px,5vw,70px)}
+  .method .quote i{font-style:italic;color:var(--accent)}
+  .m3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,50px)}
+  .m3 .card{border-top:2px solid var(--ink)}
+  .m3 .card .no{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);padding-top:18px}
+  .m3 .card h3{font-size:clamp(20px,2vw,26px);margin:14px 0 12px}
+  .m3 .card p{color:var(--ink-2);font-size:15px}
+  @media(max-width:760px){.m3{grid-template-columns:1fr;gap:26px}}
+
+  /* compare */
+  .cmp{margin-top:clamp(44px,5vw,68px);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .cmp .col{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:clamp(22px,2.6vw,34px)}
+  .cmp .col.win{border-color:var(--accent);background:#fff;box-shadow:0 20px 50px -30px rgba(12,90,70,.5)}
+  .cmp .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .cmp .col.win .tag{color:var(--accent)}
+  .cmp ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .cmp li{display:flex;gap:11px;font-size:14.5px;color:var(--ink-2)}
+  .cmp li b{color:var(--ink);font-weight:600}
+  .cmp .mk{flex:none;color:var(--accent);font-weight:700}
+  .cmp .col:not(.win) .mk{color:#b9b1a1}
+  @media(max-width:680px){.cmp{grid-template-columns:1fr}}
+
+  /* cases */
+  .cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2vw,28px)}
+  .case{position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;transition:.35s}
+  .case:hover{transform:translateY(-5px);box-shadow:0 34px 70px -34px rgba(23,20,13,.4)}
+  .case .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
+  .case .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:.6s}
+  .case:hover .thumb img{transform:scale(1.04)}
+  .case .flag{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    background:rgba(23,20,13,.82);color:#fff;padding:5px 9px;border-radius:3px;backdrop-filter:blur(4px)}
+  .case .flag.demo{background:rgba(176,131,40,.92)}
+  .case .body{padding:clamp(20px,2.2vw,28px)}
+  .case .body .ind{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .case .body h3{font-size:clamp(20px,2vw,26px);margin:10px 0 10px}
+  .case .body p{color:var(--ink-2);font-size:14.5px}
+  .case .body .res{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:26px}
+  .case .body .res .v{font-family:var(--serif);font-size:22px;color:var(--ink)}
+  .case .body .res .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  /* demo frame preview */
+  .demoframe{width:100%;height:100%;background:
+    linear-gradient(135deg,#101d19,#0c5a46 130%);position:relative;display:flex;flex-direction:column;justify-content:center;padding:0 34px;color:#fff}
+  .demoframe .df-brand{font-family:var(--serif);font-size:clamp(24px,3vw,38px);letter-spacing:.02em}
+  .demoframe .df-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8fd8c2;margin-top:10px}
+  .demoframe::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px;opacity:.5}
+  @media(max-width:720px){.cases-grid{grid-template-columns:1fr}}
+
+  /* process */
+  .proc{background:var(--panel);color:var(--paper)}
+  .proc .sec-head h2{color:#fff}
+  .proc .sec-head p{color:#9a9284}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid #2a271f}
+  .step{padding:30px 22px 30px 0;border-right:1px solid #2a271f;position:relative}
+  .step:last-child{border-right:none}
+  .step .no{font-family:var(--mono);font-size:11px;color:#7ee0be;letter-spacing:.1em}
+  .step h3{color:#fff;font-size:20px;margin:14px 0 10px}
+  .step p{color:#9a9284;font-size:13.5px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step{border-right:none;border-bottom:1px solid #2a271f;padding-right:0}}
+
+  /* capability */
+  .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2vw,26px)}
+  .cap{padding:clamp(24px,2.6vw,34px) 0;border-top:2px solid var(--ink)}
+  .cap .ic{font-family:var(--serif);font-size:34px;color:var(--accent);line-height:1}
+  .cap h3{font-size:19px;margin:16px 0 10px}
+  .cap p{color:var(--ink-2);font-size:14px}
+  @media(max-width:820px){.cap-grid{grid-template-columns:1fr 1fr}}
+
+  /* CTA */
+  .cta{background:linear-gradient(160deg,#0c5a46,#083c2f);color:#fff;text-align:center}
+  .cta h2{font-size:clamp(32px,5vw,64px);color:#fff;max-width:16ch;margin:0 auto}
+  .cta p{color:#bfe7d9;margin:22px auto 0;max-width:440px}
+  .cta .actions{margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .cta .btn-solid{background:#fff;color:var(--accent-ink);border-color:#fff}
+  .cta .btn-solid:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  .cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+  .cta .btn-ghost:hover{background:#fff;color:var(--accent-ink)}
+  .cta .wc{margin-top:26px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:#8fd8c2}
+
+  /* footer */
+  footer{background:var(--panel);color:#8f8778;padding:46px 0}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .foot-in .wm{font-family:var(--serif);font-size:18px;color:#fff;letter-spacing:.02em;text-transform:none}
+  .note{position:fixed;left:16px;bottom:16px;z-index:200;background:#fff8e6;border:1px dashed var(--gold);color:#7a5a12;
+    font-size:11px;padding:8px 13px;border-radius:20px;font-family:var(--mono);letter-spacing:.02em;
+    box-shadow:0 8px 24px -8px rgba(23,20,13,.3);max-width:min(92vw,420px)}
+</style>
+</head>
+<body>
+
+<!-- placeholder note -->
+<div class="note">占位品牌 VOYANT · 样板案例仅为演示 — 上线前换成你的真实品牌与项目</div>
+
+<nav class="top" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <span class="wm">VOYANT<span class="dot">.</span></span>
+      <span class="cn">远洋数字</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">服务</a>
+      <a href="#method">方法</a>
+      <a href="#cases">案例</a>
+      <a href="#process">流程</a>
+      <a href="#contact">联系</a>
+    </div>
+    <div class="nav-right">
+      <span class="lang"><b>中</b> / EN</span>
+      <a class="btn btn-solid" href="#contact">获取诊断 <span class="ar">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="h-kick kick rv">GLOBAL DIGITAL GROWTH PARTNER · 企业出海数字增长伙伴</div>
+      <h1 class="h-title rv">为中国企业构建<br>面向全球的<em>数字资产</em></h1>
+      <p class="h-sub rv">从品牌官网、外贸独立站到 SEO 增长体系，我们以设计 + 工程一体的方式，为企业打造面向全球客户的数字化营销入口 —— 更快、更专业、更利于成交。</p>
+      <div class="h-cta rv">
+        <a class="btn btn-solid" href="#contact">获取全球网站诊断 <span class="ar">→</span></a>
+        <a class="btn btn-ghost" href="#cases">查看样板案例</a>
+      </div>
+      <div class="h-meta rv">
+        <div><div class="n">设计 + 工程一体</div><div class="l">Design & Engineering</div></div>
+        <div><div class="n">大厂出身 · 陌陌/新浪/优酷</div><div class="l">Big-tech background</div></div>
+        <div><div class="n">多国 · 多语言平台交付</div><div class="l">Multi-market delivery</div></div>
+      </div>
+    </div>
+    <div class="h-visual rv">
+      <svg class="meridian" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="150" stroke="#0c5a46" stroke-opacity=".22"/>
+        <circle cx="200" cy="200" r="150" stroke="#0c5a46" stroke-opacity=".16" transform="scale(1.28)" transform-origin="200 200"/>
+        <ellipse cx="200" cy="200" rx="150" ry="60" stroke="#0c5a46" stroke-opacity=".22"/>
+        <ellipse cx="200" cy="200" rx="80" ry="150" stroke="#0c5a46" stroke-opacity=".18"/>
+        <ellipse cx="200" cy="200" rx="150" ry="120" stroke="#0c5a46" stroke-opacity=".14"/>
+        <line x1="50" y1="200" x2="350" y2="200" stroke="#0c5a46" stroke-opacity=".2"/>
+      </svg>
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span class="u"></span></div>
+        <img src="/uploads/webp/tarmeer-home.webp" alt="多国多语言外贸平台官网示例" loading="lazy">
+      </div>
+      <div class="chip chip-1"><div class="cn"><i>100</i></div><div class="cl">Lighthouse 性能</div></div>
+      <div class="chip chip-2"><div class="cn">3<i>+</i> 语言</div><div class="cl">多国家 · 多语言</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- credibility band -->
+<section class="band" style="padding:0" id="about">
+  <div class="wrap">
+    <div class="lead rv">凭什么交给我们 · WHY US</div>
+    <div class="band-grid rv">
+      <div class="band-cell"><div class="big">设计 <i>+</i> 工程</div><div class="sm">双专业 · 一体交付</div></div>
+      <div class="band-cell"><div class="big">陌陌 · 新浪 · 优酷</div><div class="sm">互联网大厂经历</div></div>
+      <div class="band-cell"><div class="big">多国 <i>·</i> 多语言</div><div class="sm">平台级项目落地</div></div>
+      <div class="band-cell"><div class="big">静态高性能</div><div class="sm">Lighthouse 全绿</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- services -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>企业全球数字基础设施</h2>
+      <p>我们卖的不是"一个网页"，而是企业面向全球客户的数字增长系统。</p>
+    </div>
+    <div class="svc rv">
+      <div class="svc-row">
+        <div class="no">01</div>
+        <div><h3>品牌官网建设</h3><div class="en">Brand Website</div></div>
+        <div class="desc">国际化视觉体系的企业形象官网，响应式、多端适配、SEO 友好架构。</div>
+        <div class="go">↗</div>
+      </div>
+      <div class="svc-row">
+        <div class="no">02</div>
+        <div><h3>外贸独立站</h3><div class="en">Cross-border Site</div></div>
+        <div class="desc">WordPress / 定制商城 / 手写静态，多语言多国家，面向全球买家的独立站。</div>
+        <div class="go">↗</div>
+      </div>
+      <div class="svc-row">
+        <div class="no">03</div>
+        <div><h3>SEO 增长系统</h3><div class="en">SEO Growth</div></div>
+        <div class="desc">技术 SEO、结构化数据、内容架构与外链策略，做 Google 自然流量增长。</div>
+        <div class="go">↗</div>
+      </div>
+      <div class="svc-row">
+        <div class="no">04</div>
+        <div><h3>AI 营销自动化</h3><div class="en">AI Marketing</div></div>
+        <div class="desc">AI 内容生成、多语言本地化、AI 客服与销售线索管理，降低获客成本。</div>
+        <div class="go">↗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- method -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="kick rv" style="margin-bottom:26px">我们的方法 · OUR APPROACH</div>
+    <div class="quote rv">我们不是做一个网站，而是<i>构建长期增长系统</i>。</div>
+    <div class="m3">
+      <div class="card rv"><div class="no">01 / 策略</div><h3>先懂商业</h3><p>理解你的商业模式、目标市场与买家路径，再决定网站该长什么样、说什么话。</p></div>
+      <div class="card rv"><div class="no">02 / 设计</div><h3>国际化视觉</h3><p>面向海外买家的视觉与信息架构，专业、可信、转化导向，而非国内模板套壳。</p></div>
+      <div class="card rv"><div class="no">03 / 技术</div><h3>SEO 友好架构</h3><p>手写静态或无头架构，秒级加载、Lighthouse 全绿，从底层就利于搜索与收录。</p></div>
+    </div>
+
+    <div class="cmp">
+      <div class="col win rv">
+        <div class="tag">我们的方式 · Hand-crafted Static</div>
+        <ul>
+          <li><span class="mk">✓</span><span><b>0.1–2 秒加载</b>，Lighthouse 全绿</span></li>
+          <li><span class="mk">✓</span><span>托管成本极低，<b>无插件安全隐患</b></span></li>
+          <li><span class="mk">✓</span><span>底层结构<b>为 SEO 而生</b></span></li>
+          <li><span class="mk">✓</span><span>源码与设计文件<b>完整交付给你</b></span></li>
+        </ul>
+      </div>
+      <div class="col rv">
+        <div class="tag">套模板建站 · Template Sites</div>
+        <ul>
+          <li><span class="mk">—</span><span>臃肿插件，加载慢</span></li>
+          <li><span class="mk">—</span><span>需持续维护、易被攻击</span></li>
+          <li><span class="mk">—</span><span>结构固化，SEO 受限</span></li>
+          <li><span class="mk">—</span><span>换供应商即受制于人</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- cases -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>精选案例</h2>
+      <p>真实交付项目与样板设计 —— 每一个都为特定市场与买家而做。</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case rv">
+        <div class="thumb"><span class="flag">真实项目 · Live</span><img src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台" loading="lazy"></div>
+        <div class="body">
+          <div class="ind">垂直平台 / 独立站</div>
+          <h3>Tarmeer — 多国多语言室内设计平台</h3>
+          <p>面向多个国家、多语言的室内设计垂直平台，全站国际化与内容架构一体化落地。</p>
+          <div class="res"><div><div class="v">2 国</div><div class="k">Markets</div></div><div><div class="v">3 语言</div><div class="k">Languages</div></div><div><div class="v">全栈</div><div class="k">Delivery</div></div></div>
+        </div>
+      </div>
+      <div class="case rv">
+        <div class="thumb"><span class="flag">真实项目 · Live</span><img src="/uploads/webp/oilfield-web-home.webp" alt="石油装备中英双语外贸展示站" loading="lazy"></div>
+        <div class="body">
+          <div class="ind">B2B 外贸站</div>
+          <h3>油田装备 — 中英双语外贸展示站</h3>
+          <p>石油钻采与动力装备的中英双语外贸站，大主图 + 型号参数表，面向海外买家与 SEO。</p>
+          <div class="res"><div><div class="v">中/英</div><div class="k">Bilingual</div></div><div><div class="v">6 栏目</div><div class="k">Sections</div></div><div><div class="v">静态</div><div class="k">SEO-ready</div></div></div>
+        </div>
+      </div>
+      <div class="case rv">
+        <div class="thumb"><span class="flag demo">样板 · Demo</span><div class="demoframe"><div class="df-brand">NORDHAUS</div><div class="df-tag">Outdoor Furniture · 户外家具</div></div></div>
+        <div class="body">
+          <div class="ind">样板演示 / 独立站</div>
+          <h3>NORDHAUS — 户外家具品牌独立站</h3>
+          <p>面向欧美市场的户外家具品牌站样板：产品目录 + 多语言 + 询盘转化路径。</p>
+          <div class="res"><div><div class="v">演示</div><div class="k">Demo design</div></div><div><div class="v">EU 市场</div><div class="k">Target</div></div></div>
+        </div>
+      </div>
+      <div class="case rv">
+        <div class="thumb"><span class="flag demo">样板 · Demo</span><div class="demoframe" style="background:linear-gradient(135deg,#1a140c,#b08328 150%)"><div class="df-brand">LUMENA</div><div class="df-tag" style="color:#f0d79a">LED Lighting · 商用照明</div></div></div>
+        <div class="body">
+          <div class="ind">样板演示 / B2B 外贸站</div>
+          <h3>LUMENA — 商用 LED 照明外贸站</h3>
+          <p>商用照明 B2B 外贸站样板：应用场景 + 参数规格 + 分销商询盘系统。</p>
+          <div class="res"><div><div class="v">演示</div><div class="k">Demo design</div></div><div><div class="v">B2B</div><div class="k">Model</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- process -->
+<section class="proc" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>成熟的交付流程</h2>
+      <p>从诊断到上线增长，每一步可验证、可交接。</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><div class="no">01</div><h3>诊断</h3><p>市场、买家、竞品与现状分析，定目标与口径。</p></div>
+      <div class="step"><div class="no">02</div><h3>策略</h3><p>信息架构、内容框架与 SEO 关键词规划。</p></div>
+      <div class="step"><div class="no">03</div><h3>设计</h3><p>国际化视觉体系与高转化页面设计。</p></div>
+      <div class="step"><div class="no">04</div><h3>开发</h3><p>手写静态 / 定制开发，性能与 SEO 一次做对。</p></div>
+      <div class="step"><div class="no">05</div><h3>增长</h3><p>上线、收录提交与持续 SEO 增长优化。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- capability -->
+<section id="capability">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>一体化交付能力</h2>
+      <p>设计、工程、海外营销与项目管理，一条链路内完成。</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap rv"><div class="ic">◐</div><h3>设计</h3><p>品牌视觉、UI/UX 与设计系统。</p></div>
+      <div class="cap rv"><div class="ic">◧</div><h3>前端工程</h3><p>手写静态、响应式、性能与可访问性。</p></div>
+      <div class="cap rv"><div class="ic">◈</div><h3>海外营销</h3><p>技术 SEO、结构化数据与内容增长。</p></div>
+      <div class="cap rv"><div class="ic">◍</div><h3>项目管理</h3><p>规范化流程、里程碑与可交接文档。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="kick rv" style="justify-content:center;color:#8fd8c2;margin-bottom:24px">开始你的出海项目 · GET STARTED</div>
+    <h2 class="rv">让你的企业，被全球客户看见</h2>
+    <p class="rv">发来你的官网或产品，我们提供一次免费的全球网站诊断：性能、SEO 与转化，逐项给出可执行建议。</p>
+    <div class="actions rv">
+      <a class="btn btn-solid" href="mailto:bbtizan@gmail.com?subject=全球网站诊断咨询&body=公司/品牌：%0A目标市场：%0A现有网站（如有）：%0A需求简述：">获取免费诊断 →</a>
+      <a class="btn btn-ghost" href="mailto:bbtizan@gmail.com">发邮件洽谈</a>
+    </div>
+    <div class="wc rv">Email&nbsp; bbtizan@gmail.com&nbsp;&nbsp;·&nbsp;&nbsp;WeChat&nbsp; lvtizan</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span class="wm">VOYANT<span style="color:#0c5a46">.</span> 远洋数字</span>
+    <span>企业出海数字增长伙伴 · © 2026</span>
+    <span>品牌官网 / 外贸独立站 / SEO 增长</span>
+  </div>
+</footer>
+
+<script>
+  // nav scrolled state
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>20);
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+  // reveal on scroll (staggered within a section)
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){
+      const items=[...e.target.parentElement.querySelectorAll('.rv')].filter(x=>x===e.target);
+      e.target.style.transitionDelay=(e.target.dataset.d||'0')+'ms';
+      e.target.classList.add('in');io.unobserve(e.target);
+    }});
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach((el,i)=>{
+    // subtle stagger for siblings
+    const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));
+    el.dataset.d=(sibs.indexOf(el)%6)*70;
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
