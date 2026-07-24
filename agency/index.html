@@ -40,6 +40,35 @@
   h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.02}
   .disp{font-family:var(--disp)}
 
+  /* ---------- LIGHT THEME ---------- */
+  html[data-theme="light"]{
+    --bg:#FFFFFF; --bg-2:#F3F5FB; --surface:#FFFFFF; --surface-2:#F5F7FC;
+    --ink:#0A0D18; --ink-2:#474D5E; --muted:#7A8092;
+    --line:rgba(11,14,23,.10); --line-2:rgba(11,14,23,.17);
+    --accent:#3B54F0; --accent-2:#2A40D6;
+  }
+  html[data-theme="light"] body::before{background:radial-gradient(900px 520px at 84% -10%,rgba(67,97,255,.10),transparent 62%)}
+  html[data-theme="light"] body::after{opacity:.02}
+  html[data-theme="light"] nav.top.scrolled{background:rgba(255,255,255,.75)}
+  /* 永远深色的元素 → 保留浅蓝文字 */
+  html[data-theme="light"] .chip .cn i,
+  html[data-theme="light"] .demoframe .df-tag,
+  html[data-theme="light"] .case .flag.demo,
+  html[data-theme="light"] .cta .kick,
+  html[data-theme="light"] .cta .wc,
+  html[data-theme="light"] .note{color:#8AA6FF}
+  html[data-theme="light"] .chip .cl{color:#9aa0b0}
+  html[data-theme="light"] h1.h-title em,
+  html[data-theme="light"] .method .quote em{background:none;-webkit-text-fill-color:var(--accent);color:var(--accent)}
+  html[data-theme="light"] .cta h2{color:#fff}
+  html[data-theme="light"] .cta p{color:#C7CBD6}
+  html[data-theme="light"] .cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+  html[data-theme="light"] .foot-in .wm{color:var(--ink)}
+  html[data-theme="light"] .chat-launch{background:#14151E;color:#fff}
+  /* theme toggle button */
+  .theme-tg{background:transparent;border:1px solid var(--line-2);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;display:grid;place-items:center;transition:.2s;flex:none}
+  .theme-tg:hover{border-color:var(--ink);background:rgba(127,140,180,.08)}
+
   /* NAV */
   nav.top{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;border-bottom:1px solid transparent}
   nav.top.scrolled{background:rgba(8,8,12,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
@@ -288,6 +317,7 @@
       <a href="#process">Process</a><a href="#about">Studio</a>
     </div>
     <div class="nav-right">
+      <button class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button>
       <span class="lang"><b>中</b> / EN</span>
       <a class="btn btn-solid" href="#contact">Get a diagnosis <span class="ar">→</span></a>
     </div>
@@ -572,6 +602,12 @@
 </div>
 
 <script>
+  // theme toggle (dark / light, remembered)
+  const root=document.documentElement,tg=document.getElementById('themeTg');
+  const setTheme=t=>{root.setAttribute('data-theme',t);tg.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('voyant-theme',t)}catch(e){}};
+  setTheme((()=>{try{return localStorage.getItem('voyant-theme')}catch(e){return null}})()||'dark');
+  tg.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+
   const nav=document.getElementById('nav');
   const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>20);
   onScroll();addEventListener('scroll',onScroll,{passive:true});
