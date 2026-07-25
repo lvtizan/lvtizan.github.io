@@ -281,12 +281,12 @@
 
   /* process */
   .steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
-  .step{padding:32px 22px 32px 0;border-right:1px solid var(--line)}
-  .step:last-child{border-right:none}
+  .step{padding:30px 28px 34px;border-left:1px solid var(--line)}
+  .step:first-child{border-left:none;padding-left:0}
   .step .no{font-family:var(--mono);font-size:11px;color:var(--accent-2);letter-spacing:.1em}
   .step h3{font-size:20px;margin:16px 0 10px;font-weight:600}
   .step p{color:var(--muted);font-size:13.5px}
-  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step{border-right:none;border-bottom:1px solid var(--line);padding-right:0}}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step{border-left:none;border-bottom:1px solid var(--line);padding:26px 0}.step:nth-child(even){padding-left:26px}}
 
   /* about */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
@@ -474,7 +474,7 @@
 <section id="services">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="htxt"><div class="kick">What we do · 服务</div><h2>两条产品线，一个内核</h2></div>
+      <div class="htxt"><div class="kick">What we do · 服务</div><h2>20 年开发与设计经验，为各类企业提供从网站到软件的<span style="color:var(--accent-2)">优质数字产品</span>。</h2></div>
       <p>设计 + 工程一体 —— 我们做面向全球的网站，也做专业软件与应用界面。</p>
     </div>
 
