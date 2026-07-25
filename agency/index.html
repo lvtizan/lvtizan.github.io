@@ -252,7 +252,7 @@
   @media(max-width:820px){.price-grid{grid-template-columns:1fr}}
 
   /* cases */
-  .cases-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(250px,20vw,310px),1fr));gap:clamp(14px,1.3vw,20px);width:100vw;margin-left:calc(50% - 50vw);padding:0 clamp(20px,5vw,64px)}
+  .cases-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(max(200px, (100% - 90px) / 6), 1fr));gap:clamp(12px,1.1vw,18px);width:100vw;margin-left:calc(50% - 50vw);padding:0 clamp(20px,5vw,64px)}
   .case{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);transition:.35s}
   .case-link{position:absolute;inset:0;z-index:6}
   .case .flag{transition:.3s}
@@ -263,9 +263,9 @@
   .case:hover .thumb img{transform:scale(1.05)}
   .case .flag{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(8,8,12,.78);backdrop-filter:blur(6px);color:#fff;padding:6px 10px;border-radius:20px;border:1px solid var(--line-2)}
   .case .flag.demo{color:var(--accent-2)}
-  .case .body{padding:15px 17px 18px}
-  .case .body .ind{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2)}
-  .case .body h3{font-size:clamp(16px,1.35vw,19px);margin:9px 0 0;font-weight:600;line-height:1.3}
+  .case .body{padding:13px 14px 15px}
+  .case .body .ind{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2)}
+  .case .body h3{font-size:clamp(13.5px,1vw,16px);margin:8px 0 0;font-weight:600;line-height:1.32}
   .case .body p{display:none}
   .case .body .res{display:none}
   .case .flag{font-size:9.5px;padding:5px 9px}
@@ -419,6 +419,57 @@
   </div>
 </header>
 
+<!-- 7. cases -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="htxt"><div class="kick">Selected work · 案例</div><h2>精选案例</h2></div>
+      <p>Real deliveries and sample designs — each built for a specific market.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case rv">
+        <a class="case-link" href="/agency/work/tarmeer/" aria-label="查看 Tarmeer 设计详情"></a>
+        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台" loading="lazy"></div>
+        <div class="body"><div class="ind">网站 · Vertical platform</div><h3>Tarmeer — 多国多语言室内设计平台</h3><p>面向多个国家、多语言的室内设计垂直平台，全站国际化与内容架构一体化落地。</p><div class="res"><div><div class="v">2</div><div class="k">Markets</div></div><div><div class="v">3</div><div class="k">Languages</div></div><div><div class="v">Full-stack</div><div class="k">Delivery</div></div></div></div>
+      </div>
+      <div class="case rv">
+        <a class="case-link" href="https://kst-power.com" target="_blank" rel="noopener noreferrer" aria-label="访问 Oilfield 网站 kst-power.com（新窗口）"></a>
+        <div class="thumb"><span class="flag">Live project ↗</span><img src="/uploads/webp/oilfield-web-home.webp" alt="石油装备中英双语外贸展示站" loading="lazy"></div>
+        <div class="body"><div class="ind">网站 · B2B export site</div><h3>Oilfield — 中英双语外贸展示站</h3><p>石油钻采与动力装备的中英双语外贸站，大主图 + 型号参数表，面向海外买家与 SEO。</p><div class="res"><div><div class="v">ZH/EN</div><div class="k">Bilingual</div></div><div><div class="v">6</div><div class="k">Sections</div></div><div><div class="v">Static</div><div class="k">SEO-ready</div></div></div></div>
+      </div>
+      <div class="case rv">
+        <a class="case-link" href="/agency/work/veinscope/" aria-label="查看 VeinScope 设计详情"></a>
+        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/veinscope-onsite7.webp" alt="工程师手持 VeinScope 工业内窥镜检测航空发动机" loading="lazy"></div>
+        <div class="body"><div class="ind">软件 · Product UI/UX</div><h3>VeinScope — 工业内窥镜检测系统</h3><p>工业内窥镜检测软件的产品与界面设计：2D/3D 切换、多模式测量、深度图与 PLY 导出，为强光现场而设计。</p><div class="res"><div><div class="v">UI/UX</div><div class="k">Design</div></div><div><div class="v">2D/3D</div><div class="k">Measure</div></div><div><div class="v">5</div><div class="k">Tools</div></div></div></div>
+      </div>
+      <div class="case rv">
+        <a class="case-link" href="/agency/work/avatar/" aria-label="查看 AVATAR 设计详情"></a>
+        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/avatar-showcase.webp" alt="AVATAR App 多端界面展示" loading="lazy"></div>
+        <div class="body"><div class="ind">软件 · Mobile App</div><h3>AVATAR — AI 角色陪伴聊天 App</h3><p>AI 角色陪伴与聊天移动应用的产品设计、界面与交互动效，从角色发现到订阅体系一体化。</p><div class="res"><div><div class="v">iOS</div><div class="k">App</div></div><div><div class="v">UI/UX</div><div class="k">Design</div></div><div><div class="v">动效</div><div class="k">Motion</div></div></div></div>
+      </div>
+      <div class="case rv">
+        <a class="case-link" href="/agency/work/nanhai/" aria-label="查看 南海风物 设计详情"></a>
+        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/nanhai-keyvisual.webp" alt="南海风物 沉浸式文化互动装置" loading="lazy"></div>
+        <div class="body"><div class="ind">软件 · 互动装置</div><h3>南海风物 — 沉浸式文化互动装置</h3><p>佛山千灯湖魁星阁的沉浸式文化互动装置，以岭南龙舟为叙事主线，三种可玩体验。</p><div class="res"><div><div class="v">3</div><div class="k">玩法</div></div><div><div class="v">触屏+大屏</div><div class="k">联动</div></div><div><div class="v">2025</div><div class="k">落地</div></div></div></div>
+      </div>
+      <div class="case rv">
+        <div class="thumb"><span class="flag demo">Sample · Demo</span><div class="demoframe"><div class="df-brand">NORDHAUS</div><div class="df-tag">Outdoor Furniture · 户外家具</div></div></div>
+        <div class="body"><div class="ind">网站 · Sample site</div><h3>NORDHAUS — 户外家具品牌独立站</h3><p>面向欧美市场的户外家具品牌站样板：产品目录 + 多语言 + 询盘转化路径。</p><div class="res"><div><div class="v">Demo</div><div class="k">Sample design</div></div><div><div class="v">EU</div><div class="k">Target</div></div></div></div>
+      </div>
+      <div class="case rv">
+        <div class="thumb"><span class="flag demo">Sample · Demo</span><div class="demoframe" style="background:radial-gradient(120% 120% at 20% 10%,#12233a,#0a0b16)"><div class="df-brand">LUMENA</div><div class="df-tag" style="color:#6ec8ff">LED Lighting · 商用照明</div></div></div>
+        <div class="body"><div class="ind">网站 · Sample B2B</div><h3>LUMENA — 商用 LED 照明外贸站</h3><p>商用照明 B2B 外贸站样板：应用场景 + 参数规格 + 分销商询盘系统。</p><div class="res"><div><div class="v">Demo</div><div class="k">Sample design</div></div><div><div class="v">B2B</div><div class="k">Model</div></div></div></div>
+      </div>
+      <div class="case rv">
+        <a class="case-link" href="/agency/work/demo-ecommerce/" aria-label="查看 LUMO 概念设计"></a>
+        <div class="thumb"><span class="flag demo">概念稿 · Concept</span><img src="/uploads/webp/demo-lumo.webp" alt="LUMO 极简灯具品牌电商概念设计" loading="lazy"></div>
+        <div class="body"><div class="ind">电商 · Concept</div><h3>LUMO — 极简灯具品牌电商</h3><p>DTC 灯具品牌电商概念站：产品陈列 + 品牌故事 + 转化路径，100% 原创设计，可点开体验。</p><div class="res"><div><div class="v">Concept</div><div class="k">原创设计</div></div><div><div class="v">DTC</div><div class="k">电商</div></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- 2. credibility band -->
 <section id="whyus" style="padding-top:clamp(56px,6vw,82px);padding-bottom:clamp(56px,6vw,82px)">
@@ -526,56 +577,6 @@
         <div class="amt">面议</div>
         <ul><li><span class="mk">✓</span>多语言商城 / 垂直平台</li><li><span class="mk">✓</span>定制功能 · 后台系统</li><li><span class="mk">✓</span>全栈设计 + 工程交付</li><li><span class="mk">✓</span>长期增长与迭代</li></ul>
         <a class="btn btn-ghost" href="#contact">预约方案沟通</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. cases -->
-<section id="cases">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="htxt"><div class="kick">Selected work · 案例</div><h2>精选案例</h2></div>
-      <p>Real deliveries and sample designs — each built for a specific market.</p>
-    </div>
-    <div class="cases-grid">
-      <div class="case rv">
-        <a class="case-link" href="/agency/work/tarmeer/" aria-label="查看 Tarmeer 设计详情"></a>
-        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台" loading="lazy"></div>
-        <div class="body"><div class="ind">网站 · Vertical platform</div><h3>Tarmeer — 多国多语言室内设计平台</h3><p>面向多个国家、多语言的室内设计垂直平台，全站国际化与内容架构一体化落地。</p><div class="res"><div><div class="v">2</div><div class="k">Markets</div></div><div><div class="v">3</div><div class="k">Languages</div></div><div><div class="v">Full-stack</div><div class="k">Delivery</div></div></div></div>
-      </div>
-      <div class="case rv">
-        <a class="case-link" href="https://kst-power.com" target="_blank" rel="noopener noreferrer" aria-label="访问 Oilfield 网站 kst-power.com（新窗口）"></a>
-        <div class="thumb"><span class="flag">Live project ↗</span><img src="/uploads/webp/oilfield-web-home.webp" alt="石油装备中英双语外贸展示站" loading="lazy"></div>
-        <div class="body"><div class="ind">网站 · B2B export site</div><h3>Oilfield — 中英双语外贸展示站</h3><p>石油钻采与动力装备的中英双语外贸站，大主图 + 型号参数表，面向海外买家与 SEO。</p><div class="res"><div><div class="v">ZH/EN</div><div class="k">Bilingual</div></div><div><div class="v">6</div><div class="k">Sections</div></div><div><div class="v">Static</div><div class="k">SEO-ready</div></div></div></div>
-      </div>
-      <div class="case rv">
-        <a class="case-link" href="/agency/work/veinscope/" aria-label="查看 VeinScope 设计详情"></a>
-        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/veinscope-onsite7.webp" alt="工程师手持 VeinScope 工业内窥镜检测航空发动机" loading="lazy"></div>
-        <div class="body"><div class="ind">软件 · Product UI/UX</div><h3>VeinScope — 工业内窥镜检测系统</h3><p>工业内窥镜检测软件的产品与界面设计：2D/3D 切换、多模式测量、深度图与 PLY 导出，为强光现场而设计。</p><div class="res"><div><div class="v">UI/UX</div><div class="k">Design</div></div><div><div class="v">2D/3D</div><div class="k">Measure</div></div><div><div class="v">5</div><div class="k">Tools</div></div></div></div>
-      </div>
-      <div class="case rv">
-        <a class="case-link" href="/agency/work/avatar/" aria-label="查看 AVATAR 设计详情"></a>
-        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/avatar-showcase.webp" alt="AVATAR App 多端界面展示" loading="lazy"></div>
-        <div class="body"><div class="ind">软件 · Mobile App</div><h3>AVATAR — AI 角色陪伴聊天 App</h3><p>AI 角色陪伴与聊天移动应用的产品设计、界面与交互动效，从角色发现到订阅体系一体化。</p><div class="res"><div><div class="v">iOS</div><div class="k">App</div></div><div><div class="v">UI/UX</div><div class="k">Design</div></div><div><div class="v">动效</div><div class="k">Motion</div></div></div></div>
-      </div>
-      <div class="case rv">
-        <a class="case-link" href="/agency/work/nanhai/" aria-label="查看 南海风物 设计详情"></a>
-        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/nanhai-keyvisual.webp" alt="南海风物 沉浸式文化互动装置" loading="lazy"></div>
-        <div class="body"><div class="ind">软件 · 互动装置</div><h3>南海风物 — 沉浸式文化互动装置</h3><p>佛山千灯湖魁星阁的沉浸式文化互动装置，以岭南龙舟为叙事主线，三种可玩体验。</p><div class="res"><div><div class="v">3</div><div class="k">玩法</div></div><div><div class="v">触屏+大屏</div><div class="k">联动</div></div><div><div class="v">2025</div><div class="k">落地</div></div></div></div>
-      </div>
-      <div class="case rv">
-        <div class="thumb"><span class="flag demo">Sample · Demo</span><div class="demoframe"><div class="df-brand">NORDHAUS</div><div class="df-tag">Outdoor Furniture · 户外家具</div></div></div>
-        <div class="body"><div class="ind">网站 · Sample site</div><h3>NORDHAUS — 户外家具品牌独立站</h3><p>面向欧美市场的户外家具品牌站样板：产品目录 + 多语言 + 询盘转化路径。</p><div class="res"><div><div class="v">Demo</div><div class="k">Sample design</div></div><div><div class="v">EU</div><div class="k">Target</div></div></div></div>
-      </div>
-      <div class="case rv">
-        <div class="thumb"><span class="flag demo">Sample · Demo</span><div class="demoframe" style="background:radial-gradient(120% 120% at 20% 10%,#12233a,#0a0b16)"><div class="df-brand">LUMENA</div><div class="df-tag" style="color:#6ec8ff">LED Lighting · 商用照明</div></div></div>
-        <div class="body"><div class="ind">网站 · Sample B2B</div><h3>LUMENA — 商用 LED 照明外贸站</h3><p>商用照明 B2B 外贸站样板：应用场景 + 参数规格 + 分销商询盘系统。</p><div class="res"><div><div class="v">Demo</div><div class="k">Sample design</div></div><div><div class="v">B2B</div><div class="k">Model</div></div></div></div>
-      </div>
-      <div class="case rv">
-        <a class="case-link" href="/agency/work/demo-ecommerce/" aria-label="查看 LUMO 概念设计"></a>
-        <div class="thumb"><span class="flag demo">概念稿 · Concept</span><img src="/uploads/webp/demo-lumo.webp" alt="LUMO 极简灯具品牌电商概念设计" loading="lazy"></div>
-        <div class="body"><div class="ind">电商 · Concept</div><h3>LUMO — 极简灯具品牌电商</h3><p>DTC 灯具品牌电商概念站：产品陈列 + 品牌故事 + 转化路径，100% 原创设计，可点开体验。</p><div class="res"><div><div class="v">Concept</div><div class="k">原创设计</div></div><div><div class="v">DTC</div><div class="k">电商</div></div></div></div>
       </div>
     </div>
   </div>
