@@ -198,6 +198,13 @@
   .svc-card p{color:var(--ink-2);font-size:14.5px;margin-top:16px;position:relative}
   .svc-card .go{position:absolute;top:clamp(28px,3vw,42px);right:clamp(28px,3vw,42px);opacity:0;transition:.3s;color:var(--accent-2)}
   .svc-card:hover .go{opacity:1;transform:translate(3px,-3px)}
+  .pillar{display:flex;align-items:center;gap:16px;margin:0 0 20px}
+  .pillar.two{margin-top:clamp(40px,4.5vw,64px)}
+  .pillar .pn{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.2vw,28px);white-space:nowrap}
+  .pillar .pn i{font-style:normal;color:var(--accent-2)}
+  .pillar .pt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .pillar .ln{flex:1;height:1px;background:var(--line)}
+  @media(max-width:600px){.pillar{flex-wrap:wrap;gap:8px}.pillar .ln{display:none}}
   @media(max-width:860px){.svc-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
 
@@ -374,9 +381,9 @@
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div class="kick rv" style="margin-bottom:26px">Global Digital Growth Partner · 企业出海数字增长伙伴</div>
-      <h1 class="h-title rv"><span class="en">We build global digital assets</span>为中国企业构建<br>面向全球的<em>数字资产</em></h1>
-      <p class="h-sub rv">从品牌官网、外贸独立站到 SEO 增长体系，我们以设计 + 工程一体的方式，为企业打造面向全球客户的数字化入口 —— 更快、更专业、更利于成交。</p>
+      <div class="kick rv" style="margin-bottom:26px">Digital Product Studio · 数字产品设计与开发</div>
+      <h1 class="h-title rv"><span class="en">We design & build digital products</span>网站与软件<br>一体<em>设计与开发</em></h1>
+      <p class="h-sub rv">一支设计 + 工程一体的团队，做两件事：面向全球的<strong style="color:var(--ink);font-weight:700">网站</strong>——外贸独立站、品牌官网、商城；以及专业<strong style="color:var(--ink);font-weight:700">软件与应用界面</strong>——从产品设计到工程落地，一体交付。</p>
       <div class="h-cta rv">
         <a class="btn btn-solid" href="#contact">获取全球网站诊断 <span class="ar">→</span></a>
         <a class="btn btn-ghost" href="#cases">View selected work</a>
@@ -429,9 +436,11 @@
 <section id="services">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="htxt"><div class="kick">What we do · 服务</div><h2>企业全球数字基础设施</h2></div>
-      <p>Not just a website — a growth system for your global customers.</p>
+      <div class="htxt"><div class="kick">What we do · 服务</div><h2>两条产品线，一个内核</h2></div>
+      <p>设计 + 工程一体 —— 我们做面向全球的网站，也做专业软件与应用界面。</p>
     </div>
+
+    <div class="pillar rv"><span class="pn"><i>01</i> 网站 · Web</span><span class="pt">外贸独立站 / 官网 / 商城 / SEO</span><span class="ln"></span></div>
     <div class="svc-grid rv">
       <div class="svc-card"><div class="no">01</div><h3>品牌官网建设</h3><div class="en">Brand Website</div><p>国际化视觉体系的企业形象官网，响应式、多端适配、SEO 友好架构。</p><span class="go">↗</span></div>
       <div class="svc-card"><div class="no">02</div><h3>外贸独立站</h3><div class="en">Cross-border Site</div><p>多语言多国家的外贸独立站，产品目录 + 询盘系统，面向全球买家。</p><span class="go">↗</span></div>
@@ -439,6 +448,13 @@
       <div class="svc-card"><div class="no">04</div><h3>多语言本地化</h3><div class="en">Localization</div><p>多语言内容架构、hreflang 与本地化文案，一套站服务多个市场。</p><span class="go">↗</span></div>
       <div class="svc-card"><div class="no">05</div><h3>SEO 增长系统</h3><div class="en">SEO Growth</div><p>技术 SEO、结构化数据、内容架构与站点地图，做 Google 自然流量。</p><span class="go">↗</span></div>
       <div class="svc-card"><div class="no">06</div><h3>品牌视觉设计</h3><div class="en">Visual Identity</div><p>Logo、视觉规范与设计系统，让官网从第一眼就有国际品牌感。</p><span class="go">↗</span></div>
+    </div>
+
+    <div class="pillar two rv"><span class="pn"><i>02</i> 软件 · Software</span><span class="pt">应用 / 工具 / 专业设备软件界面</span><span class="ln"></span></div>
+    <div class="svc-grid rv">
+      <div class="svc-card"><div class="no">07</div><h3>软件界面设计</h3><div class="en">Software UI/UX</div><p>复杂业务系统与专业设备软件的界面与交互设计，兼顾专业性与易用性。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">08</div><h3>应用与工具开发</h3><div class="en">App & Tools</div><p>移动应用、桌面与内部工具的产品设计与端到端开发落地。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">09</div><h3>产品设计</h3><div class="en">Product Design</div><p>从需求梳理、信息架构、原型到落地的完整数字产品设计。</p><span class="go">↗</span></div>
     </div>
   </div>
 </section>
@@ -629,8 +645,8 @@
 <footer>
   <div class="wrap foot-in">
     <span class="wm">VOYANT<span style="color:var(--accent)">.</span> 远洋数字</span>
-    <span>Global Digital Growth Partner · © 2026</span>
-    <span>Websites / Cross-border / SEO</span>
+    <span>Digital Product Studio · © 2026</span>
+    <span>Web · Software · Product</span>
   </div>
 </footer>
 
