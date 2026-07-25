@@ -473,6 +473,10 @@
     .foot-grid { grid-template-columns: 1fr; gap: 30px; }
     .hero-meta { gap: 26px; }
   }
+  .hero-stage .lampimg{width:92%;max-width:400px;height:auto;border-radius:18px;display:block;box-shadow:0 30px 60px -28px rgba(60,40,20,.42)}
+  .card-visual .lampimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .card-visual .tag{z-index:3}
+  .card-visual .floor{display:none}
 </style>
 </head>
 <body>
@@ -539,37 +543,7 @@
 
       <div class="hero-stage reveal" aria-hidden="true">
         <!-- Hero lamp: floor arc lamp -->
-        <svg class="lamp" viewBox="0 0 320 420" width="86%" style="max-width:340px" role="img" aria-label="Illustration of a minimalist arc floor lamp">
-          <defs>
-            <radialGradient id="heroGlow" cx="50%" cy="38%" r="60%">
-              <stop offset="0%" stop-color="#fff2d0" stop-opacity="0.95"/>
-              <stop offset="45%" stop-color="#ffcf87" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="#ffcf87" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="heroShade" cx="50%" cy="30%" r="80%">
-              <stop offset="0%" stop-color="#fff6e6"/>
-              <stop offset="60%" stop-color="#f6dcae"/>
-              <stop offset="100%" stop-color="#e2b878"/>
-            </radialGradient>
-            <linearGradient id="heroStem" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#3b342b"/>
-              <stop offset="100%" stop-color="#5c5044"/>
-            </linearGradient>
-          </defs>
-          <!-- glow -->
-          <circle class="lamp-glow" cx="205" cy="150" r="150" fill="url(#heroGlow)"/>
-          <!-- base -->
-          <ellipse cx="90" cy="392" rx="70" ry="12" fill="#d8c6a8" opacity="0.6"/>
-          <rect x="80" y="150" width="20" height="238" rx="10" fill="url(#heroStem)"/>
-          <circle cx="90" cy="390" r="16" fill="url(#heroStem)"/>
-          <!-- arc arm -->
-          <path d="M90 150 C90 60 150 42 205 60" fill="none" stroke="url(#heroStem)" stroke-width="14" stroke-linecap="round"/>
-          <!-- shade -->
-          <g class="bulb">
-            <path d="M170 66 a35 35 0 0 1 70 0 l-8 40 a27 27 0 0 1 -54 0 z" fill="url(#heroShade)"/>
-            <ellipse cx="205" cy="112" rx="27" ry="7" fill="#fff3d6"/>
-          </g>
-        </svg>
+        <img class="lampimg" src="/uploads/webp/lumo-hero.webp" alt="LUMO 弧形落地灯" loading="lazy">
       </div>
     </div>
   </section>
@@ -592,25 +566,7 @@
           <div class="card-visual">
             <span class="tag">Bestseller</span>
             <div class="floor"></div>
-            <svg class="lamp" viewBox="0 0 220 240" width="72%" style="max-width:200px" role="img" aria-label="Halo dome table lamp illustration">
-              <defs>
-                <radialGradient id="g1glow" cx="50%" cy="55%" r="55%">
-                  <stop offset="0%" stop-color="#fff2d0" stop-opacity="0.95"/>
-                  <stop offset="100%" stop-color="#ffcf87" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="g1dome" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#3a332a"/>
-                  <stop offset="100%" stop-color="#564b3d"/>
-                </linearGradient>
-              </defs>
-              <circle class="lamp-glow" cx="110" cy="150" r="95" fill="url(#g1glow)"/>
-              <ellipse cx="110" cy="222" rx="60" ry="10" fill="#d8c6a8" opacity="0.55"/>
-              <path d="M45 150 a65 55 0 0 1 130 0 z" fill="url(#g1dome)"/>
-              <g class="bulb"><path d="M60 150 a50 44 0 0 1 100 0 z" fill="#fff0c9"/></g>
-              <rect x="70" y="150" width="80" height="10" rx="5" fill="#2f2921"/>
-              <rect x="96" y="160" width="28" height="52" rx="6" fill="#413a30"/>
-              <ellipse cx="110" cy="214" rx="34" ry="8" fill="#2f2921"/>
-            </svg>
+            <img class="lampimg" src="/uploads/webp/lumo-halo.webp" alt="LUMO Halo 球形台灯" loading="lazy">
           </div>
           <div class="card-body">
             <div class="meta">
@@ -627,24 +583,7 @@
           <div class="card-visual">
             <span class="tag">New</span>
             <div class="floor"></div>
-            <svg class="lamp" viewBox="0 0 220 240" width="58%" style="max-width:150px" role="img" aria-label="Pillar portable cylinder lamp illustration">
-              <defs>
-                <radialGradient id="g2glow" cx="50%" cy="40%" r="60%">
-                  <stop offset="0%" stop-color="#fff2d0" stop-opacity="0.95"/>
-                  <stop offset="100%" stop-color="#ffcf87" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="g2body" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#efd9ad"/>
-                  <stop offset="50%" stop-color="#fff3d8"/>
-                  <stop offset="100%" stop-color="#e5c48f"/>
-                </linearGradient>
-              </defs>
-              <circle class="lamp-glow" cx="110" cy="110" r="95" fill="url(#g2glow)"/>
-              <ellipse cx="110" cy="224" rx="46" ry="9" fill="#d8c6a8" opacity="0.55"/>
-              <rect x="66" y="60" width="88" height="150" rx="44" fill="url(#g2body)"/>
-              <g class="bulb"><rect x="80" y="74" width="60" height="60" rx="30" fill="#fff2cd" opacity="0.9"/></g>
-              <rect x="66" y="196" width="88" height="18" rx="9" fill="#3a332a"/>
-            </svg>
+            <img class="lampimg" src="/uploads/webp/lumo-pillar.webp" alt="LUMO Pillar 柱形灯" loading="lazy">
           </div>
           <div class="card-body">
             <div class="meta">
@@ -660,24 +599,7 @@
         <article class="card reveal">
           <div class="card-visual">
             <div class="floor"></div>
-            <svg class="lamp" viewBox="0 0 220 240" width="70%" style="max-width:190px" role="img" aria-label="Arca spherical pendant lamp illustration">
-              <defs>
-                <radialGradient id="g3glow" cx="50%" cy="55%" r="55%">
-                  <stop offset="0%" stop-color="#fff2d0" stop-opacity="0.95"/>
-                  <stop offset="100%" stop-color="#ffcf87" stop-opacity="0"/>
-                </radialGradient>
-                <radialGradient id="g3orb" cx="42%" cy="34%" r="72%">
-                  <stop offset="0%" stop-color="#fff7e8"/>
-                  <stop offset="55%" stop-color="#ffe6b6"/>
-                  <stop offset="100%" stop-color="#e9c184"/>
-                </radialGradient>
-              </defs>
-              <circle class="lamp-glow" cx="110" cy="140" r="100" fill="url(#g3glow)"/>
-              <rect x="107" y="8" width="6" height="70" rx="3" fill="#3a332a"/>
-              <circle cx="110" cy="10" r="7" fill="#3a332a"/>
-              <g class="bulb"><circle cx="110" cy="140" r="62" fill="url(#g3orb)"/></g>
-              <ellipse cx="110" cy="118" rx="40" ry="14" fill="#fff6e2" opacity="0.55"/>
-            </svg>
+            <img class="lampimg" src="/uploads/webp/lumo-arca.webp" alt="LUMO Arca 灯" loading="lazy">
           </div>
           <div class="card-body">
             <div class="meta">
@@ -693,24 +615,7 @@
         <article class="card reveal">
           <div class="card-visual">
             <div class="floor"></div>
-            <svg class="lamp" viewBox="0 0 220 240" width="70%" style="max-width:190px" role="img" aria-label="Reed slim floor lamp illustration">
-              <defs>
-                <radialGradient id="g4glow" cx="50%" cy="30%" r="55%">
-                  <stop offset="0%" stop-color="#fff2d0" stop-opacity="0.95"/>
-                  <stop offset="100%" stop-color="#ffcf87" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="g4cone" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#564b3d"/>
-                  <stop offset="100%" stop-color="#39322a"/>
-                </linearGradient>
-              </defs>
-              <circle class="lamp-glow" cx="110" cy="70" r="80" fill="url(#g4glow)"/>
-              <ellipse cx="110" cy="224" rx="42" ry="9" fill="#d8c6a8" opacity="0.55"/>
-              <path d="M86 40 h48 l-10 44 h-28 z" fill="url(#g4cone)"/>
-              <g class="bulb"><ellipse cx="110" cy="84" rx="15" ry="5" fill="#fff0c9"/></g>
-              <rect x="106" y="82" width="8" height="128" rx="4" fill="#4a4234"/>
-              <rect x="78" y="208" width="64" height="9" rx="4.5" fill="#3a332a"/>
-            </svg>
+            <img class="lampimg" src="/uploads/webp/lumo-reed.webp" alt="LUMO Reed 落地灯" loading="lazy">
           </div>
           <div class="card-body">
             <div class="meta">
