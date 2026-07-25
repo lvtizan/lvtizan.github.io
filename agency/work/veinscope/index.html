@@ -249,5 +249,6 @@
   setTheme((()=>{try{return localStorage.getItem('voyant-theme')}catch(e){return null}})()||'dark');
   tg.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
 </script>
+<script src="/agency/assets/lightbox.js" defer></script>
 </body>
 </html>
