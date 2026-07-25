@@ -96,7 +96,7 @@
   /* HERO */
   header.hero{padding:clamp(128px,18vh,200px) 0 clamp(50px,7vw,90px);position:relative}
   .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(30px,4vw,60px);align-items:center}
-  h1.h-title{font-size:clamp(44px,7vw,96px);line-height:.98;letter-spacing:-.03em;font-weight:600}
+  h1.h-title{font-size:clamp(34px,5.4vw,66px);line-height:1.04;letter-spacing:-.02em;font-weight:600;text-wrap:balance}
   h1.h-title .en{display:block;font-size:clamp(20px,2.4vw,32px);letter-spacing:.02em;color:var(--muted);font-weight:500;margin-bottom:16px}
   h1.h-title em{font-style:normal;color:transparent;background:linear-gradient(100deg,var(--accent-2),#fff 60%);-webkit-background-clip:text;background-clip:text}
   .h-sub{margin-top:28px;font-size:clamp(16px,1.5vw,19px);color:var(--ink-2);max-width:520px}
@@ -201,6 +201,9 @@
   /* cases */
   .cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2vw,26px)}
   .case{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);transition:.35s}
+  .case-link{position:absolute;inset:0;z-index:6}
+  .case .flag{transition:.3s}
+  .case:hover .flag{background:var(--accent);border-color:var(--accent);color:#fff}
   .case:hover{transform:translateY(-6px);border-color:var(--line-2);box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
   .case .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2)}
   .case .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:.6s}
@@ -478,11 +481,13 @@
     </div>
     <div class="cases-grid">
       <div class="case rv">
-        <div class="thumb"><span class="flag">Live project</span><img src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台" loading="lazy"></div>
+        <a class="case-link" href="https://tarmeer.com" target="_blank" rel="noopener noreferrer" aria-label="访问 Tarmeer 网站（新窗口）"></a>
+        <div class="thumb"><span class="flag">Live project ↗</span><img src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台" loading="lazy"></div>
         <div class="body"><div class="ind">Vertical platform</div><h3>Tarmeer — 多国多语言室内设计平台</h3><p>面向多个国家、多语言的室内设计垂直平台，全站国际化与内容架构一体化落地。</p><div class="res"><div><div class="v">2</div><div class="k">Markets</div></div><div><div class="v">3</div><div class="k">Languages</div></div><div><div class="v">Full-stack</div><div class="k">Delivery</div></div></div></div>
       </div>
       <div class="case rv">
-        <div class="thumb"><span class="flag">Live project</span><img src="/uploads/webp/oilfield-web-home.webp" alt="石油装备中英双语外贸展示站" loading="lazy"></div>
+        <a class="case-link" href="https://kst-power.com" target="_blank" rel="noopener noreferrer" aria-label="访问 Oilfield 网站 kst-power.com（新窗口）"></a>
+        <div class="thumb"><span class="flag">Live project ↗</span><img src="/uploads/webp/oilfield-web-home.webp" alt="石油装备中英双语外贸展示站" loading="lazy"></div>
         <div class="body"><div class="ind">B2B export site</div><h3>Oilfield — 中英双语外贸展示站</h3><p>石油钻采与动力装备的中英双语外贸站，大主图 + 型号参数表，面向海外买家与 SEO。</p><div class="res"><div><div class="v">ZH/EN</div><div class="k">Bilingual</div></div><div><div class="v">6</div><div class="k">Sections</div></div><div><div class="v">Static</div><div class="k">SEO-ready</div></div></div></div>
       </div>
       <div class="case rv">
