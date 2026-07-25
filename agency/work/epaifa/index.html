@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epaifa Mall — B2B 跨境批发供应链 + 商城 App · 产品与界面设计案例 | VOYANT 远洋数字</title>
+<meta name="description" content="Epaifa Mall 面向中↔越跨境批发商的供应链 + 商城一体化 App 产品设计案例：一键采购、多仓收货入库、库存补货、多规格阶梯价下单、拣货出库、COD 物流与退货售后，46 个界面串成端到端业务闭环。">
+<meta name="keywords" content="B2B SaaS设计,供应链App,进销存,WMS,跨境电商,采购入库,库存补货,拣货出库,产品设计,UI设计,越南本地化">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Epaifa Mall — B2B 跨境批发供应链 + 商城 App · 设计案例">
+<meta property="og:image" content="https://lvtizan.github.io/uploads/webp/epaifa-cover.webp">
+<link rel="canonical" href="https://lvtizan.github.io/agency/work/epaifa/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"CreativeWork","@id":"https://lvtizan.github.io/agency/work/epaifa/#work","name":"Epaifa Mall B2B 供应链商城 App","headline":"Epaifa Mall — B2B 跨境批发供应链 + 商城 App · 产品与界面设计案例","description":"面向中↔越跨境批发商的供应链与交易一体化移动端产品设计。","url":"https://lvtizan.github.io/agency/work/epaifa/","image":"https://lvtizan.github.io/uploads/webp/epaifa-cover.webp","dateCreated":"2024","inLanguage":"zh-CN"},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"首页","item":"https://lvtizan.github.io/agency/"},
+{"@type":"ListItem","position":2,"name":"精选案例","item":"https://lvtizan.github.io/agency/#cases"},
+{"@type":"ListItem","position":3,"name":"Epaifa Mall","item":"https://lvtizan.github.io/agency/work/epaifa/"}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#08080C;--bg-2:#0F1017;--surface:#14151E;--surface-2:#1B1D28;--ink:#F6F7FB;--ink-2:#B7BAC6;--muted:#787C8B;--line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.17);--accent:#4361FF;--accent-2:#7DA0FF;--disp:'Clash Display','Noto Sans SC',sans-serif;--sans:'Satoshi','Noto Sans SC',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--wrap:1160px}
+  html[data-theme="light"]{--bg:#F8F9FB;--bg-2:#F1F3F8;--surface:#FFFFFF;--surface-2:#F5F7FC;--ink:#0A0D18;--ink-2:#474D5E;--muted:#7A8092;--line:rgba(11,14,23,.10);--line-2:rgba(11,14,23,.17);--accent:#3B54F0;--accent-2:#2A40D6}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent);color:#fff}a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+  .kick{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2)}
+  .kick::before{content:"";width:24px;height:1px;background:var(--accent)}
+  h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+  nav.top{position:sticky;top:0;z-index:100;background:rgba(8,8,12,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  html[data-theme="light"] nav.top{background:rgba(248,249,251,.78)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+  .brand{display:flex;align-items:baseline;gap:10px}.brand .wm{font-family:var(--disp);font-weight:700;font-size:22px}.brand .cn{font-size:12px;color:var(--muted);letter-spacing:.14em}.brand .dot{color:var(--accent)}
+  .nav-links{display:flex;gap:26px}.nav-links a{font-size:14px;color:var(--ink-2)}.nav-links a:hover{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .theme-tg{background:transparent;border:1px solid var(--line-2);color:var(--ink);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:14px;display:grid;place-items:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:10px 18px;border-radius:40px;background:var(--accent);color:#fff;transition:.25s}.btn:hover{background:#5674ff}
+  @media(max-width:820px){.nav-links{display:none}}
+  header.hero{padding:clamp(56px,8vw,100px) 0 clamp(30px,4vw,48px)}
+  .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted);margin-bottom:24px}.crumb a:hover{color:var(--accent-2)}
+  header.hero h1{font-size:clamp(32px,5vw,58px);margin:16px 0 16px}
+  header.hero .sub{color:var(--ink-2);font-size:clamp(16px,1.7vw,20px);max-width:720px}
+  .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
+  .meta .n{font-family:var(--disp);font-weight:600;font-size:15px}.meta .l{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .cover{margin-top:clamp(30px,4vw,46px);border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--bg-2)}
+  .cover img{width:100%;height:100%;object-fit:cover;display:block}
+  section{padding:clamp(40px,5vw,72px) 0}
+  .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px)}@media(max-width:760px){.grid2{grid-template-columns:1fr;gap:24px}}
+  .ov{font-size:clamp(16px,1.6vw,19px);color:var(--ink-2)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 26px}.chips span{font-family:var(--mono);font-size:11.5px;padding:7px 13px;border:1px solid var(--line-2);border-radius:20px;color:var(--ink-2)}
+  .contrib{list-style:none}.contrib li{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line);font-size:15px;color:var(--ink-2)}.contrib li .cn{font-family:var(--mono);color:var(--accent-2);flex:none}
+  .sec-head{margin-bottom:clamp(26px,3vw,40px)}.sec-head h2{font-size:clamp(26px,3.4vw,40px);margin-top:14px}.sec-head p{color:var(--muted);font-size:14px;margin-top:12px;max-width:620px}
+  /* screen-flow diagram */
+  .flow{display:flex;flex-direction:column;gap:clamp(14px,1.8vw,22px)}
+  .lane-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);display:flex;align-items:center;gap:10px}
+  .lane-tag::before{content:"";width:22px;height:1px;background:var(--accent)}
+  .lane{display:flex;align-items:flex-start;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin}
+  .lane::-webkit-scrollbar{height:6px}.lane::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:3px}
+  .node{flex:0 0 auto;width:clamp(122px,13vw,156px);border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--surface);position:relative;margin:0}
+  .node img{width:100%;display:block;aspect-ratio:.66;object-fit:cover;object-position:top;cursor:zoom-in}
+  .node figcaption{font-size:12px;line-height:1.35;color:var(--ink-2);padding:9px 11px;border-top:1px solid var(--line);font-family:var(--sans)}
+  .node figcaption b{display:block;font-weight:600;color:var(--ink)}.node figcaption span{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+  .node .step{position:absolute;top:8px;left:8px;z-index:2;font-family:var(--mono);font-size:10px;background:rgba(8,8,12,.82);border:1px solid var(--line-2);color:#fff;padding:3px 7px;border-radius:12px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .node.hub{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 12px 34px rgba(67,97,255,.20)}
+  .node.hub .step{background:var(--accent);border-color:var(--accent)}
+  .node .badge{position:absolute;top:8px;right:8px;z-index:2;font-family:var(--mono);font-size:9px;letter-spacing:.1em;background:var(--accent);color:#fff;padding:3px 7px;border-radius:12px}
+  .conn{flex:0 0 auto;align-self:center;position:relative;width:clamp(26px,3vw,50px);height:44px}
+  .conn::before{content:"";position:absolute;left:12%;right:26%;top:50%;height:1.5px;background:var(--line-2)}
+  .conn::after{content:"";position:absolute;right:24%;top:50%;width:8px;height:8px;border-top:1.5px solid var(--accent-2);border-right:1.5px solid var(--accent-2);transform:translateY(-50%) rotate(45deg)}
+  .loop{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .loop .node{width:clamp(112px,12vw,140px)}
+  .loop-line{flex:1;min-width:220px;display:flex;align-items:center;gap:12px;color:var(--ink-2);font-size:12.5px;font-family:var(--mono);border:1px dashed var(--line-2);border-radius:12px;padding:14px 18px;background:rgba(67,97,255,.04)}
+  .loop-line .ico{font-size:17px;color:var(--accent-2)}
+  .bridge{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--ink-2);font-size:13px;font-family:var(--mono);letter-spacing:.06em}
+  .bridge .arw{width:9px;height:9px;border-right:1.5px solid var(--accent-2);border-bottom:1.5px solid var(--accent-2);transform:rotate(45deg)}
+  .side-note{font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:6px;border-left:2px solid var(--line-2);margin-left:2px}
+  .side-note b{color:var(--accent-2);font-weight:500}
+  .branch-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-top:6px}
+  .branch{display:flex;align-items:flex-start;overflow-x:auto;padding:4px 2px 8px}
+  /* phone galleries */
+  .phones{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(148px,17vw,186px),1fr));gap:clamp(12px,1.4vw,18px)}
+  .phones figure{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);align-self:start}
+  .phones figure img{width:100%;display:block;aspect-ratio:750/1624;object-fit:cover;object-position:top;background:#0a0b10;cursor:zoom-in}
+  .phones figcaption{font-family:var(--mono);font-size:10.5px;color:var(--muted);padding:11px 13px;border-top:1px solid var(--line);line-height:1.4}
+  .backcta{border-top:1px solid var(--line);padding:clamp(40px,5vw,64px) 0;text-align:center}.backcta h2{font-size:clamp(24px,3vw,38px);margin-bottom:24px}
+  footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--muted);padding:40px 0;margin-top:10px}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.foot-in .wm{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink);text-transform:none}
+</style>
+</head>
+<body>
+<nav class="top"><div class="nav-in">
+  <a class="brand" href="/agency/"><span class="wm">VOYANT<span class="dot">.</span></span><span class="cn">远洋数字</span></a>
+  <div class="nav-links"><a href="/agency/#services">Services</a><a href="/agency/#pricing">Pricing</a><a href="/agency/#cases">Work</a><a href="/agency/resources/">洞察</a></div>
+  <div class="nav-right"><button class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button><a class="btn" href="/agency/#contact">获取诊断 →</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="crumb"><a href="/agency/">首页</a> / <a href="/agency/#cases">精选案例</a> / Epaifa Mall</div>
+  <div class="kick">Product Design · B2B SaaS</div>
+  <h1>Epaifa Mall — B2B 跨境批发供应链 + 商城 App</h1>
+  <p class="sub">面向中↔越跨境批发商的供应链与交易一体化移动端。从云单一键采购、多仓收货入库、库存补货，到多规格阶梯价下单、拣货出库、COD 物流与退货售后——把 46 个真实界面串成一条带状态机的业务闭环。</p>
+  <div class="meta">
+    <div><div class="n">产品设计 · UI/UX · 界面流程</div><div class="l">Role</div></div>
+    <div><div class="n">B2B SaaS · 供应链 · 跨境电商</div><div class="l">Domain</div></div>
+    <div><div class="n">中 / 英 / 越 三语</div><div class="l">i18n</div></div>
+    <div><div class="n">2024</div><div class="l">Year</div></div>
+  </div>
+  <div class="cover"><img src="/uploads/webp/epaifa-cover.webp" alt="Epaifa Mall 手机端界面群像：采购、下单、入库、结账"></div>
+</div></header>
+
+<section><div class="wrap grid2">
+  <div>
+    <div class="kick" style="margin-bottom:18px">项目概述 · Overview</div>
+    <p class="ov">Epaifa Mall 是为跨境批发商打造的供应链 + 商城一体化移动应用。它把过去分散在采购、仓库、销售、财务之间的动作，收敛进一部手机：老板端一键接单采购、多仓收货入库、逐箱清点与不良品带图上报、按库存量自动补货；作业端拣货出库、发货任务与跨境头程跟踪；交易端多规格阶梯价下单、结账收银（货款 / VAT / COD / 运费 + 现金收款与欠款对账）、退货退款闭环。<br><br>库存居于两条链路正中，双向驱动上游补货与下游履约，形成一条可追溯的业务闭环。</p>
+  </div>
+  <div>
+    <div class="chips"><span>一键采购</span><span>收货入库</span><span>库存补货</span><span>多规格阶梯价</span><span>拣货出库</span><span>COD 物流</span><span>退货售后</span><span>中越双语</span><span>扫码作业</span></div>
+    <div class="kick" style="margin-bottom:6px">我的工作 · Contribution</div>
+    <ul class="contrib">
+      <li><span class="cn">01</span>端到端业务流梳理：采购 → 入库 → 库存 → 下单 → 履约 → 售后</li>
+      <li><span class="cn">02</span>供应链后台：采购 / 收货 / 入库清点 / 不良品 / 补货 / 出库 / 拣货界面</li>
+      <li><span class="cn">03</span>交易前台：CRM / 多规格下单 / 结账收银 / 物流 / 退货退款界面</li>
+      <li><span class="cn">04</span>多单位（箱 / 盒 / 个 · Thùng / cái）与中越双语本地化设计</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="flow"><div class="wrap">
+  <div class="sec-head"><div class="kick">Screen Flow · 业务流程连线</div><h2>一条闭环：从采购到履约</h2><p>把真实界面按业务走向连起来——上游采购入库补货，下游下单拣货发货，库存居中双向驱动，退货售后回写。横向可滑动查看每一步。</p></div>
+  <div class="flow">
+
+    <div class="lane-tag">① 供应链后台 · Supply → Stock</div>
+    <div class="lane">
+      <figure class="node"><span class="step">01</span><img loading="lazy" src="/uploads/webp/epaifa-supplier.webp" alt="选供应商"><figcaption><b>选供应商</b><span>Supplier</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">02</span><img loading="lazy" src="/uploads/webp/epaifa-purchase.webp" alt="采购"><figcaption><b>一键采购</b><span>Purchase</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">03</span><img loading="lazy" src="/uploads/webp/epaifa-po.webp" alt="采购单"><figcaption><b>采购单</b><span>PO · 状态机</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">04</span><img loading="lazy" src="/uploads/webp/epaifa-receiving.webp" alt="收货任务"><figcaption><b>收货任务</b><span>Receiving</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">05</span><img loading="lazy" src="/uploads/webp/epaifa-inbound.webp" alt="入库清点"><figcaption><b>入库清点</b><span>Inbound</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node hub"><span class="step">06</span><span class="badge">HUB</span><img loading="lazy" src="/uploads/webp/epaifa-inventory.webp" alt="货品库存"><figcaption><b>货品 / 库存</b><span>Stock · 枢纽</span></figcaption></figure>
+    </div>
+
+    <div class="side-note">↘ 入库异常分支 · <b>不良品上报</b>（带图凭证）→ 数量回写库存</div>
+
+    <div class="loop">
+      <figure class="node"><img loading="lazy" src="/uploads/webp/epaifa-restock.webp" alt="补货建议"><figcaption><b>补货建议</b><span>Restock</span></figcaption></figure>
+      <div class="loop-line"><span class="ico">⟲</span><span>库存量触发 → 补货建议 → 回到「采购」，形成采购—入库—库存—补货闭环</span></div>
+    </div>
+
+    <div class="bridge"><span>库存居中 · 双向驱动下游履约</span><span class="arw"></span></div>
+
+    <div class="lane-tag">② 交易前台 · Order → Fulfillment</div>
+    <div class="lane">
+      <figure class="node"><span class="step">07</span><img loading="lazy" src="/uploads/webp/epaifa-crm.webp" alt="客户档案"><figcaption><b>客户档案</b><span>CRM</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">08</span><img loading="lazy" src="/uploads/webp/epaifa-order.webp" alt="多规格下单"><figcaption><b>多规格下单</b><span>Order · 阶梯价</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">09</span><img loading="lazy" src="/uploads/webp/epaifa-checkout.webp" alt="结账收银"><figcaption><b>结账收银</b><span>Checkout</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">10</span><img loading="lazy" src="/uploads/webp/epaifa-outbound.webp" alt="出库单"><figcaption><b>出库单</b><span>Outbound</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">11</span><img loading="lazy" src="/uploads/webp/epaifa-picking.webp" alt="拣货操作"><figcaption><b>拣货</b><span>Picking</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">12</span><img loading="lazy" src="/uploads/webp/epaifa-fulfillment.webp" alt="发货任务"><figcaption><b>发货任务</b><span>Shipping</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><span class="step">13</span><img loading="lazy" src="/uploads/webp/epaifa-logistics.webp" alt="查看物流"><figcaption><b>查看物流</b><span>Logistics</span></figcaption></figure>
+    </div>
+
+    <div class="branch-tag">↘ 售后分支 · After-sales</div>
+    <div class="branch">
+      <figure class="node"><img loading="lazy" src="/uploads/webp/epaifa-return.webp" alt="退货"><figcaption><b>退货</b><span>Return</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><img loading="lazy" src="/uploads/webp/epaifa-return-detail.webp" alt="退货单详情"><figcaption><b>退货单</b><span>Return Order</span></figcaption></figure>
+      <div class="conn"></div>
+      <figure class="node"><img loading="lazy" src="/uploads/webp/epaifa-refund.webp" alt="退款"><figcaption><b>退款</b><span>Refund</span></figcaption></figure>
+    </div>
+
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><div class="kick">Supply Backstage · 供应链后台</div><h2>采购 · 入库 · 库存 · 履约</h2><p>老板端与仓管作业端：从上游一键采购到多仓收货入库、逐箱清点、不良品上报、补货建议，再到出库拣货与发货。</p></div>
+  <div class="phones">
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-home.webp" alt="老板端菜单"><figcaption>老板端菜单 · Menu</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-supplier.webp" alt="选供应商"><figcaption>选供应商 · Supplier</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-purchase.webp" alt="一键采购"><figcaption>一键采购 · Purchase</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-po.webp" alt="采购单"><figcaption>采购单 · PO 状态机</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-receiving.webp" alt="收货任务"><figcaption>收货任务 · Receiving</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-inbound.webp" alt="入库清点"><figcaption>入库清点 · Inbound</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-inbound-vn.webp" alt="入库单越南文"><figcaption>入库单 · 越南本地化</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-defect.webp" alt="不良品上报"><figcaption>不良品上报 · Defect</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-inventory.webp" alt="货品库存"><figcaption>货品 / 库存 · Stock</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-price-trend.webp" alt="价格波动"><figcaption>价格走势 · Price Trend</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-restock.webp" alt="补货建议"><figcaption>补货建议 · Restock</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-outbound.webp" alt="出库单"><figcaption>出库单 · Outbound</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-picking.webp" alt="拣货操作"><figcaption>拣货操作 · Picking</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-fulfillment.webp" alt="发货任务"><figcaption>发货任务 · Shipping</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-stats.webp" alt="统计数据"><figcaption>统计汇总 · Stats</figcaption></figure>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><div class="kick">Trade Frontstage · 交易前台</div><h2>下单 · 收银 · 物流 · 售后</h2><p>从客户档案到多规格阶梯价下单、结账收银（货款 / VAT / COD / 运费 + 现金收款与欠款对账），到 COD 物流与退货退款闭环。</p></div>
+  <div class="phones">
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-crm.webp" alt="客户档案"><figcaption>客户档案 · CRM</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-order.webp" alt="多规格下单"><figcaption>多规格下单 · Order</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-checkout.webp" alt="结账收银"><figcaption>结账收银 · Checkout</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-order-detail.webp" alt="订单详情"><figcaption>订单详情 · Order Detail</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-logistics.webp" alt="查看物流"><figcaption>物流轨迹 · Logistics</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-return.webp" alt="退货"><figcaption>退货发起 · Return</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-return-detail.webp" alt="退货单详情"><figcaption>退货单详情 · Return Order</figcaption></figure>
+    <figure><img loading="lazy" src="/uploads/webp/epaifa-refund.webp" alt="退款"><figcaption>退款 · Refund</figcaption></figure>
+  </div>
+</div></section>
+
+<div class="backcta"><div class="wrap">
+  <h2>有 App / SaaS 产品想做？</h2>
+  <a class="btn" href="/agency/#contact">聊聊你的项目 →</a>&nbsp;&nbsp;
+  <a class="btn" style="background:transparent;color:var(--ink);border:1px solid var(--line-2)" href="/agency/#cases">← 返回全部案例</a>
+</div></div>
+
+<footer><div class="wrap foot-in">
+  <span class="wm">VOYANT<span style="color:var(--accent)">.</span> 远洋数字</span>
+  <span>Epaifa Mall · B2B 供应链商城 App 设计案例 · © 2026</span>
+  <span><a href="/agency/" style="color:var(--muted)">← 返回首页</a></span>
+</div></footer>
+
+<script>
+  const root=document.documentElement,tg=document.getElementById('themeTg');
+  const setTheme=t=>{root.setAttribute('data-theme',t);tg.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('voyant-theme',t)}catch(e){}};
+  setTheme((()=>{try{return localStorage.getItem('voyant-theme')}catch(e){return null}})()||'dark');
+  tg.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+</script>
+<script src="/agency/assets/lightbox.js" defer></script>
+</body>
+</html>
