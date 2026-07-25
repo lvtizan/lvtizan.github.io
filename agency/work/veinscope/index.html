@@ -103,8 +103,11 @@
   .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(260px,30vw,360px),1fr));gap:clamp(12px,1.5vw,18px)}
   .gal.wide{grid-template-columns:repeat(auto-fill,minmax(clamp(300px,44vw,520px),1fr))}
   figure{margin:0;position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+  figure{align-self:start}
   figure img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-  figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted);padding:11px 13px;border-top:1px solid var(--line)}
+  figcaption{padding:15px 16px 17px;border-top:1px solid var(--line)}
+  figcaption b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);font-weight:500;margin-bottom:8px}
+  figcaption span{display:block;font-family:var(--sans);font-size:13.5px;color:var(--ink-2);line-height:1.55}
 
   .highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
   .hl{background:var(--surface);padding:clamp(24px,2.6vw,34px)}
@@ -176,25 +179,25 @@
 
     <div class="grp"><span class="d"></span><span class="t">观察 · 2D/3D 分屏与深度图</span><span class="ln"></span></div>
     <div class="gal wide">
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-01.webp" alt="VeinScope 2D/3D 分屏观察界面"><figcaption>2D/3D 分屏 · 实景与三维重建同屏</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-07.webp" alt="VeinScope 深度伪彩图"><figcaption>深度伪彩图 · 缺陷深度分布</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-01.webp" alt="VeinScope 2D/3D 分屏观察界面"><figcaption><b>2D/3D 分屏</b><span>实景图像与三维重建同屏对照，工程师一眼建立对缺陷形态的判断；两侧等宽布局，信息权重一致、互不干扰。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-07.webp" alt="VeinScope 深度伪彩图"><figcaption><b>深度伪彩图</b><span>把三维数据映射为深度伪彩，红近蓝远，一眼看出凹陷/凸起的深度分布；色带与数值刻度并列，避免只凭颜色误判。</span></figcaption></figure>
     </div>
 
     <div class="grp"><span class="d"></span><span class="t">测量 · 五种测量工具</span><span class="ln"></span></div>
     <div class="gal">
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-02.webp" alt="VeinScope 测量界面"><figcaption>测量界面 · 多模式工具</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-03.webp" alt="VeinScope 放大镜取点"><figcaption>放大镜取点 · 精准定位</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-04.webp" alt="VeinScope 点到点测量"><figcaption>点到点测量 · 距离</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-05.webp" alt="VeinScope 面积周长测量"><figcaption>面积周长 · 区域圈选</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-06.webp" alt="VeinScope 剖面趋势图"><figcaption>剖面趋势图 · 截面轮廓</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-02.webp" alt="VeinScope 测量界面"><figcaption><b>测量界面</b><span>五种测量工具收进右侧固定工具栏，主视区完整留给图像，控件靠边、不遮挡观察。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-03.webp" alt="VeinScope 放大镜取点"><figcaption><b>放大镜取点</b><span>取点时弹出放大镜，把被指尖遮挡的区域放大呈现，细小裂纹上也能精准落点。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-04.webp" alt="VeinScope 点到点测量"><figcaption><b>点到点测量</b><span>两点连线即得实际距离，读数实时显示在顶部；测量线用高对比色，强光下清晰可辨。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-05.webp" alt="VeinScope 面积周长测量"><figcaption><b>面积周长</b><span>依次落点围合成多边形，自动算出面积与周长，适合不规则缺损的量化评估。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-06.webp" alt="VeinScope 剖面趋势图"><figcaption><b>剖面趋势图</b><span>沿剖切线采样生成截面轮廓曲线并给出 MTD 读数，判断缺陷沿深度方向的走势。</span></figcaption></figure>
     </div>
 
     <div class="grp"><span class="d"></span><span class="t">管理 · 图库与设置</span><span class="ln"></span></div>
     <div class="gal">
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-08.webp" alt="VeinScope 测量图库"><figcaption>测量图库 · 归档与分类</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-09.webp" alt="VeinScope 图库全屏预览"><figcaption>图库全屏预览</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-10.webp" alt="VeinScope 删除确认弹窗"><figcaption>删除确认 · 数据安全</figcaption></figure>
-      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-11.webp" alt="VeinScope 设置界面"><figcaption>设置 · 单位 / 线宽 / 配色</figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-08.webp" alt="VeinScope 测量图库"><figcaption><b>测量图库</b><span>所有测量记录按类型归档，缩略图带测量类型与数值标签，便于现场回溯与交付整理。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-09.webp" alt="VeinScope 图库全屏预览"><figcaption><b>图库全屏预览</b><span>单条记录全屏查看，测量标注叠加在原图上，随时复核测量点与结果是否准确。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-10.webp" alt="VeinScope 删除确认弹窗"><figcaption><b>删除确认</b><span>删除这类不可逆操作加二次确认弹窗，防止现场误触删掉重要检测数据。</span></figcaption></figure>
+      <figure><img loading="lazy" src="/uploads/webp/veinscope-ui-11.webp" alt="VeinScope 设置界面"><figcaption><b>设置</b><span>测量单位、线宽、测量线与测量点配色均可自定义，适配不同检测标准与个人操作习惯。</span></figcaption></figure>
     </div>
   </div>
 </section>
