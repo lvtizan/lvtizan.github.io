@@ -193,6 +193,9 @@
   .svc-card:hover{background:var(--surface-2)}
   .svc-card:hover::before{opacity:1}
   .svc-card .no{font-family:var(--mono);font-size:12px;color:var(--accent-2)}
+  .svc-card .svc-ic{display:block;width:clamp(34px,3vw,42px);height:clamp(34px,3vw,42px);color:var(--accent-2);margin:16px 0 0;stroke-linecap:round;stroke-linejoin:round;transition:.3s}
+  .svc-card:hover .svc-ic{color:#9ab6ff;transform:translateY(-2px)}
+  .svc-card .svc-ic + h3{margin-top:12px}
   .svc-card h3{font-size:clamp(21px,2vw,26px);margin:22px 0 6px;font-weight:600}
   .svc-card .en{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .svc-card p{color:var(--ink-2);font-size:14.5px;margin-top:16px;position:relative}
@@ -383,7 +386,7 @@
     <div>
       <div class="kick rv" style="margin-bottom:26px">Digital Product Studio · 数字产品设计与开发</div>
       <h1 class="h-title rv"><span class="en">We design & build digital products</span>网站与软件<br>一体<em>设计与开发</em></h1>
-      <p class="h-sub rv">一支设计 + 工程一体的团队，做两件事：面向全球的<strong style="color:var(--ink);font-weight:700">网站</strong>——外贸独立站、品牌官网、商城；以及专业<strong style="color:var(--ink);font-weight:700">软件与应用界面</strong>——从产品设计到工程落地，一体交付。</p>
+      <p class="h-sub rv">让中小企业用得起<strong style="color:var(--ink);font-weight:700">国际级设计</strong>，轻松走向世界。</p>
       <div class="h-cta rv">
         <a class="btn btn-solid" href="#contact">获取全球网站诊断 <span class="ar">→</span></a>
         <a class="btn btn-ghost" href="#cases">View selected work</a>
@@ -414,10 +417,6 @@
   </div>
 </header>
 
-<!-- markets marquee -->
-<div class="markets">
-  <div class="mq"><span>North America&nbsp;&nbsp;·&nbsp;&nbsp;Europe&nbsp;&nbsp;·&nbsp;&nbsp;MENA&nbsp;&nbsp;·&nbsp;&nbsp;Southeast Asia&nbsp;&nbsp;·&nbsp;&nbsp;Latin America&nbsp;&nbsp;·&nbsp;&nbsp;Japan &amp; Korea&nbsp;&nbsp;·&nbsp;&nbsp;Australia</span><span>North America&nbsp;&nbsp;·&nbsp;&nbsp;Europe&nbsp;&nbsp;·&nbsp;&nbsp;MENA&nbsp;&nbsp;·&nbsp;&nbsp;Southeast Asia&nbsp;&nbsp;·&nbsp;&nbsp;Latin America&nbsp;&nbsp;·&nbsp;&nbsp;Japan &amp; Korea&nbsp;&nbsp;·&nbsp;&nbsp;Australia</span></div>
-</div>
 
 <!-- 2. credibility band -->
 <section id="whyus" style="padding-top:clamp(56px,6vw,82px);padding-bottom:clamp(56px,6vw,82px)">
@@ -443,19 +442,19 @@
 
     <div class="pillar rv"><span class="pn"><i>01</i> 网站 · Web</span><span class="pt">外贸独立站 / 官网 / 商城 / SEO</span><span class="ln"></span></div>
     <div class="svc-grid rv">
-      <div class="svc-card"><div class="no">01</div><h3>品牌官网建设</h3><div class="en">Brand Website</div><p>国际化视觉体系的企业形象官网，响应式、多端适配、SEO 友好架构。</p><span class="go">↗</span></div>
-      <div class="svc-card"><div class="no">02</div><h3>外贸独立站</h3><div class="en">Cross-border Site</div><p>多语言多国家的外贸独立站，产品目录 + 询盘系统，面向全球买家。</p><span class="go">↗</span></div>
-      <div class="svc-card"><div class="no">03</div><h3>定制商城 / 平台</h3><div class="en">Store & Platform</div><p>WooCommerce 或全定制商城、垂直平台，复杂业务的端到端实现。</p><span class="go">↗</span></div>
-      <div class="svc-card"><div class="no">04</div><h3>多语言本地化</h3><div class="en">Localization</div><p>多语言内容架构、hreflang 与本地化文案，一套站服务多个市场。</p><span class="go">↗</span></div>
-      <div class="svc-card"><div class="no">05</div><h3>SEO 增长系统</h3><div class="en">SEO Growth</div><p>技术 SEO、结构化数据、内容架构与站点地图，做 Google 自然流量。</p><span class="go">↗</span></div>
-      <div class="svc-card"><div class="no">06</div><h3>品牌视觉设计</h3><div class="en">Visual Identity</div><p>Logo、视觉规范与设计系统，让官网从第一眼就有国际品牌感。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">01</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M6 6h.01M8.5 6h.01"/></svg><h3>品牌官网建设</h3><div class="en">Brand Website</div><p>国际化视觉体系的企业形象官网，响应式、多端适配、SEO 友好架构。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">02</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.4 2.5 14.6 0 17M12 3.5c-2.5 2.4-2.5 14.6 0 17"/></svg><h3>外贸独立站</h3><div class="en">Cross-border Site</div><p>多语言多国家的外贸独立站，产品目录 + 询盘系统，面向全球买家。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">03</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h14l-1 11H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><h3>定制商城 / 平台</h3><div class="en">Store & Platform</div><p>WooCommerce 或全定制商城、垂直平台，复杂业务的端到端实现。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">04</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h7M7.5 6v1.5c0 2.5-1.5 4.5-3.5 5.5M5.5 10c1 1.6 2.6 2.8 4.5 3.5"/><path d="M13 20l3.5-8 3.5 8M14.5 17h4"/></svg><h3>多语言本地化</h3><div class="en">Localization</div><p>多语言内容架构、hreflang 与本地化文案，一套站服务多个市场。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">05</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M15.5 15.5 20 20M8.5 12l2-2.5 1.5 1.5 2-3"/></svg><h3>SEO 增长系统</h3><div class="en">SEO Growth</div><p>技术 SEO、结构化数据、内容架构与站点地图，做 Google 自然流量。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">06</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9.5" cy="10" r="5"/><circle cx="14.5" cy="14" r="5"/></svg><h3>品牌视觉设计</h3><div class="en">Visual Identity</div><p>Logo、视觉规范与设计系统，让官网从第一眼就有国际品牌感。</p><span class="go">↗</span></div>
     </div>
 
     <div class="pillar two rv"><span class="pn"><i>02</i> 软件 · Software</span><span class="pt">应用 / 工具 / 专业设备软件界面</span><span class="ln"></span></div>
     <div class="svc-grid rv">
-      <div class="svc-card"><div class="no">07</div><h3>软件界面设计</h3><div class="en">Software UI/UX</div><p>复杂业务系统与专业设备软件的界面与交互设计，兼顾专业性与易用性。</p><span class="go">↗</span></div>
-      <div class="svc-card"><div class="no">08</div><h3>应用与工具开发</h3><div class="en">App & Tools</div><p>移动应用、桌面与内部工具的产品设计与端到端开发落地。</p><span class="go">↗</span></div>
-      <div class="svc-card"><div class="no">09</div><h3>产品设计</h3><div class="en">Product Design</div><p>从需求梳理、信息架构、原型到落地的完整数字产品设计。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">07</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M9 4.5v15M3 9h6M12 9h6M12 13h6"/></svg><h3>软件界面设计</h3><div class="en">Software UI/UX</div><p>复杂业务系统与专业设备软件的界面与交互设计，兼顾专业性与易用性。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">08</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M10.5 5.5h3M11 18.2h2"/></svg><h3>应用与工具开发</h3><div class="en">App & Tools</div><p>移动应用、桌面与内部工具的产品设计与端到端开发落地。</p><span class="go">↗</span></div>
+      <div class="svc-card"><div class="no">09</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="7" r="2"/><rect x="14.5" y="14" width="5.5" height="5.5" rx="1"/><path d="M8 7.5h5a3 3 0 0 1 3 3v3"/></svg><h3>产品设计</h3><div class="en">Product Design</div><p>从需求梳理、信息架构、原型到落地的完整数字产品设计。</p><span class="go">↗</span></div>
     </div>
   </div>
 </section>
