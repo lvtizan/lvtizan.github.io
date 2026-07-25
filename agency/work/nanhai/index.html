@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#08080C;--bg-2:#0F1017;--surface:#14151E;--surface-2:#1B1D28;--ink:#F6F7FB;--ink-2:#B7BAC6;--muted:#787C8B;--line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.17);--accent:#4361FF;--accent-2:#7DA0FF;--disp:'Clash Display','Noto Sans SC',sans-serif;--sans:'Satoshi','Noto Sans SC',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--wrap:1160px}
   html[data-theme="light"]{--bg:#F8F9FB;--bg-2:#F1F3F8;--surface:#FFFFFF;--surface-2:#F5F7FC;--ink:#0A0D18;--ink-2:#474D5E;--muted:#7A8092;--line:rgba(11,14,23,.10);--line-2:rgba(11,14,23,.17);--accent:#3B54F0;--accent-2:#2A40D6}
@@ -61,6 +61,22 @@
   .backcta{border-top:1px solid var(--line);padding:clamp(40px,5vw,64px) 0;text-align:center}.backcta h2{font-size:clamp(24px,3vw,38px);margin-bottom:24px}
   footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--muted);padding:40px 0;margin-top:10px}
   .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.foot-in .wm{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink);text-transform:none}
+  .heritage{display:flex;flex-direction:column;gap:clamp(14px,1.8vw,24px)}
+  .poster{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);background:#0a0b10;min-height:clamp(420px,52vw,720px);display:flex}
+  .poster .img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .poster .veil{position:absolute;inset:0;background:linear-gradient(90deg,#07080c 0%,#07080c 20%,rgba(7,8,12,.45) 38%,rgba(7,8,12,0) 56%)}
+  .poster.flip{justify-content:flex-end}
+  .poster.flip .veil{background:linear-gradient(270deg,#07080c 0%,#07080c 20%,rgba(7,8,12,.45) 38%,rgba(7,8,12,0) 56%)}
+  .poster .txt{position:relative;z-index:2;flex:1;padding:clamp(24px,3.2vw,56px);display:flex;flex-direction:column;justify-content:center;max-width:60%}
+  .poster.flip .txt{align-items:flex-end;text-align:right}
+  .poster .no{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:#7DA0FF;margin-bottom:14px}
+  .poster .name{font-family:'Ma Shan Zheng',cursive;font-size:clamp(52px,8.5vw,116px);line-height:.98;color:#fff;font-weight:400}
+  .poster .py{font-family:var(--disp);font-weight:600;font-size:clamp(15px,1.6vw,20px);letter-spacing:.14em;color:#c7cbd6;margin-top:10px}
+  .poster .desc{margin:clamp(14px,1.6vw,22px) 0 0;font-size:clamp(14px,1.4vw,18px);line-height:1.55;color:#aab0be;max-width:340px}
+  .poster .loc{display:flex;align-items:center;gap:10px;margin-top:clamp(18px,2.2vw,30px);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#7c8090}
+  .poster.flip .loc{flex-direction:row-reverse}
+  .poster .loc i{width:18px;height:1px;background:#3a3f4d;display:inline-block}
+  @media(max-width:640px){.poster .txt{max-width:100%}.poster.flip .txt{align-items:flex-start;text-align:left}.poster .veil,.poster.flip .veil{background:linear-gradient(0deg,#07080c 5%,rgba(7,8,12,.55) 45%,rgba(7,8,12,.15) 100%)}}
 </style>
 </head>
 <body>
@@ -111,6 +127,42 @@
     <figure><img loading="lazy" src="/uploads/webp/nanhai-saver1.webp" alt="南海风物 书院屏保"><figcaption>序 · 书院屏保</figcaption></figure>
     <figure><img loading="lazy" src="/uploads/webp/nanhai-saver2.webp" alt="南海风物 书院屏保"><figcaption>序 · 书院屏保</figcaption></figure>
     <figure><img loading="lazy" src="/uploads/webp/nanhai-banner3.webp" alt="南海风物 现场"><figcaption>现场 · 大屏联动</figcaption></figure>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><div class="kick">Heritage Series · 风物志</div><h2>风物志</h2><p>把南海在地风物拆解重构为可玩的文化场景。</p></div>
+  <div class="heritage">
+    <div class="poster">
+      <img class="img" loading="lazy" src="/uploads/webp/nanhai-run1.webp" alt="南海风物·风物志·贪泉">
+      <div class="veil"></div>
+      <div class="txt"><div class="no">风物志 · NO.01</div><div class="name">贪泉</div><div class="py">TANQUAN</div><p class="desc">一泓清泉，照见廉洁初心。</p><div class="loc"><i></i>南海风物 · 中国 — 佛山</div></div>
+    </div>
+    <div class="poster flip">
+      <img class="img" loading="lazy" src="/uploads/webp/nanhai-run2.webp" alt="南海风物·风物志·西华寺">
+      <div class="veil"></div>
+      <div class="txt"><div class="no">风物志 · NO.02</div><div class="name">西华寺</div><div class="py">XIHUA TEMPLE</div><p class="desc">古刹钟声，禅意入画。</p><div class="loc"><i></i>南海风物 · 中国 — 佛山</div></div>
+    </div>
+    <div class="poster">
+      <img class="img" loading="lazy" src="/uploads/webp/nanhai-run3.webp" alt="南海风物·风物志·文头岭窑址">
+      <div class="veil"></div>
+      <div class="txt"><div class="no">风物志 · NO.03</div><div class="name">文头岭窑址</div><div class="py">WENTOULING KILN</div><p class="desc">千年窑火，陶韵犹存。</p><div class="loc"><i></i>南海风物 · 中国 — 佛山</div></div>
+    </div>
+    <div class="poster flip">
+      <img class="img" loading="lazy" src="/uploads/webp/nanhai-run4.webp" alt="南海风物·风物志·金山寺">
+      <div class="veil"></div>
+      <div class="txt"><div class="no">风物志 · NO.04</div><div class="name">金山寺</div><div class="py">JINSHAN TEMPLE</div><p class="desc">半山楼阁，云深藏禅。</p><div class="loc"><i></i>南海风物 · 中国 — 佛山</div></div>
+    </div>
+    <div class="poster">
+      <img class="img" loading="lazy" src="/uploads/webp/nanhai-run5.webp" alt="南海风物·风物志·凤山古庙">
+      <div class="veil"></div>
+      <div class="txt"><div class="no">风物志 · NO.05</div><div class="name">凤山古庙</div><div class="py">FENGSHAN TEMPLE</div><p class="desc">凤山庇佑，香火千年。</p><div class="loc"><i></i>南海风物 · 中国 — 佛山</div></div>
+    </div>
+    <div class="poster flip">
+      <img class="img" loading="lazy" src="/uploads/webp/nanhai-run6.webp" alt="南海风物·风物志·官窑古驿道">
+      <div class="veil"></div>
+      <div class="txt"><div class="no">风物志 · NO.06</div><div class="name">官窑古驿道</div><div class="py">GUANYAO ROAD</div><p class="desc">一道通南北，商旅越千年。</p><div class="loc"><i></i>南海风物 · 中国 — 佛山</div></div>
+    </div>
   </div>
 </div></section>
 
