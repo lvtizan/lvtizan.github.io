@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lvtizan.github.io/sitemap.xml
+Sitemap: https://voyant.pages.dev/agency/sitemap.xml
