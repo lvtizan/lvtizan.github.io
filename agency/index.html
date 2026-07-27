@@ -691,19 +691,18 @@
     <div class="s" id="liveText">● 在线 · 通常几分钟内回复</div>
   </div>
   <div class="chat-bd" id="chatBody">
-    <div class="wx-qr">
-      <img src="/uploads/webp/wechat-qr.webp" alt="VOYANT 远洋数字 微信二维码" width="172" height="172">
-      <div class="wx-id">微信号 <b id="wxId">lvtizan</b> <button class="wx-copy" id="wxCopy">复制</button></div>
-      <p class="wx-tip">微信扫码 或 搜索微信号加我，发来你的官网 / 需求，免费做一次全球网站诊断。</p>
-    </div>
-    <div class="wx-div">或</div>
-    <button class="wx-more" id="wxMore">扫码不方便？填表留言 →</button>
-    <form id="chatForm" style="display:none;margin-top:14px">
+    <form id="chatForm">
       <div class="fld"><label>称呼</label><input name="称呼" placeholder="怎么称呼您" required></div>
       <div class="fld"><label>联系方式（微信 / 邮箱 / 电话）</label><input name="联系方式" placeholder="方便我们回复您" required></div>
       <div class="fld"><label>留言</label><textarea name="留言" rows="3" placeholder="简单说说您的项目或需求" required></textarea></div>
       <button class="btn btn-solid send" type="submit" id="chatSend">发送留言 →</button>
     </form>
+    <div class="wx-div">或扫码加微信 · 更快</div>
+    <div class="wx-qr">
+      <img src="/uploads/webp/wechat-qr.webp" alt="VOYANT 远洋数字 微信二维码" width="168" height="168">
+      <div class="wx-id">微信号 <b id="wxId">lvtizan</b> <button class="wx-copy" id="wxCopy">复制</button></div>
+      <p class="wx-tip">扫码或搜索微信号加我，发来你的官网 / 需求，免费做一次全球网站诊断。</p>
+    </div>
   </div>
 </div>
 
@@ -730,8 +729,6 @@
     try{await navigator.clipboard.writeText(id);}catch(e){const t=document.createElement('textarea');t.value=id;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove();}
     btn.textContent='已复制 ✓';btn.classList.add('done');setTimeout(()=>{btn.textContent='复制';btn.classList.remove('done');},1800);
   });
-  // 展开留言表单
-  document.getElementById('wxMore').addEventListener('click',function(){document.getElementById('chatForm').style.display='block';this.style.display='none';});
   const form=document.getElementById('chatForm');
   form.addEventListener('submit',async(e)=>{
     e.preventDefault();const btn=document.getElementById('chatSend');btn.textContent='发送中…';btn.disabled=true;
