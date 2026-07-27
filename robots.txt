@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lvtizan.github.io/sitemap.xml
-Sitemap: https://voyant.pages.dev/agency/sitemap.xml
+Sitemap: https://voyant.pages.dev/sitemap.xml
+Sitemap: https://lvtizan.github.io/me/sitemap.xml
