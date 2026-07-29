@@ -113,6 +113,8 @@
   footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--muted);padding:40px 0;margin-top:20px}
   .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   .foot-in .wm{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink);text-transform:none}
+
+.post-card{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:16px;padding:22px 22px 24px;background:var(--surface);transition:.25s;margin-bottom:16px}.post-card:hover{border-color:var(--line-2);transform:translateY(-3px)}.post-card .pc-cat{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2)}.post-card h3{font-family:var(--disp);font-weight:600;font-size:clamp(17px,2vw,20px);color:var(--ink);line-height:1.4}.post-card p{color:var(--ink-2);font-size:14px;line-height:1.6}.post-card .pc-more{font-family:var(--mono);font-size:11px;color:var(--accent-2);margin-top:2px}
 </style>
 </head>
 <body>
@@ -155,142 +157,36 @@
   <section class="panel on" id="duli" role="tabpanel">
     <p class="lead">面向海外买家的独立站，怎么搭才既专业又利于成交。</p>
 
-    <article class="post">
-      <div class="meta">外贸独立站 · Cross-border</div>
-      <h2>外贸独立站，为什么建议手写静态而不是套 WordPress？</h2>
-      <div class="kv"><span>性能</span><span>SEO</span><span>安全</span><span>成本</span></div>
-      <p>很多外贸企业第一反应是用 WordPress 建站——插件多、上手快。但如果目标是<strong>海外买家访问快、Google 收录好、长期维护省心</strong>，手写静态站往往是更划算的选择。</p>
-      <h3>1. 速度直接影响转化与排名</h3>
-      <p>海外买家大多通过手机、跨国网络访问。WordPress 默认要加载主题框架、数据库查询和一堆插件脚本，首屏往往 3 秒以上；手写静态页面没有这些负担，配合全球 CDN，通常 <strong>0.1–2 秒</strong> 打开。Google 已把 Core Web Vitals（加载、交互、稳定性）纳入排名信号，快本身就是 SEO。</p>
-      <h3>2. 结构干净，天生利于收录</h3>
-      <p>静态站的 HTML 是确定的、语义化的，标题层级、结构化数据、hreflang 都能精确控制，爬虫抓取无障碍。WordPress 的插件常注入冗余标签与重复内容，反而给收录添乱。</p>
-      <h3>3. 没有插件，就没有插件漏洞</h3>
-      <p>WordPress 站被入侵，八成来自过期插件与主题。静态站没有后台、没有数据库，攻击面几乎为零，也不用天天盯着更新。</p>
-      <h3>4. 什么时候仍然值得用 CMS？</h3>
-      <p>如果客户需要<strong>频繁自助更新大量内容</strong>（例如每周上新几十个 SKU 的商城），可以用无头 CMS + 静态生成，兼顾自助编辑与静态性能。判断标准很简单：内容更新频率高就上 CMS，以展示与询盘为主就手写静态。</p>
-      <a class="cta-in" href="/#contact">想评估你的站该走哪条路？免费诊断 →</a>
-    </article>
+    <a class="post-card" href="/resources/static-vs-wordpress/"><span class="pc-cat">外贸独立站</span><h3>外贸独立站，为什么建议手写静态而不是套 WordPress？</h3><p>很多外贸企业第一反应是用 WordPress 建站——插件多、上手快。但如果目标是海外买家访问快、Google 收录好、…</p><span class="pc-more">阅读全文 →</span></a>
 
-    <article class="post">
-      <div class="meta">外贸独立站 · Conversion</div>
-      <h2>一个能带来询盘的外贸独立站，必备这 7 个模块</h2>
-      <p>外贸站不是作品集，而是把陌生海外买家一步步带到"发询盘"的转化路径。以下 7 块几乎是标配：</p>
-      <ol>
-        <li><strong>清晰的价值主张首屏</strong>：一句话说清你是做什么的、卖给谁，配一张真实产品/场景大图。</li>
-        <li><strong>产品/能力目录</strong>：按买家心智分类，大主图 + 关键参数表，方便快速判断。</li>
-        <li><strong>信任背书</strong>：认证、工厂/团队实拍、合作品牌、案例数据，海外买家非常看重可信度。</li>
-        <li><strong>清楚的询盘入口</strong>：每个关键页面都要有"联系/询盘"按钮，表单字段越少越好。</li>
-        <li><strong>关于我们与实力展示</strong>：讲清规模、经验与交付能力，降低跨国合作的不确定感。</li>
-        <li><strong>多语言与本地化</strong>：至少中英双语，目标市场多则加对应语言与 hreflang。</li>
-        <li><strong>SEO 基建</strong>：语义化结构、sitemap、结构化数据，让 Google 能收录并展示富摘要。</li>
-      </ol>
-      <p>把这 7 块按"买家浏览动线"排好，再用性能和视觉撑起专业感，独立站才算真正为成交服务。</p>
-      <a class="cta-in" href="/#pricing">看外贸独立站建站套餐 →</a>
-    </article>
+    <a class="post-card" href="/resources/b2b-website-7-modules/"><span class="pc-cat">外贸独立站</span><h3>一个能带来询盘的外贸独立站，必备这 7 个模块</h3><p>外贸站不是作品集，而是把陌生海外买家一步步带到"发询盘"的转化路径。以下 7 块几乎是标配：…</p><span class="pc-more">阅读全文 →</span></a>
   </section>
 
   <!-- TAB 2: 网站建设与性能 -->
   <section class="panel" id="build" role="tabpanel">
     <p class="lead">网站建设里那些真正影响体验与转化的技术地基。</p>
 
-    <article class="post">
-      <div class="meta">网站建设 · Performance</div>
-      <h2>网站为什么要追求 Lighthouse 全绿？它到底测了什么</h2>
-      <p>Lighthouse 是 Google 官方的网页质量评测工具，从四个维度打分：<strong>性能、可访问性、最佳实践、SEO</strong>。"全绿"意味着四项都在 90 分以上——这不是炫技，而是实打实影响用户体验和搜索排名。</p>
-      <h3>核心是 Core Web Vitals</h3>
-      <ul>
-        <li><strong>LCP（最大内容绘制）</strong>：首屏主要内容多久出现，理想 &lt; 2.5 秒。</li>
-        <li><strong>INP（交互到下一次绘制）</strong>：点击/输入后页面多快响应，理想 &lt; 200 毫秒。</li>
-        <li><strong>CLS（累积布局偏移）</strong>：加载时元素是否乱跳，理想 &lt; 0.1。</li>
-      </ul>
-      <p>这三项 Google 已直接用于排名。做到全绿的常见手段：图片用 WebP 并按需尺寸、字体预加载、减少阻塞脚本、给图片和广告位预留高度避免跳动。手写静态站在这些点上有天然优势。</p>
-      <a class="cta-in" href="/#contact">给你的网站做一次性能诊断 →</a>
-    </article>
+    <a class="post-card" href="/resources/lighthouse-core-web-vitals/"><span class="pc-cat">网站建设与性能</span><h3>网站为什么要追求 Lighthouse 全绿？它到底测了什么</h3><p>Lighthouse 是 Google 官方的网页质量评测工具，从四个维度打分：性能、可访问性、最佳实践、SEO。"全绿…</p><span class="pc-more">阅读全文 →</span></a>
 
-    <article class="post">
-      <div class="meta">网站建设 · Assets</div>
-      <h2>网站图片怎么处理，才能又清晰又快？</h2>
-      <p>图片通常是网页里最重的资源，也是拖慢外贸站的头号元凶。几条实用原则：</p>
-      <ul>
-        <li><strong>格式选 WebP/AVIF</strong>：同等清晰度下体积比 JPG/PNG 小 30%–80%。</li>
-        <li><strong>按显示尺寸导出</strong>：不要把 4000px 大图塞进 400px 的卡片，用响应式 <code>srcset</code> 提供多档尺寸。</li>
-        <li><strong>懒加载首屏以下图片</strong>：<code>loading="lazy"</code> 让首屏更快。</li>
-        <li><strong>给图片写 alt</strong>：既是无障碍，也是图片 SEO，帮你在 Google 图片搜索获得曝光。</li>
-      </ul>
-      <p>一个典型例子：把 9MB 的 PNG 组图转成 WebP，往往能压到 1MB 左右，首屏加载时间肉眼可见地下降，排名与跳出率一起改善。</p>
-      <a class="cta-in" href="/#pricing">看网站建设套餐 →</a>
-    </article>
+    <a class="post-card" href="/resources/web-image-optimization/"><span class="pc-cat">网站建设与性能</span><h3>网站图片怎么处理，才能又清晰又快？</h3><p>图片通常是网页里最重的资源，也是拖慢外贸站的头号元凶。几条实用原则：…</p><span class="pc-more">阅读全文 →</span></a>
   </section>
 
   <!-- TAB 3: Google SEO -->
   <section class="panel" id="seo" role="tabpanel">
     <p class="lead">让 Google 找到你、收录你、并把你排上去。</p>
 
-    <article class="post">
-      <div class="meta">Google SEO · Indexing</div>
-      <h2>新站 Google 收录慢？先做对这 5 个技术要点</h2>
-      <p>新站上线后几周搜不到自己，多数不是"被惩罚"，而是还在收录队列里，或者有技术障碍。按这 5 步排查基本能解决：</p>
-      <ol>
-        <li><strong>提交并保证 sitemap 可抓取</strong>：在 Google Search Console 提交 <code>sitemap.xml</code>，确认返回 200、格式合法、列出的 URL 都能打开。</li>
-        <li><strong>检查 robots 与 noindex</strong>：别让 <code>robots.txt</code> 或 <code>&lt;meta name="robots"&gt;</code> 意外挡住抓取；每个要收录的页面应是 <code>index, follow</code>。</li>
-        <li><strong>用"网址检查"请求编入索引</strong>：对首页和重点页逐个提交，能明显加快。</li>
-        <li><strong>补内链</strong>：确保重要页面之间有真实 <code>&lt;a href&gt;</code> 链接，别只靠 JS 跳转，爬虫才能顺着爬。</li>
-        <li><strong>拿几个外链</strong>：新站有一两个可信外链（如企业名录、社媒、合作方），Google 发现和信任都会更快。</li>
-      </ol>
-      <p>做完这些，剩下的就是耐心：新站从提交到稳定收录通常需要 1–4 周，竞争词的排名则以周到月计。</p>
-      <a class="cta-in" href="/#contact">让我们帮你排查收录问题 →</a>
-    </article>
+    <a class="post-card" href="/resources/new-site-google-indexing/"><span class="pc-cat">Google SEO</span><h3>新站 Google 收录慢？先做对这 5 个技术要点</h3><p>新站上线后几周搜不到自己，多数不是"被惩罚"，而是还在收录队列里，或者有技术障碍。按这 5 步排查基本能解决：…</p><span class="pc-more">阅读全文 →</span></a>
 
-    <article class="post">
-      <div class="meta">Google SEO · Structure</div>
-      <h2>结构化数据（JSON-LD）是什么，为什么外贸站该加</h2>
-      <p>结构化数据是一段告诉搜索引擎"这页到底是什么"的标准化标记。用 Schema.org 的 JSON-LD 写在页面里，Google 能更准确理解你的公司、产品、服务与文章，并有机会展示<strong>富摘要</strong>（评分、面包屑、FAQ 等），提升点击率。</p>
-      <h3>外贸站常用的几种类型</h3>
-      <ul>
-        <li><strong>Organization / ProfessionalService</strong>：公司与服务信息，强化品牌实体。</li>
-        <li><strong>Product</strong>：产品页的型号、规格，利于产品搜索展示。</li>
-        <li><strong>BreadcrumbList</strong>：面包屑导航，让搜索结果显示层级路径。</li>
-        <li><strong>Article</strong>：博客/资源文章，利于内容被识别与推荐。</li>
-      </ul>
-      <p>加之前用 Google 的富媒体测试工具校验一遍，确保没有语法错误。它不是排名的"魔法开关"，但能让 Google 更懂你，也让你的搜索结果更显眼。</p>
-      <a class="cta-in" href="/#contact">给你的站补齐结构化数据 →</a>
-    </article>
+    <a class="post-card" href="/resources/structured-data-json-ld/"><span class="pc-cat">Google SEO</span><h3>结构化数据（JSON-LD）是什么，为什么外贸站该加</h3><p>结构化数据是一段告诉搜索引擎"这页到底是什么"的标准化标记。用 Schema.org 的 JSON-LD 写在页面里，G…</p><span class="pc-more">阅读全文 →</span></a>
   </section>
 
   <!-- TAB 4: 软件 · 产品设计 -->
   <section class="panel" id="software" role="tabpanel">
     <p class="lead">网站之外，我们也做软件与应用的产品与界面设计。</p>
 
-    <article class="post">
-      <div class="meta">软件设计 · Product</div>
-      <h2>专业软件的界面，和消费级 App 有什么不同？</h2>
-      <div class="kv"><span>信息密度</span><span>专业效率</span><span>容错</span><span>环境适配</span></div>
-      <p>很多人以为"界面好看"就是好设计，但专业设备与工具软件（工业检测、医疗、测量、后台系统）和消费级 App 的设计目标其实差得很远。做错方向，界面越"漂亮"越难用。</p>
-      <h3>1. 信息密度：要一屏看全，而不是层层点开</h3>
-      <p>消费 App 追求极简、留白、一步一屏；专业软件的用户是熟练操作者，他们要的是<strong>关键信息一屏尽收</strong>——读数、状态、工具、辅助线同时在场，减少来回切换。留白过度反而降低效率。</p>
-      <h3>2. 为熟练而设计，不是为新手</h3>
-      <p>消费 App 优化"第一次使用"；专业软件优化"每天用几百次"。所以要给<strong>快捷路径、可记忆的固定布局、硬件按键映射</strong>，让老手形成肌肉记忆，而不是每次都被引导。</p>
-      <h3>3. 环境与容错</h3>
-      <p>专业软件常在强光现场、戴手套、单手操作等严苛环境下使用。这要求<strong>高对比配色、够大的点击区、关键操作的二次确认</strong>——一次误删可能就是一整天的数据。VeinScope 的深色高对比界面与删除确认，就是这个逻辑的落地。</p>
-      <p>一句话：消费级设计追求"讨人喜欢"，专业软件设计追求"专业的人用得又快又稳"。两套方法论，我们都做。</p>
-      <a class="cta-in" href="/work/veinscope/">看 VeinScope 软件设计案例 →</a>
-    </article>
+    <a class="post-card" href="/resources/professional-software-ui/"><span class="pc-cat">软件 · 产品设计</span><h3>专业软件的界面，和消费级 App 有什么不同？</h3><p>很多人以为"界面好看"就是好设计，但专业设备与工具软件（工业检测、医疗、测量、后台系统）和消费级 App 的设计目标其实…</p><span class="pc-more">阅读全文 →</span></a>
 
-    <article class="post">
-      <div class="meta">产品设计 · Process</div>
-      <h2>一个数字产品从想法到上线，要走哪几步？</h2>
-      <p>无论是外贸站、App 还是专业软件，一个靠谱的数字产品都不是"直接开做"，而是走一条可验证、可交接的流程：</p>
-      <ol>
-        <li><strong>需求与场景梳理</strong>：搞清楚为谁做、在什么场景用、要解决什么核心问题，定义成功标准。</li>
-        <li><strong>信息架构</strong>：把功能与内容组织成清晰的结构与动线，决定"什么放哪、怎么走"。</li>
-        <li><strong>原型</strong>：用低到高保真的原型把交互跑通，尽早发现问题——改原型比改代码便宜得多。</li>
-        <li><strong>视觉设计</strong>：在结构对的基础上，做出专业、可信、符合品牌的界面。</li>
-        <li><strong>工程实现</strong>：把设计一比一落地，性能、可访问性、边界情况一次做对。</li>
-        <li><strong>验证与迭代</strong>：上线后看真实使用数据与反馈，持续打磨。</li>
-      </ol>
-      <p>我们的差异化在于<strong>设计 + 工程一体</strong>：同一支团队从需求走到上线，不用在设计与开发之间反复翻译、丢失细节，交付更快也更还原。</p>
-      <a class="cta-in" href="/#contact">有软件 / 产品想做？聊聊 →</a>
-    </article>
+    <a class="post-card" href="/resources/digital-product-process/"><span class="pc-cat">软件 · 产品设计</span><h3>一个数字产品从想法到上线，要走哪几步？</h3><p>无论是外贸站、App 还是专业软件，一个靠谱的数字产品都不是"直接开做"，而是走一条可验证、可交接的流程：…</p><span class="pc-more">阅读全文 →</span></a>
   </section>
 </div>
 
