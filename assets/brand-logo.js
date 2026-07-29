@@ -16,8 +16,8 @@
   var css =
     '.brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;justify-content:center}' +
     '.brand-main{display:flex;align-items:baseline;gap:8px}' +
-    '.brand-desc{font-family:var(--mono,ui-monospace,monospace);font-size:9.5px;letter-spacing:.03em;' +
-    'color:var(--muted,#787C8B);line-height:1;white-space:nowrap}' +
+    '.brand-desc{font-family:var(--mono,ui-monospace,monospace);font-size:9px;letter-spacing:.06em;' +
+    'color:var(--muted,#787C8B);opacity:.82;line-height:1;white-space:nowrap}' +
     '@media(max-width:560px){.brand-desc{display:none}}' +
     '[data-brand-foot]{display:inline-flex;flex-direction:column;gap:4px}' +
     '.fdesc{font-family:var(--mono,ui-monospace,monospace);font-size:10px;letter-spacing:.03em;' +
