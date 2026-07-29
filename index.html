@@ -13,7 +13,11 @@
 <meta property="og:title" content="YOYANT — Global Digital Growth Partner">
 <meta property="og:description" content="为中国企业构建面向全球的数字资产：品牌官网 · 外贸独立站 · SEO 增长体系。">
 <meta property="og:url" content="https://yoyant.com/">
+<meta property="og:image" content="https://yoyant.com/uploads/webp/tarmeer-home.webp">
+<meta property="og:site_name" content="YOYANT 远洋数字">
+<meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yoyant.com/uploads/webp/tarmeer-home.webp">
 <meta name="twitter:title" content="企业建站 · 外贸独立站 · 网站建设 — YOYANT 远洋数字">
 <meta name="twitter:description" content="企业建站、外贸独立站与网站建设：品牌官网、定制商城、多语言独立站与 Google SEO 增长。">
 <link rel="canonical" href="https://yoyant.com/">
@@ -21,6 +25,18 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yoyant.com/#org",
+      "name": "YOYANT 远洋数字",
+      "alternateName": ["YOYANT", "远洋数字", "Yoyant Digital"],
+      "url": "https://yoyant.com/",
+      "description": "YOYANT 远洋数字是一家设计与工程一体的数字产品公司，为企业提供品牌官网、外贸独立站、定制商城、软件界面（UI/UX）设计与软件定制开发，服务国内与出海双市场。",
+      "email": "bbtizan@gmail.com",
+      "knowsLanguage": ["zh-CN", "en"],
+      "areaServed": "Worldwide",
+      "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "bbtizan@gmail.com", "availableLanguage": ["zh-CN", "en"]}
+    },
     {
       "@type": "ProfessionalService",
       "@id": "https://yoyant.com/#service",
@@ -45,7 +61,8 @@
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "软件产品设计与开发", "description": "软件产品设计、应用与工具开发、软件定制开发，设计+工程一体交付。"}}
         ]
       },
-      "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "bbtizan@gmail.com", "availableLanguage": ["zh-CN", "en"]}
+      "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "bbtizan@gmail.com", "availableLanguage": ["zh-CN", "en"]},
+      "parentOrganization": {"@id": "https://yoyant.com/#org"}
     },
     {
       "@type": "WebSite",
@@ -53,6 +70,7 @@
       "name": "YOYANT 远洋数字",
       "url": "https://yoyant.com/",
       "inLanguage": "zh-CN",
+      "publisher": {"@id": "https://yoyant.com/#org"},
       "about": "企业建站、外贸独立站、网站建设与出海 SEO 增长"
     }
   ]
