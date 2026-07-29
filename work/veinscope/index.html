@@ -6,6 +6,9 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0VE5EQQE12');</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>VeinScope — 工业内窥镜检测系统 · 产品与 UI 设计案例 | YOYANT 远洋数字</title>
 <meta name="description" content="VeinScope 工业内窥镜检测系统的产品与 UI 设计案例：2D/3D 视图切换、点到点/面积/剖面/角度多模式测量、深度伪彩图与 PLY 点云导出，为强光现场检测打造的高对比深色界面。">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -34,6 +37,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -278,8 +282,8 @@
 
 <script>
   const root=document.documentElement,tg=document.getElementById('themeTg');
-  const setTheme=t=>{root.setAttribute('data-theme',t);tg.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('voyant-theme',t)}catch(e){}};
-  setTheme((()=>{try{return localStorage.getItem('voyant-theme')}catch(e){return null}})()||'dark');
+  const setTheme=t=>{root.setAttribute('data-theme',t);tg.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('yoyant-theme',t)}catch(e){}};
+  setTheme((()=>{try{return localStorage.getItem('yoyant-theme')}catch(e){return null}})()||'dark');
   tg.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
 </script>
 <script src="/assets/lightbox.js" defer></script>

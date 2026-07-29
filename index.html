@@ -6,6 +6,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VE5EQQE12"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0VE5EQQE12');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>网站与软件设计开发 · 外贸独立站 / 软件界面 / 产品设计 — YOYANT 远洋数字</title>
 <meta name="description" content="YOYANT 远洋数字，设计 + 工程一体的数字产品公司，提供两类服务：网站——外贸独立站、品牌官网、定制商城、多语言与 Google SEO；软件——软件界面（UI/UX）设计、小程序与 App 界面、后台管理系统与 SaaS 产品设计、应用与工具开发。设计软件、做 UI、软件定制开发一站式承接。手写静态、Lighthouse 全绿，从设计到工程一体交付，帮企业构建面向全球的数字产品。">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -13,11 +16,11 @@
 <meta property="og:title" content="YOYANT — Global Digital Growth Partner">
 <meta property="og:description" content="为中国企业构建面向全球的数字资产：品牌官网 · 外贸独立站 · SEO 增长体系。">
 <meta property="og:url" content="https://yoyant.com/">
-<meta property="og:image" content="https://yoyant.com/uploads/webp/tarmeer-home.webp">
+<meta property="og:image" content="https://yoyant.com/uploads/webp/og-brand.webp">
 <meta property="og:site_name" content="YOYANT 远洋数字">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yoyant.com/uploads/webp/tarmeer-home.webp">
+<meta name="twitter:image" content="https://yoyant.com/uploads/webp/og-brand.webp">
 <meta name="twitter:title" content="企业建站 · 外贸独立站 · 网站建设 — YOYANT 远洋数字">
 <meta name="twitter:description" content="企业建站、外贸独立站与网站建设：品牌官网、定制商城、多语言独立站与 Google SEO 增长。">
 <link rel="canonical" href="https://yoyant.com/">
@@ -78,6 +81,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -373,13 +377,12 @@
   <div class="wrap nav-in">
     <a class="brand" href="#top" data-brand-nav aria-label="YOYANT 远洋数字"></a>
     <div class="nav-links">
-      <a href="/services/web/">网站服务</a><a href="/services/software/">软件服务</a><a href="#cases">Work</a>
-      <a href="#pricing">Pricing</a><a href="/about/">About</a><a href="/resources/">洞察</a>
+      <a href="/services/web/">网站服务</a><a href="/services/software/">软件服务</a><a href="#cases">案例</a>
+      <a href="#pricing">报价</a><a href="/about/">关于</a><a href="/resources/">洞察</a>
     </div>
     <div class="nav-right">
       <button class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button>
-      <span class="lang"><b>中</b> / EN</span>
-      <a class="btn btn-solid" href="#contact">Get a diagnosis <span class="ar">→</span></a>
+      <a class="btn btn-solid" href="#contact">获取免费诊断 <span class="ar">→</span></a>
     </div>
   </div>
 </nav>
@@ -413,7 +416,7 @@
       </svg>
       <div class="browser">
         <div class="bar"><i></i><i></i><i></i><span class="u"></span></div>
-        <img src="/uploads/webp/tarmeer-home.webp" alt="多国多语言外贸平台官网示例" loading="lazy">
+        <img src="/uploads/webp/tarmeer-home.webp" alt="多国多语言外贸平台官网示例" fetchpriority="high" decoding="async">
       </div>
       <div class="chip chip-1"><div class="cn"><i>100</i></div><div class="cl">Lighthouse Score</div></div>
       <div class="chip chip-2"><div class="cn">3<i>+</i></div><div class="cl">Languages · Markets</div></div>
@@ -698,8 +701,8 @@
 <script>
   // theme toggle (dark / light, remembered)
   const root=document.documentElement,tg=document.getElementById('themeTg');
-  const setTheme=t=>{root.setAttribute('data-theme',t);tg.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('voyant-theme',t)}catch(e){}};
-  setTheme((()=>{try{return localStorage.getItem('voyant-theme')}catch(e){return null}})()||'dark');
+  const setTheme=t=>{root.setAttribute('data-theme',t);tg.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('yoyant-theme',t)}catch(e){}};
+  setTheme((()=>{try{return localStorage.getItem('yoyant-theme')}catch(e){return null}})()||'dark');
   tg.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
 
   const nav=document.getElementById('nav');
