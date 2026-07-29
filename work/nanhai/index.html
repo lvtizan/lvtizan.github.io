@@ -79,12 +79,25 @@
   .poster.flip .loc{flex-direction:row-reverse}
   .poster .loc i{width:18px;height:1px;background:#3a3f4d;display:inline-block}
   @media(max-width:640px){.poster .txt{max-width:100%}.poster.flip .txt{align-items:flex-start;text-align:left}.poster .veil,.poster.flip .veil{background:linear-gradient(0deg,#07080c 5%,rgba(7,8,12,.55) 45%,rgba(7,8,12,.15) 100%)}}
+
+  /* related cases */
+  .rel{padding:clamp(50px,6vw,84px) 0 clamp(20px,3vw,40px)}
+  .rel .kick{margin-bottom:12px}
+  .rel h2{font-size:clamp(23px,2.8vw,34px);margin-bottom:24px}
+  .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+  .relc{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--surface);transition:.3s;display:block}
+  .relc:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .relc img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
+  .relc .b{padding:14px 16px}
+  .relc .t{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2)}
+  .relc h3{font-size:15.5px;margin-top:7px;line-height:1.35;font-weight:600}
+  @media(max-width:760px){.rel-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav class="top"><div class="nav-in">
   <a class="brand" href="/" data-brand-nav aria-label="YOYANT 远洋数字"></a>
-  <div class="nav-links"><a href="/#services">Services</a><a href="/#pricing">Pricing</a><a href="/#cases">Work</a><a href="/resources/">洞察</a></div>
+  <div class="nav-links"><a href="/services/web/">网站服务</a><a href="/services/software/">软件服务</a><a href="/#cases">案例</a><a href="/about/">About</a><a href="/resources/">洞察</a></div>
   <div class="nav-right"><button class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button><a class="btn" href="/#contact">获取诊断 →</a></div>
 </div></nav>
 
@@ -165,6 +178,25 @@
       <div class="veil"></div>
       <div class="txt"><div class="no">风物志 · NO.06</div><div class="name">官窑古驿道</div><div class="py">GUANYAO ROAD</div><p class="desc">一道通南北，商旅越千年。</p><div class="loc"><i></i>南海风物 · 中国 — 佛山</div></div>
     </div>
+  </div>
+</div></section>
+
+<section class="rel"><div class="wrap">
+  <div class="kick">More cases · 相关案例</div>
+  <h2>继续看其他案例</h2>
+  <div class="rel-grid">
+    <a class="relc" href="/work/avatar/" aria-label="查看 AVATAR — AI 角色陪伴聊天 App 案例详情">
+      <img loading="lazy" src="/uploads/webp/avatar-showcase.webp" alt="AVATAR AI 角色陪伴聊天 App 多端界面展示">
+      <div class="b"><div class="t">软件 · 移动 App</div><h3>AVATAR — AI 角色陪伴聊天 App</h3></div>
+    </a>
+    <a class="relc" href="/work/veinscope/" aria-label="查看 VeinScope — 工业内窥镜检测系统 案例详情">
+      <img loading="lazy" src="/uploads/webp/veinscope-onsite7.webp" alt="工程师手持 VeinScope 工业内窥镜检测航空发动机">
+      <div class="b"><div class="t">软件 · 专业设备 UI/UX</div><h3>VeinScope — 工业内窥镜检测系统</h3></div>
+    </a>
+    <a class="relc" href="/work/tarmeer/" aria-label="查看 Tarmeer — 多国多语言室内设计平台 案例详情">
+      <img loading="lazy" src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台首页界面">
+      <div class="b"><div class="t">网站 · 多语言平台</div><h3>Tarmeer — 多国多语言室内设计平台</h3></div>
+    </a>
   </div>
 </div></section>
 

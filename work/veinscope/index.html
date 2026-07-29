@@ -123,6 +123,19 @@
   footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--muted);padding:40px 0;margin-top:10px}
   .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   .foot-in .wm{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink);text-transform:none}
+
+  /* related cases */
+  .rel{padding:clamp(50px,6vw,84px) 0 clamp(20px,3vw,40px)}
+  .rel .kick{margin-bottom:12px}
+  .rel h2{font-size:clamp(23px,2.8vw,34px);margin-bottom:24px}
+  .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+  .relc{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--surface);transition:.3s;display:block}
+  .relc:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .relc img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
+  .relc .b{padding:14px 16px}
+  .relc .t{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2)}
+  .relc h3{font-size:15.5px;margin-top:7px;line-height:1.35;font-weight:600}
+  @media(max-width:760px){.rel-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -131,8 +144,7 @@
   <div class="nav-in">
     <a class="brand" href="/" data-brand-nav aria-label="YOYANT 远洋数字"></a>
     <div class="nav-links">
-      <a href="/#services">Services</a><a href="/#pricing">Pricing</a>
-      <a href="/#cases">Work</a><a href="/resources/">洞察</a>
+      <a href="/services/web/">网站服务</a><a href="/services/software/">软件服务</a><a href="/#cases">案例</a><a href="/about/">About</a><a href="/resources/">洞察</a>
     </div>
     <div class="nav-right">
       <button class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button>
@@ -227,6 +239,25 @@
     </div>
   </div>
 </section>
+
+<section class="rel"><div class="wrap">
+  <div class="kick">More cases · 相关案例</div>
+  <h2>继续看其他案例</h2>
+  <div class="rel-grid">
+    <a class="relc" href="/work/epaifa/" aria-label="查看 Epaifa Mall — B2B 跨境供应链商城 App 案例详情">
+      <img loading="lazy" src="/uploads/webp/epaifa-cover.webp" alt="Epaifa Mall B2B 跨境供应链商城 App 界面群像">
+      <div class="b"><div class="t">软件 · B2B SaaS App</div><h3>Epaifa Mall — B2B 跨境供应链商城 App</h3></div>
+    </a>
+    <a class="relc" href="/work/nanhai/" aria-label="查看 南海风物 — 沉浸式文化互动装置 案例详情">
+      <img loading="lazy" src="/uploads/webp/nanhai-title.webp" alt="南海风物沉浸式文化互动装置主视觉">
+      <div class="b"><div class="t">软件 · 互动装置</div><h3>南海风物 — 沉浸式文化互动装置</h3></div>
+    </a>
+    <a class="relc" href="/work/avatar/" aria-label="查看 AVATAR — AI 角色陪伴聊天 App 案例详情">
+      <img loading="lazy" src="/uploads/webp/avatar-showcase.webp" alt="AVATAR AI 角色陪伴聊天 App 多端界面展示">
+      <div class="b"><div class="t">软件 · 移动 App</div><h3>AVATAR — AI 角色陪伴聊天 App</h3></div>
+    </a>
+  </div>
+</div></section>
 
 <div class="backcta">
   <div class="wrap">
