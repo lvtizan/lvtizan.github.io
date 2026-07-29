@@ -113,7 +113,6 @@
   html[data-theme="light"] .cta p{color:#C7CBD6}
   html[data-theme="light"] .cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
   html[data-theme="light"] .foot-in .wm{color:var(--ink)}
-  html[data-theme="light"] .chat-launch{background:#14151E;color:#fff}
   /* theme toggle button */
   .theme-tg{background:transparent;border:1px solid var(--line-2);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;display:grid;place-items:center;transition:.2s;flex:none}
   .theme-tg:hover{border-color:var(--ink);background:rgba(127,140,180,.08)}
@@ -338,66 +337,6 @@
   .foot-in .wm{font-family:var(--disp);font-weight:700;font-size:18px;color:#fff;letter-spacing:.01em;text-transform:none}
   .note{position:fixed;left:16px;bottom:16px;z-index:200;background:rgba(27,29,40,.9);backdrop-filter:blur(8px);border:1px dashed var(--accent);color:var(--accent-2);font-size:11px;padding:8px 13px;border-radius:20px;font-family:var(--mono);letter-spacing:.02em;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);max-width:min(92vw,440px)}
 
-  /* 在线咨询 widget */
-  .chat-launch{position:fixed;right:22px;bottom:22px;z-index:300;display:inline-flex;align-items:center;gap:9px;background:var(--surface-2);color:#fff;padding:13px 20px 13px 15px;border-radius:40px;cursor:pointer;border:1px solid var(--line-2);transition:transform .28s,border-color .28s;font-size:14.5px;font-weight:700;animation:breathe 2.3s ease-in-out infinite}
-  .chat-launch:hover{transform:translateY(-3px);border-color:#07C160;animation-play-state:paused;box-shadow:0 22px 54px -14px rgba(7,193,96,.6)}
-  .chat-launch .wx{width:20px;height:20px;flex:none;color:#07C160}
-  @keyframes breathe{0%,100%{box-shadow:0 16px 44px -12px rgba(0,0,0,.7),0 0 0 0 rgba(7,193,96,.5)}50%{box-shadow:0 16px 44px -12px rgba(0,0,0,.7),0 0 0 13px rgba(7,193,96,0)}}
-  @media(prefers-reduced-motion:reduce){.chat-launch{animation:none}}
-  .chat-launch .live{position:relative;width:9px;height:9px;border-radius:50%;background:#22c55e;flex:none}
-  .chat-launch .live.off{background:#eab308}
-  .chat-launch .live::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid #22c55e;animation:pulse 2s infinite}
-  .chat-launch .live.off::after{border-color:#eab308;animation:none}
-  @keyframes pulse{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.9);opacity:0}}
-  .chat-launch.hide{opacity:0;pointer-events:none;transform:translateY(14px)}
-  .chat-tip{position:fixed;right:22px;bottom:84px;z-index:300;max-width:min(258px,calc(100vw - 40px));display:flex;align-items:center;gap:9px;background:var(--surface-2);color:#fff;border:1px solid var(--line-2);border-radius:14px;padding:11px 13px;font-size:13px;line-height:1.45;font-weight:500;box-shadow:0 18px 46px -14px rgba(0,0,0,.6);opacity:0;transform:translateY(8px) scale(.96);transform-origin:bottom right;transition:.35s cubic-bezier(.2,.7,.2,1);pointer-events:none;cursor:pointer}
-  .chat-tip.show{opacity:1;transform:none;pointer-events:auto}
-  .chat-tip.hide{opacity:0;transform:translateY(8px) scale(.96);pointer-events:none}
-  .chat-tip .dot{position:relative;width:8px;height:8px;border-radius:50%;background:#22c55e;flex:none}
-  .chat-tip .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid #22c55e;animation:pulse 2s infinite}
-  .chat-tip .dot.off{background:#eab308}.chat-tip .dot.off::after{border-color:#eab308;animation:none}
-  .chat-tip .tx{flex:1}.chat-tip .tx b{color:var(--accent-2);font-weight:700}
-  .chat-tip .cx{flex:none;color:var(--muted);font-size:13px;line-height:1;padding:2px}
-  .chat-tip .cx:hover{color:#fff}
-  .chat-tip::before{content:"";position:absolute;right:28px;bottom:-6px;width:11px;height:11px;background:var(--surface-2);border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);transform:rotate(45deg)}
-  html[data-theme="light"] .chat-tip{background:#14151E;color:#fff}
-  html[data-theme="light"] .chat-tip::before{background:#14151E}
-  .chat-panel{position:fixed;right:22px;bottom:22px;z-index:301;width:min(92vw,362px);background:var(--surface);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -24px rgba(0,0,0,.85);opacity:0;transform:translateY(18px) scale(.98);pointer-events:none;transition:.3s cubic-bezier(.2,.7,.2,1)}
-  .chat-panel.open{opacity:1;transform:none;pointer-events:auto}
-  .chat-hd{background:linear-gradient(180deg,rgba(67,97,255,.18),var(--surface-2));padding:18px 18px 16px;border-bottom:1px solid var(--line)}
-  .chat-hd .row{display:flex;align-items:center;justify-content:space-between}
-  .chat-hd .t{font-family:var(--disp);font-weight:600;font-size:18px;display:flex;align-items:center;gap:9px}
-  .chat-hd .t .live{width:8px;height:8px;border-radius:50%;background:#22c55e}
-  .chat-hd .t .live.off{background:#eab308}
-  .chat-hd .s{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--ink-2);margin-top:8px}
-  .chat-hd .x{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;padding:2px 4px}
-  .chat-hd .x:hover{color:#fff}
-  .chat-bd{padding:18px}
-  .chat-bd .fld{margin-bottom:12px}
-  .chat-bd label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .chat-bd input,.chat-bd textarea{width:100%;background:var(--bg-2);border:1px solid var(--line-2);border-radius:8px;padding:11px 12px;font-family:var(--sans);font-size:14px;color:var(--ink);resize:vertical}
-  .chat-bd input::placeholder,.chat-bd textarea::placeholder{color:var(--muted)}
-  .chat-bd input:focus,.chat-bd textarea:focus{outline:none;border-color:var(--accent)}
-  .chat-bd .send{width:100%;justify-content:center;margin-top:4px}
-  .chat-bd .alt{text-align:center;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:14px}
-  .chat-bd .alt b{color:var(--accent-2)}
-  .chat-ok{text-align:center;padding:20px 6px}
-  .chat-ok .ic{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:24px;margin:0 auto 14px}
-  .chat-ok h4{font-family:var(--disp);font-weight:600;font-size:20px;margin-bottom:8px}
-  .chat-ok p{color:var(--ink-2);font-size:14px}
-  .wx-qr{text-align:center}
-  .wx-qr>img{width:172px;height:172px;border-radius:14px;padding:10px;background:#fff;box-shadow:0 14px 36px -10px rgba(0,0,0,.5)}
-  .wx-id{margin-top:14px;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;color:var(--ink)}
-  .wx-id b{color:var(--accent-2);letter-spacing:.04em}
-  .wx-copy{background:var(--bg-2);border:1px solid var(--line-2);color:var(--ink);border-radius:7px;padding:5px 11px;font-family:var(--mono);font-size:11px;cursor:pointer;transition:.2s}
-  .wx-copy:hover{border-color:#07C160;color:#07C160}
-  .wx-copy.done{border-color:#07C160;color:#07C160}
-  .wx-tip{color:var(--muted);font-size:12.5px;line-height:1.6;margin-top:14px}
-  .wx-div{display:flex;align-items:center;gap:12px;margin:18px 0 4px;color:var(--muted);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em}
-  .wx-div::before,.wx-div::after{content:"";height:1px;background:var(--line);flex:1}
-  .wx-more{display:block;width:100%;text-align:center;background:none;border:1px solid var(--line-2);color:var(--ink-2);border-radius:8px;padding:10px;font-family:var(--sans);font-size:13px;cursor:pointer;margin-top:10px;transition:.2s}
-  .wx-more:hover{border-color:var(--accent);color:#fff}
-  @media(max-width:520px){.chat-panel{right:12px;bottom:12px}.chat-launch{right:14px;bottom:14px}.chat-tip{right:12px;bottom:74px}}
 </style>
 </head>
 <body>
@@ -698,33 +637,7 @@
   </div>
 </footer>
 
-<!-- 加微信咨询 widget -->
-<button class="chat-launch" id="chatLaunch" aria-label="加微信咨询"><svg class="wx" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.2 3C5.02 3 1.7 5.86 1.7 9.35c0 1.98 1.08 3.74 2.77 4.9L3.7 16.9l2.72-1.4c.72.2 1.48.32 2.28.36a5.7 5.7 0 0 1-.22-1.57c0-3.24 3.1-5.84 6.94-5.84.23 0 .46.01.68.03C15.4 5.05 12.6 3 9.2 3ZM6.75 7.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm4.9 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/><path d="M22.3 14.1c0-2.86-2.82-5.18-6.3-5.18s-6.3 2.32-6.3 5.18 2.82 5.18 6.3 5.18c.73 0 1.42-.1 2.07-.28l2.02 1.08-.57-1.82c1.68-.95 2.78-2.47 2.78-4.16Zm-8.35-1.15a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7Zm4.1 0a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7Z"/></svg><span>加微信咨询</span></button>
-<div class="chat-tip" id="chatTip">
-  <span class="dot" id="tipDot"></span>
-  <span class="tx" id="tipText"><b>在线</b> · 免费诊断网站，直接问 👋</span>
-  <span class="cx" id="tipClose" role="button" aria-label="关闭提示">✕</span>
-</div>
-<div class="chat-panel" id="chatPanel" role="dialog" aria-label="加微信咨询">
-  <div class="chat-hd">
-    <div class="row"><div class="t"><span class="live" id="liveDot2"></span>加微信 · 直接聊需求</div><button class="x" id="chatClose" aria-label="关闭">✕</button></div>
-    <div class="s" id="liveText">● 在线 · 通常几分钟内回复</div>
-  </div>
-  <div class="chat-bd" id="chatBody">
-    <form id="chatForm">
-      <div class="fld"><label>称呼</label><input name="称呼" placeholder="怎么称呼您" required></div>
-      <div class="fld"><label>联系方式（微信 / 邮箱 / 电话）</label><input name="联系方式" placeholder="方便我们回复您" required></div>
-      <div class="fld"><label>留言</label><textarea name="留言" rows="3" placeholder="简单说说您的项目或需求" required></textarea></div>
-      <button class="btn btn-solid send" type="submit" id="chatSend">发送留言 →</button>
-    </form>
-    <div class="wx-div">或扫码加微信 · 更快</div>
-    <div class="wx-qr">
-      <img src="/uploads/webp/wechat-qr.webp" alt="VOYANT 远洋数字 微信二维码" width="168" height="168">
-      <div class="wx-id">微信号 <b id="wxId">lvtizan</b> <button class="wx-copy" id="wxCopy">复制</button></div>
-      <p class="wx-tip">扫码或搜索微信号加我，发来你的官网 / 需求，免费做一次全球网站诊断。</p>
-    </div>
-  </div>
-</div>
+<script src="/assets/consult-widget.js" defer></script>
 
 <script>
   // theme toggle (dark / light, remembered)
@@ -739,31 +652,6 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach((el)=>{const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(sibs.indexOf(el)%6)*70+'ms';io.observe(el);});
 
-  const launch=document.getElementById('chatLaunch'),panel=document.getElementById('chatPanel');
-  const tip=document.getElementById('chatTip');
-  const openPanel=()=>{panel.classList.add('open');launch.classList.add('hide');if(tip){tip.classList.remove('show');tip.classList.add('hide');}};
-  launch.addEventListener('click',openPanel);
-  document.getElementById('chatClose').addEventListener('click',()=>{panel.classList.remove('open');launch.classList.remove('hide');});
-  if(tip){
-    document.getElementById('tipClose').addEventListener('click',(e)=>{e.stopPropagation();tip.classList.remove('show');tip.classList.add('hide');});
-    tip.addEventListener('click',openPanel);
-    setTimeout(()=>{if(!panel.classList.contains('open')&&!tip.classList.contains('hide'))tip.classList.add('show');},1400);
-  }
-  (function(){const h=new Date().getHours(),online=h>=9&&h<23;if(!online){document.getElementById('liveDot2').classList.add('off');document.getElementById('liveText').textContent='● 暂离 · 加微信留言必回，通常当日答复';var td=document.getElementById('tipDot'),tt=document.getElementById('tipText');if(td)td.classList.add('off');if(tt)tt.innerHTML='<b>留言必回</b> · 加微信，通常当日答复 👋';}})();
-  // 复制微信号
-  document.getElementById('wxCopy').addEventListener('click',async()=>{
-    const btn=document.getElementById('wxCopy'),id=document.getElementById('wxId').textContent.trim();
-    try{await navigator.clipboard.writeText(id);}catch(e){const t=document.createElement('textarea');t.value=id;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove();}
-    btn.textContent='已复制 ✓';btn.classList.add('done');setTimeout(()=>{btn.textContent='复制';btn.classList.remove('done');},1800);
-  });
-  const form=document.getElementById('chatForm');
-  form.addEventListener('submit',async(e)=>{
-    e.preventDefault();const btn=document.getElementById('chatSend');btn.textContent='发送中…';btn.disabled=true;
-    const data=new FormData(form);data.append('_subject','VOYANT 官网在线留言');data.append('_captcha','false');data.append('_template','table');
-    try{const r=await fetch('https://formsubmit.co/ajax/bbtizan@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:data});if(!r.ok)throw 0;
-      document.getElementById('chatBody').innerHTML='<div class="chat-ok"><div class="ic">✓</div><h4>已收到，谢谢！</h4><p>我们会尽快与您联系。也可直接加微信 <b style="color:var(--accent-2)">lvtizan</b>。</p></div>';
-    }catch(err){btn.textContent='发送留言 →';btn.disabled=false;alert('发送失败，请直接邮件 bbtizan@gmail.com 或加微信 lvtizan');}
-  });
 </script>
 </body>
 </html>

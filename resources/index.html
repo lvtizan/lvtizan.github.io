@@ -312,5 +312,6 @@
   tabs.forEach(t=>t.addEventListener('click',()=>{history.replaceState(null,'','#'+t.dataset.tab);activate(t.dataset.tab,true);}));
   if(location.hash)activate(location.hash.slice(1),false);
 </script>
+<script src="/assets/consult-widget.js" defer></script>
 </body>
 </html>
