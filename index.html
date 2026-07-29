@@ -129,7 +129,7 @@
   html[data-theme="light"] .cta h2{color:#fff}
   html[data-theme="light"] .cta p{color:#C7CBD6}
   html[data-theme="light"] .cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
-  html[data-theme="light"] .foot-in .wm{color:var(--ink)}
+  html[data-theme="light"] footer .wm{color:var(--ink)}
   /* theme toggle button */
   .theme-tg{background:transparent;border:1px solid var(--line-2);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;display:grid;place-items:center;transition:.2s;flex:none}
   .theme-tg:hover{border-color:var(--ink);background:rgba(127,140,180,.08)}
@@ -157,6 +157,7 @@
   .btn-ghost:hover{border-color:var(--ink);background:rgba(255,255,255,.04)}
   .btn .ar{transition:.25s}.btn:hover .ar{transform:translateX(4px)}
   @media(max-width:960px){.nav-links{display:none}}
+  @media(max-width:560px){.brand .cn{display:none}.lang{display:none}}
 
   /* HERO */
   header.hero{padding:clamp(128px,18vh,200px) 0 clamp(50px,7vw,90px);position:relative}
@@ -229,6 +230,8 @@
   .pillar .pn i{font-style:normal;color:var(--accent-2)}
   .pillar .pt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
   .pillar .ln{flex:1;height:1px;background:var(--line)}
+  .pillar .plink{font-size:13.5px;font-weight:700;color:var(--accent-2);white-space:nowrap;transition:.2s}
+  .pillar .plink:hover{color:var(--ink)}
   @media(max-width:600px){.pillar{flex-wrap:wrap;gap:8px}.pillar .ln{display:none}}
   @media(max-width:860px){.svc-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
@@ -290,11 +293,10 @@
   .case .body .ind{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2)}
   .case .body h3{font-size:clamp(18px,1.55vw,23px);margin:11px 0 0;font-weight:600;line-height:1.28}
   .case .body p{color:var(--ink-2);font-size:14.5px;margin-top:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .case .body .res{display:none}
   .case .flag{font-size:10px;padding:6px 10px}
-  .case .body .res{display:none}
-  .case .body .res .v{font-family:var(--disp);font-weight:600;font-size:22px}
-  .case .body .res .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .case .body .res{display:flex;gap:clamp(16px,1.8vw,26px);margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+  .case .body .res .v{font-family:var(--disp);font-weight:600;font-size:clamp(17px,1.5vw,21px);line-height:1.1}
+  .case .body .res .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px}
   .demoframe{width:100%;height:100%;background:radial-gradient(120% 120% at 20% 10%,#1a2050,#0a0b16);position:relative;display:flex;flex-direction:column;justify-content:center;padding:0 36px;color:#fff}
   .demoframe .df-brand{font-family:var(--disp);font-weight:600;font-size:clamp(26px,3vw,40px);letter-spacing:.01em}
   .demoframe .df-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);margin-top:10px}
@@ -349,9 +351,18 @@
   .cta .qr img{width:158px;height:158px;border-radius:16px;padding:11px;background:#fff;box-shadow:0 22px 55px rgba(0,0,0,.4)}
   .cta .qr span{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:rgba(255,255,255,.62)}
 
-  footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--muted);padding:46px 0}
-  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-  .foot-in .wm{font-family:var(--disp);font-weight:700;font-size:18px;color:#fff;letter-spacing:.01em;text-transform:none}
+  footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--muted);padding:52px 0 36px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(24px,3vw,48px);padding-bottom:34px;border-bottom:1px solid var(--line)}
+  .foot-grid .wm{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--ink);letter-spacing:.01em}
+  .foot-grid .desc{font-size:13px;margin-top:12px;max-width:300px;line-height:1.7}
+  .foot-grid .contact{font-family:var(--mono);font-size:12px;margin-top:14px;line-height:2}
+  .foot-grid h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px;font-weight:500}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .foot-grid ul a{font-size:13.5px;color:var(--muted);transition:.2s}
+  .foot-grid ul a:hover{color:var(--ink)}
+  .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
   .note{position:fixed;left:16px;bottom:16px;z-index:200;background:rgba(27,29,40,.9);backdrop-filter:blur(8px);border:1px dashed var(--accent);color:var(--accent-2);font-size:11px;padding:8px 13px;border-radius:20px;font-family:var(--mono);letter-spacing:.02em;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);max-width:min(92vw,440px)}
 
 </style>
@@ -362,8 +373,8 @@
   <div class="wrap nav-in">
     <a class="brand" href="#top" data-brand-nav aria-label="YOYANT 远洋数字"></a>
     <div class="nav-links">
-      <a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#cases">Work</a>
-      <a href="#process">Process</a><a href="#about">About</a><a href="/resources/">洞察</a>
+      <a href="/services/web/">网站服务</a><a href="/services/software/">软件服务</a><a href="#cases">Work</a>
+      <a href="#pricing">Pricing</a><a href="/about/">About</a><a href="/resources/">洞察</a>
     </div>
     <div class="nav-right">
       <button class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button>
@@ -467,7 +478,7 @@
       <p>设计 + 工程一体 —— 我们做面向全球的网站，也做专业软件与应用界面。</p>
     </div>
 
-    <div class="pillar rv"><span class="pn"><i>01</i> 网站 · Web</span><span class="pt">外贸独立站 / 官网 / 商城 / SEO</span><span class="ln"></span></div>
+    <div class="pillar rv"><span class="pn"><i>01</i> 网站 · Web</span><span class="pt">外贸独立站 / 官网 / 商城 / SEO</span><span class="ln"></span><a class="plink" href="/services/web/">查看网站服务详情 →</a></div>
     <div class="svc-grid rv">
       <div class="svc-card"><div class="no">01</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M6 6h.01M8.5 6h.01"/></svg><h3>品牌官网建设</h3><div class="en">Brand Website</div><p>国际化视觉体系的企业形象官网，响应式、多端适配、SEO 友好架构。</p><span class="go">↗</span></div>
       <div class="svc-card"><div class="no">02</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.4 2.5 14.6 0 17M12 3.5c-2.5 2.4-2.5 14.6 0 17"/></svg><h3>外贸独立站</h3><div class="en">Cross-border Site</div><p>多语言多国家的外贸独立站，产品目录 + 询盘系统，面向全球买家。</p><span class="go">↗</span></div>
@@ -477,7 +488,7 @@
       <div class="svc-card"><div class="no">06</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9.5" cy="10" r="5"/><circle cx="14.5" cy="14" r="5"/></svg><h3>品牌视觉设计</h3><div class="en">Visual Identity</div><p>Logo、视觉规范与设计系统，让官网从第一眼就有国际品牌感。</p><span class="go">↗</span></div>
     </div>
 
-    <div class="pillar two rv"><span class="pn"><i>02</i> 软件 · Software</span><span class="pt">应用 / 工具 / 专业设备软件界面</span><span class="ln"></span></div>
+    <div class="pillar two rv"><span class="pn"><i>02</i> 软件 · Software</span><span class="pt">应用 / 工具 / 专业设备软件界面</span><span class="ln"></span><a class="plink" href="/services/software/">查看软件服务详情 →</a></div>
     <div class="svc-grid rv">
       <div class="svc-card"><div class="no">07</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M9 4.5v15M3 9h6M12 9h6M12 13h6"/></svg><h3>软件界面设计</h3><div class="en">Software UI/UX</div><p>复杂业务系统与专业设备软件的界面与交互设计，兼顾专业性与易用性。</p><span class="go">↗</span></div>
       <div class="svc-card"><div class="no">08</div><svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M10.5 5.5h3M11 18.2h2"/></svg><h3>应用与工具开发</h3><div class="en">App & Tools</div><p>移动应用、桌面与内部工具的产品设计与端到端开发落地。</p><span class="go">↗</span></div>
@@ -584,6 +595,7 @@
     <div class="rv">
       <p>核心团队来自陌陌、新浪、优酷等一线互联网公司，兼具计算机与美术学院双专业背景，以设计、工程、增长三个职能协作交付。我们把大厂方法论带给中小企业与出海品牌：从策略、设计到开发、SEO，一条链路内完成，不外包、不套模板。</p>
       <p>好的出海网站不是成本，而是能持续带来海外询盘的数字资产。</p>
+      <p style="margin-top:22px"><a href="/about/" style="color:var(--accent-2);font-weight:700">了解我们的团队职能与交付保障 →</a></p>
     </div>
   </div>
 </section>
@@ -640,10 +652,44 @@
 </section>
 
 <footer>
-  <div class="wrap foot-in">
-    <span class="wm" data-brand-foot></span>
-    <span>Digital Product Company · © 2026</span>
-    <span>Web · Software · Product</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="wm" data-brand-foot></span>
+        <p class="desc">设计与工程一体的数字产品公司：外贸独立站 · 品牌官网 · 软件界面设计与开发，服务国内与出海双市场。</p>
+        <p class="contact">Email · bbtizan@gmail.com<br>WeChat · lvtizan</p>
+      </div>
+      <div>
+        <h4>服务</h4>
+        <ul>
+          <li><a href="/services/web/">外贸独立站与品牌官网</a></li>
+          <li><a href="/services/software/">软件界面设计与开发</a></li>
+          <li><a href="#pricing">建站套餐与报价</a></li>
+          <li><a href="#contact">免费网站诊断</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>案例</h4>
+        <ul>
+          <li><a href="/work/tarmeer/">Tarmeer 多语言平台</a></li>
+          <li><a href="/work/veinscope/">VeinScope 工业软件</a></li>
+          <li><a href="/work/epaifa/">Epaifa 供应链 App</a></li>
+          <li><a href="#cases">全部案例</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>公司</h4>
+        <ul>
+          <li><a href="/about/">关于我们</a></li>
+          <li><a href="/resources/">洞察 · 资源学堂</a></li>
+          <li><a href="#contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 YOYANT 远洋数字 · yoyant.com</span>
+      <span>Web · Software · Product</span>
+    </div>
   </div>
 </footer>
 
