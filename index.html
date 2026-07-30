@@ -293,11 +293,21 @@
   .case .flag{transition:.3s}
   .case:hover .flag{background:var(--accent);border-color:var(--accent);color:#fff}
   .case:hover{transform:translateY(-6px);border-color:var(--line-2);box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
-  .case .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2)}
-  .case .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:.6s}
-  .case:hover .thumb img{transform:scale(1.05)}
-  .case .flag{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(8,8,12,.78);backdrop-filter:blur(6px);color:#fff;padding:6px 10px;border-radius:20px;border:1px solid var(--line-2)}
+  .case .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2);isolation:isolate}
+  .case .thumb::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(8,8,12,.04) 35%,rgba(8,8,12,.64) 100%),linear-gradient(90deg,rgba(8,8,12,.14),transparent 42%,rgba(8,8,12,.08));mix-blend-mode:multiply;opacity:.86;transition:.35s}
+  .case .thumb img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.92) contrast(1.04);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .35s}
+  .case:hover .thumb img{transform:scale(1.055);filter:saturate(1.02) contrast(1.06)}
+  .case:hover .thumb::after{opacity:.58}
+  .case .flag{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;background:rgba(8,8,12,.58);backdrop-filter:blur(9px);color:rgba(255,255,255,.9);padding:7px 10px;border-radius:7px;border:1px solid rgba(255,255,255,.28);box-shadow:0 6px 18px rgba(0,0,0,.14)}
   .case .flag.demo{color:var(--accent-2)}
+  .case[data-cat="电商"] .thumb::after{background:linear-gradient(180deg,rgba(61,34,18,.04) 28%,rgba(52,27,18,.67) 100%),linear-gradient(90deg,rgba(134,87,46,.22),transparent 52%);mix-blend-mode:normal}
+  .case[data-cat="企业官网"] .thumb::after{background:linear-gradient(180deg,rgba(6,24,43,.02) 30%,rgba(7,20,38,.64) 100%),linear-gradient(90deg,rgba(29,83,124,.18),transparent 52%);mix-blend-mode:normal}
+  .case[data-cat="UI"] .thumb::after{background:linear-gradient(180deg,rgba(19,19,53,.04) 30%,rgba(16,17,48,.68) 100%),linear-gradient(90deg,rgba(61,76,178,.2),transparent 52%);mix-blend-mode:normal}
+  .case .thumb img[src*="sv-hero"]{object-position:center 48%}
+  .case .thumb img[src*="med-hero"]{object-position:center 34%}
+  .case .thumb img[src*="yun-hero"]{object-position:center 40%}
+  .case .thumb img[src*="aveline-hero"]{object-position:center 42%}
+  .case .thumb img[src*="reson-hero"]{object-position:center 46%}
   .case .body{padding:clamp(18px,1.7vw,24px)}
   .case .body .ind{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2)}
   .case .body h3{font-size:clamp(18px,1.55vw,23px);margin:11px 0 0;font-weight:600;line-height:1.28}
@@ -490,12 +500,12 @@
       </div>
       <div class="case rv" data-cat="电商">
         <a class="case-link" href="/work/aveline/" aria-label="查看 AVELINE 概念设计"></a>
-        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/aveline-hero.webp" alt="AVELINE 高端女装电商独立站" loading="lazy"></div>
+        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/aveline-hero-v2.png" alt="AVELINE 高端女装电商独立站" loading="lazy"></div>
         <div class="body"><div class="ind">电商 · DTC 独立站</div><h3>AVELINE — 高端女装独立站</h3><p>面向海外的静奢女装 DTC 独立站：编辑大片 + 产品陈列 + 商品详情 + 转化路径，100% 原创设计，可点开体验。</p><div class="res"><div><div class="v">端到端</div><div class="k">设计+开发</div></div><div><div class="v">海外 DTC</div><div class="k">高端女装</div></div></div></div>
       </div>
       <div class="case rv" data-cat="电商">
         <a class="case-link" href="/work/yunshang/" aria-label="查看 YUNSHANG 云裳 设计详情"></a>
-        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/yun-hero.webp" alt="YUNSHANG 云裳 现代旗袍高端电商独立站" loading="lazy"></div>
+        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/yun-hero-v2.png" alt="YUNSHANG 云裳 现代旗袍高端电商独立站" loading="lazy"></div>
         <div class="body"><div class="ind">电商 · 东方美学独立站</div><h3>YUNSHANG 云裳 — 现代旗袍独立站</h3><p>面向海外的真丝旗袍 / 改良旗袍 DTC 独立站：东方美学视觉体系 + 完整商品目录 + 购物车 + 详情页，全站可点开体验。</p><div class="res"><div><div class="v">端到端</div><div class="k">设计+开发</div></div><div><div class="v">海外 DTC</div><div class="k">东方旗袍</div></div></div></div>
       </div>
       <div class="case rv" data-cat="电商">
