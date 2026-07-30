@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SUNVOLT 晟阳能源 — Solar modules & energy storage for export | 光伏组件 · 储能系统</title>
+<meta name="description" content="SUNVOLT (晟阳能源) — a Chinese manufacturer of solar PV modules, residential and commercial energy storage and hybrid inverters. IEC / TÜV / UL / CE certified, exporting to 60+ countries. OEM & ODM welcome." />
+<meta name="keywords" content="solar module manufacturer, energy storage, PV module export, hybrid inverter, 光伏组件, 储能系统, 新能源出海" />
+<link rel="canonical" href="https://yoyant.com/work/sunvolt/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SUNVOLT 晟阳能源 — Solar modules & energy storage for export" />
+<meta property="og:description" content="Solar PV modules, home & C&I storage, hybrid inverters. IEC/TÜV/UL/CE certified, export to 60+ countries. A case study by YOYANT." />
+<meta property="og:image" content="https://yoyant.com/uploads/webp/sv-hero.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fff; --paper:#F5F8FC; --navy:#0C1E38; --navy2:#13294D; --ink:#0C1E38; --ink2:#516079; --muted:#8B97A8;
+    --gold:#F5A623; --gold-d:#D98B0B; --line:#E5EAF1; --line2:#D4DCE7;
+    --disp:"Sora",-apple-system,sans-serif; --sans:"Manrope",-apple-system,sans-serif;
+    --shadow:0 18px 50px -22px rgba(12,30,56,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+  h1,h2,h3,.disp{font-family:var(--disp);letter-spacing:-.02em;line-height:1.08}
+  .kick{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:700;font-size:14px;padding:14px 26px;border-radius:9px;border:1.5px solid transparent;cursor:pointer;transition:.22s;white-space:nowrap}
+  .btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:var(--gold-d);color:#fff}
+  .btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2)}
+  .btn-line{border-color:var(--line2);color:var(--ink)}.btn-line:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+  .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}.btn-ghost:hover{background:#fff;color:var(--navy);border-color:#fff}
+
+  /* topbar + nav */
+  .topbar{background:var(--navy);color:#C6D2E4;font-size:12.5px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
+  .topbar b{color:#fff;font-weight:600}
+  .topbar .r{display:flex;gap:18px}
+  @media(max-width:720px){.topbar .r span:not(:last-child){display:none}}
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+  .brand{font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(245,166,35,.2)}
+  .brand small{font-family:var(--sans);font-weight:600;font-size:13px;color:var(--ink2);letter-spacing:0}
+  .nav-links{display:flex;gap:30px}
+  .nav-links a{font-weight:600;font-size:14.5px;color:var(--ink2);position:relative;padding:4px 0;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--gold);transition:width .28s}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .burger{display:none;background:none;border:1px solid var(--line2);width:40px;height:40px;border-radius:9px;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center}
+  .burger span{width:18px;height:2px;background:var(--ink);border-radius:2px}
+  @media(max-width:900px){.nav-links{display:none}.nav-cta .btn{display:none}.burger{display:flex}}
+  .mnav{display:none;border-bottom:1px solid var(--line);background:#fff}
+  .mnav.open{display:block}
+  .mnav a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600;color:var(--ink2)}
+  .mnav .btn{width:100%;justify-content:center;margin-top:16px}
+
+  /* hero */
+  .hero{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
+  .hero .bg{position:absolute;inset:0}
+  .hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.42}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(12,30,56,.94) 30%,rgba(12,30,56,.55) 75%,rgba(12,30,56,.35))}
+  .hero .wrap{position:relative;z-index:2;padding:clamp(64px,9vw,120px) clamp(20px,4vw,48px)}
+  .hero h1{font-size:clamp(34px,5.6vw,66px);font-weight:800;max-width:15ch;margin:18px 0 20px}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero p{font-size:clamp(16px,1.9vw,20px);color:#C6D2E4;max-width:52ch;margin-bottom:32px;line-height:1.6}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .stats{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.14);margin-top:clamp(40px,6vw,70px)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px clamp(20px,4vw,48px)}
+  @media(max-width:720px){.stats .wrap{grid-template-columns:1fr 1fr;gap:26px}}
+  .stat .v{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.4vw,38px);color:#fff}
+  .stat .v i{color:var(--gold);font-style:normal}
+  .stat .k{font-size:12.5px;color:#9FB0C8;margin-top:2px;letter-spacing:.02em}
+
+  /* section frame */
+  section{padding:clamp(60px,8vw,104px) 0}
+  .sec-head{max-width:660px;margin-bottom:clamp(34px,4vw,54px)}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(28px,3.8vw,44px);font-weight:700;margin:12px 0 14px}
+  .sec-head p{color:var(--ink2);font-size:16.5px}
+
+  /* products */
+  .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.2vw,28px)}
+  @media(max-width:760px){.prod-grid{grid-template-columns:1fr}}
+  .prod{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:.25s;display:flex;flex-direction:column}
+  .prod:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--line2)}
+  .prod .ph{aspect-ratio:16/10;background:var(--paper);overflow:hidden}
+  .prod .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .prod:hover .ph img{transform:scale(1.04)}
+  .prod .body{padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;flex:1}
+  .prod .tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d)}
+  .prod h3{font-size:22px;font-weight:700;margin:8px 0 6px}
+  .prod .code{font-size:13px;color:var(--muted);font-weight:600}
+  .prod .desc{color:var(--ink2);font-size:14.5px;margin:12px 0 16px}
+  .prod .specs{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;border-top:1px solid var(--line);padding-top:16px;margin-top:auto}
+  .prod .specs div{font-size:13px}
+  .prod .specs .sk{color:var(--muted);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+  .prod .specs .sv{font-weight:700;color:var(--ink)}
+  .prod .plink{margin-top:18px;font-weight:700;font-size:14px;color:var(--navy);display:inline-flex;gap:7px;align-items:center}
+  .prod .plink .ar{color:var(--gold-d);transition:transform .2s}
+  .prod:hover .plink .ar{transform:translateX(4px)}
+
+  /* solutions */
+  .solutions{background:var(--paper)}
+  .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,26px)}
+  @media(max-width:860px){.sol-grid{grid-template-columns:1fr}}
+  .sol{position:relative;border-radius:16px;overflow:hidden;min-height:320px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow)}
+  .sol img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sol::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,30,56,0) 30%,rgba(12,30,56,.9))}
+  .sol .t{position:relative;z-index:2;padding:26px}
+  .sol .t h3{font-size:22px;font-weight:700;margin-bottom:6px}
+  .sol .t p{font-size:14px;color:#D3DCEA}
+
+  /* why us */
+  .why{background:var(--navy);color:#fff}
+  .why-in{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
+  @media(max-width:860px){.why-in{grid-template-columns:1fr}}
+  .why .ph{border-radius:16px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+  .why .ph img{width:100%;height:100%;object-fit:cover}
+  .why h2{font-size:clamp(26px,3.6vw,42px);font-weight:700;margin:12px 0 16px}
+  .why p{color:#B7C5D9;font-size:16px;margin-bottom:22px;max-width:48ch}
+  .why .caps{display:grid;grid-template-columns:1fr 1fr;gap:20px 26px;margin-bottom:26px}
+  .why .cap .v{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--gold)}
+  .why .cap .k{font-size:13px;color:#9FB0C8}
+  .certs{display:flex;flex-wrap:wrap;gap:10px}
+  .certs span{border:1px solid rgba(255,255,255,.24);border-radius:7px;padding:7px 13px;font-size:12.5px;font-weight:600;color:#DDE6F2;letter-spacing:.04em}
+
+  /* process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,24px);counter-reset:st}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.steps{grid-template-columns:1fr}}
+  .step{border:1px solid var(--line);border-radius:14px;padding:26px 24px;background:#fff;position:relative}
+  .step .n{font-family:var(--disp);font-weight:800;font-size:15px;color:var(--gold-d);border:1.5px solid var(--gold);width:38px;height:38px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px}
+  .step h3{font-size:17px;font-weight:700;margin-bottom:7px}
+  .step p{font-size:14px;color:var(--ink2)}
+
+  /* contact */
+  .contact{background:var(--paper)}
+  .contact-in{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,5vw,66px);align-items:start}
+  @media(max-width:860px){.contact-in{grid-template-columns:1fr}}
+  .contact h2{font-size:clamp(26px,3.6vw,42px);font-weight:700;margin:12px 0 16px}
+  .contact .lead{color:var(--ink2);font-size:16.5px;margin-bottom:28px;max-width:44ch}
+  .cinfo{display:grid;gap:18px}
+  .cinfo .row{display:flex;gap:14px;align-items:flex-start}
+  .cinfo .ic{flex:none;width:42px;height:42px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-d)}
+  .cinfo .rk{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+  .cinfo .rv{font-weight:600;font-size:15px}
+  form.enq{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,34px);box-shadow:var(--shadow)}
+  form.enq .fg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  @media(max-width:520px){form.enq .fg{grid-template-columns:1fr}}
+  form.enq label{display:block;font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:7px}
+  form.enq input,form.enq select,form.enq textarea{width:100%;border:1px solid var(--line2);border-radius:9px;padding:12px 13px;font-family:var(--sans);font-size:14.5px;color:var(--ink);background:#fff;transition:.2s}
+  form.enq input:focus,form.enq select:focus,form.enq textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,.15)}
+  form.enq textarea{min-height:110px;resize:vertical}
+  form.enq .full{margin-bottom:16px}
+  form.enq .btn{width:100%;justify-content:center}
+  .enq-ok{text-align:center;padding:30px 10px}
+  .enq-ok h3{font-size:22px;font-weight:700;margin-bottom:8px}
+
+  /* footer */
+  footer{background:var(--navy);color:#9FB0C8;padding:clamp(46px,6vw,72px) 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
+  footer .fb{font-family:var(--disp);font-weight:800;font-size:20px;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  footer .fb .dot{width:9px;height:9px;border-radius:50%;background:var(--gold)}
+  footer p{font-size:13.5px;max-width:30ch;margin-bottom:8px}
+  footer h4{color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:14px}
+  footer a{display:block;font-size:13.5px;margin-bottom:9px;transition:color .2s}footer a:hover{color:var(--gold)}
+  .foot-bot{border-top:1px solid rgba(255,255,255,.12);margin-top:clamp(34px,5vw,52px);padding-top:22px;font-size:12.5px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  .concept{position:fixed;left:16px;bottom:16px;z-index:80;display:inline-flex;align-items:center;gap:8px;background:rgba(12,30,56,.94);color:#EAF0F8;font-size:12px;font-weight:600;padding:9px 15px;border-radius:30px;box-shadow:var(--shadow);transition:.25s}
+  .concept:hover{background:var(--navy2)}.concept b{color:#fff}
+  @media(max-width:520px){.concept{left:10px;bottom:10px;font-size:11px}}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span><b>SUNVOLT 晟阳能源</b> · Solar & Storage Manufacturer since 2010</span>
+  <div class="r"><span>✉ export@sunvolt-energy.com</span><span>IEC · TÜV · UL · CE certified</span></div>
+</div></div>
+
+<nav class="top"><div class="wrap nav-in">
+  <a class="brand" href="#top"><span class="dot"></span>SUNVOLT <small>晟阳能源</small></a>
+  <div class="nav-links">
+    <a href="#products">Products</a><a href="#solutions">Solutions</a><a href="#why">Why us</a><a href="#process">How we work</a><a href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a class="btn btn-gold" href="#contact">Get a quote</a>
+    <button class="burger" aria-label="Menu" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div class="mnav" id="mnav"><div class="wrap" style="padding-top:8px;padding-bottom:20px">
+  <a href="#products">Products</a><a href="#solutions">Solutions</a><a href="#why">Why us</a><a href="#process">How we work</a><a href="#contact">Contact</a>
+  <a class="btn btn-gold" href="#contact">Get a quote</a>
+</div></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bg"><img src="/uploads/webp/sv-hero.webp" alt="SUNVOLT 大型光伏电站 · Utility-scale solar farm" /></div>
+  <div class="wrap">
+    <div class="kick" style="color:var(--gold)">Solar modules · Energy storage · Inverters</div>
+    <h1>Clean energy, <em>engineered for export.</em></h1>
+    <p>SUNVOLT builds high-efficiency solar modules, home and commercial storage, and hybrid inverters — IEC / TÜV / UL / CE certified and shipped to installers, distributors and EPCs in 60+ countries.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="#contact">Request a quote</a>
+      <a class="btn btn-ghost" href="#products">View products</a>
+    </div>
+  </div>
+  <div class="stats"><div class="wrap">
+    <div class="stat"><div class="v"><i>2.5</i> GW</div><div class="k">Annual capacity</div></div>
+    <div class="stat"><div class="v"><i>60+</i></div><div class="k">Export countries</div></div>
+    <div class="stat"><div class="v"><i>25</i>-yr</div><div class="k">Module warranty</div></div>
+    <div class="stat"><div class="v"><i>15</i>-yr</div><div class="k">Export experience</div></div>
+  </div></div>
+</header>
+
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kick">Products</div>
+      <h2>A full clean-energy line, factory-direct.</h2>
+      <p>From the panel on the roof to the battery on the wall — engineered in-house, certified for your market, priced for volume.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod reveal">
+        <div class="ph"><img src="/uploads/webp/sv-p1.webp" alt="SUNVOLT 单晶光伏组件 PV module"></div>
+        <div class="body">
+          <div class="tag">PV Modules</div>
+          <h3>SunVolt N-540</h3><div class="code">Monocrystalline · N-type TOPCon</div>
+          <p class="desc">Bifacial N-type module with low degradation and strong low-light yield. Built for rooftop and ground-mount alike.</p>
+          <div class="specs">
+            <div><div class="sk">Power</div><div class="sv">540 W</div></div>
+            <div><div class="sk">Efficiency</div><div class="sv">22.5%</div></div>
+            <div><div class="sk">Cells</div><div class="sv">144 half-cut</div></div>
+            <div><div class="sk">Warranty</div><div class="sv">25 years</div></div>
+          </div>
+          <a class="plink" href="#contact">Request datasheet <span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="prod reveal">
+        <div class="ph"><img src="/uploads/webp/sv-p2.webp" alt="SUNVOLT 家用储能电池 home storage"></div>
+        <div class="body">
+          <div class="tag">Residential Storage</div>
+          <h3>SunVolt Home 10</h3><div class="code">Wall-mounted LiFePO₄ battery</div>
+          <p class="desc">A stackable home battery with a 10-year design life. Pairs with any hybrid inverter for backup and self-consumption.</p>
+          <div class="specs">
+            <div><div class="sk">Capacity</div><div class="sv">10.2 kWh</div></div>
+            <div><div class="sk">Chemistry</div><div class="sv">LiFePO₄</div></div>
+            <div><div class="sk">Cycles</div><div class="sv">6,000+</div></div>
+            <div><div class="sk">Stackable</div><div class="sv">to 40 kWh</div></div>
+          </div>
+          <a class="plink" href="#contact">Request datasheet <span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="prod reveal">
+        <div class="ph"><img src="/uploads/webp/sv-p3.webp" alt="SUNVOLT 工商业储能柜 C&I storage"></div>
+        <div class="body">
+          <div class="tag">C&amp;I Storage</div>
+          <h3>SunVolt Stack 215</h3><div class="code">Liquid-cooled commercial cabinet</div>
+          <p class="desc">An all-in-one liquid-cooled cabinet for peak shaving and demand charge management, scalable to megawatt-hour sites.</p>
+          <div class="specs">
+            <div><div class="sk">Capacity</div><div class="sv">215 kWh</div></div>
+            <div><div class="sk">Cooling</div><div class="sv">Liquid</div></div>
+            <div><div class="sk">Protection</div><div class="sv">IP55</div></div>
+            <div><div class="sk">Scalable</div><div class="sv">to MWh</div></div>
+          </div>
+          <a class="plink" href="#contact">Request datasheet <span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="prod reveal">
+        <div class="ph"><img src="/uploads/webp/sv-p4.webp" alt="SUNVOLT 混合逆变器 hybrid inverter"></div>
+        <div class="body">
+          <div class="tag">Inverters</div>
+          <h3>SunVolt Flow 12K</h3><div class="code">Three-phase hybrid inverter</div>
+          <p class="desc">A hybrid inverter with high MPPT efficiency and seamless backup switchover, ready for solar-plus-storage from day one.</p>
+          <div class="specs">
+            <div><div class="sk">Rated power</div><div class="sv">12 kW</div></div>
+            <div><div class="sk">Efficiency</div><div class="sv">98.4%</div></div>
+            <div><div class="sk">Phase</div><div class="sv">3-phase</div></div>
+            <div><div class="sk">MPPT</div><div class="sv">Dual</div></div>
+          </div>
+          <a class="plink" href="#contact">Request datasheet <span class="ar">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="solutions" id="solutions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kick">Solutions</div>
+      <h2>One supplier, three markets.</h2>
+      <p>Whether you sell to homeowners, factories or utilities, we ship a matched system — modules, storage and inverters that are tested to work together.</p>
+    </div>
+    <div class="sol-grid">
+      <div class="sol reveal"><img src="/uploads/webp/sv-resi.webp" alt="住宅屋顶光伏+储能 residential rooftop"><div class="t"><h3>Residential</h3><p>Rooftop solar + home battery for self-consumption and backup power.</p></div></div>
+      <div class="sol reveal"><img src="/uploads/webp/sv-factory.webp" alt="工商业光储 commercial & industrial"><div class="t"><h3>Commercial &amp; Industrial</h3><p>Peak shaving and demand-charge control for factories and campuses.</p></div></div>
+      <div class="sol reveal"><img src="/uploads/webp/sv-hero.webp" alt="大型地面电站 utility-scale"><div class="t"><h3>Utility-scale</h3><p>Ground-mount modules and MWh storage for IPPs and EPCs.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap why-in">
+    <div class="ph reveal"><img src="/uploads/webp/sv-factory.webp" alt="SUNVOLT 智能制造产线 manufacturing line"></div>
+    <div class="reveal">
+      <div class="kick" style="color:var(--gold)">Why SUNVOLT</div>
+      <h2>A factory partner, not a trader.</h2>
+      <p>We own our lines. That means real specs, honest lead times, and the flexibility to OEM / ODM to your brand and your grid code — not a markup on someone else's stock.</p>
+      <div class="caps">
+        <div class="cap"><div class="v">2.5 GW</div><div class="k">Module capacity / year</div></div>
+        <div class="cap"><div class="v">1.2 GWh</div><div class="k">Storage capacity / year</div></div>
+        <div class="cap"><div class="v">120+</div><div class="k">R&amp;D engineers</div></div>
+        <div class="cap"><div class="v">&lt; 0.3%</div><div class="k">Field failure rate</div></div>
+      </div>
+      <div class="certs">
+        <span>IEC 61215</span><span>IEC 61730</span><span>TÜV Rheinland</span><span>UL 1741</span><span>CE</span><span>ISO 9001</span><span>ISO 14001</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="kick">How we work</div>
+      <h2>From enquiry to your port.</h2>
+      <p>A process built for overseas buyers — clear at every step, with English-speaking engineers on the other end.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Enquiry & spec</h3><p>Tell us your market, grid code and volume. We reply with a matched configuration and quote within 24 hours.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Sample & certify</h3><p>Samples plus the certificates your market needs — IEC, UL, TÜV, local grid approvals.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>OEM / ODM production</h3><p>Your brand, your packaging, your firmware. Production tracked with staged QC photos.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3>Shipping & after-sales</h3><p>FOB / CIF / DDP, full export documents, and a 25-year warranty with spare-parts support.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-in">
+    <div class="reveal">
+      <div class="kick">Contact</div>
+      <h2>Get a quote for your market.</h2>
+      <p class="lead">Send us your requirement — capacity, voltage, grid code and target quantity. Our export team replies within one business day.</p>
+      <div class="cinfo">
+        <div class="row"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><div class="rk">Email</div><div class="rv">export@sunvolt-energy.com</div></div></div>
+        <div class="row"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div><div><div class="rk">Phone / WhatsApp</div><div class="rv">+86 138 0000 0000</div></div></div>
+        <div class="row"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><div class="rk">Factory</div><div class="rv">Hefei, Anhui, China</div></div></div>
+      </div>
+    </div>
+    <form class="enq" id="enq">
+      <div class="fg">
+        <div><label>Name</label><input name="name" required placeholder="Your name"></div>
+        <div><label>Company</label><input name="company" placeholder="Company"></div>
+      </div>
+      <div class="fg">
+        <div><label>Email</label><input name="email" type="email" required placeholder="you@company.com"></div>
+        <div><label>Country</label><input name="country" placeholder="Country / region"></div>
+      </div>
+      <div class="full"><label>Interested in</label>
+        <select name="product"><option>Solar modules</option><option>Residential storage</option><option>C&I storage</option><option>Hybrid inverters</option><option>Full system / EPC</option></select>
+      </div>
+      <div class="full"><label>Requirement</label><textarea name="message" placeholder="Capacity / voltage / grid code / target quantity…"></textarea></div>
+      <button class="btn btn-navy" type="submit">Send enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="fb"><span class="dot"></span>SUNVOLT 晟阳能源</div><p>High-efficiency solar modules, energy storage and inverters — manufactured in China, certified for the world.</p></div>
+    <div><h4>Products</h4><a href="#products">Solar modules</a><a href="#products">Residential storage</a><a href="#products">C&I storage</a><a href="#products">Hybrid inverters</a></div>
+    <div><h4>Company</h4><a href="#why">Why us</a><a href="#process">How we work</a><a href="#why">Certifications</a><a href="#contact">Contact</a></div>
+    <div><h4>Export</h4><a href="#contact">Request a quote</a><a href="#contact">OEM / ODM</a><a href="#contact">Become a distributor</a></div>
+  </div>
+  <div class="foot-bot"><span>© 2026 SUNVOLT 晟阳能源 · All rights reserved</span><span>IEC · TÜV Rheinland · UL · CE · ISO 9001 / 14001</span></div>
+</div></footer>
+
+<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+
+<script>
+  // mobile menu
+  var b=document.getElementById('burger'),m=document.getElementById('mnav');
+  b.addEventListener('click',function(){m.classList.toggle('open');});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});});
+  // reveal
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*70+'ms';io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+  // nav active on scroll
+  var secs=['products','solutions','why','process','contact'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+  var links=[].slice.call(document.querySelectorAll('.nav-links a'));
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){spy.observe(s);});
+  }
+  // fake enquiry submit
+  document.getElementById('enq').addEventListener('submit',function(e){
+    e.preventDefault();
+    this.innerHTML='<div class="enq-ok"><h3>Thank you — enquiry received.</h3><p style="color:var(--ink2)">Our export team will reply to your email within one business day. In a live build this posts to your CRM or inbox.</p></div>';
+  });
+</script>
+</body>
+</html>
