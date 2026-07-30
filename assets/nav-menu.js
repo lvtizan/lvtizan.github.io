@@ -22,7 +22,10 @@
     '.nav-drawer .dx{background:none;border:none;color:var(--muted,#787C8B);font-size:24px;line-height:1;cursor:pointer;padding:2px 6px}.nav-drawer .dx:hover{color:var(--ink,#fff)}' +
     '.nav-drawer a{font-family:var(--sans,sans-serif);font-size:16.5px;color:var(--ink-2,#B7BAC6);padding:14px 2px;border-bottom:1px solid var(--line,rgba(255,255,255,.09));transition:color .2s}' +
     '.nav-drawer a:hover{color:var(--ink,#fff)}' +
-    '.nav-drawer .dcta{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent,#4361FF);color:#fff;font-weight:700;font-size:15px;padding:13px 20px;border-radius:40px;border:none}';
+    '.nav-drawer .dcta{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent,#4361FF);color:#fff;font-weight:700;font-size:15px;padding:13px 20px;border-radius:40px;border:none}' +
+    '.nav-links a{position:relative}' +
+    '.nav-links a.active{color:var(--ink,#fff)}' +
+    '.nav-links a.active::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent,#4361FF);border-radius:2px}';
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
@@ -81,4 +84,30 @@
   }
   window.addEventListener('resize', sync);
   sync();
+
+  // --- 当前项高亮(蓝下划线):页面链接按 URL 匹配 + 本页锚点滚动高亮 ---
+  var navA = [].slice.call(links.querySelectorAll('a'));
+  var path = location.pathname.replace(/index\.html$/, '');
+  if (path.charAt(path.length - 1) !== '/') path += '';
+  navA.forEach(function (a) {
+    var href = a.getAttribute('href') || '';
+    if (href.charAt(0) === '/') {
+      var hp = href.replace(/index\.html$/, '');
+      if (hp !== '/' && path.indexOf(hp) === 0) a.classList.add('active');
+    }
+  });
+  var anchors = navA.filter(function (a) { return (a.getAttribute('href') || '').charAt(0) === '#'; });
+  var map = anchors.map(function (a) {
+    return { a: a, el: document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function (m) { return m.el; });
+  if (map.length && 'IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          map.forEach(function (m) { m.a.classList.toggle('active', m.el === e.target); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    map.forEach(function (m) { spy.observe(m.el); });
+  }
 })();
