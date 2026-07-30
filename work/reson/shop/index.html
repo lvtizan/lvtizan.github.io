@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — RESON</title>
+<meta name="description" content="Shop RESON — premium wireless headphones, true-wireless earbuds, portable speakers, desktop amps and accessories. Machined, driver-first, built to last." />
+<link rel="canonical" href="https://yoyant.com/work/reson/shop/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/work/reson/assets/reson.css" />
+<style>
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:clamp(26px,3vw,40px)}
+  .filters button{background:none;border:1px solid var(--line2);color:var(--ink2);font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:9px 18px;cursor:pointer;transition:.2s}
+  .filters button:hover,.filters button.on{border-color:var(--ink);color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="anno">Free 2-year warranty · Ships worldwide in 48h · 60-day returns</div>
+<nav class="top"><div class="wrap nav-in">
+  <div class="nav-links"><a href="/work/reson/shop/">Shop</a><a href="/work/reson/#lineup">Lineup</a><a href="/work/reson/journal/">Journal</a><a href="/work/reson/about/">About</a></div>
+  <a class="brand" href="/work/reson/">RESON</a>
+  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="/work/reson/about/">Account</a><a class="cart" href="/work/reson/cart/">Bag<span class="n" data-cart-n>0</span></a></div>
+</div></nav>
+
+<div class="wrap pagehead">
+  <div class="crumb"><a href="/work/reson/">Home</a> — Shop</div>
+  <h1 class="page serif">All products</h1>
+  <p style="color:var(--ink2);max-width:46ch;margin-bottom:34px">The full RESON lineup — headphones, earbuds, speakers and the gear that drives them. Every product tuned by ear.</p>
+</div>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">All</button>
+      <button data-f="Headphones">Headphones</button>
+      <button data-f="Earbuds">Earbuds</button>
+      <button data-f="Speakers">Speakers</button>
+      <button data-f="Amp &amp; DAC">Amp &amp; DAC</button>
+      <button data-f="Accessories">Accessories</button>
+    </div>
+    <div class="grid" id="shopGrid"></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="fb serif">RESON</div><p style="max-width:30ch">Premium wireless audio, engineered to disappear. Machined, driver-first, built to last.</p></div>
+    <div><h4>Shop</h4><a href="/work/reson/shop/">Headphones</a><a href="/work/reson/shop/">Earbuds</a><a href="/work/reson/shop/">Speakers</a><a href="/work/reson/shop/">Accessories</a></div>
+    <div><h4>Support</h4><a href="#">Shipping & returns</a><a href="#">Warranty</a><a href="#">Firmware & manuals</a><a href="#">Contact</a></div>
+    <div><h4>Company</h4><a href="/work/reson/about/">Our story</a><a href="/work/reson/about/">Sound philosophy</a><a href="/work/reson/journal/">Journal</a></div>
+  </div>
+  <div class="foot-bot"><span>© 2026 RESON Audio</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
+</div></footer>
+<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function(){
+    var g=document.getElementById('shopGrid'); if(!g||!window.RESON_CAT) return;
+    function draw(f){
+      var list = (f==='all')? window.RESON_CAT : window.RESON_CAT.filter(function(p){return p.cat===f;});
+      g.innerHTML = list.length ? list.map(function(p){
+        return '<a class="card" href="/work/reson/product/?p='+p.id+'"><div class="ph"><img src="/uploads/webp/'+p.img+'.webp" alt="'+p.name+'"><button class="add" data-add data-id="'+p.id+'">Add to bag</button></div><div class="meta"><div class="lbl" style="color:var(--accent);font-size:10px">'+p.cat+'</div><div class="nm" style="margin-top:6px">'+p.name+'</div><div class="pr">'+window.RESON_CART.money(p.price)+'</div></div></a>';
+      }).join('') : '<p style="color:var(--muted);grid-column:1/-1">No pieces in this category yet.</p>';
+    }
+    document.querySelectorAll('#filters button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#filters button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');draw(b.getAttribute('data-f'));});});
+    draw('all');
+  });
+</script>
+<script src="/work/reson/assets/reson.js" defer></script>
+</body>
+</html>
