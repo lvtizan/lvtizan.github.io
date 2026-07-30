@@ -24,18 +24,18 @@
     <div class="pdp" style="margin-top:22px">
       <div class="ph"><img id="pImg" src="/uploads/webp/yun-p1.webp" alt=""></div>
       <div class="info">
-        <div class="lbl" id="pCat">Outerwear</div>
-        <h1 class="serif" id="pName">The Wool Coat</h1>
-        <div class="price" id="pPrice">$ 890</div>
+        <div class="lbl" id="pCat">Qipao</div>
+        <h1 class="serif" id="pName">Crimson Silk Qipao</h1>
+        <div class="price" id="pPrice">$ 680</div>
         <p class="desc" id="pDesc"></p>
         <div class="lbl" style="margin-bottom:10px">Select size</div>
         <div class="sizes"><button>XS</button><button class="on">S</button><button>M</button><button>L</button><button>XL</button></div>
         <div class="row">
-          <button class="btn btn-dark" id="pAdd" data-add data-id="coat" style="flex:1;justify-content:center;min-width:220px">Add to bag</button>
+          <button class="btn btn-dark" id="pAdd" data-add data-id="crimson" style="flex:1;justify-content:center;min-width:220px">Add to bag</button>
           <button class="btn btn-line">Save</button>
         </div>
         <div class="detail">
-          <div><span>Material</span><span id="pMat">100% virgin wool · Italy</span></div>
+          <div><span>Material</span><span id="pMat">100% mulberry silk</span></div>
           <div><span>Care</span><span>Dry clean only</span></div>
           <div><span>Shipping</span><span>Complimentary, worldwide · 3–6 days</span></div>
           <div><span>Returns</span><span>Free within 30 days</span></div>
@@ -67,9 +67,9 @@
   window.addEventListener('DOMContentLoaded', function(){
     if(!window.YUN_CAT) return;
     var money=window.YUN_CART.money;
-    var id=(new URLSearchParams(location.search)).get('p')||'coat';
+    var id=(new URLSearchParams(location.search)).get('p')||'crimson';
     var p=window.YUN_CART.find(id)||window.YUN_CAT[0];
-    var mats={coat:'100% virgin wool · Italy',knit:'100% Grade-A cashmere · Italy',dress:'100% sandwashed silk',trousers:'100% virgin wool · Italy',blouse:'100% silk crepe',blazer:'100% virgin wool · Italy'};
+    var mats={crimson:'100% mulberry silk',ink:'100% jacquard silk',gold:'100% mulberry silk · gold-thread embroidery',emerald:'100% silk velvet',jacket:'100% silk',set:'100% silk'};
     document.title=p.name+' — YUNSHANG';
     document.getElementById('pImg').src='/uploads/webp/'+p.img+'.webp';
     document.getElementById('pImg').alt=p.name;
