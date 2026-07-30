@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cadence — The operating system for modern teams | 团队协作 SaaS</title>
+<meta name="description" content="Cadence brings projects, automations and insights into one workspace — so teams ship faster with less busywork. A B2B SaaS product website case study by YOYANT." />
+<link rel="canonical" href="https://yoyant.com/work/cadence/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cadence — The operating system for modern teams" />
+<meta property="og:description" content="Projects, automations and insights in one workspace. A SaaS product website case study by YOYANT." />
+<meta property="og:image" content="https://yoyant.com/uploads/webp/saas-team.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fff; --paper:#F5F5FB; --dark:#131022; --ink:#16141F; --ink2:#575567; --muted:#9694A6;
+    --accent:#5B5BD6; --accent2:#8B7CF6; --line:#EBEBF2; --line2:#DEDEE9;
+    --disp:"Schibsted Grotesk",-apple-system,sans-serif; --sans:"Manrope",-apple-system,sans-serif;
+    --shadow:0 24px 60px -28px rgba(30,25,70,.35); --shadow-sm:0 8px 26px -14px rgba(30,25,70,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+  h1,h2,h3,.disp{font-family:var(--disp);letter-spacing:-.025em;line-height:1.05}
+  .kick{font-weight:700;font-size:12.5px;letter-spacing:.02em;color:var(--accent);text-transform:uppercase}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:14.5px;padding:12px 22px;border-radius:10px;border:1.5px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
+  .btn-p{background:var(--accent);color:#fff}.btn-p:hover{background:#4A4AC4;transform:translateY(-1px)}
+  .btn-line{border-color:var(--line2);color:var(--ink)}.btn-line:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+  .btn-ghost{border-color:rgba(255,255,255,.28);color:#fff}.btn-ghost:hover{background:#fff;color:var(--dark)}
+  .btn-white{background:#fff;color:var(--dark)}.btn-white:hover{background:var(--paper)}
+
+  /* nav */
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+  .brand{font-family:var(--disp);font-weight:800;font-size:21px;display:flex;align-items:center;gap:9px}
+  .logo{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#fff;font-size:15px;font-weight:800}
+  .nav-links{display:flex;gap:28px}
+  .nav-links a{font-weight:600;font-size:14.5px;color:var(--ink2);transition:color .2s}.nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .nav-cta .lg{font-weight:600;font-size:14.5px;color:var(--ink2)}
+  .burger{display:none;background:none;border:1px solid var(--line2);width:38px;height:38px;border-radius:9px;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center}
+  .burger span{width:17px;height:2px;background:var(--ink);border-radius:2px}
+  @media(max-width:880px){.nav-links{display:none}.nav-cta .lg{display:none}.burger{display:flex}}
+  .mnav{display:none;border-bottom:1px solid var(--line)}.mnav.open{display:block}
+  .mnav a{display:block;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600;color:var(--ink2)}
+  .mnav .btn{width:100%;justify-content:center;margin-top:14px}
+
+  /* hero */
+  .hero{background:radial-gradient(1200px 480px at 70% -10%,rgba(139,124,246,.16),transparent 60%),var(--bg);padding:clamp(52px,7vw,92px) 0 clamp(40px,6vw,70px)}
+  .hero-in{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,5vw,64px);align-items:center}
+  @media(max-width:920px){.hero-in{grid-template-columns:1fr;gap:40px}}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line2);border-radius:30px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--ink2);margin-bottom:22px}
+  .pill b{color:var(--accent)}
+  .hero h1{font-size:clamp(34px,5.2vw,60px);font-weight:800;margin-bottom:20px}
+  .hero h1 span{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{font-size:clamp(16px,2vw,19px);color:var(--ink2);max-width:46ch;margin-bottom:28px}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .hero .note{font-size:13px;color:var(--muted);margin-top:16px}
+
+  /* CSS dashboard mockup */
+  .mock{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  .mock .bar{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--paper)}
+  .mock .bar i{width:11px;height:11px;border-radius:50%;background:#DADAE6}
+  .mock .bar .u{margin-left:auto;width:80px;height:11px;border-radius:6px;background:#E4E4EE}
+  .mock .app{display:grid;grid-template-columns:132px 1fr;min-height:340px}
+  .mock .side{background:var(--paper);border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:9px}
+  .mock .side .s{height:30px;border-radius:8px;display:flex;align-items:center;gap:8px;padding:0 9px;font-size:12px;font-weight:600;color:var(--ink2)}
+  .mock .side .s .d{width:14px;height:14px;border-radius:5px;background:#D8D8E6}
+  .mock .side .s.on{background:#fff;color:var(--accent);box-shadow:var(--shadow-sm)}.mock .side .s.on .d{background:var(--accent)}
+  .mock .main{padding:18px}
+  .mock .row1{display:flex;gap:12px;margin-bottom:14px}
+  .mock .kpi{flex:1;border:1px solid var(--line);border-radius:11px;padding:12px}
+  .mock .kpi .l{font-size:10.5px;color:var(--muted);font-weight:600}
+  .mock .kpi .n{font-family:var(--disp);font-weight:800;font-size:22px;margin-top:3px}
+  .mock .kpi .n em{font-style:normal;color:#22B07D;font-size:12px;font-weight:700;margin-left:6px}
+  .mock .chart{border:1px solid var(--line);border-radius:11px;padding:16px 16px 10px}
+  .mock .chart .ct{font-size:11px;font-weight:700;color:var(--ink2);margin-bottom:14px}
+  .mock .bars{display:flex;align-items:flex-end;gap:9px;height:120px}
+  .mock .bars span{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--accent2),var(--accent));opacity:.9}
+  .mock .bars span:nth-child(even){background:#E6E4F6}
+
+  /* logos strip */
+  .logos{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+  .logos .wrap{display:flex;align-items:center;justify-content:center;gap:clamp(22px,5vw,60px);flex-wrap:wrap}
+  .logos p{width:100%;text-align:center;font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:20px;letter-spacing:.02em}
+  .logos b{font-family:var(--disp);font-weight:700;font-size:19px;color:#B9B8C6;letter-spacing:-.01em}
+
+  section{padding:clamp(58px,8vw,100px) 0}
+  .sh{max-width:620px;margin:0 auto clamp(38px,4vw,56px);text-align:center}
+  .sh h2{font-size:clamp(28px,3.8vw,44px);font-weight:800;margin:12px 0 14px}
+  .sh p{color:var(--ink2);font-size:16.5px}
+
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,22px)}
+  @media(max-width:860px){.feat{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.feat{grid-template-columns:1fr}}
+  .fcard{border:1px solid var(--line);border-radius:15px;padding:26px 24px;transition:.22s;background:#fff}
+  .fcard:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--line2)}
+  .fic{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,rgba(91,91,214,.14),rgba(139,124,246,.14));display:grid;place-items:center;color:var(--accent);margin-bottom:16px}
+  .fcard h3{font-size:18.5px;font-weight:700;margin-bottom:8px}
+  .fcard p{font-size:14.5px;color:var(--ink2)}
+
+  /* alt feature bands */
+  .band{background:var(--paper)}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,66px);align-items:center}
+  @media(max-width:860px){.split{grid-template-columns:1fr}}
+  .split.rev .txt{order:2}
+  .split h2{font-size:clamp(24px,3.3vw,38px);font-weight:800;margin:12px 0 14px}
+  .split p{color:var(--ink2);font-size:16px;margin-bottom:18px;max-width:42ch}
+  .checks{display:grid;gap:11px}
+  .checks li{list-style:none;display:flex;gap:11px;font-size:15px;color:var(--ink);font-weight:500}
+  .checks .ck{flex:none;width:22px;height:22px;border-radius:7px;background:rgba(91,91,214,.12);color:var(--accent);display:grid;place-items:center;font-size:12px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-sm);padding:20px}
+  .panel .prow{display:flex;align-items:center;gap:12px;padding:13px 12px;border-radius:11px;transition:.2s}
+  .panel .prow+.prow{margin-top:6px}
+  .panel .prow:hover{background:var(--paper)}
+  .panel .av{width:34px;height:34px;border-radius:9px;flex:none}
+  .panel .pt{flex:1}.panel .pt .a{font-weight:700;font-size:14px}.panel .pt .b{font-size:12px;color:var(--muted)}
+  .panel .stat{font-size:11px;font-weight:700;padding:4px 9px;border-radius:20px}
+  .st-done{background:rgba(34,176,125,.14);color:#188A5F}.st-prog{background:rgba(91,91,214,.14);color:var(--accent)}.st-wait{background:var(--paper);color:var(--muted)}
+
+  /* stats dark */
+  .statsband{background:var(--dark);color:#fff}
+  .sg{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  @media(max-width:680px){.sg{grid-template-columns:1fr 1fr;gap:34px}}
+  .sg .v{font-family:var(--disp);font-weight:800;font-size:clamp(30px,4vw,46px);background:linear-gradient(120deg,#fff,#B9B0FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sg .k{color:#A5A2C0;font-size:13.5px;margin-top:4px}
+
+  /* team band */
+  .teamband .split{align-items:center}
+  .teamband .ph{border-radius:16px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+  .teamband .ph img{width:100%;height:100%;object-fit:cover}
+  .quote{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.6vw,28px);line-height:1.3;letter-spacing:-.02em;margin:14px 0 18px}
+  .qby{font-size:14px;color:var(--ink2);font-weight:600}.qby span{color:var(--muted);font-weight:500}
+
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto}
+  @media(max-width:820px){.price-grid{grid-template-columns:1fr;max-width:420px}}
+  .tier{border:1px solid var(--line);border-radius:16px;padding:28px 26px;background:#fff;display:flex;flex-direction:column}
+  .tier.hot{border-color:var(--accent);box-shadow:var(--shadow);position:relative}
+  .tier.hot::before{content:"Most popular";position:absolute;top:-11px;left:26px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 11px;border-radius:20px}
+  .tier .tn{font-weight:700;font-size:16px}
+  .tier .tp{font-family:var(--disp);font-weight:800;font-size:40px;margin:12px 0 2px}.tier .tp span{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted)}
+  .tier .td{font-size:13.5px;color:var(--ink2);margin-bottom:18px}
+  .tier ul{list-style:none;display:grid;gap:10px;margin-bottom:22px;flex:1}
+  .tier li{font-size:14px;color:var(--ink);display:flex;gap:9px}.tier li .ck{color:var(--accent);flex:none}
+  .tier .btn{width:100%;justify-content:center}
+
+  /* CTA */
+  .cta-band{background:linear-gradient(120deg,var(--accent),var(--accent2));color:#fff;text-align:center}
+  .cta-band h2{font-size:clamp(28px,4vw,46px);font-weight:800;margin-bottom:14px}
+  .cta-band p{color:rgba(255,255,255,.9);font-size:17px;margin-bottom:28px;max-width:44ch;margin-left:auto;margin-right:auto}
+  .cta-band .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  footer{background:var(--dark);color:#A5A2C0;padding:clamp(46px,6vw,70px) 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:26px}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
+  footer .fb{font-family:var(--disp);font-weight:800;font-size:19px;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+  footer p{font-size:13.5px;max-width:30ch;margin-bottom:8px}
+  footer h4{color:#fff;font-size:13px;font-weight:700;margin-bottom:14px}
+  footer a{display:block;font-size:13.5px;margin-bottom:9px}footer a:hover{color:#fff}
+  .foot-bot{border-top:1px solid rgba(255,255,255,.1);margin-top:clamp(32px,5vw,50px);padding-top:22px;font-size:12.5px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  .concept{position:fixed;left:16px;bottom:16px;z-index:80;display:inline-flex;align-items:center;gap:8px;background:rgba(19,16,34,.94);color:#EDECF6;font-size:12px;font-weight:600;padding:9px 15px;border-radius:30px;box-shadow:var(--shadow-sm)}
+  .concept:hover{background:#221D3A}.concept b{color:#fff}
+  @media(max-width:520px){.concept{left:10px;bottom:10px;font-size:11px}}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap nav-in">
+  <a class="brand" href="#top"><span class="logo">C</span>Cadence</a>
+  <div class="nav-links"><a href="#features">Features</a><a href="#product">Product</a><a href="#pricing">Pricing</a><a href="#customers">Customers</a></div>
+  <div class="nav-cta">
+    <a class="lg" href="#">Log in</a>
+    <a class="btn btn-p" href="#pricing">Start free</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div class="mnav" id="mnav"><div class="wrap" style="padding:6px 0 18px">
+  <a href="#features">Features</a><a href="#product">Product</a><a href="#pricing">Pricing</a><a href="#customers">Customers</a>
+  <a class="btn btn-p" href="#pricing">Start free</a>
+</div></div>
+</nav>
+
+<header class="hero" id="top"><div class="wrap hero-in">
+  <div>
+    <div class="pill"><b>New</b> · Automations 2.0 is live</div>
+    <h1>The operating system for <span>modern teams.</span></h1>
+    <p>Cadence pulls your projects, automations and insights into one fast workspace — so your team spends time shipping, not chasing status updates.</p>
+    <div class="cta">
+      <a class="btn btn-p" href="#pricing">Start free — no card</a>
+      <a class="btn btn-line" href="#product">See how it works</a>
+    </div>
+    <div class="note">Free for up to 5 people · SOC 2 Type II · 99.98% uptime</div>
+  </div>
+  <div class="mock" aria-hidden="true">
+    <div class="bar"><i></i><i></i><i></i><span class="u"></span></div>
+    <div class="app">
+      <div class="side">
+        <div class="s on"><span class="d"></span>Dashboard</div>
+        <div class="s"><span class="d"></span>Projects</div>
+        <div class="s"><span class="d"></span>Automations</div>
+        <div class="s"><span class="d"></span>Insights</div>
+        <div class="s"><span class="d"></span>Team</div>
+      </div>
+      <div class="main">
+        <div class="row1">
+          <div class="kpi"><div class="l">On track</div><div class="n">92%<em>▲ 6</em></div></div>
+          <div class="kpi"><div class="l">Cycle time</div><div class="n">3.4d<em>▲ 0.5</em></div></div>
+          <div class="kpi"><div class="l">Shipped</div><div class="n">148<em>▲ 21</em></div></div>
+        </div>
+        <div class="chart">
+          <div class="ct">Throughput · last 8 weeks</div>
+          <div class="bars"><span style="height:40%"></span><span style="height:58%"></span><span style="height:47%"></span><span style="height:70%"></span><span style="height:62%"></span><span style="height:84%"></span><span style="height:76%"></span><span style="height:96%"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></header>
+
+<div class="logos"><div class="wrap">
+  <p>Trusted by fast-moving teams at</p>
+  <b>Northwind</b><b>Lumaflow</b><b>Basework</b><b>Orbit&nbsp;Labs</b><b>Kelvin</b><b>Meridian</b>
+</div></div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sh reveal"><div class="kick">Everything in one place</div><h2>Less tool-switching. More shipping.</h2><p>Six teams' worth of tools, replaced by one workspace your whole company actually enjoys using.</p></div>
+    <div class="feat">
+      <div class="fcard reveal"><div class="fic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg></div><h3>Projects & boards</h3><p>Lists, boards and timelines that stay in sync. Plan a sprint or a launch without a spreadsheet in sight.</p></div>
+      <div class="fcard reveal"><div class="fic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div><h3>Automations</h3><p>Turn any repetitive flow into a rule. Assign, notify, escalate and update — while you sleep.</p></div>
+      <div class="fcard reveal"><div class="fic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Insights</h3><p>Live dashboards on throughput, cycle time and load. Know what's slipping before the standup does.</p></div>
+      <div class="fcard reveal"><div class="fic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></div><h3>200+ integrations</h3><p>Slack, GitHub, Figma, HubSpot and the rest. Cadence sits in the middle and keeps everything current.</p></div>
+      <div class="fcard reveal"><div class="fic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v14H8l-4 4V4Z"/></svg></div><h3>Docs & wikis</h3><p>Write specs and notes next to the work. No more hunting across five apps for the latest version.</p></div>
+      <div class="fcard reveal"><div class="fic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Enterprise-grade</h3><p>SSO/SAML, granular permissions, audit logs and SOC 2 Type II. IT signs off without a fight.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="product">
+  <div class="wrap split">
+    <div class="txt reveal">
+      <div class="kick">Automations</div>
+      <h2>Kill the busywork, keep the work.</h2>
+      <p>Build rules in plain language. When something changes, Cadence does the follow-up so your team doesn't have to.</p>
+      <ul class="checks">
+        <li><span class="ck">✓</span>Auto-assign by workload and skill</li>
+        <li><span class="ck">✓</span>Escalate anything stuck for 48 hours</li>
+        <li><span class="ck">✓</span>Sync status to Slack and your CRM</li>
+        <li><span class="ck">✓</span>Weekly digests, sent on their own</li>
+      </ul>
+    </div>
+    <div class="panel reveal">
+      <div class="prow"><div class="av" style="background:linear-gradient(135deg,#5B5BD6,#8B7CF6)"></div><div class="pt"><div class="a">Design review · Homepage</div><div class="b">Auto-assigned to Mia</div></div><span class="stat st-done">Done</span></div>
+      <div class="prow"><div class="av" style="background:linear-gradient(135deg,#22B07D,#4FD1A0)"></div><div class="pt"><div class="a">API rate limits</div><div class="b">Escalated · stuck 2 days</div></div><span class="stat st-prog">In progress</span></div>
+      <div class="prow"><div class="av" style="background:linear-gradient(135deg,#F59E42,#F5C542)"></div><div class="pt"><div class="a">Q3 launch checklist</div><div class="b">Synced to #launch</div></div><span class="stat st-prog">In progress</span></div>
+      <div class="prow"><div class="av" style="background:linear-gradient(135deg,#9694A6,#C4C2D2)"></div><div class="pt"><div class="a">Weekly digest</div><div class="b">Sends Friday 9:00</div></div><span class="stat st-wait">Scheduled</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="statsband"><section><div class="wrap"><div class="sg">
+  <div class="reveal"><div class="v">3,500+</div><div class="k">Teams onboarded</div></div>
+  <div class="reveal"><div class="v">40%</div><div class="k">Less status-chasing</div></div>
+  <div class="reveal"><div class="v">99.98%</div><div class="k">Uptime, last 12 mo</div></div>
+  <div class="reveal"><div class="v">4.8/5</div><div class="k">Average rating</div></div>
+</div></div></section></div>
+
+<section class="teamband" id="customers"><div class="wrap split">
+  <div class="ph reveal"><img src="/uploads/webp/saas-team.webp" alt="Team using Cadence"></div>
+  <div class="reveal">
+    <div class="kick">Why teams switch</div>
+    <div class="quote">“We replaced four tools with Cadence and cut our weekly status meetings in half. The team just… ships now.”</div>
+    <div class="qby">Head of Operations <span>· 180-person SaaS company</span></div>
+    <div style="margin-top:22px"><a class="btn btn-line" href="#pricing">Start your free workspace</a></div>
+  </div>
+</div></section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <div class="sh reveal"><div class="kick">Pricing</div><h2>Simple plans that scale with you.</h2><p>Start free. Upgrade when your team grows. Cancel any time.</p></div>
+    <div class="price-grid">
+      <div class="tier reveal">
+        <div class="tn">Starter</div><div class="tp">$0<span>/mo</span></div><div class="td">For small teams getting organised.</div>
+        <ul><li><span class="ck">✓</span>Up to 5 members</li><li><span class="ck">✓</span>Unlimited projects</li><li><span class="ck">✓</span>Basic automations</li><li><span class="ck">✓</span>7-day history</li></ul>
+        <a class="btn btn-line" href="#">Get started</a>
+      </div>
+      <div class="tier hot reveal">
+        <div class="tn">Team</div><div class="tp">$12<span>/user/mo</span></div><div class="td">For teams that ship every week.</div>
+        <ul><li><span class="ck">✓</span>Unlimited members</li><li><span class="ck">✓</span>Advanced automations</li><li><span class="ck">✓</span>Insights dashboards</li><li><span class="ck">✓</span>200+ integrations</li><li><span class="ck">✓</span>Priority support</li></ul>
+        <a class="btn btn-p" href="#">Start 14-day trial</a>
+      </div>
+      <div class="tier reveal">
+        <div class="tn">Business</div><div class="tp">$24<span>/user/mo</span></div><div class="td">For companies that need control.</div>
+        <ul><li><span class="ck">✓</span>Everything in Team</li><li><span class="ck">✓</span>SSO / SAML</li><li><span class="ck">✓</span>Granular permissions</li><li><span class="ck">✓</span>Audit logs & SOC 2</li><li><span class="ck">✓</span>Dedicated CSM</li></ul>
+        <a class="btn btn-line" href="#">Contact sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band"><section><div class="wrap">
+  <h2 class="reveal">Give your team its time back.</h2>
+  <p class="reveal">Set up your workspace in minutes. Free for up to five people, forever.</p>
+  <div class="cta reveal"><a class="btn btn-white" href="#">Start free</a><a class="btn btn-ghost" href="#">Book a demo</a></div>
+</div></section></div>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="fb"><span class="logo">C</span>Cadence</div><p>The operating system for modern teams. Projects, automations and insights in one workspace.</p></div>
+    <div><h4>Product</h4><a href="#features">Features</a><a href="#product">Automations</a><a href="#pricing">Pricing</a><a href="#">Integrations</a></div>
+    <div><h4>Company</h4><a href="#customers">Customers</a><a href="#">Careers</a><a href="#">Blog</a><a href="#">Security</a></div>
+    <div><h4>Get started</h4><a href="#pricing">Start free</a><a href="#">Book a demo</a><a href="#">Contact sales</a></div>
+  </div>
+  <div class="foot-bot"><span>© 2026 Cadence, Inc.</span><span>SOC 2 Type II · GDPR · 99.98% uptime</span></div>
+</div></footer>
+
+<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+
+<script>
+  var b=document.getElementById('burger'),m=document.getElementById('mnav');
+  b.addEventListener('click',function(){m.classList.toggle('open');});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*70+'ms';io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+</script>
+</body>
+</html>
