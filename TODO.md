@@ -1,6 +1,6 @@
 # TODO — yoyant.com
 
-> 更新：2026-07-31 凌晨 · 上一会话主题：7 个新演示案例的 SEO 改造
+> 更新：2026-07-31 · 上一会话主题：7 个新演示案例的 SEO 改造 + KST 真实客户案例页规划
 > 恢复方式：读本文件 → 从「下一步」第 1 条开始
 
 ---
@@ -49,7 +49,34 @@
 
 ## 下一步（按顺序做）
 
-### 1. 演示页标识条 + 中文案例区 ★ 最高优先
+### 1. KST / Oilfield 真实客户案例页 ★（7-31 用户确认要做）
+
+**问题**：首页 `index.html:468` 与 `services/web/index.html:344` 两处直接外链 `https://kst-power.com`，
+点了**跳出站**——访客走了、权重送出去了、自己什么都没留下。而这是你为数不多的**真实上线客户案例**，
+说服力天然高于 7 个虚构演示站，现在却只是个跳走的链接。
+
+**关键认知**：谷歌不会因为你链出去就认定那是你的项目。链接信号方向是「你 → 对方」，
+要建立归属关系得靠下面三件事。
+
+- [ ] **建 `/work/kst-oilfield/` 案例页** —— 直接复刻 `/work/tarmeer/` 的结构（它已经是正确形态：
+      案例页 + `<a class="btn" href="https://tarmeer.com" target="_blank">访问在线网站 ↗</a>`），
+      不要另起炉灶
+  - 页面里放「访问线上站 ↗」外链指向 kst-power.com
+  - 锚定长尾词：`石油装备外贸站` / `B2B 双语外贸展示站` / `机械装备出口官网`
+  - head 按文末「新增演示案例的标准流程」第 2 步配齐（GA4 / robots / canonical / og / JSON-LD）
+  - JSON-LD 用 `CreativeWork` + `creator: {Organization: YOYANT 远洋数字}` —— **明确声明作者身份**
+- [ ] **改两处卡片链接指向案例页**（而非直接外链）：
+      `index.html:468`（现在是空锚 `<a class="case-link"></a>`，只有 aria-label，锚文本为空）、
+      `services/web/index.html:344`（这处 `<a>` 包住了标题+描述，锚文本本身是充分的）
+- [ ] 首页卡片 aria-label 补归属语义：`访问 Oilfield 网站…` → `查看 YOYANT 为 Oilfield 制作的中英双语外贸站`
+- [ ] 进 sitemap + 接进相关案例互链
+
+**并行推进（需你亲自联系客户，不是代码活）**
+- [ ] 请 kst-power.com 页脚加 `Site by YOYANT` 回链 —— **建立归属关系最强的信号**，
+      也是一条高相关性 dofollow 外链。7-29 SEO 方案第 119 行已列为「立即」级，一直没执行
+- [ ] tarmeer.com 同样加页脚回链（Tarmeer 的案例页和访问链接**已经有了**，只差这条回链）
+
+### 2. 演示页标识条 + 中文案例区 ★ 最高优先
 **设计已定稿（用户从预览中选定，属 Phase 1 通过）**：`顶部细条 + 底部案例区`
 
 - 顶部：36px 深色细条，常驻页面最顶（**非 fixed**，避免与各站 sticky nav 的 `top:0` 打架），
@@ -60,7 +87,7 @@
   7 个站视觉方案各异，标识条要统一成 YOYANT 深色"外壳感"，不融进品牌配色
 - 完成后走 Phase 2：截图验收（含 375px 移动端），通过再报完成
 
-### 2. 假身份清理（用户已确认「全部改」）
+### 3. 假身份清理（用户已确认「全部改」）
 - [ ] 邮箱域名换 `.example` 保留域名：
       `export@sunvolt-energy.com` → `export@sunvolt.example`；
       `export@vitalink-med.com` → `export@vitalink.example`；
@@ -74,18 +101,18 @@
       vitalink `CE · ISO 13485 · FDA registered`、`FDA 510(k)`、`CE / FDA clearance for global sale`；
       goldenfields `HACCP · ISO 22000 · BRC · Halal · FDA`、`audited to BRC`
 
-### 3. h1 结构修复（本次未做完）
+### 4. h1 结构修复（本次未做完）
 - [ ] `aveline / reson / yunshang` 首页各有 **2 个 h1**，第二个是商品名（`The Wool Coat` / `RESON One` / `Crimson Silk Qipao`，
       均为 `<h1 class="serif">`）→ 降为 h2，**改前先确认 CSS 是否有裸 `h1{}` 规则**，避免字号视觉回归
 - [ ] `aveline/about/`、`reson/about/`、`yunshang/about/` **一个 h1 都没有**（首个大标题是 `<h2 class="serif">`）→ 提升为 h1
 
-### 4. 内链网补齐
+### 5. 内链网补齐
 - [ ] 新 7 页目前只有一条 `/#cases` 出链（老案例页有全站导航 + About + 服务页 + 3 个相关案例）
 - [ ] 把新 7 个案例接进老案例页的「相关案例」模块
 - [ ] `/services/web/` 正文列出「外贸独立站案例」清单链去这 7 页
       → 形成 **服务页（核心词）← 案例页（长尾词）→ 演示（转化）** 三层结构
 
-### 5. 站外（用户亲自执行，杠杆最大）
+### 6. 站外（用户亲自执行，杠杆最大）
 - [ ] **Search Console 提交 sitemap**（若还没提交，站内所有改动的收效会晚 1-2 周才看得到）
 - [ ] 每个案例 = 1 篇 Behance/Dribbble 视觉帖 + 1 篇知乎复盘 + 1 篇 Medium/LinkedIn 英文版（canonical 回官网）
       → 7 个案例正好够撑两个月的分发节奏，详见 `docs/plans/seo-and-strength-plan.md` 第五章
@@ -107,5 +134,5 @@
 ## 待确认 / 用户决策项
 
 - 是否要给 7 个演示各建**独立中文案例页**（`/work/<name>-case/`）承接业务词？
-  上次讨论时用户倾向"演示页本身被抓就行"，故当前方案是**就地改造**（下一步 1+2）。
+  上次讨论时用户倾向"演示页本身被抓就行"，故当前方案是**就地改造**（下一步第 2、3 条）。
   若后续想更大化长尾覆盖，再上独立案例页这条路。
