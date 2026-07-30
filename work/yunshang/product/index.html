@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop the piece — YUNSHANG</title>
+<meta name="description" content="YUNSHANG — modern qipao and cheongsam in pure silk." />
+<link rel="canonical" href="https://yoyant.com/work/yunshang/product/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/work/yunshang/assets/yunshang.css" />
+</head>
+<body>
+<div class="anno">Complimentary worldwide shipping · Made in limited runs</div>
+<nav class="top"><div class="wrap nav-in">
+  <div class="nav-links"><a href="/work/yunshang/shop/">Shop</a><a href="/work/yunshang/#collection">Collections</a><a href="/work/yunshang/journal/">Journal</a><a href="/work/yunshang/about/">About</a></div>
+  <a class="brand" href="/work/yunshang/">YUNSHANG</a>
+  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="/work/yunshang/about/">Account</a><a class="cart" href="/work/yunshang/cart/">Bag<span class="n" data-cart-n>0</span></a></div>
+</div></nav>
+
+<section class="pagehead" style="padding-bottom:clamp(40px,6vw,80px)">
+  <div class="wrap">
+    <div class="crumb" id="crumb"><a href="/work/yunshang/">Home</a> — <a href="/work/yunshang/shop/">Shop</a></div>
+    <div class="pdp" style="margin-top:22px">
+      <div class="ph"><img id="pImg" src="/uploads/webp/yun-p1.webp" alt=""></div>
+      <div class="info">
+        <div class="lbl" id="pCat">Outerwear</div>
+        <h1 class="serif" id="pName">The Wool Coat</h1>
+        <div class="price" id="pPrice">$ 890</div>
+        <p class="desc" id="pDesc"></p>
+        <div class="lbl" style="margin-bottom:10px">Select size</div>
+        <div class="sizes"><button>XS</button><button class="on">S</button><button>M</button><button>L</button><button>XL</button></div>
+        <div class="row">
+          <button class="btn btn-dark" id="pAdd" data-add data-id="coat" style="flex:1;justify-content:center;min-width:220px">Add to bag</button>
+          <button class="btn btn-line">Save</button>
+        </div>
+        <div class="detail">
+          <div><span>Material</span><span id="pMat">100% virgin wool · Italy</span></div>
+          <div><span>Care</span><span>Dry clean only</span></div>
+          <div><span>Shipping</span><span>Complimentary, worldwide · 3–6 days</span></div>
+          <div><span>Returns</span><span>Free within 30 days</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="serif" style="font-size:clamp(24px,3vw,36px)">You may also like</h2><a class="lnk" href="/work/yunshang/shop/">View all</a></div>
+    <div class="grid" id="also"></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="fb serif">YUNSHANG</div><p style="max-width:30ch">Modern qipao & cheongsam in pure silk. Made to be worn, not stored.</p></div>
+    <div><h4>Shop</h4><a href="/work/yunshang/shop/">New arrivals</a><a href="/work/yunshang/shop/">Qipao</a><a href="/work/yunshang/shop/">Ceremony</a><a href="/work/yunshang/shop/">Separates</a></div>
+    <div><h4>Client care</h4><a href="#">Shipping & returns</a><a href="#">Size guide</a><a href="#">Garment care</a><a href="#">Contact</a></div>
+    <div><h4>House</h4><a href="/work/yunshang/about/">Our story</a><a href="/work/yunshang/about/">Materials</a><a href="/work/yunshang/journal/">Journal</a></div>
+  </div>
+  <div class="foot-bot"><span>© 2026 Yunshang</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
+</div></footer>
+<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function(){
+    if(!window.YUN_CAT) return;
+    var money=window.YUN_CART.money;
+    var id=(new URLSearchParams(location.search)).get('p')||'coat';
+    var p=window.YUN_CART.find(id)||window.YUN_CAT[0];
+    var mats={coat:'100% virgin wool · Italy',knit:'100% Grade-A cashmere · Italy',dress:'100% sandwashed silk',trousers:'100% virgin wool · Italy',blouse:'100% silk crepe',blazer:'100% virgin wool · Italy'};
+    document.title=p.name+' — YUNSHANG';
+    document.getElementById('pImg').src='/uploads/webp/'+p.img+'.webp';
+    document.getElementById('pImg').alt=p.name;
+    document.getElementById('pCat').textContent=p.cat;
+    document.getElementById('pName').textContent=p.name;
+    document.getElementById('pPrice').textContent=money(p.price);
+    document.getElementById('pDesc').textContent=p.blurb;
+    document.getElementById('pMat').textContent=mats[p.id]||'Natural fibre';
+    var add=document.getElementById('pAdd'); add.setAttribute('data-id',p.id); add.textContent='Add to bag — '+money(p.price);
+    document.getElementById('crumb').innerHTML='<a href="/work/yunshang/">Home</a> — <a href="/work/yunshang/shop/">Shop</a> — '+p.name;
+    // also like: other products
+    var others=window.YUN_CAT.filter(function(x){return x.id!==p.id;}).slice(0,3);
+    document.getElementById('also').innerHTML=others.map(function(o){return '<a class="card" href="/work/yunshang/product/?p='+o.id+'"><div class="ph"><img src="/uploads/webp/'+o.img+'.webp" alt="'+o.name+'"></div><div class="meta"><div class="nm">'+o.name+'</div><div class="pr">'+money(o.price)+'</div></div></a>';}).join('');
+  });
+</script>
+<script src="/work/yunshang/assets/yunshang.js" defer></script>
+</body>
+</html>
