@@ -25,7 +25,7 @@
     '.nav-drawer .dcta{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent,#4361FF);color:#fff;font-weight:700;font-size:15px;padding:13px 20px;border-radius:40px;border:none}' +
     '.nav-links a{position:relative}' +
     '.nav-links a.active{color:var(--ink,#fff)}' +
-    '.nav-links a.active::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent,#4361FF);border-radius:2px}';
+    '.nav-links a.active::after,.nav-links a.on::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent,#4361FF);border-radius:2px}';
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
