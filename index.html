@@ -281,6 +281,11 @@
   @media(max-width:820px){.price-grid{grid-template-columns:1fr}}
 
   /* cases */
+  .case-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:clamp(22px,2.6vw,38px)}
+  .ct{background:none;border:1px solid var(--line-2);color:var(--ink-2);font-family:inherit;font-size:13px;letter-spacing:.04em;padding:9px 20px;border-radius:30px;cursor:pointer;transition:.22s}
+  .ct:hover{border-color:var(--accent);color:var(--ink)}
+  .ct.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .case[hidden]{display:none}
   .cases-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.6vw,24px)}
   @media(max-width:900px){.cases-grid{grid-template-columns:1fr 1fr}}
   .case{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);transition:.35s}
@@ -431,38 +436,39 @@
       <div class="htxt"><div class="kick">Selected work · 案例</div><h2>精选案例</h2></div>
       <p>Real deliveries and sample designs — each built for a specific market.</p>
     </div>
+    <div class="case-tabs rv"><button class="ct on" data-f="all">全部</button><button class="ct" data-f="电商">电商 · 独立站</button><button class="ct" data-f="UI">UI · 软件/App</button><button class="ct" data-f="企业官网">企业官网</button></div>
     <div class="cases-grid">
-      <div class="case rv">
+      <div class="case rv" data-cat="UI">
         <a class="case-link" href="/work/epaifa/" aria-label="查看 Epaifa Mall 设计详情"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/epaifa-cover.webp" alt="Epaifa Mall B2B 跨境供应链商城 App 界面群像" loading="lazy"></div>
         <div class="body"><div class="ind">软件 · B2B SaaS App</div><h3>Epaifa Mall — B2B 跨境供应链商城</h3><p>面向中↔越跨境批发商的供应链 + 商城一体化 App：采购入库、库存补货、多规格下单、拣货出库、COD 物流与售后，46 屏串成业务闭环。</p><div class="res"><div><div class="v">46</div><div class="k">Screens</div></div><div><div class="v">CN/EN/VN</div><div class="k">i18n</div></div><div><div class="v">端到端</div><div class="k">Flow</div></div></div></div>
       </div>
-      <div class="case rv">
+      <div class="case rv" data-cat="企业官网">
         <a class="case-link" href="/work/tarmeer/" aria-label="查看 Tarmeer 设计详情"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台" loading="lazy"></div>
         <div class="body"><div class="ind">网站 · Vertical platform</div><h3>Tarmeer — 多国多语言室内设计平台</h3><p>面向多个国家、多语言的室内设计垂直平台，全站国际化与内容架构一体化落地。</p><div class="res"><div><div class="v">2</div><div class="k">Markets</div></div><div><div class="v">3</div><div class="k">Languages</div></div><div><div class="v">Full-stack</div><div class="k">Delivery</div></div></div></div>
       </div>
-      <div class="case rv">
+      <div class="case rv" data-cat="企业官网">
         <a class="case-link" href="https://kst-power.com" target="_blank" rel="noopener noreferrer" aria-label="访问 Oilfield 网站 kst-power.com（新窗口）"></a>
         <div class="thumb"><span class="flag">Live project ↗</span><img src="/uploads/webp/oilfield-web-home.webp" alt="石油装备中英双语外贸展示站" loading="lazy"></div>
         <div class="body"><div class="ind">网站 · B2B export site</div><h3>Oilfield — 中英双语外贸展示站</h3><p>石油钻采与动力装备的中英双语外贸站，大主图 + 型号参数表，面向海外买家与 SEO。</p><div class="res"><div><div class="v">ZH/EN</div><div class="k">Bilingual</div></div><div><div class="v">6</div><div class="k">Sections</div></div><div><div class="v">Static</div><div class="k">SEO-ready</div></div></div></div>
       </div>
-      <div class="case rv">
+      <div class="case rv" data-cat="UI">
         <a class="case-link" href="/work/veinscope/" aria-label="查看 VeinScope 设计详情"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/veinscope-onsite7.webp" alt="工程师手持 VeinScope 工业内窥镜检测航空发动机" loading="lazy"></div>
         <div class="body"><div class="ind">软件 · Product UI/UX</div><h3>VeinScope — 工业内窥镜检测系统</h3><p>工业内窥镜检测软件的产品与界面设计：2D/3D 切换、多模式测量、深度图与 PLY 导出，为强光现场而设计。</p><div class="res"><div><div class="v">UI/UX</div><div class="k">Design</div></div><div><div class="v">2D/3D</div><div class="k">Measure</div></div><div><div class="v">5</div><div class="k">Tools</div></div></div></div>
       </div>
-      <div class="case rv">
+      <div class="case rv" data-cat="UI">
         <a class="case-link" href="/work/avatar/" aria-label="查看 AVATAR 设计详情"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/avatar-showcase.webp" alt="AVATAR App 多端界面展示" loading="lazy"></div>
         <div class="body"><div class="ind">软件 · Mobile App</div><h3>AVATAR — AI 角色陪伴聊天 App</h3><p>AI 角色陪伴与聊天移动应用的产品设计、界面与交互动效，从角色发现到订阅体系一体化。</p><div class="res"><div><div class="v">iOS</div><div class="k">App</div></div><div><div class="v">UI/UX</div><div class="k">Design</div></div><div><div class="v">动效</div><div class="k">Motion</div></div></div></div>
       </div>
-      <div class="case rv">
+      <div class="case rv" data-cat="UI">
         <a class="case-link" href="/work/nanhai/" aria-label="查看 南海风物 设计详情"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/nanhai-title.webp" alt="南海风物 沉浸式文化互动装置" loading="lazy"></div>
         <div class="body"><div class="ind">软件 · 互动装置</div><h3>南海风物 — 沉浸式文化互动装置</h3><p>佛山千灯湖魁星阁的沉浸式文化互动装置，以岭南龙舟为叙事主线，三种可玩体验。</p><div class="res"><div><div class="v">3</div><div class="k">玩法</div></div><div><div class="v">触屏+大屏</div><div class="k">联动</div></div><div><div class="v">2025</div><div class="k">落地</div></div></div></div>
       </div>
-      <div class="case rv">
+      <div class="case rv" data-cat="电商">
         <a class="case-link" href="/work/aveline/" aria-label="查看 AVELINE 概念设计"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/aveline-hero.webp" alt="AVELINE 高端女装电商独立站" loading="lazy"></div>
         <div class="body"><div class="ind">电商 · DTC 独立站</div><h3>AVELINE — 高端女装独立站</h3><p>面向海外的静奢女装 DTC 独立站：编辑大片 + 产品陈列 + 商品详情 + 转化路径，100% 原创设计，可点开体验。</p><div class="res"><div><div class="v">端到端</div><div class="k">设计+开发</div></div><div><div class="v">海外 DTC</div><div class="k">高端女装</div></div></div></div>
@@ -714,5 +720,16 @@
 
 </script>
 <script src="/assets/brand-logo.js" defer></script>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.case-tabs .ct'), cards=document.querySelectorAll('.cases-grid .case');
+  if(!tabs.length) return;
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('on')}); t.classList.add('on');
+    var f=t.getAttribute('data-f');
+    cards.forEach(function(c){ c.hidden = !(f==='all' || c.getAttribute('data-cat')===f); });
+  });});
+})();
+</script>
 </body>
 </html>
