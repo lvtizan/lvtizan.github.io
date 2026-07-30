@@ -39,7 +39,8 @@
   .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
   .topbar b{color:#fff;font-weight:600}
   .topbar .r{display:flex;gap:18px}
-  @media(max-width:720px){.topbar .r span:not(:last-child){display:none}}
+  .topbar .wrap span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  @media(max-width:720px){.topbar .r span:not(:last-child){display:none}.topbar .tt{display:none}}
   nav.top{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
   .brand{font-family:var(--disp);font-weight:400;font-size:24px;display:flex;align-items:center;gap:9px}
@@ -172,7 +173,7 @@
 <body>
 
 <div class="topbar"><div class="wrap">
-  <span><b>GOLDEN FIELDS 金穗</b> · Specialty Food Exporter since 2012</span>
+  <span><b>GOLDEN FIELDS 金穗</b><span class="tt"> · Specialty Food Exporter since 2012</span></span>
   <div class="r"><span>✉ sales@goldenfields-food.com</span><span>HACCP · ISO 22000 · BRC · Halal</span></div>
 </div></div>
 

@@ -40,7 +40,8 @@
   .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
   .topbar b{color:#fff;font-weight:600}
   .topbar .r{display:flex;gap:18px}
-  @media(max-width:720px){.topbar .r span:not(:last-child){display:none}}
+  .topbar .wrap span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  @media(max-width:720px){.topbar .r span:not(:last-child){display:none}.topbar .tt{display:none}}
   nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
   .brand{font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
@@ -183,7 +184,7 @@
 <body>
 
 <div class="topbar"><div class="wrap">
-  <span><b>SUNVOLT 晟阳能源</b> · Solar & Storage Manufacturer since 2010</span>
+  <span><b>SUNVOLT 晟阳能源</b><span class="tt"> · Solar & Storage Manufacturer since 2010</span></span>
   <div class="r"><span>✉ export@sunvolt-energy.com</span><span>IEC · TÜV · UL · CE certified</span></div>
 </div></div>
 
@@ -303,7 +304,7 @@
     </div>
     <div class="sol-grid">
       <div class="sol reveal"><img src="/uploads/webp/sv-resi.webp" alt="住宅屋顶光伏+储能 residential rooftop"><div class="t"><h3>Residential</h3><p>Rooftop solar + home battery for self-consumption and backup power.</p></div></div>
-      <div class="sol reveal"><img src="/uploads/webp/sv-factory.webp" alt="工商业光储 commercial & industrial"><div class="t"><h3>Commercial &amp; Industrial</h3><p>Peak shaving and demand-charge control for factories and campuses.</p></div></div>
+      <div class="sol reveal"><img src="/uploads/webp/sv-ci.webp" alt="工商业厂房光储 commercial & industrial"><div class="t"><h3>Commercial &amp; Industrial</h3><p>Peak shaving and demand-charge control for factories and campuses.</p></div></div>
       <div class="sol reveal"><img src="/uploads/webp/sv-hero.webp" alt="大型地面电站 utility-scale"><div class="t"><h3>Utility-scale</h3><p>Ground-mount modules and MWh storage for IPPs and EPCs.</p></div></div>
     </div>
   </div>
