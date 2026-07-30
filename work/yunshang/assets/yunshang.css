@@ -1,7 +1,7 @@
 /* YUNSHANG 云裳 — shared design system (modern qipao · East-meets-West luxury) */
 :root{
-  --bone:#EAE0CC; --paper:#F5EFE2; --ink:#241611; --ink2:#6E5A4C; --muted:#9C8A77;
-  --clay:#8C1D18; --gold:#A9853F; --line:#DFD3BC; --line2:#CDBE9F;
+  --bone:#EEF3F7; --paper:#FBFCFD; --ink:#202A35; --ink2:#627180; --muted:#8A98A5;
+  --clay:#A53E43; --gold:#A97942; --line:#E0E8EF; --line2:#CBD7E1;
   --disp:"Cormorant Garamond","Noto Serif SC",Georgia,serif; --sans:"Jost","Noto Sans SC",-apple-system,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}

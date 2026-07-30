@@ -1,7 +1,7 @@
 /* AVELINE — shared design system (quiet luxury womenswear) */
 :root{
-  --bone:#F1EDE4; --paper:#FBFAF6; --ink:#211D18; --ink2:#6E685C; --muted:#9A9488;
-  --clay:#9C7C68; --line:#E3DCCF; --line2:#D6CDBC;
+  --bone:#EEF3F7; --paper:#FCFDFE; --ink:#202A35; --ink2:#627180; --muted:#8B98A5;
+  --clay:#3C789F; --line:#E0E8EF; --line2:#CBD7E1;
   --disp:"Fraunces",Georgia,serif; --sans:"Jost",-apple-system,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
