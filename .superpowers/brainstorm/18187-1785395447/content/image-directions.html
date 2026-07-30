@@ -1,0 +1,36 @@
+<style>
+  .direction-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+  .direction-card{border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;background:#15161f;cursor:pointer;transition:.25s;min-width:0}
+  .direction-card:hover{transform:translateY(-4px);border-color:#8da4ff}
+  .visual{height:250px;position:relative;overflow:hidden;background:#20212a}
+  .visual img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+  .direction-card:hover img{transform:scale(1.03)}
+  .visual:after{content:"";position:absolute;inset:0;pointer-events:none}
+  .visual.a:after{background:linear-gradient(180deg,rgba(15,16,23,.02),rgba(15,16,23,.5))}
+  .visual.b:after{background:linear-gradient(90deg,rgba(14,18,27,.78),rgba(14,18,27,.05) 58%,rgba(14,18,27,.12)),linear-gradient(180deg,transparent 45%,rgba(10,11,16,.5))}
+  .visual.c:after{background:linear-gradient(180deg,rgba(184,142,77,.12),rgba(36,27,20,.58))}
+  .pill{position:absolute;left:18px;top:16px;z-index:2;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(16,17,22,.72);padding:8px 12px;font:11px/1 ui-monospace,monospace;letter-spacing:.14em;color:#fff}
+  .overlay-title{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;color:#fff;font-size:22px;font-weight:700;line-height:1.1}
+  .direction-body{padding:16px 18px 18px}
+  .direction-body h3{margin:0 0 7px;font-size:17px;color:#fff}
+  .direction-body p{margin:0;color:#a8adbe;font-size:13px;line-height:1.55}
+  @media(max-width:800px){.direction-grid{grid-template-columns:1fr}.visual{height:220px}}
+</style>
+
+<h2>案例图片优化方向</h2>
+<p class="subtitle">先选整体气质，我再把它落到首页所有案例卡片。</p>
+
+<div class="direction-grid">
+  <div class="direction-card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="visual a"><img src="/uploads/webp/sv-hero.webp" alt=""><span class="pill">A · CLEAN</span><div class="overlay-title">保留原图<br>做高级化处理</div></div>
+    <div class="direction-body"><h3>A · 干净作品集</h3><p>不换内容，只用统一比例、柔和暗角、轻微调色和更克制的标签，让图片本身更耐看。</p></div>
+  </div>
+  <div class="direction-card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="visual b"><img src="/uploads/webp/med-hero.webp" alt=""><span class="pill">B · EDITORIAL</span><div class="overlay-title">像杂志封面<br>一样讲案例</div></div>
+    <div class="direction-body"><h3>B · 编辑部视觉</h3><p>把图片变成更有构图意识的主视觉：强化主体、留出呼吸区，用短标题代替大块信息覆盖。</p></div>
+  </div>
+  <div class="direction-card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="visual c"><img src="/uploads/webp/yun-hero.webp" alt=""><span class="pill">C · BRAND</span><div class="overlay-title">让每个案例<br>有自己的品牌感</div></div>
+    <div class="direction-body"><h3>C · 品牌海报感</h3><p>根据项目类型做不同色调和构图：服装更有氛围，工业更有秩序，医疗更明亮可信。</p></div>
+  </div>
+</div>
