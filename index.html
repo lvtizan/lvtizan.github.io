@@ -308,6 +308,12 @@
   .case .thumb img[src*="yun-hero"]{object-position:center 40%}
   .case .thumb img[src*="aveline-hero"]{object-position:center 42%}
   .case .thumb img[src*="reson-hero"]{object-position:center 46%}
+  /* Keep documentary/live-project imagery readable instead of washing it into the dark card overlay. */
+  .case[data-tone="documentary"] .thumb::after{opacity:.42;background:linear-gradient(180deg,rgba(8,8,12,.02) 28%,rgba(8,8,12,.38) 100%),linear-gradient(90deg,rgba(8,8,12,.04),transparent 58%);mix-blend-mode:normal}
+  .case[data-tone="documentary"] .thumb img{filter:saturate(1.04) contrast(1.04) brightness(1.06)}
+  .case[data-tone="documentary"] .flag{background:rgba(8,8,12,.7)}
+  .case[data-tone="ui"] .thumb::after{opacity:.62}
+  .case[data-tone="ui"] .thumb img{filter:saturate(.98) contrast(1.05)}
   .case .body{padding:clamp(18px,1.7vw,24px)}
   .case .body .ind{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2)}
   .case .body h3{font-size:clamp(18px,1.55vw,23px);margin:11px 0 0;font-weight:600;line-height:1.28}
@@ -453,12 +459,12 @@
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/epaifa-cover.webp" alt="Epaifa Mall B2B 跨境供应链商城 App 界面群像" loading="lazy"></div>
         <div class="body"><div class="ind">软件 · B2B SaaS App</div><h3>Epaifa Mall — B2B 跨境供应链商城</h3><p>面向中↔越跨境批发商的供应链 + 商城一体化 App：采购入库、库存补货、多规格下单、拣货出库、COD 物流与售后，46 屏串成业务闭环。</p><div class="res"><div><div class="v">46</div><div class="k">Screens</div></div><div><div class="v">CN/EN/VN</div><div class="k">i18n</div></div><div><div class="v">端到端</div><div class="k">Flow</div></div></div></div>
       </div>
-      <div class="case rv" data-cat="企业官网">
+      <div class="case rv" data-cat="企业官网" data-tone="documentary">
         <a class="case-link" href="/work/tarmeer/" aria-label="查看 Tarmeer 设计详情"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/tarmeer-home.webp" alt="Tarmeer 多国多语言室内设计平台" loading="lazy"></div>
         <div class="body"><div class="ind">网站 · Vertical platform</div><h3>Tarmeer — 多国多语言室内设计平台</h3><p>面向多个国家、多语言的室内设计垂直平台，全站国际化与内容架构一体化落地。</p><div class="res"><div><div class="v">2</div><div class="k">Markets</div></div><div><div class="v">3</div><div class="k">Languages</div></div><div><div class="v">Full-stack</div><div class="k">Delivery</div></div></div></div>
       </div>
-      <div class="case rv" data-cat="企业官网">
+      <div class="case rv" data-cat="企业官网" data-tone="documentary">
         <a class="case-link" href="https://kst-power.com" target="_blank" rel="noopener noreferrer" aria-label="访问 Oilfield 网站 kst-power.com（新窗口）"></a>
         <div class="thumb"><span class="flag">Live project ↗</span><img src="/uploads/webp/oilfield-web-home.webp" alt="石油装备中英双语外贸展示站" loading="lazy"></div>
         <div class="body"><div class="ind">网站 · B2B export site</div><h3>Oilfield — 中英双语外贸展示站</h3><p>石油钻采与动力装备的中英双语外贸站，大主图 + 型号参数表，面向海外买家与 SEO。</p><div class="res"><div><div class="v">ZH/EN</div><div class="k">Bilingual</div></div><div><div class="v">6</div><div class="k">Sections</div></div><div><div class="v">Static</div><div class="k">SEO-ready</div></div></div></div>
@@ -483,7 +489,7 @@
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/saas-team.webp" alt="Cadence B2B SaaS 团队协作软件产品官网" loading="lazy"></div>
         <div class="body"><div class="ind">网站 · SaaS 产品站</div><h3>Cadence — B2B SaaS 软件产品站</h3><p>团队协作 SaaS 的英文产品营销站：手搭产品仪表盘 + 功能矩阵 + 数据背书 + 定价方案 + 转化路径，纯 CSS 界面演示、现代软件质感。</p><div class="res"><div><div class="v">软件产品</div><div class="k">SaaS</div></div><div><div class="v">定价转化</div><div class="k">+ CSS 演示</div></div></div></div>
       </div>
-      <div class="case rv" data-cat="UI">
+      <div class="case rv" data-cat="UI" data-tone="ui">
         <a class="case-link" href="/work/veinscope/" aria-label="查看 VeinScope 设计详情"></a>
         <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/webp/veinscope-onsite7.webp" alt="工程师手持 VeinScope 工业内窥镜检测航空发动机" loading="lazy"></div>
         <div class="body"><div class="ind">软件 · Product UI/UX</div><h3>VeinScope — 工业内窥镜检测系统</h3><p>工业内窥镜检测软件的产品与界面设计：2D/3D 切换、多模式测量、深度图与 PLY 导出，为强光现场而设计。</p><div class="res"><div><div class="v">UI/UX</div><div class="k">Design</div></div><div><div class="v">2D/3D</div><div class="k">Measure</div></div><div><div class="v">5</div><div class="k">Tools</div></div></div></div>
@@ -505,7 +511,7 @@
       </div>
       <div class="case rv" data-cat="电商">
         <a class="case-link" href="/work/yunshang/" aria-label="查看 YUNSHANG 云裳 设计详情"></a>
-        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/yun-hero-v2.png" alt="YUNSHANG 云裳 现代旗袍高端电商独立站" loading="lazy"></div>
+        <div class="thumb"><span class="flag">Case study →</span><img src="/uploads/yun-hero-v3.png" alt="YUNSHANG 云裳 现代旗袍高端电商独立站" loading="lazy"></div>
         <div class="body"><div class="ind">电商 · 东方美学独立站</div><h3>YUNSHANG 云裳 — 现代旗袍独立站</h3><p>面向海外的真丝旗袍 / 改良旗袍 DTC 独立站：东方美学视觉体系 + 完整商品目录 + 购物车 + 详情页，全站可点开体验。</p><div class="res"><div><div class="v">端到端</div><div class="k">设计+开发</div></div><div><div class="v">海外 DTC</div><div class="k">东方旗袍</div></div></div></div>
       </div>
       <div class="case rv" data-cat="电商">
