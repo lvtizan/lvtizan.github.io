@@ -33,9 +33,9 @@
     <div><h4>Client care</h4><a href="#">Shipping & returns</a><a href="#">Size guide</a><a href="#">Garment care</a><a href="#">Contact</a></div>
     <div><h4>House</h4><a href="/work/aveline/about/">Our story</a><a href="/work/aveline/about/">Materials</a><a href="/work/aveline/journal/">Journal</a></div>
   </div>
-  <div class="foot-bot"><span>© 2026 Aveline — Concept store</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
+  <div class="foot-bot"><span>© 2026 Aveline</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
 </div></footer>
-<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 概念作品 · by <b>YOYANT</b></a>
+<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
 
 <script>
   window.addEventListener('DOMContentLoaded', function(){
@@ -64,7 +64,7 @@
       root.querySelectorAll('[data-inc]').forEach(function(b){b.onclick=function(){var c=C.get();c[+b.getAttribute('data-inc')].qty++;C.save(c);render();};});
       root.querySelectorAll('[data-dec]').forEach(function(b){b.onclick=function(){var c=C.get(),x=+b.getAttribute('data-dec');c[x].qty--;if(c[x].qty<1)c.splice(x,1);C.save(c);render();};});
       root.querySelectorAll('[data-rm]').forEach(function(b){b.onclick=function(){var c=C.get();c.splice(+b.getAttribute('data-rm'),1);C.save(c);render();};});
-      var co=document.getElementById('checkout'); if(co) co.onclick=function(){root.innerHTML='<div class="cart-empty"><h2 class="serif">Thank you.</h2><p style="color:var(--ink2);margin-bottom:26px">This is a concept store — no real order was placed. In a live build, checkout would continue to secure payment (Stripe / PayPal / Alipay).</p><a class="btn btn-dark" href="/work/aveline/">Back to Aveline</a></div>';C.save([]);};
+      var co=document.getElementById('checkout'); if(co) co.onclick=function(){root.innerHTML='<div class="cart-empty"><h2 class="serif">Thank you.</h2><p style="color:var(--ink2);margin-bottom:26px">In a live build, checkout continues to secure payment via Stripe / PayPal / Alipay.</p><a class="btn btn-dark" href="/work/aveline/">Back to Aveline</a></div>';C.save([]);};
     }
     render();
   });
