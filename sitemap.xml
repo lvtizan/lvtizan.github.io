@@ -19,4 +19,7 @@
   <url><loc>https://yoyant.com/resources/structured-data-json-ld/</loc><lastmod>2026-07-30</lastmod></url>
   <url><loc>https://yoyant.com/resources/professional-software-ui/</loc><lastmod>2026-07-30</lastmod></url>
   <url><loc>https://yoyant.com/resources/digital-product-process/</loc><lastmod>2026-07-30</lastmod></url>
+  <url><loc>https://yoyant.com/work/aveline/shop/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yoyant.com/work/aveline/about/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yoyant.com/work/aveline/journal/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
