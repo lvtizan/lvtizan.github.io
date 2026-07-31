@@ -47,15 +47,23 @@
   var lbImg = ov.querySelector('.lb-img'),
       lbCap = ov.querySelector('.lb-cap'),
       lbCount = ov.querySelector('.lb-count'),
-      i = 0;
+      i = 0, loadToken = 0;
 
   function show(n) {
     i = (n + items.length) % items.length;
     var it = items[i];
-    lbImg.classList.remove('rdy');
-    lbImg.onload = function () { lbImg.classList.add('rdy'); };
-    lbImg.src = it.el.getAttribute('data-full') || it.el.currentSrc || it.el.src;
+    var thumb = it.el.currentSrc || it.el.src;
+    var full = it.el.getAttribute('data-full') || thumb;
+    var myToken = ++loadToken;
+    // 立即显示已加载的缩略图（不留空白），高清源下完再无缝换上；翻页竞态用 token 防串图
+    lbImg.classList.add('rdy');
+    lbImg.src = thumb;
     lbImg.alt = it.cap;
+    if (full !== thumb) {
+      var hi = new Image();
+      hi.onload = function () { if (myToken === loadToken) lbImg.src = full; };
+      hi.src = full;
+    }
     lbCap.textContent = it.cap;
     lbCap.style.display = it.cap ? 'block' : 'none';
     lbCount.textContent = (i + 1) + ' / ' + items.length;
