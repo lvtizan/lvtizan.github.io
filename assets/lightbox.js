@@ -15,10 +15,10 @@
   var css = document.createElement('style');
   css.textContent = [
     '.lb{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;',
-    'background:rgba(6,7,11,.94);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:clamp(16px,4vw,56px)}',
+    'background:rgba(6,7,11,.94);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:clamp(8px,2vw,24px)}',
     '.lb.on{display:flex}',
     '.lb-fig{margin:0;max-width:96vw;display:flex;flex-direction:column;align-items:center;gap:14px}',
-    '.lb-img{max-width:96vw;max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:6px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);opacity:0;transition:opacity .18s}',
+    '.lb-img{max-width:98vw;max-height:94vh;width:auto;height:auto;object-fit:contain;border-radius:6px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);opacity:0;transition:opacity .18s}',
     '.lb-img.rdy{opacity:1}',
     '.lb-cap{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:#c7cbd6;text-align:center;max-width:90vw}',
     '.lb-btn{position:absolute;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;transition:background .2s}',
