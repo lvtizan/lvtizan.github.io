@@ -15,7 +15,7 @@
   var css = document.createElement('style');
   css.textContent = [
     '.lb{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;',
-    'background:rgba(6,7,11,.94);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:clamp(8px,2vw,24px)}',
+    'background:#0A0A0E;padding:clamp(8px,2vw,24px)}',
     '.lb.on{display:flex}',
     '.lb-fig{margin:0;max-width:96vw;display:flex;flex-direction:column;align-items:center;gap:14px}',
     '.lb-img{max-width:98vw;max-height:94vh;width:auto;height:auto;object-fit:contain;border-radius:6px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);opacity:0;transition:opacity .18s}',
