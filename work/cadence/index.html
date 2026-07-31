@@ -91,6 +91,39 @@
   .mock .bars{display:flex;align-items:flex-end;gap:9px;height:120px}
   .mock .bars span{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--accent2),var(--accent));opacity:.9}
   .mock .bars span:nth-child(even){background:#E6E4F6}
+  /* enriched mock：顶栏 / 侧栏工作区 / 任务表，让它像真产品截图 */
+  .mock .tbar{display:flex;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line);background:#fff}
+  .mock .tbar .wl{width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center}
+  .mock .tbar .tt{font-size:12px;font-weight:700;color:var(--ink)}
+  .mock .tbar .sr{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:5px 10px}
+  .mock .tbar .sr b{width:10px;height:10px;border:1.5px solid var(--muted);border-radius:50%;position:relative}.mock .tbar .sr b::after{content:"";position:absolute;width:5px;height:1.5px;background:var(--muted);transform:rotate(45deg);bottom:-2px;right:-3px}
+  .mock .tbar .avs{display:flex;align-items:center}
+  .mock .tbar .avs i{width:20px;height:20px;border-radius:50%;border:2px solid #fff;margin-left:-6px}
+  .mock .tbar .avs i:nth-child(1){background:#8B7CF6}.mock .tbar .avs i:nth-child(2){background:#22B07D}.mock .tbar .avs i:nth-child(3){background:#F59E42}
+  .mock .tbar .avs em{font-style:normal;font-size:10px;font-weight:700;color:var(--muted);margin-left:3px}
+  .mock .side{position:relative}
+  .mock .side .ws{display:flex;align-items:center;gap:7px;padding:0 4px 10px;border-bottom:1px solid var(--line);margin-bottom:2px}
+  .mock .side .ws .wa{width:20px;height:20px;border-radius:6px;background:#16141F;color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center}
+  .mock .side .ws .wn{font-size:11.5px;font-weight:700;color:var(--ink)}.mock .side .ws .wc{margin-left:auto;color:var(--muted);font-size:9px}
+  .mock .side .d2{background:#22B07D}.mock .side .d3{background:#F59E42}.mock .side .d4{background:#8B7CF6}.mock .side .d5{background:#E4739A}
+  .mock .side .s .cnt{margin-left:auto;font-size:9.5px;font-weight:700;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:20px;padding:0 6px}
+  .mock .side .newb{margin-top:auto;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:8px;text-align:center;padding:8px}
+  .mock .chart .lg{float:right;font-size:10px;font-weight:700;color:#22B07D}
+  .mock .tbl{margin-top:14px;border:1px solid var(--line);border-radius:11px;overflow:hidden}
+  .mock .tr{display:grid;grid-template-columns:1fr 76px 24px 40px;align-items:center;gap:8px;padding:8px 12px;font-size:11px;border-top:1px solid var(--line)}
+  .mock .tr:first-child{border-top:none}
+  .mock .tr.th{background:var(--paper);color:var(--muted);font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.04em}
+  .mock .tr .tk{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mock .tr .ck{width:13px;height:13px;border-radius:4px;border:1.5px solid var(--line2);flex:none;position:relative}
+  .mock .tr .ck.done{background:var(--accent);border-color:var(--accent)}
+  .mock .pill{font-size:9px;font-weight:700;padding:3px 0;border-radius:20px;text-align:center;white-space:nowrap}
+  .mock .pill.done{background:rgba(34,176,125,.14);color:#188A5F}
+  .mock .pill.prog{background:rgba(91,91,214,.14);color:var(--accent)}
+  .mock .pill.wait{background:var(--paper);color:var(--muted)}
+  .mock .ow{width:22px;height:22px;border-radius:50%}
+  .mock .o1{background:#8B7CF6}.mock .o2{background:#22B07D}.mock .o3{background:#F59E42}.mock .o4{background:#5B5BD6}
+  .mock .due{font-size:10px;color:var(--muted);text-align:right}
+  @media(max-width:520px){.mock .tbl{display:none}}
 
   /* logos strip */
   .logos{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
@@ -227,14 +260,20 @@
     <div class="note">Free for up to 5 people · SOC 2 Type II · 99.98% uptime</div>
   </div>
   <div class="mock" aria-hidden="true">
-    <div class="bar"><i></i><i></i><i></i><span class="u"></span></div>
+    <div class="tbar">
+      <span class="wl">C</span><span class="tt">Product · Q3 board</span>
+      <span class="sr"><b></b>Search tasks…</span>
+      <span class="avs"><i></i><i></i><i></i><em>+5</em></span>
+    </div>
     <div class="app">
       <div class="side">
+        <div class="ws"><span class="wa">A</span><span class="wn">Acme Inc.</span><span class="wc">▾</span></div>
         <div class="s on"><span class="d"></span>Dashboard</div>
-        <div class="s"><span class="d"></span>Projects</div>
-        <div class="s"><span class="d"></span>Automations</div>
-        <div class="s"><span class="d"></span>Insights</div>
-        <div class="s"><span class="d"></span>Team</div>
+        <div class="s"><span class="d d2"></span>Projects<span class="cnt">12</span></div>
+        <div class="s"><span class="d d3"></span>Automations</div>
+        <div class="s"><span class="d d4"></span>Insights</div>
+        <div class="s"><span class="d d5"></span>Team</div>
+        <div class="newb">+ New task</div>
       </div>
       <div class="main">
         <div class="row1">
@@ -243,8 +282,15 @@
           <div class="kpi"><div class="l">Shipped</div><div class="n">148<em>▲ 21</em></div></div>
         </div>
         <div class="chart">
-          <div class="ct">Throughput · last 8 weeks</div>
+          <div class="ct">Throughput · last 8 weeks<span class="lg">▲ 24%</span></div>
           <div class="bars"><span style="height:40%"></span><span style="height:58%"></span><span style="height:47%"></span><span style="height:70%"></span><span style="height:62%"></span><span style="height:84%"></span><span style="height:76%"></span><span style="height:96%"></span></div>
+        </div>
+        <div class="tbl">
+          <div class="tr th"><span>Task</span><span>Status</span><span></span><span>Due</span></div>
+          <div class="tr"><span class="tk"><i class="ck done"></i>Homepage redesign</span><span class="pill done">Done</span><span class="ow o1"></span><span class="due">Aug 2</span></div>
+          <div class="tr"><span class="tk"><i class="ck"></i>API rate limiting</span><span class="pill prog">In&nbsp;progress</span><span class="ow o2"></span><span class="due">Aug 4</span></div>
+          <div class="tr"><span class="tk"><i class="ck"></i>Onboarding flow v3</span><span class="pill prog">In&nbsp;progress</span><span class="ow o3"></span><span class="due">Aug 6</span></div>
+          <div class="tr"><span class="tk"><i class="ck"></i>Billing webhook retries</span><span class="pill wait">Backlog</span><span class="ow o4"></span><span class="due">Aug 9</span></div>
         </div>
       </div>
     </div>
