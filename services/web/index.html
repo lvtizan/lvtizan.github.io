@@ -309,6 +309,11 @@
   .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
   @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+
+  /* 移动端信息密度：卡片英文副名在手机上隐藏，中文标题已足够识别 */
+  @media(max-width:560px){
+    .svc-card .en{display:none}
+  }
 </style>
 </head>
 <body>
@@ -333,7 +338,7 @@
 <header class="hd">
   <div class="wrap">
     <div class="crumb"><a href="/">首页</a> / 网站服务</div>
-    <div class="kick">Web services · 网站服务</div>
+    <div class="kick">Web services</div>
     <h1>外贸独立站 · 品牌官网<br>为<em>被找到、能成交</em>而建</h1>
     <p>我们为企业建设面向全球市场的网站：外贸独立站、品牌官网、定制商城与多语言网站。原创国际化设计、手写静态高性能、技术 SEO 从底层做起——网站不只是门面，而是能持续带来询盘的数字资产。</p>
     <div class="hd-cta">
@@ -349,7 +354,7 @@
 <section id="offer" style="padding-top:clamp(28px,4vw,48px)">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">What we build · 服务范围</div>
+      <div class="kick">What we build</div>
       <h2>五类网站服务，覆盖从形象到转化</h2>
     </div>
     <div class="svc-grid">
@@ -366,7 +371,7 @@
 <section id="standards" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">Delivery standards · 交付标准</div>
+      <div class="kick">Delivery standards</div>
       <h2>每个网站都按同一套硬指标交付</h2>
     </div>
     <div class="std-grid">
@@ -381,7 +386,7 @@
 <section id="process" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">How we work · 建站流程</div>
+      <div class="kick">How we work</div>
       <h2>五步交付，每步可验收</h2>
       <p>详细的合作方式与交付保障见<a href="/about/" style="color:var(--accent-2)">关于我们</a>。</p>
     </div>
@@ -398,7 +403,7 @@
 <section id="pricing">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">Pricing · 报价</div>
+      <div class="kick">Pricing</div>
       <h2>透明的建站套餐</h2>
       <p>完整套餐明细见<a href="/#pricing" style="color:var(--accent-2)">首页报价区</a>。签约合作 · 分阶段验收 · 不加价。</p>
     </div>
@@ -428,7 +433,7 @@
 <section id="cases" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">Web cases · 建站案例</div>
+      <div class="kick">Web cases</div>
       <h2>我们建的站，长这样</h2>
     </div>
     <div class="strip">
@@ -452,7 +457,7 @@
 <section id="faq" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">FAQ · 常见问题</div>
+      <div class="kick">FAQ</div>
       <h2>建站前，客户最常问的四个问题</h2>
     </div>
     <div class="faq">
@@ -478,7 +483,7 @@
 
 <section class="cta" id="contact">
   <div class="wrap">
-    <div class="kick" style="margin-bottom:22px">Get started · 开始你的建站项目</div>
+    <div class="kick" style="margin-bottom:22px">Get started</div>
     <h2>先做一次免费诊断，再决定怎么建</h2>
     <p>发来你的现有网站或需求，我们从性能、SEO 与转化三个维度给出可执行建议。</p>
     <div class="actions">

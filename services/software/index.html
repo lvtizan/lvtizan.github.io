@@ -298,6 +298,11 @@
   .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
   @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+
+  /* 移动端信息密度：卡片英文副名在手机上隐藏，中文标题已足够识别 */
+  @media(max-width:560px){
+    .svc-card .en{display:none}
+  }
 </style>
 </head>
 <body>
@@ -322,7 +327,7 @@
 <header class="hd">
   <div class="wrap">
     <div class="crumb"><a href="/">首页</a> / 软件服务</div>
-    <div class="kick">Software services · 软件服务</div>
+    <div class="kick">Software services</div>
     <h1>软件界面设计与开发<br>让专业的产品<em>专业地好用</em></h1>
     <p>我们为企业设计与开发软件产品：软件界面（UI/UX）设计、SaaS 中后台与数据看板、小程序与 App、专业设备软件界面、应用与工具定制开发。核心团队来自阿里、新浪、优酷，设计与工程在同一支团队内闭环。</p>
     <div class="hd-cta">
@@ -338,7 +343,7 @@
 <section id="offer" style="padding-top:clamp(28px,4vw,48px)">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">What we do · 服务范围</div>
+      <div class="kick">What we do</div>
       <h2>从一块界面到一个完整产品</h2>
       <p>可以只做设计，也可以设计 + 开发一体交付——按你的团队现状灵活配合。</p>
     </div>
@@ -356,7 +361,7 @@
 <section id="principles" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">Our approach · 专业软件设计方法</div>
+      <div class="kick">Our approach</div>
       <h2>专业软件不是"好看的 App"，是另一套方法论</h2>
       <p>消费级设计追求讨人喜欢，专业软件设计追求"专业的人用得又快又稳"。两套方法论，我们都做。</p>
     </div>
@@ -371,7 +376,7 @@
 <section id="process" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">How we work · 产品流程</div>
+      <div class="kick">How we work</div>
       <h2>从想法到上线的六步</h2>
       <p>详细的合作方式与交付保障见<a href="/about/" style="color:var(--accent-2)">关于我们</a>。</p>
     </div>
@@ -389,7 +394,7 @@
 <section id="cases">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">Software cases · 软件案例</div>
+      <div class="kick">Software cases</div>
       <h2>四个方向，各有代表作</h2>
     </div>
     <div class="strip">
@@ -417,7 +422,7 @@
 <section id="faq" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kick">FAQ · 常见问题</div>
+      <div class="kick">FAQ</div>
       <h2>合作前，客户最常问的四个问题</h2>
     </div>
     <div class="faq">
@@ -443,7 +448,7 @@
 
 <section class="cta" id="contact">
   <div class="wrap">
-    <div class="kick" style="margin-bottom:22px">Get started · 开始你的软件项目</div>
+    <div class="kick" style="margin-bottom:22px">Get started</div>
     <h2>有软件或产品想做？带需求来聊</h2>
     <p>无论是一块界面、一个 App 还是一整套系统，先免费沟通一次，我们给出方案方向与报价区间。</p>
     <div class="actions">
