@@ -1,7 +1,11 @@
 # TODO — yoyant.com
 
-> 更新：2026-07-31 · 上一会话主题：7 个新演示案例的 SEO 改造 + KST 真实客户案例页规划
+> 更新：2026-08-01 · 主题：定位收窄 → 工作室口径 → 个人 ICP 备案准备
 > 恢复方式：读本文件 → 从「下一步」第 1 条开始
+>
+> **目标客户（2026-08-01 用户确认）**：国内想建站的「土老板」。
+> 因此渠道优先级是 **百度 + 国内 AI 收录**，Google 退居其次。
+> 凡与此冲突的历史结论（如「主战场是 Google」「备案价值不大」）一律以本条为准。
 
 ---
 
@@ -49,7 +53,54 @@
 
 ## 下一步（按顺序做）
 
-### 1. KST / Oilfield 真实客户案例页 ★（7-31 用户确认要做）
+### 1. 关掉 Cloudflare 的 AI 爬虫拦截 ★★ 最高优先（一个开关的事）
+
+**线上 robots.txt ≠ 仓库里的 robots.txt。** 仓库里只有 3 行（`User-agent: * / Allow: /`），
+但 Cloudflare 的 Managed robots.txt 在线上注入了一大段，把主流 AI 爬虫全部 `Disallow: /`：
+
+`GPTBot`(ChatGPT) `ClaudeBot` `Google-Extended`(Gemini) `CCBot`(Common Crawl)
+`Bytespider`(字节/豆包) `Amazonbot` `Applebot-Extended` `meta-externalagent`，
+并声明了 `Content-Signal: ai-train=no`。
+
+- **CCBot 是绝大多数 AI 语料的源头，Bytespider 是豆包的爬虫**——目标客户在国内、
+  优先国内 AI 收录，这套规则与目标完全相反
+- [ ] 动作：Cloudflare 控制台 → AI Crawl Control / Managed robots.txt → **关闭**
+- [ ] 验证：`curl https://yoyant.com/robots.txt` 应只剩仓库里那 3 行
+
+### 2. ICP 备案（个人主体）★
+
+**服务器**：阿里云 ECS e 实例 99 元/年活动（活动期至 2029-03-31）
+
+- [ ] 下单参数：华南3（**广州**）/ 可用区随机分配 / `ecs.e-c1m1.large` 2核2G /
+      ESSD Entry **40G** / Ubuntu 22.04 或 Alibaba Cloud Linux 3 /
+      **勾选分配公网 IPv4** / 带宽计费选**按固定带宽 3M** /
+      安全组放行 **22 · 80 · 443** / 登录用自定义密码 / 买 **1 年** / **不勾自动续费**
+- **铁律：买完别变配。** 升配或降配要按官网价补差价，**且从此失去 99 元续费权益**
+- **续费窗口**（每年可 99 元续 1 次，活动 2029-03-31 截止）：
+  2026-08 新购 → 到期 2027-07 → 续到 2028-07 → 2029-07 → 2030-07，
+  **合计 4 年约 396 元**。到期前手动按活动价续，别用自动续费（有按官网价扣款风险）
+- [ ] 买完在控制台申请**备案服务号**（免费）
+
+**备案两个卡点**
+- [ ] **网站名称字段**：不能用 `YOYANT` / `远洋数字`，也不能含「工作室」「科技」「公司」等字样，
+      要填个人性质名称（如「XXX 的个人主页」）。**这是驳回率最高的字段**
+- [x] 内容经营性：公开标价已于 8-01 撤下（金额换成交付周期），风险已大幅下降
+- [ ] 提交前先问一次**阿里云备案客服**（免费）：个人主体 + 站上有服务介绍和案例能不能过
+
+**时长**：阿里云初审 1–2 工作日 + 广东管局 7–20 工作日。备案期间站继续在 CF 上跑，不影响。
+
+### 3. 境内外分流的 DNS 改造（备案通过后做）
+
+目标客户在国内 → 百度与国内 AI 优先；但**海外 AI 爬虫都在境外**，
+整站迁到国内 3M 单机反而会让 Google / ChatGPT / Claude 抓得更慢。
+所以不要「全迁」，要分流：
+
+- [ ] NS 从 Cloudflare 换到**阿里云云解析**
+- [ ] 境内线路 → 广州 ECS（满足备案的接入要求，百度/豆包走国内快线）
+- [ ] 境外 / 默认线路 → Cloudflare Pages 或 GitHub Pages（Google 与海外 AI 不受影响）
+- [ ] 部署流程改双通道：push → GitHub Pages + rsync 到 ECS
+
+### 4. ~~KST / Oilfield 真实客户案例页~~ ✅ 已由另一会话完成（commit d718b57）
 
 **问题**：首页 `index.html:468` 与 `services/web/index.html:344` 两处直接外链 `https://kst-power.com`，
 点了**跳出站**——访客走了、权重送出去了、自己什么都没留下。而这是你为数不多的**真实上线客户案例**，
@@ -76,7 +127,7 @@
       也是一条高相关性 dofollow 外链。7-29 SEO 方案第 119 行已列为「立即」级，一直没执行
 - [ ] tarmeer.com 同样加页脚回链（Tarmeer 的案例页和访问链接**已经有了**，只差这条回链）
 
-### 2. 演示页标识条 + 中文案例区 ★ 最高优先
+### 5. 演示页标识条 + 中文案例区 ★ 最高优先
 **设计已定稿（用户从预览中选定，属 Phase 1 通过）**：`顶部细条 + 底部案例区`
 
 - 顶部：36px 深色细条，常驻页面最顶（**非 fixed**，避免与各站 sticky nav 的 `top:0` 打架），
@@ -87,7 +138,7 @@
   7 个站视觉方案各异，标识条要统一成 YOYANT 深色"外壳感"，不融进品牌配色
 - 完成后走 Phase 2：截图验收（含 375px 移动端），通过再报完成
 
-### 3. 假身份清理（用户已确认「全部改」）
+### 6. ~~假身份清理~~ ✅ 已由另一会话完成（commit 46e3d7b），如需复核见下方清单
 - [ ] 邮箱域名换 `.example` 保留域名：
       `export@sunvolt-energy.com` → `export@sunvolt.example`；
       `export@vitalink-med.com` → `export@vitalink.example`；
@@ -101,18 +152,18 @@
       vitalink `CE · ISO 13485 · FDA registered`、`FDA 510(k)`、`CE / FDA clearance for global sale`；
       goldenfields `HACCP · ISO 22000 · BRC · Halal · FDA`、`audited to BRC`
 
-### 4. h1 结构修复（本次未做完）
+### 7. h1 结构修复（本次未做完）
 - [ ] `aveline / reson / yunshang` 首页各有 **2 个 h1**，第二个是商品名（`The Wool Coat` / `RESON One` / `Crimson Silk Qipao`，
       均为 `<h1 class="serif">`）→ 降为 h2，**改前先确认 CSS 是否有裸 `h1{}` 规则**，避免字号视觉回归
 - [ ] `aveline/about/`、`reson/about/`、`yunshang/about/` **一个 h1 都没有**（首个大标题是 `<h2 class="serif">`）→ 提升为 h1
 
-### 5. 内链网补齐
+### 8. 内链网补齐
 - [ ] 新 7 页目前只有一条 `/#cases` 出链（老案例页有全站导航 + About + 服务页 + 3 个相关案例）
 - [ ] 把新 7 个案例接进老案例页的「相关案例」模块
 - [ ] `/services/web/` 正文列出「外贸独立站案例」清单链去这 7 页
       → 形成 **服务页（核心词）← 案例页（长尾词）→ 演示（转化）** 三层结构
 
-### 6. 站外（用户亲自执行，杠杆最大）
+### 9. 站外（用户亲自执行，杠杆最大）
 - [ ] **Search Console 提交 sitemap**（若还没提交，站内所有改动的收效会晚 1-2 周才看得到）
 - [ ] 每个案例 = 1 篇 Behance/Dribbble 视觉帖 + 1 篇知乎复盘 + 1 篇 Medium/LinkedIn 英文版（canonical 回官网）
       → 7 个案例正好够撑两个月的分发节奏，详见 `docs/plans/seo-and-strength-plan.md` 第五章
