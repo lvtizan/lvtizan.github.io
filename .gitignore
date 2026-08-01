@@ -1,3 +1,7 @@
 .DS_Store
 .gstack/
 .wrangler/
+
+# 调试产物与设计草稿：留在本地，不进仓库、不上线
+.playwright-mcp/
+hero-preview.html
