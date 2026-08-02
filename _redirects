@@ -21,3 +21,14 @@
 /README.md        /  302
 /TODO.md          /  302
 /.gitignore       /  302
+
+# 已下架的样板站（2026-08-03）：BEDROCK / Aperture Capital / NORTHBEAM
+# 三个面向英美本土服务业的单页 demo，与"给中国外贸厂建站"的定位不搭，
+# 且首页零引用 + noindex，已是死资产。文件已删（git 历史可恢复），
+# 但保留 301 —— 早年可能把链接发给过客户，落 404 不如落到案例区。
+/work/demo-construction/*  /#cases  301
+/work/demo-finance/*       /#cases  301
+/work/demo-roofing/*       /#cases  301
+/work/demo-construction    /#cases  301
+/work/demo-finance         /#cases  301
+/work/demo-roofing         /#cases  301

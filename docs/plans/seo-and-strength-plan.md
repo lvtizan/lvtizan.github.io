@@ -23,7 +23,7 @@
 | 项目 | 现状 | 差距/动作 |
 |---|---|---|
 | canonical | 首页/资源/5 案例/demo-ecommerce 均有且指向 yoyant.com | 达标 |
-| **孤儿 demo 页** | work/demo-construction、demo-finance、demo-roofing：**无 canonical、无 robots 指令、不在 sitemap、无任何内链**（虚构英文品牌 BEDROCK/Aperture/NORTHBEAM） | 保留文件（可作提案演示素材），**P0 加 canonical + noindex（已做）**，确保不进 sitemap。不删的理由：可能被线下引用；noindex 后对 SEO 零影响 |
+| ~~**孤儿 demo 页**~~ | ~~work/demo-construction、demo-finance、demo-roofing（BEDROCK/Aperture/NORTHBEAM）~~ | **2026-08-03 已下架删除。**此前决定"保留，因可能被线下引用"——但这三个是面向英美本土服务业（建筑承包 / 财富管理 / 屋顶翻新）的单页 demo，与「给中国外贸厂建站」的定位不搭，加上首页零引用 + noindex，已成纯死资产。**线下引用的顾虑改用 `_redirects` 301 到 `/#cases` 解决**，比留着文件更好：仓库干净、旧链接也不落 404。文件在 git 历史里，随时可恢复。LUMO（demo-ecommerce）保留——灯具离中山照明外贸最近，将来做该行业样板可改造 |
 | sitemap.xml | 8 个真实 URL，均 200，含 lastmod | 达标 |
 | robots.txt | Allow all + sitemap 声明 | 达标；**/me 个人作品集即将下线**（个人身份拉低公司实力感），已从 robots.txt 移除 `/me/sitemap.xml` 声明；公司站不引用任何 /me 链接；/me 文件删除由主线程统一处理 |
 | 重复内容 | 无 | 达标 |
