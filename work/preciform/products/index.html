@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VE5EQQE12"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0VE5EQQE12');</script>
+<title>产品目录页设计：多维规格筛选 + 参数表 · PRECIFORM 外贸站样板 | YOYANT 远洋数字</title>
+<meta name="description" content="B2B 外贸独立站产品目录页样板：按螺纹、强度等级、头型、表面处理、材质五个维度实时筛选，参数表等宽数字右对齐，每行直通询盘并自动带上型号。YOYANT 远洋数字外贸独立站设计案例。" />
+<link rel="canonical" href="https://yoyant.com/work/preciform/products/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:title" content="产品目录页设计：多维规格筛选 + 参数表 · PRECIFORM 外贸站样板 | YOYANT 远洋数字" />
+<meta property="og:url" content="https://yoyant.com/work/preciform/products/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/work/preciform/assets/preciform.css" />
+</head>
+<body>
+
+<div class="anno">ISO 9001 : 2015 · IATF 16949 · 东莞长安 · 出口 34 国 · 2009 年至今</div>
+
+<nav class="top"><div class="wrap nav-in">
+  <a class="brand" href="/work/preciform/"><span class="mk"></span>PRECIFORM <small>普锐成精密五金</small></a>
+  <div class="nav-links">
+    <a href="/work/preciform/products/" class="on">产品目录</a>
+    <a href="/work/preciform/solutions/">行业方案</a>
+    <a href="/work/preciform/factory/">工厂实力</a>
+    <a href="/work/preciform/certifications/">认证资质</a>
+    <a href="/work/preciform/about/">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <span class="lang"><b>中文</b> / EN</span>
+    <a class="btn solid sm" href="/work/preciform/contact/">获取报价</a>
+  </div>
+</div></nav>
+
+<section style="padding-bottom:0"><div class="wrap">
+  <div class="lbl">标准件目录</div>
+  <h1 style="font-size:clamp(26px,3.6vw,44px);margin:14px 0 14px">紧固件与连接件</h1>
+  <p style="color:var(--ink2);max-width:60ch">常备现货，参数全部公开。用下面五个维度筛到具体那一行，直接在该行点询价——型号会自动带进表单，客户不用再描述一遍。非标头型、长度与镀层按图定制。</p>
+</div></section>
+
+<section style="padding-top:clamp(28px,3vw,40px)"><div class="wrap">
+
+  <div class="filters">
+    <div class="fg"><label>螺纹</label>
+      <select data-filter="thread">
+        <option value="">全部</option><option>M3</option><option>M4</option><option>M5</option><option>M6</option><option>M8</option><option>M10</option><option>M12</option>
+      </select>
+    </div>
+    <div class="fg"><label>强度等级</label>
+      <select data-filter="grade">
+        <option value="">全部</option><option>4.8</option><option>8.8</option><option>10.9</option><option>12.9</option><option>A2-70</option>
+      </select>
+    </div>
+    <div class="fg"><label>头型</label>
+      <select data-filter="head">
+        <option value="">全部</option><option value="Hex">外六角</option><option value="Socket">内六角</option><option value="Flange">法兰面</option><option value="Button">半圆头</option>
+      </select>
+    </div>
+    <div class="fg"><label>表面处理</label>
+      <select data-filter="finish">
+        <option value="">全部</option><option value="Zinc">镀锌</option><option value="Black oxide">发黑</option><option value="Passivated">钝化</option><option value="Plain">本色</option>
+      </select>
+    </div>
+    <div class="fg"><label>材质</label>
+      <select data-filter="material">
+        <option value="">全部</option><option value="Carbon steel">碳钢</option><option value="SUS304">SUS304</option><option value="SUS316">SUS316</option>
+      </select>
+    </div>
+    <span class="rst" data-reset>重置</span>
+  </div>
+
+  <p style="color:var(--muted);font-family:var(--mono);font-size:12px;margin-bottom:14px">显示 <span data-count>12</span> 个型号 · 尺寸单位均为 mm</p>
+
+  <div class="spec-scroll">
+    <table class="spec">
+      <thead><tr>
+        <th>型号</th><th>螺纹</th><th>长度</th><th>头型</th><th>等级</th><th>表面处理</th><th>材质</th><th>抗拉 MPa</th><th>起订量</th><th></th>
+      </tr></thead>
+      <tbody>
+        <tr data-row data-thread="M3" data-grade="8.8" data-head="Socket" data-finish="Black oxide" data-material="Carbon steel">
+          <td class="model">PF-SC-0310-88</td><td>M3</td><td class="n">10</td><td>内六角</td><td class="n">8.8</td><td>发黑</td><td>碳钢</td><td class="n">800</td><td class="n">2,000</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-SC-0310-88">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M4" data-grade="8.8" data-head="Hex" data-finish="Zinc" data-material="Carbon steel">
+          <td class="model">PF-HB-0416-88</td><td>M4</td><td class="n">16</td><td>外六角</td><td class="n">8.8</td><td>镀锌</td><td>碳钢</td><td class="n">800</td><td class="n">2,000</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-HB-0416-88">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M5" data-grade="10.9" data-head="Socket" data-finish="Black oxide" data-material="Carbon steel">
+          <td class="model">PF-SC-0520-109</td><td>M5</td><td class="n">20</td><td>内六角</td><td class="n">10.9</td><td>发黑</td><td>碳钢</td><td class="n">1,040</td><td class="n">1,000</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-SC-0520-109">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M6" data-grade="8.8" data-head="Flange" data-finish="Zinc" data-material="Carbon steel">
+          <td class="model">PF-FL-0620-88</td><td>M6</td><td class="n">20</td><td>法兰面</td><td class="n">8.8</td><td>镀锌</td><td>碳钢</td><td class="n">800</td><td class="n">1,000</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-FL-0620-88">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M6" data-grade="A2-70" data-head="Hex" data-finish="Passivated" data-material="SUS304">
+          <td class="model">PF-HB-0625-A270</td><td>M6</td><td class="n">25</td><td>外六角</td><td class="n">A2-70</td><td>钝化</td><td>SUS304</td><td class="n">700</td><td class="n">500</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-HB-0625-A270">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M6" data-grade="12.9" data-head="Socket" data-finish="Black oxide" data-material="Carbon steel">
+          <td class="model">PF-SC-0630-129</td><td>M6</td><td class="n">30</td><td>内六角</td><td class="n">12.9</td><td>发黑</td><td>碳钢</td><td class="n">1,220</td><td class="n">1,000</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-SC-0630-129">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M8" data-grade="8.8" data-head="Hex" data-finish="Zinc" data-material="Carbon steel">
+          <td class="model">PF-HB-0830-88</td><td>M8</td><td class="n">30</td><td>外六角</td><td class="n">8.8</td><td>镀锌</td><td>碳钢</td><td class="n">800</td><td class="n">1,000</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-HB-0830-88">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M8" data-grade="10.9" data-head="Flange" data-finish="Plain" data-material="Carbon steel">
+          <td class="model">PF-FL-0835-109</td><td>M8</td><td class="n">35</td><td>法兰面</td><td class="n">10.9</td><td>本色</td><td>碳钢</td><td class="n">1,040</td><td class="n">500</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-FL-0835-109">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M8" data-grade="A2-70" data-head="Button" data-finish="Passivated" data-material="SUS316">
+          <td class="model">PF-BT-0820-A270</td><td>M8</td><td class="n">20</td><td>半圆头</td><td class="n">A2-70</td><td>钝化</td><td>SUS316</td><td class="n">700</td><td class="n">500</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-BT-0820-A270">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M10" data-grade="8.8" data-head="Hex" data-finish="Zinc" data-material="Carbon steel">
+          <td class="model">PF-HB-1040-88</td><td>M10</td><td class="n">40</td><td>外六角</td><td class="n">8.8</td><td>镀锌</td><td>碳钢</td><td class="n">800</td><td class="n">500</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-HB-1040-88">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M10" data-grade="12.9" data-head="Socket" data-finish="Black oxide" data-material="Carbon steel">
+          <td class="model">PF-SC-1045-129</td><td>M10</td><td class="n">45</td><td>内六角</td><td class="n">12.9</td><td>发黑</td><td>碳钢</td><td class="n">1,220</td><td class="n">500</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-SC-1045-129">询价</a></td>
+        </tr>
+        <tr data-row data-thread="M12" data-grade="10.9" data-head="Hex" data-finish="Plain" data-material="Carbon steel">
+          <td class="model">PF-HB-1250-109</td><td>M12</td><td class="n">50</td><td>外六角</td><td class="n">10.9</td><td>本色</td><td>碳钢</td><td class="n">1,040</td><td class="n">250</td>
+          <td><a class="btn sm" href="/work/preciform/product/?model=PF-HB-1250-109">询价</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section style="background:var(--panel);border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-hd"><div><div class="lbl">另外两条线</div><h2>目录里没有你要的件？</h2></div></div>
+  <div class="grid g2">
+    <div class="card">
+      <h3>精密冲压件</h3>
+      <p style="margin-bottom:14px">支架、屏蔽罩、触片与端子，料厚 1.5–6.0mm。在用模具 60 余套；你的件若是新模，自有模具车间 18–25 天出样。</p>
+      <div class="spec-scroll" style="margin-bottom:16px">
+        <table class="spec"><thead><tr><th>能力项</th><th>范围</th></tr></thead><tbody>
+          <tr><td>料厚</td><td class="n">1.5 – 6.0 mm</td></tr>
+          <tr><td>位置度公差</td><td class="n">±0.02 mm</td></tr>
+          <tr><td>冲床吨位</td><td class="n">25 – 250 t</td></tr>
+          <tr><td>新模周期</td><td class="n">18 – 25 天</td></tr>
+        </tbody></table>
+      </div>
+      <a class="btn sm" href="/work/preciform/contact/">发来零件图 →</a>
+    </div>
+    <div class="card">
+      <h3>CNC 车铣件</h3>
+      <p style="margin-bottom:14px">纯按图定制，没有目录——因为没有两家客户的件是一样的。上传 STEP 或 DWG，报价里会一并给可制造性建议，而不是等首件做废才说。</p>
+      <div class="spec-scroll" style="margin-bottom:16px">
+        <table class="spec"><thead><tr><th>能力项</th><th>范围</th></tr></thead><tbody>
+          <tr><td>车削直径</td><td class="n">Ø6 – Ø120 mm</td></tr>
+          <tr><td>可达公差</td><td class="n">±0.01 mm</td></tr>
+          <tr><td>表面粗糙度</td><td class="n">Ra 0.4 – 3.2</td></tr>
+          <tr><td>打样周期</td><td class="n">5 – 8 天</td></tr>
+        </tbody></table>
+      </div>
+      <a class="btn sm" href="/work/preciform/contact/">上传图纸 →</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="brand" style="font-size:19px"><span class="mk"></span>PRECIFORM <small>普锐成精密五金</small></div>
+      <p>精密冲压件、CNC 车铣件与紧固件制造商。广东东莞长安。2009 年至今出口 34 个国家。</p>
+    </div>
+    <div><h4>产品</h4><a href="/work/preciform/products/">精密冲压件</a><a href="/work/preciform/products/">CNC 车铣件</a><a href="/work/preciform/products/">紧固件与连接件</a></div>
+    <div><h4>公司</h4><a href="/work/preciform/about/">关于我们</a><a href="/work/preciform/factory/">工厂与设备</a><a href="/work/preciform/certifications/">认证资质</a><a href="/work/preciform/solutions/">服务行业</a></div>
+    <div><h4>联系</h4><a href="/work/preciform/contact/">获取报价</a><a href="/work/preciform/contact/">sales@preciform-demo.com</a><a href="/work/preciform/contact/">WhatsApp</a></div>
+  </div>
+  <div class="foot-bot"><span>© 2026 东莞普锐成精密五金有限公司</span><span>广东 · 东莞 · 长安镇</span></div>
+</div></footer>
+
+<script src="/work/preciform/assets/preciform.js" defer></script>
+</body>
+</html>

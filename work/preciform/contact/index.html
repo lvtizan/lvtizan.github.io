@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VE5EQQE12"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0VE5EQQE12');</script>
+<title>RFQ 询盘表单设计：分步 + 型号预填 + 图纸上传 · PRECIFORM 外贸站样板 | YOYANT 远洋数字</title>
+<meta name="description" content="B2B 外贸独立站询盘表单样板：必填只留五项，选填折叠为第二步，从产品页跳转自动预填型号，支持 STEP/DWG 图纸上传。含企业邮箱、WhatsApp、工厂地址多渠道。YOYANT 远洋数字外贸独立站设计案例。" />
+<link rel="canonical" href="https://yoyant.com/work/preciform/contact/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:title" content="RFQ 询盘表单设计：分步 + 型号预填 + 图纸上传 · PRECIFORM 外贸站样板 | YOYANT 远洋数字" />
+<meta property="og:url" content="https://yoyant.com/work/preciform/contact/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/work/preciform/assets/preciform.css" />
+</head>
+<body>
+
+<div class="anno">ISO 9001 : 2015 · IATF 16949 · 东莞长安 · 出口 34 国 · 2009 年至今</div>
+
+<nav class="top"><div class="wrap nav-in">
+  <a class="brand" href="/work/preciform/"><span class="mk"></span>PRECIFORM <small>普锐成精密五金</small></a>
+  <div class="nav-links">
+    <a href="/work/preciform/products/">产品目录</a>
+    <a href="/work/preciform/solutions/">行业方案</a>
+    <a href="/work/preciform/factory/">工厂实力</a>
+    <a href="/work/preciform/certifications/">认证资质</a>
+    <a href="/work/preciform/about/">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <span class="lang"><b>中文</b> / EN</span>
+    <a class="btn solid sm" href="/work/preciform/contact/">获取报价</a>
+  </div>
+</div></nav>
+
+<section><div class="wrap">
+  <div class="lbl">询盘 / RFQ</div>
+  <h1 style="font-size:clamp(26px,3.6vw,44px);margin:14px 0 14px">告诉我们你要做的件</h1>
+  <p style="color:var(--ink2);max-width:60ch;margin-bottom:clamp(30px,3.4vw,46px)">标准件只需要五项就能报价。按图定制的话，展开第二步补上商务信息并附图纸——报价会连同可制造性建议一起给你，不是等首件做废了才说。</p>
+
+  <div class="grid" style="grid-template-columns:1.5fr 1fr;gap:clamp(20px,3vw,44px)">
+
+    <div class="rfq">
+      <div class="steps">
+        <div data-step class="on">01 · 零件与数量</div>
+        <div data-step>02 · 商务信息</div>
+      </div>
+
+      <form id="rfq" novalidate>
+        <div class="fld">
+          <label>产品型号 <span class="req">*</span></label>
+          <input name="model" required placeholder="如 PF-HB-0830-88，或直接描述零件">
+          <div class="hint">从目录某一行点进来的话，型号已自动填好。</div>
+        </div>
+        <div class="fld-row">
+          <div class="fld">
+            <label>数量 <span class="req">*</span></label>
+            <input name="qty" required inputmode="numeric" placeholder="如 5000 件 / 年">
+          </div>
+          <div class="fld">
+            <label>目标市场 <span class="req">*</span></label>
+            <select name="country" required>
+              <option value="">请选择…</option>
+              <option>美国</option><option>德国</option><option>英国</option>
+              <option>西班牙</option><option>墨西哥</option><option>巴西</option>
+              <option>沙特阿拉伯</option><option>印度</option><option>澳大利亚</option><option>其他</option>
+            </select>
+          </div>
+        </div>
+        <div class="fld-row">
+          <div class="fld">
+            <label>公司名称 <span class="req">*</span></label>
+            <input name="company" required placeholder="工商注册全称">
+          </div>
+          <div class="fld">
+            <label>企业邮箱 <span class="req">*</span></label>
+            <input name="email" type="email" required placeholder="name@company.com">
+          </div>
+        </div>
+
+        <button type="button" class="opt-toggle" data-opt-toggle>+ 展开选填项（目标价、认证要求、图纸）</button>
+
+        <div class="opt-body" data-opt-body>
+          <div class="fld-row">
+            <div class="fld"><label>目标单价</label><input name="price" placeholder="美元"></div>
+            <div class="fld"><label>贸易条款</label>
+              <select name="incoterm"><option value="">请选择…</option><option>EXW 工厂交货</option><option>FOB 深圳</option><option>CIF</option><option>DDP</option></select>
+            </div>
+          </div>
+          <div class="fld">
+            <label>需要的认证 / 文件</label>
+            <div class="chk">
+              <label><input type="checkbox" name="cert" value="RoHS"> RoHS</label>
+              <label><input type="checkbox" name="cert" value="REACH"> REACH</label>
+              <label><input type="checkbox" name="cert" value="PPAP"> PPAP 三级</label>
+              <label><input type="checkbox" name="cert" value="材质证明"> 材质证明</label>
+              <label><input type="checkbox" name="cert" value="ISO 13485"> ISO 13485</label>
+            </div>
+          </div>
+          <div class="fld">
+            <label>图纸 / 三维文件</label>
+            <input type="file" name="drawing" multiple accept=".step,.stp,.iges,.igs,.dwg,.dxf,.pdf">
+            <div class="hint" data-file-hint>支持 STEP、IGES、DWG、DXF、PDF · 单个不超过 25 MB</div>
+          </div>
+          <div class="fld"><label>其他说明</label><textarea name="msg" rows="3" placeholder="应用场景、交期要求、现有供应商遇到的问题…"></textarea></div>
+          <div class="fld"><label>WhatsApp / 微信</label><input name="im" placeholder="选填——跟进比邮件快"></div>
+        </div>
+
+        <button class="btn solid" type="submit" style="width:100%">提交询盘 →</button>
+        <p style="color:var(--muted);font-size:12.5px;margin-top:13px;text-align:center">工作日 24 小时内出报价。你的图纸不会流出工程部之外。</p>
+      </form>
+
+      <div class="rfq-ok" data-rfq-ok>
+        <div class="ic">✓</div>
+        <h3 style="font-size:22px;margin-bottom:9px">已收到询盘</h3>
+        <p style="color:var(--ink2)">工程师会在工作日 24 小时内回复你。</p>
+        <p style="color:var(--muted);font-family:var(--mono);font-size:11.5px;margin-top:18px;letter-spacing:.06em">DEMO ONLY · 样板演示，未实际提交</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="margin-bottom:16px">
+        <div class="lbl" style="margin-bottom:14px">直接联系</div>
+        <div class="ch"><div class="ico">@</div><div><div class="k">销售邮箱</div><div class="v">sales@preciform-demo.com</div></div></div>
+        <div class="ch"><div class="ico">✆</div><div><div class="k">WhatsApp</div><div class="v"><b>+86 138 0000 0000</b></div></div></div>
+        <div class="ch"><div class="ico">☏</div><div><div class="k">座机</div><div class="v">+86 769 8888 0000</div></div></div>
+        <div class="ch"><div class="ico">⌖</div><div><div class="k">工厂地址</div><div class="v" style="font-size:14px;line-height:1.6">广东省东莞市长安镇振安路 8 号<br>邮编 523850</div></div></div>
+      </div>
+      <div class="card">
+        <div class="lbl" style="margin-bottom:12px">响应时效</div>
+        <div class="spec-scroll">
+          <table class="spec"><tbody>
+            <tr><td>目录标准件</td><td class="n">当天</td></tr>
+            <tr><td>按图定制件</td><td class="n">≤ 24 小时</td></tr>
+            <tr><td>开模项目</td><td class="n">≤ 48 小时</td></tr>
+            <tr><td>工作时间</td><td class="n">周一至周六</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="brand" style="font-size:19px"><span class="mk"></span>PRECIFORM <small>普锐成精密五金</small></div>
+      <p>精密冲压件、CNC 车铣件与紧固件制造商。广东东莞长安。2009 年至今出口 34 个国家。</p>
+    </div>
+    <div><h4>产品</h4><a href="/work/preciform/products/">精密冲压件</a><a href="/work/preciform/products/">CNC 车铣件</a><a href="/work/preciform/products/">紧固件与连接件</a></div>
+    <div><h4>公司</h4><a href="/work/preciform/about/">关于我们</a><a href="/work/preciform/factory/">工厂与设备</a><a href="/work/preciform/certifications/">认证资质</a><a href="/work/preciform/solutions/">服务行业</a></div>
+    <div><h4>联系</h4><a href="/work/preciform/contact/">获取报价</a><a href="/work/preciform/contact/">sales@preciform-demo.com</a><a href="/work/preciform/contact/">WhatsApp</a></div>
+  </div>
+  <div class="foot-bot"><span>© 2026 东莞普锐成精密五金有限公司</span><span>广东 · 东莞 · 长安镇</span></div>
+</div></footer>
+
+<script src="/work/preciform/assets/preciform.js" defer></script>
+</body>
+</html>
