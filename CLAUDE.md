@@ -46,7 +46,10 @@ python3 scripts/imgctl.py shot <源图> <name> [--crop 顶部裁剪px] --cap "�
 ```bash
 python3 scripts/gen_sitemap.py          # 重新生成 sitemap.xml
 python3 scripts/gen_sitemap.py --check  # 只报差异不写（有差异退出码 1）
+git config core.hooksPath .githooks     # 启用 pre-push 检查（换机器 clone 后跑一次）
 ```
+
+`.githooks/pre-push` 会在 push 前自动跑 `--check`，不一致就拦下并给出修复命令——本仓库 push 即上线、没有构建步骤兜底，漏更新 sitemap 不会报错，要等索引量不涨才察觉。
 
 **唯一真相来源 = 页面自己的 `noindex` 标记**：脚本扫描全站 `index.html`，`<head>` 里带 `<meta name="robots" content="...noindex...">` 的一律跳过，其余全收。所以**不需要单独维护 sitemap 名单**——要排除某页，给它加 `noindex` 即可，两处自动一致。
 

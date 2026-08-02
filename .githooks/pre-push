@@ -1,0 +1,39 @@
+#!/bin/sh
+# push 前检查 sitemap.xml 是否与实际页面一致。
+#
+# 存在的理由：本仓库 push 即上线，没有构建步骤能兜底。新增页面忘了跑生成器，
+# 站就带着过期 sitemap 上线了，搜索引擎发现不了新页面——而且不会有任何报错，
+# 要等索引量不涨才察觉，那时已经过去几周。
+#
+# 启用（clone 后跑一次）：
+#     git config core.hooksPath .githooks
+
+ROOT=$(git rev-parse --show-toplevel) || exit 0
+cd "$ROOT" || exit 0
+
+[ -f scripts/gen_sitemap.py ] || exit 0
+
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "⚠️  未找到 python3，跳过 sitemap 检查（请手动确认 sitemap.xml 是最新的）"
+    exit 0
+fi
+
+OUT=$(python3 scripts/gen_sitemap.py --check 2>&1)
+STATUS=$?
+
+if [ $STATUS -ne 0 ]; then
+    echo ""
+    echo "❌ push 已中止：sitemap.xml 与实际页面不一致"
+    echo ""
+    echo "$OUT" | sed 's/^/   /'
+    echo ""
+    echo "   修复：python3 scripts/gen_sitemap.py && git add sitemap.xml && git commit --amend --no-edit"
+    echo "   （若已 push 过该 commit，改用新 commit 而非 amend）"
+    echo ""
+    echo "   要排除某个页面，给它加 <meta name=\"robots\" content=\"noindex\">，"
+    echo "   不要手改 sitemap.xml——noindex 是唯一真相来源。"
+    echo ""
+    exit 1
+fi
+
+exit 0
