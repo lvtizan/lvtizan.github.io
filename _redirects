@@ -4,16 +4,22 @@
 # 所以 push 上去的任何文件都会公开在 https://yoyant.com/<路径>。
 # 2026-08-02 发现 CLAUDE.md / TODO.md / docs/plans/*.md / scripts/deploy-ecs.sh
 # 全部返回 200 —— 内部规范、SEO 关键词策略、部署脚本（含服务器 IP 与 root 用户名）
-# 都在公网可读。以下规则把它们挡成 404。
+# 都在公网可读。
+#
+# 用 302 而非 404：CF Pages 的 _redirects 官方支持 301/302/303/307/308 与 200，
+# 404 不在其列，写了整份规则可能被判无效。
 #
 # ⚠️ 新增任何"非站点内容"的目录时，记得同步在这里加一条。
 # ⚠️ 真正的密钥一律不进仓库（走环境变量），本文件只是防止内部资料被随手翻到，不是保险箱。
 
-/docs/*           /404.html  404
-/scripts/*        /404.html  404
-/.githooks/*      /404.html  404
-/.superpowers/*   /404.html  404
-/CLAUDE.md        /404.html  404
-/README.md        /404.html  404
-/TODO.md          /404.html  404
-/.gitignore       /404.html  404
+# 金丝雀：用于判定 _redirects 是否被应用（该路径无对应文件）
+/canary-redirect-check  /  302
+
+/docs/*           /  302
+/scripts/*        /  302
+/.githooks/*      /  302
+/.superpowers/*   /  302
+/CLAUDE.md        /  302
+/README.md        /  302
+/TODO.md          /  302
+/.gitignore       /  302
