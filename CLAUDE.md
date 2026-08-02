@@ -58,6 +58,32 @@ git config core.hooksPath .githooks     # 启用 pre-push 检查（换机器 clo
 - 当前有意排除的：`/go/`、`work/demo-*`（样板站）、各 demo 站的 `cart/` 与 `product/`（`?p=` 参数驱动，无参数时是空壳）。
 - **新建 demo 电商站时记得给 `cart/` 和 `product/` 都加 `noindex`**——2026-08-02 就出过 cart 加了、product 漏了的情况。
 
+## ⚠️ push 即公开（2026-08-02 踩坑）
+
+**本仓库直接部署根目录、没有构建步骤过滤，所以 push 的任何文件都会公开在 `https://yoyant.com/<路径>`。**
+
+当天实测发现 `/CLAUDE.md`、`/TODO.md`、`/docs/plans/*.md`（SEO 关键词策略）、`/scripts/deploy-ecs.sh`（含 `HOST` 与 `USER="root"`）全部返回 **200**，在公网可读。已用根目录 `_redirects` 挡成 404。
+
+**两条铁律：**
+1. **新增"非站点内容"的目录，必须同步在 `_redirects` 里加一条**，否则一 push 就公开
+2. **真正的密钥永远不进仓库**——走环境变量（`deploy-ecs.sh` 读 `DEPLOY_SSH_PASSWORD` 就是对的做法）。`_redirects` 只防随手翻到，**不是保险箱**，文件仍在 CDN 上
+
+不能拦的：`.nojekyll`（GitHub Pages 需要）、`uploads/*`（母版被 `work/reson/` 引用）。
+
+## 文案与排版规范
+
+**① 能一行放下就不要两行。** 标题、副标题、按钮、卡片描述——凡是换行了先问"能不能把字砍短"，而不是先去加宽容器。加宽只是把松散藏起来，字还是那么多。砍不动再调容器。
+
+**② 内容主体必须中文，装饰性 kicker 可以英文。**
+- **主体**（大标题、正文、列表项、按钮）——中文站就用中文，不要突然崩出一句英文
+- **kicker**（`.kick` 那类 11px 等宽大写 + `letter-spacing` 的小标签，如 `OUR APPROACH` / `GET STARTED`）——保持英文，这是全站统一的设计语言，不是"崩出来的英文"
+- 同一区块内的并列项要么全中文要么全英文，**不要一条英文三条中文**
+
+**③ 中文排版不能直接套英文的度量。**
+- `max-width` 用 **`em` 不用 `ch`**——`ch` 基于 `0` 字符宽度，是为拉丁字母设计的；中文全角字符宽度 = `1em`，用 `em` 才能精确控制每行字数
+- `line-height` 中文要比英文松：拉丁字母有大量 x-height 以下留白，中文字面占满字框，英文的 `1.14` 放到中文会挤。**中文大标题建议 ≥ 1.2**
+- 2026-08-02 首页 `.method .quote` 就是这么改的：`19ch` → `13em`，`1.14` → `1.22`
+
 ## 案例页 / demo 规范
 - demo 要**完整多页架构**、一切按实战走（电商需 首页/shop/product?p=/cart/about/journal + localStorage 购物车，独立 `<brand>_cart` 键防串）。
 - 导航当前项要有**选中态下划线**（`.active` / 滚动高亮）。
