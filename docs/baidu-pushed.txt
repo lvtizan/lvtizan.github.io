@@ -1,0 +1,38 @@
+# 百度普通收录 · 已推送 URL 台账
+# 每次推送后追加，下次推送 = sitemap 差集 - 本文件。
+# 放 docs/ 是因为该目录已被根目录 _redirects 挡成 302，不会公开。
+# 本文件不含任何凭据——token 只存本机记忆，不进仓库。
+#
+# 2026-08-01（10 条）
+https://yoyant.com/
+https://yoyant.com/services/web/
+https://yoyant.com/about/
+https://yoyant.com/resources/
+https://yoyant.com/resources/b2b-website-7-modules/
+https://yoyant.com/resources/static-vs-wordpress/
+https://yoyant.com/resources/new-site-google-indexing/
+https://yoyant.com/work/kst-oilfield/
+https://yoyant.com/work/tarmeer/
+https://yoyant.com/work/reson/
+# 2026-08-02（10 条）
+https://yoyant.com/resources/web-image-optimization/
+https://yoyant.com/resources/structured-data-json-ld/
+https://yoyant.com/resources/lighthouse-core-web-vitals/
+https://yoyant.com/resources/digital-product-process/
+https://yoyant.com/work/goldenfields/
+https://yoyant.com/work/sunvolt/
+https://yoyant.com/work/nanhai/
+https://yoyant.com/work/epaifa/
+https://yoyant.com/work/vitalink/
+https://yoyant.com/work/veinscope/
+# 2026-08-03（10 条）
+https://yoyant.com/work/preciform/
+https://yoyant.com/work/preciform/products/
+https://yoyant.com/work/preciform/solutions/
+https://yoyant.com/work/preciform/factory/
+https://yoyant.com/work/preciform/certifications/
+https://yoyant.com/work/preciform/contact/
+https://yoyant.com/work/preciform/about/
+https://yoyant.com/services/software/
+https://yoyant.com/resources/professional-software-ui/
+https://yoyant.com/work/cadence/
