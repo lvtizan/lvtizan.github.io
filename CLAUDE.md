@@ -49,7 +49,9 @@ python3 scripts/gen_sitemap.py --check  # 只报差异不写（有差异退出�
 git config core.hooksPath .githooks     # 启用 pre-push 检查（换机器 clone 后跑一次）
 ```
 
-`.githooks/pre-push` 会在 push 前自动跑 `--check`，不一致就拦下并给出修复命令——本仓库 push 即上线、没有构建步骤兜底，漏更新 sitemap 不会报错，要等索引量不涨才察觉。
+`.githooks/pre-push` 会在 push 前自动跑 `--check`——本仓库 push 即上线、没有构建步骤兜底，漏更新 sitemap 不会报错，要等索引量不涨才察觉。
+
+**只有「页面增删」才拦截，`lastmod` 漂移只提示不拦**（2026-08-02 修）。因为 `lastmod` 取 git 提交日期，一旦提交了 HTML 它必然变化；若也拦，等于每次改文案都要「提交 → 重跑生成器 → amend」两轮。而真正会造成损失的失败模式只有一个：**新页面没进 sitemap，搜索引擎永远发现不了**。lastmod 会在下次有人增删页面时一并刷新。
 
 **唯一真相来源 = 页面自己的 `noindex` 标记**：脚本扫描全站 `index.html`，`<head>` 里带 `<meta name="robots" content="...noindex...">` 的一律跳过，其余全收。所以**不需要单独维护 sitemap 名单**——要排除某页，给它加 `noindex` 即可，两处自动一致。
 

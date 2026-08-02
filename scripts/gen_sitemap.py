@@ -12,7 +12,10 @@ sitemap.xml 生成器 —— 以页面自身的 noindex 标记为唯一真相来
 
 用法：
     python3 scripts/gen_sitemap.py            # 生成并写入 sitemap.xml
-    python3 scripts/gen_sitemap.py --check    # 只报告差异，不写文件（退出码 1 = 有差异）
+    python3 scripts/gen_sitemap.py --check    # 只报告，不写文件（退出码 1 = 页面增删）
+
+--check 只在「页面增删」时返回 1（pre-push 会据此拦截）；lastmod 漂移只提示不拦，
+理由见 main() 内注释。
 """
 
 import re
@@ -145,9 +148,18 @@ def main():
     changed = not SITEMAP.exists() or SITEMAP.read_text(encoding="utf-8") != new_xml
 
     if check_only:
-        print("sitemap 需要更新，请运行 python3 scripts/gen_sitemap.py" if changed
-              else f"sitemap 已是最新（{len(pages)} 条）")
-        return 1 if changed else 0
+        # 只有「页面增删」才拦——那是真会造成损失的失败模式（新页面进不了 sitemap，
+        # 搜索引擎永远发现不了）。lastmod 漂移不拦：lastmod 取 git 提交日期，一旦
+        # 提交了 HTML 它必然变，若也拦就等于每次改文案都要「提交→重跑→amend」两轮，
+        # 而代价只是抓取优先级的提示略滞后。下次有人增删页面时会一并刷新。
+        if added or removed:
+            print("❌ sitemap 与实际页面不一致（见上），必须更新")
+            return 1
+        if changed:
+            print(f"ℹ️  页面齐全（{len(pages)} 条），仅 lastmod 有漂移，不拦截")
+            return 0
+        print(f"✅ sitemap 已是最新（{len(pages)} 条）")
+        return 0
 
     SITEMAP.write_text(new_xml, encoding="utf-8")
     print(f"已写入 {SITEMAP.relative_to(ROOT)}：{len(pages)} 条 URL"
