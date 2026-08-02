@@ -66,9 +66,10 @@ git config core.hooksPath .githooks     # 启用 pre-push 检查（换机器 clo
 
 当天实测发现 `/CLAUDE.md`、`/TODO.md`、`/docs/plans/*.md`（SEO 关键词策略）、`/scripts/deploy-ecs.sh`（含 `HOST` 与 `USER="root"`）全部返回 **200**，在公网可读。已用根目录 `_redirects` 挡成 404。
 
-**两条铁律：**
+**三条铁律：**
 1. **新增"非站点内容"的目录，必须同步在 `_redirects` 里加一条**，否则一 push 就公开
 2. **真正的密钥永远不进仓库**——走环境变量（`deploy-ecs.sh` 读 `DEPLOY_SSH_PASSWORD` 就是对的做法）。`_redirects` 只防随手翻到，**不是保险箱**，文件仍在 CDN 上
+3. **`_redirects` 的状态码只能用 301/302/303/307/308 或 200，绝不能写 404**——CF Pages 不支持 404，写了会让**整份规则失效、一条都不生效**。当天就踩过：表现是所有内部文件照常 200，极易误判成"规则没部署"或"静态资源优先级更高"。排查手法：加一条指向**不存在路径**的金丝雀规则，看它是否跳转，就能区分"规则未生效"与"规则生效但没匹配上"。
 
 不能拦的：`.nojekyll`（GitHub Pages 需要）、`uploads/*`（母版被 `work/reson/` 引用）。
 
