@@ -41,6 +41,20 @@ python3 scripts/imgctl.py shot <源图> <name> [--crop 顶部裁剪px] --cap "�
 - 封面/hero 用 `cover`；能点开看细节的截图用 `shot` + 灯箱；别混。
 - 新案例封面接进首页 `#cases` 网格时，`<img>` 必须是上面的 srcset 形态，不许直接 `src=` 一张大图。
 
+## sitemap（新增/删除页面后必跑）
+
+```bash
+python3 scripts/gen_sitemap.py          # 重新生成 sitemap.xml
+python3 scripts/gen_sitemap.py --check  # 只报差异不写（有差异退出码 1）
+```
+
+**唯一真相来源 = 页面自己的 `noindex` 标记**：脚本扫描全站 `index.html`，`<head>` 里带 `<meta name="robots" content="...noindex...">` 的一律跳过，其余全收。所以**不需要单独维护 sitemap 名单**——要排除某页，给它加 `noindex` 即可，两处自动一致。
+
+- 已有条目的 `priority`/`changefreq` 原样保留（尊重手工调过的值），只刷新 `lastmod`；新页面按脚本里的 `RULES` 给默认值。
+- `lastmod` 取该文件的 **git 最后提交日期**，页面没改日期就不动，符合语义。
+- 当前有意排除的：`/go/`、`work/demo-*`（样板站）、各 demo 站的 `cart/` 与 `product/`（`?p=` 参数驱动，无参数时是空壳）。
+- **新建 demo 电商站时记得给 `cart/` 和 `product/` 都加 `noindex`**——2026-08-02 就出过 cart 加了、product 漏了的情况。
+
 ## 案例页 / demo 规范
 - demo 要**完整多页架构**、一切按实战走（电商需 首页/shop/product?p=/cart/about/journal + localStorage 购物车，独立 `<brand>_cart` 键防串）。
 - 导航当前项要有**选中态下划线**（`.active` / 滚动高亮）。
