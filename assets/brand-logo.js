@@ -3,7 +3,7 @@
         页脚放 <span class="wm" data-brand-foot></span>
    每页 <script src="/assets/brand-logo.js" defer></script> 引入 */
 (function () {
-  var EN = "YOYANT", CN = "远洋数字", DESC = "外贸独立站 · 软件界面 · 产品设计";
+  var EN = "YOYANT", CN = "远洋软件", DESC = "软件定制开发 · App · 小程序 · 商家后台";
   var navHTML =
     '<span class="brand-main"><span class="wm">' + EN + '<span class="dot">.</span></span>' +
     '<span class="cn">' + CN + '</span></span>' +

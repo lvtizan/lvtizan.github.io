@@ -1,6 +1,8 @@
 /* AVELINE — shared shop logic: catalog · cart(localStorage) · search · nav active · UI */
 (function () {
-  var BASE = '/work/aveline/';
+  var isLocal = window.location.protocol === 'file:';
+  var BASE = isLocal ? (window.location.pathname.includes('/work/aveline/') ? (window.location.pathname.split('/work/aveline/')[0] + '/work/aveline/') : './') : '/work/aveline/';
+  var IMG_BASE = isLocal ? (window.location.pathname.split('/work/aveline/')[0] + '/uploads/webp/') : '/uploads/webp/';
   var CAT = [
     { id: 'coat', name: 'The Wool Coat', price: 890, img: 'aveline-p1', cat: 'Outerwear', blurb: 'An unstructured double-breasted coat in pure Italian virgin wool. Dropped shoulders, a relaxed drape, horn buttons — made to be worn open for a decade.' },
     { id: 'knit', name: 'Ribbed Cashmere Knit', price: 340, img: 'aveline-p2', cat: 'Knitwear', blurb: 'A softly ribbed crew-neck in pure Grade-A Mongolian cashmere, knitted in a single Italian mill. Weighty, warm, quietly luxurious.' },
@@ -88,7 +90,7 @@
         q = (q || '').trim().toLowerCase();
         var res = q ? CAT.filter(function (p) { return (p.name + ' ' + p.cat + ' ' + p.blurb).toLowerCase().indexOf(q) > -1; }) : CAT;
         hint.textContent = q ? (res.length + ' result' + (res.length === 1 ? '' : 's')) : 'Try “coat”, “cashmere”, “silk”…';
-        grid.innerHTML = res.map(function (p) { return '<a class="card" href="' + BASE + 'product/?p=' + p.id + '"><div class="ph"><img src="/uploads/webp/' + p.img + '.webp" alt="' + p.name + '"></div><div class="meta"><div class="nm">' + p.name + '</div><div class="pr">' + money(p.price) + '</div></div></a>'; }).join('');
+        grid.innerHTML = res.map(function (p) { return '<a class="card" href="' + BASE + 'product/?p=' + p.id + '"><div class="ph"><img src="' + IMG_BASE + p.img + '.webp" alt="' + p.name + '"></div><div class="meta"><div class="nm">' + p.name + '</div><div class="pr">' + money(p.price) + '</div></div></a>'; }).join('');
       }
       function openS() { ov.classList.add('open'); document.body.style.overflow = 'hidden'; render(''); setTimeout(function () { inp.focus(); }, 50); }
       function closeS() { ov.classList.remove('open'); document.body.style.overflow = ''; }

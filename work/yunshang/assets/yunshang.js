@@ -1,6 +1,8 @@
 /* YUNSHANG 云裳 — shared shop logic: catalog · cart(localStorage) · search · nav active · UI */
 (function () {
-  var BASE = '/work/yunshang/';
+  var isLocal = window.location.protocol === 'file:';
+  var BASE = isLocal ? (window.location.pathname.includes('/work/yunshang/') ? (window.location.pathname.split('/work/yunshang/')[0] + '/work/yunshang/') : './') : '/work/yunshang/';
+  var IMG_BASE = isLocal ? (window.location.pathname.split('/work/yunshang/')[0] + '/uploads/webp/') : '/uploads/webp/';
   var CAT = [
     { id: 'crimson', name: 'Crimson Silk Qipao', price: 680, img: 'yun-p1', cat: 'Qipao', blurb: 'A modern deep-crimson qipao in pure mulberry silk, hand-finished with floral embroidery and knotted silk frog buttons (pankou). A heritage silhouette, cut for today.' },
     { id: 'ink', name: 'Ink-Blue Jacquard Qipao', price: 620, img: 'yun-p2', cat: 'Qipao', blurb: 'Woven jacquard silk in deep ink blue, with a mandarin collar and hand-knotted closures. Quiet depth, understated grace.' },
@@ -88,7 +90,7 @@
         q = (q || '').trim().toLowerCase();
         var res = q ? CAT.filter(function (p) { return (p.name + ' ' + p.cat + ' ' + p.blurb).toLowerCase().indexOf(q) > -1; }) : CAT;
         hint.textContent = q ? (res.length + ' result' + (res.length === 1 ? '' : 's')) : 'Try “qipao”, “silk”, “embroidered”…';
-        grid.innerHTML = res.map(function (p) { return '<a class="card" href="' + BASE + 'product/?p=' + p.id + '"><div class="ph"><img src="/uploads/webp/' + p.img + '.webp" alt="' + p.name + '"></div><div class="meta"><div class="nm">' + p.name + '</div><div class="pr">' + money(p.price) + '</div></div></a>'; }).join('');
+        grid.innerHTML = res.map(function (p) { return '<a class="card" href="' + BASE + 'product/?p=' + p.id + '"><div class="ph"><img src="' + IMG_BASE + p.img + '.webp" alt="' + p.name + '"></div><div class="meta"><div class="nm">' + p.name + '</div><div class="pr">' + money(p.price) + '</div></div></a>'; }).join('');
       }
       function openS() { ov.classList.add('open'); document.body.style.overflow = 'hidden'; render(''); setTimeout(function () { inp.focus(); }, 50); }
       function closeS() { ov.classList.remove('open'); document.body.style.overflow = ''; }

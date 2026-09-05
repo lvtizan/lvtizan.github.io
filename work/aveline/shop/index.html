@@ -18,13 +18,13 @@
 <body>
 <div class="anno">Complimentary worldwide shipping · Made in limited runs</div>
 <nav class="top"><div class="wrap nav-in">
-  <div class="nav-links"><a href="/work/aveline/shop/">Shop</a><a href="/work/aveline/#collection">Collections</a><a href="/work/aveline/journal/">Journal</a><a href="/work/aveline/about/">About</a></div>
-  <a class="brand" href="/work/aveline/">AVELINE</a>
-  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="/work/aveline/about/">Account</a><a class="cart" href="/work/aveline/cart/">Bag<span class="n" data-cart-n>0</span></a></div>
+  <div class="nav-links"><a href="../../../work/aveline/shop/index.html">Shop</a><a href="/work/aveline/#collection">Collections</a><a href="../../../work/aveline/journal/index.html">Journal</a><a href="../../../work/aveline/about/index.html">About</a></div>
+  <a class="brand" href="../../../work/aveline/index.html">AVELINE</a>
+  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="../../../work/aveline/about/index.html">Account</a><a class="cart" href="../../../work/aveline/cart/index.html">Bag<span class="n" data-cart-n>0</span></a></div>
 </div></nav>
 
 <div class="wrap pagehead">
-  <div class="crumb"><a href="/work/aveline/">Home</a> — Shop</div>
+  <div class="crumb"><a href="../../../work/aveline/index.html">Home</a> — Shop</div>
   <h1 class="page serif">The collection</h1>
   <p style="color:var(--ink2);max-width:46ch;margin-bottom:34px">A small wardrobe of natural-fibre essentials — designed to be worn together, and for years.</p>
 </div>
@@ -47,13 +47,13 @@
 <footer><div class="wrap">
   <div class="foot-grid">
     <div><div class="fb serif">AVELINE</div><p style="max-width:30ch">Considered womenswear in natural fibres. Made to be worn for years, not seasons.</p></div>
-    <div><h4>Shop</h4><a href="/work/aveline/shop/">New arrivals</a><a href="/work/aveline/shop/">Outerwear</a><a href="/work/aveline/shop/">Knitwear</a><a href="/work/aveline/shop/">Dresses</a></div>
+    <div><h4>Shop</h4><a href="../../../work/aveline/shop/index.html">New arrivals</a><a href="../../../work/aveline/shop/index.html">Outerwear</a><a href="../../../work/aveline/shop/index.html">Knitwear</a><a href="../../../work/aveline/shop/index.html">Dresses</a></div>
     <div><h4>Client care</h4><a href="#">Shipping & returns</a><a href="#">Size guide</a><a href="#">Garment care</a><a href="#">Contact</a></div>
-    <div><h4>House</h4><a href="/work/aveline/about/">Our story</a><a href="/work/aveline/about/">Materials</a><a href="/work/aveline/journal/">Journal</a></div>
+    <div><h4>House</h4><a href="../../../work/aveline/about/index.html">Our story</a><a href="../../../work/aveline/about/index.html">Materials</a><a href="../../../work/aveline/journal/index.html">Journal</a></div>
   </div>
   <div class="foot-bot"><span>© 2026 Aveline</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
 </div></footer>
-<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+<a class="concept" href="../../../index.html#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
 
 <script>
   window.addEventListener('DOMContentLoaded', function(){
@@ -61,13 +61,13 @@
     function draw(f){
       var list = (f==='all')? window.AVELINE_CAT : window.AVELINE_CAT.filter(function(p){return p.cat===f;});
       g.innerHTML = list.length ? list.map(function(p){
-        return '<a class="card" href="/work/aveline/product/?p='+p.id+'"><div class="ph"><img src="/uploads/webp/'+p.img+'.webp" alt="'+p.name+'"><button class="add" data-add data-id="'+p.id+'">Add to bag</button></div><div class="meta"><div class="lbl" style="color:var(--clay);font-size:10px">'+p.cat+'</div><div class="nm" style="margin-top:6px">'+p.name+'</div><div class="pr">'+window.AVELINE_CART.money(p.price)+'</div></div></a>';
+        return '<a class="card" href="/work/aveline/product/?p='+p.id+'"><div class="ph"><img src="../../../uploads/webp/'+p.img+'.webp" alt="'+p.name+'"><button class="add" data-add data-id="'+p.id+'">Add to bag</button></div><div class="meta"><div class="lbl" style="color:var(--clay);font-size:10px">'+p.cat+'</div><div class="nm" style="margin-top:6px">'+p.name+'</div><div class="pr">'+window.AVELINE_CART.money(p.price)+'</div></div></a>';
       }).join('') : '<p style="color:var(--muted);grid-column:1/-1">No pieces in this category yet.</p>';
     }
     document.querySelectorAll('#filters button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#filters button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');draw(b.getAttribute('data-f'));});});
     draw('all');
   });
 </script>
-<script src="/work/aveline/assets/aveline.js" defer></script>
+<script src="../assets/aveline.js" defer></script>
 </body>
 </html>

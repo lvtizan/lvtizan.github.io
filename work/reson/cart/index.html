@@ -13,14 +13,14 @@
 <body>
 <div class="anno">Free 2-year warranty · Ships worldwide in 48h · 60-day returns</div>
 <nav class="top"><div class="wrap nav-in">
-  <div class="nav-links"><a href="/work/reson/shop/">Shop</a><a href="/work/reson/#lineup">Lineup</a><a href="/work/reson/journal/">Journal</a><a href="/work/reson/about/">About</a></div>
-  <a class="brand" href="/work/reson/">RESON</a>
-  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="/work/reson/about/">Account</a><a class="cart" href="/work/reson/cart/">Bag<span class="n" data-cart-n>0</span></a></div>
+  <div class="nav-links"><a href="../../../work/reson/shop/index.html">Shop</a><a href="/work/reson/#lineup">Lineup</a><a href="../../../work/reson/journal/index.html">Journal</a><a href="../../../work/reson/about/index.html">About</a></div>
+  <a class="brand" href="../../../work/reson/index.html">RESON</a>
+  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="../../../work/reson/about/index.html">Account</a><a class="cart" href="../../../work/reson/cart/index.html">Bag<span class="n" data-cart-n>0</span></a></div>
 </div></nav>
 
 <section class="pagehead">
   <div class="wrap">
-    <div class="crumb"><a href="/work/reson/">Home</a> — Your bag</div>
+    <div class="crumb"><a href="../../../work/reson/index.html">Home</a> — Your bag</div>
     <h1 class="page serif">Your bag</h1>
     <div id="cartRoot" style="margin-top:20px"></div>
   </div>
@@ -29,13 +29,13 @@
 <footer><div class="wrap">
   <div class="foot-grid">
     <div><div class="fb serif">RESON</div><p style="max-width:30ch">Premium wireless audio, engineered to disappear. Machined, driver-first, built to last.</p></div>
-    <div><h4>Shop</h4><a href="/work/reson/shop/">Headphones</a><a href="/work/reson/shop/">Earbuds</a><a href="/work/reson/shop/">Speakers</a><a href="/work/reson/shop/">Accessories</a></div>
+    <div><h4>Shop</h4><a href="../../../work/reson/shop/index.html">Headphones</a><a href="../../../work/reson/shop/index.html">Earbuds</a><a href="../../../work/reson/shop/index.html">Speakers</a><a href="../../../work/reson/shop/index.html">Accessories</a></div>
     <div><h4>Support</h4><a href="#">Shipping & returns</a><a href="#">Warranty</a><a href="#">Firmware & manuals</a><a href="#">Contact</a></div>
-    <div><h4>Company</h4><a href="/work/reson/about/">Our story</a><a href="/work/reson/about/">Sound philosophy</a><a href="/work/reson/journal/">Journal</a></div>
+    <div><h4>Company</h4><a href="../../../work/reson/about/index.html">Our story</a><a href="../../../work/reson/about/index.html">Sound philosophy</a><a href="../../../work/reson/journal/index.html">Journal</a></div>
   </div>
   <div class="foot-bot"><span>© 2026 RESON Audio</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
 </div></footer>
-<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+<a class="concept" href="../../../index.html#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
 
 <script>
   window.addEventListener('DOMContentLoaded', function(){
@@ -43,12 +43,12 @@
     var C=window.RESON_CART, money=C.money, root=document.getElementById('cartRoot');
     function render(){
       var cart=C.get();
-      if(!cart.length){ root.innerHTML='<div class="cart-empty"><h2 class="serif">Your bag is empty</h2><p style="color:var(--ink2);margin-bottom:26px">Explore the lineup — headphones, earbuds and speakers, all tuned by ear.</p><a class="btn btn-dark" href="/work/reson/shop/">Shop all audio</a></div>'; return; }
+      if(!cart.length){ root.innerHTML='<div class="cart-empty"><h2 class="serif">Your bag is empty</h2><p style="color:var(--ink2);margin-bottom:26px">Explore the lineup — headphones, earbuds and speakers, all tuned by ear.</p><a class="btn btn-dark" href="../../../work/reson/shop/index.html">Shop all audio</a></div>'; return; }
       var sub=0;
       var lines=cart.map(function(l,i){
         var p=C.find(l.id); if(!p) return '';
         var lt=p.price*l.qty; sub+=lt;
-        return '<div class="cart-line"><div class="ph"><img src="/uploads/webp/'+p.img+'.webp" alt="'+p.name+'"></div>'+
+        return '<div class="cart-line"><div class="ph"><img src="../../../uploads/webp/'+p.img+'.webp" alt="'+p.name+'"></div>'+
           '<div><div class="nm">'+p.name+'</div><div class="sz">'+l.size+'</div><div class="qty"><button data-dec="'+i+'">−</button><span>'+l.qty+'</span><button data-inc="'+i+'">+</button></div></div>'+
           '<div class="rt"><div class="pr">'+money(lt)+'</div><button class="rm" data-rm="'+i+'">Remove</button></div></div>';
       }).join('');
@@ -59,16 +59,16 @@
         '<div class="r"><span>Shipping</span><span>Complimentary</span></div>'+
         '<div class="r tot"><span>Total</span><span>'+money(sub)+'</span></div>'+
         '<button class="btn btn-dark" id="checkout" style="width:100%;justify-content:center;margin-top:22px">Proceed to checkout</button>'+
-        '<a href="/work/reson/shop/" style="display:block;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-top:16px">Continue shopping</a>'+
+        '<a href="../../../work/reson/shop/index.html" style="display:block;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-top:16px">Continue shopping</a>'+
         '<p style="font-size:12px;color:var(--muted);margin-top:18px;line-height:1.6">Free worldwide shipping & 60-day returns. Taxes calculated at checkout.</p></div></div>';
       root.querySelectorAll('[data-inc]').forEach(function(b){b.onclick=function(){var c=C.get();c[+b.getAttribute('data-inc')].qty++;C.save(c);render();};});
       root.querySelectorAll('[data-dec]').forEach(function(b){b.onclick=function(){var c=C.get(),x=+b.getAttribute('data-dec');c[x].qty--;if(c[x].qty<1)c.splice(x,1);C.save(c);render();};});
       root.querySelectorAll('[data-rm]').forEach(function(b){b.onclick=function(){var c=C.get();c.splice(+b.getAttribute('data-rm'),1);C.save(c);render();};});
-      var co=document.getElementById('checkout'); if(co) co.onclick=function(){root.innerHTML='<div class="cart-empty"><h2 class="serif">Thank you.</h2><p style="color:var(--ink2);margin-bottom:26px">In a live build, checkout continues to secure payment via Stripe / PayPal / Alipay.</p><a class="btn btn-dark" href="/work/reson/">Back to RESON</a></div>';C.save([]);};
+      var co=document.getElementById('checkout'); if(co) co.onclick=function(){root.innerHTML='<div class="cart-empty"><h2 class="serif">Thank you.</h2><p style="color:var(--ink2);margin-bottom:26px">In a live build, checkout continues to secure payment via Stripe / PayPal / Alipay.</p><a class="btn btn-dark" href="../../../work/reson/index.html">Back to RESON</a></div>';C.save([]);};
     }
     render();
   });
 </script>
-<script src="/work/reson/assets/reson.js" defer></script>
+<script src="../assets/reson.js" defer></script>
 </body>
 </html>

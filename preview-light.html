@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOYANT 远洋软件 · 高端软件定制与全栈数字化交付 | App · 小程序商城 · 商家后台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-subtle: #f1f5f9;
+    --border: rgba(15, 23, 42, 0.08);
+    --border-strong: rgba(15, 23, 42, 0.16);
+    --text-main: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --accent: #0f172a;
+    --emerald: #059669;
+    --emerald-bg: #ecfdf5;
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --radius: 16px;
+    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 12px 30px -10px rgba(15, 23, 42, 0.07), 0 0 0 1px rgba(15, 23, 42, 0.05);
+    --shadow-lg: 0 24px 60px -15px rgba(15, 23, 42, 0.10), 0 0 0 1px rgba(15, 23, 42, 0.06);
+    --maxw: 1240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(1200px 600px at 50% -80px, rgba(37, 99, 235, 0.07), transparent 75%),
+      linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 64px 64px, 64px 64px;
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+
+  /* Top Navigation */
+  nav.navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(248, 250, 252, 0.86);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: 0.3s;
+  }
+  .nav-inner {
+    height: 74px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-group {
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .brand-logo {
+    font-size: 21px; font-weight: 800; letter-spacing: -0.03em; color: var(--text-main);
+  }
+  .brand-logo span { color: var(--primary); }
+  .brand-badge {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a {
+    font-size: 14.5px; font-weight: 500; color: var(--text-body); transition: 0.2s;
+  }
+  .nav-links a:hover { color: var(--primary); }
+
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .theme-toggle-btn {
+    font-family: var(--font-mono); font-size: 12px; padding: 8px 14px; border-radius: 30px;
+    background: #ffffff; border: 1px solid var(--border-strong); color: var(--text-body);
+    display: inline-flex; align-items: center; gap: 6px; transition: 0.2s;
+  }
+  .theme-toggle-btn:hover { background: var(--bg-subtle); color: var(--text-main); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600;
+    padding: 10px 22px; border-radius: 40px; cursor: pointer; transition: 0.25s ease;
+  }
+  .btn-dark {
+    background: var(--text-main); color: #ffffff; border: 1px solid var(--text-main);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+  }
+  .btn-dark:hover {
+    background: #1e293b; transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+  }
+  .btn-white {
+    background: #ffffff; color: var(--text-main); border: 1px solid var(--border-strong);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-white:hover {
+    background: var(--bg-subtle); border-color: rgba(15, 23, 42, 0.25); transform: translateY(-1px);
+  }
+  .btn-blue {
+    background: var(--primary); color: #ffffff; border: 1px solid var(--primary);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+  }
+  .btn-blue:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+  /* Hero Section */
+  header.hero {
+    padding: clamp(64px, 10vw, 108px) 0 clamp(48px, 6vw, 72px);
+    text-align: center; position: relative;
+  }
+  .kicker-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    padding: 6px 16px; border-radius: 30px; background: #ffffff;
+    border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+    color: var(--text-body); margin-bottom: 28px;
+  }
+  .kicker-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--emerald);
+    box-shadow: 0 0 8px rgba(5, 150, 105, 0.5);
+  }
+
+  .hero-title {
+    font-size: clamp(34px, 5.2vw, 68px); font-weight: 800; letter-spacing: -0.035em;
+    line-height: 1.12; max-width: 980px; margin: 0 auto; color: var(--text-main);
+  }
+  .hero-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.8vw, 19px); color: var(--text-body); max-width: 740px;
+    margin: 24px auto 0; line-height: 1.75;
+  }
+  .hero-sub strong { color: var(--text-main); font-weight: 600; }
+
+  .hero-actions {
+    display: flex; gap: 14px; justify-content: center; margin-top: 36px; flex-wrap: wrap;
+  }
+
+  /* Stats Strip */
+  .stats-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border); border-radius: 18px;
+    overflow: hidden; margin-top: 56px; background-color: var(--border);
+    box-shadow: var(--shadow-md);
+  }
+  .stat-cell {
+    background: #ffffff; padding: 26px 24px; text-align: left;
+    transition: 0.2s;
+  }
+  .stat-cell:hover { background: #fdfdfd; }
+  .stat-val {
+    font-family: var(--font-mono); font-size: clamp(26px, 2.5vw, 36px);
+    font-weight: 700; color: var(--text-main); letter-spacing: -0.03em;
+  }
+  .stat-val span { color: var(--primary); font-size: 0.7em; margin-left: 2px; }
+  .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
+
+  /* Architecture Showcase (macOS Light Terminal) */
+  .arch-section { margin-top: 64px; }
+  .arch-box {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 20px;
+    box-shadow: var(--shadow-lg); overflow: hidden;
+  }
+  .arch-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; border-bottom: 1px solid var(--border); background: #fcfcfd;
+    flex-wrap: wrap; gap: 14px;
+  }
+  .arch-kicker {
+    display: flex; align-items: center; gap: 10px; font-family: var(--font-mono);
+    font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .traffic-lights { display: flex; gap: 6px; }
+  .traffic-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .traffic-red { background: #ff5f56; border: 1px solid #e0443e; }
+  .traffic-yellow { background: #ffbd2e; border: 1px solid #dea123; }
+  .traffic-green { background: #27c93f; border: 1px solid #1aab29; }
+
+  .arch-tabs { display: flex; gap: 8px; background: #f1f5f9; padding: 4px; border-radius: 10px; }
+  .arch-tab-btn {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    padding: 7px 16px; border-radius: 7px; border: none; background: transparent;
+    color: var(--text-muted); cursor: pointer; transition: 0.2s;
+  }
+  .arch-tab-btn:hover { color: var(--text-main); }
+  .arch-tab-btn.active {
+    background: #ffffff; color: var(--text-main); font-weight: 600;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+  }
+
+  .arch-content {
+    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; padding: 36px clamp(24px, 3vw, 44px);
+    align-items: center;
+  }
+  .code-terminal {
+    background: #0f172a; border-radius: 14px; padding: 24px; color: #cbd5e1;
+    font-family: var(--font-mono); font-size: 12.5px; line-height: 1.75;
+    overflow-x: auto; box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .code-terminal .cmt { color: #64748b; font-style: italic; }
+  .code-terminal .kw { color: #38bdf8; font-weight: 600; }
+  .code-terminal .fn { color: #fde047; }
+  .code-terminal .str { color: #86efac; }
+  .code-terminal .num { color: #f472b6; }
+
+  .arch-info h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .arch-info p { color: var(--text-body); font-size: 15px; line-height: 1.7; margin-bottom: 22px; }
+  .pill-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+  .pill-tag {
+    font-family: var(--font-mono); font-size: 11.5px; padding: 5px 12px; border-radius: 6px;
+    background: var(--bg-subtle); border: 1px solid var(--border); color: var(--text-body);
+    font-weight: 500;
+  }
+
+  /* Section Styles */
+  section { padding: clamp(64px, 8vw, 100px) 0; }
+  .section-head { margin-bottom: 44px; text-align: left; }
+  .sec-kicker {
+    display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono);
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--primary); margin-bottom: 12px;
+  }
+  .sec-kicker::before { content: ""; width: 18px; height: 1.5px; background: var(--primary); }
+  .section-head h2 {
+    font-size: clamp(28px, 3.6vw, 46px); font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.15; color: var(--text-main);
+  }
+  .section-head p {
+    font-size: 16px; color: var(--text-muted); margin-top: 10px; max-width: 640px;
+  }
+
+  /* 4 Pillars Bento Grid */
+  .pillars-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 28px;
+  }
+  .pillar-card {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 18px;
+    padding: clamp(28px, 2.5vw, 36px); display: flex; flex-direction: column;
+    justify-content: space-between; transition: 0.3s; box-shadow: var(--shadow-sm);
+  }
+  .pillar-card:hover {
+    transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(37, 99, 235, 0.3);
+  }
+  .pillar-card.featured {
+    border-color: rgba(37, 99, 235, 0.4);
+    background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+    box-shadow: 0 16px 40px -15px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.1);
+  }
+  .pillar-num {
+    font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; color: var(--primary);
+    letter-spacing: 0.08em; margin-bottom: 14px;
+  }
+  .pillar-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .pillar-card p { font-size: 14px; color: var(--text-body); line-height: 1.65; margin-bottom: 20px; }
+  .pillar-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .pillar-bullets li {
+    font-size: 13.5px; color: var(--text-body); display: flex; align-items: flex-start; gap: 8px;
+  }
+  .pillar-bullets li span { color: var(--emerald); font-weight: 700; }
+
+  /* Expansion Banner (High-end Web & Export) */
+  .expansion-banner {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 18px;
+    padding: 28px 36px; display: flex; align-items: center; justify-content: space-between;
+    gap: 28px; flex-wrap: wrap; box-shadow: var(--shadow-sm); transition: 0.3s;
+  }
+  .expansion-banner:hover {
+    box-shadow: var(--shadow-md); border-color: var(--border-strong);
+  }
+  .exp-left { max-width: 780px; }
+  .exp-pill {
+    display: inline-block; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .expansion-banner h4 { font-size: 19px; font-weight: 700; color: var(--text-main); margin-bottom: 6px; }
+  .expansion-banner p { font-size: 14px; color: var(--text-body); line-height: 1.65; margin: 0; }
+
+  /* Cases Section */
+  .cases-section { background: #fdfdfe; border-top: 1px solid var(--border); }
+  .case-filter-tabs {
+    display: flex; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; align-items: center;
+  }
+  .case-filter-btn {
+    font-family: var(--font-mono); font-size: 13px; font-weight: 500; padding: 9px 20px;
+    border-radius: 30px; background: #ffffff; border: 1px solid var(--border-strong);
+    color: var(--text-body); cursor: pointer; transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .case-filter-btn:hover {
+    color: var(--text-main); border-color: var(--text-main); background: var(--bg-subtle);
+  }
+  .case-filter-btn.active {
+    background: var(--text-main); color: #ffffff; border-color: var(--text-main);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.2); font-weight: 600;
+  }
+
+  .case-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+  }
+  .case-card {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 18px;
+    overflow: hidden; text-decoration: none; color: inherit; transition: 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex; flex-direction: column; box-shadow: var(--shadow-sm);
+  }
+  .case-card:hover {
+    border-color: rgba(15, 23, 42, 0.2); transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .case-thumb {
+    width: 100%; height: 270px; background: #f1f5f9; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .case-thumb img {
+    width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
+  }
+  .case-card:hover .case-thumb img { transform: scale(1.03); }
+  .case-badge {
+    position: absolute; top: 16px; left: 16px;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600; padding: 5px 12px;
+    border-radius: 30px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px);
+    border: 1px solid rgba(15, 23, 42, 0.08); color: var(--text-main);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .case-body {
+    padding: 26px 28px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .case-body h4 { font-size: 19px; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
+  .case-body p { font-size: 14px; color: var(--text-body); line-height: 1.65; margin-bottom: 20px; }
+  .case-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .case-tag {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
+    background: var(--bg-subtle); padding: 4px 10px; border-radius: 6px; font-weight: 500;
+  }
+
+  /* Comparison Section */
+  .compare-section {
+    background: #f8fafc; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+  .compare-col {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 18px; padding: 34px;
+    box-shadow: var(--shadow-sm);
+  }
+  .compare-col.win {
+    border-color: rgba(5, 150, 105, 0.3);
+    background: linear-gradient(180deg, #ffffff 0%, #f7fdfa 100%);
+    box-shadow: 0 14px 36px -12px rgba(5, 150, 105, 0.12), 0 0 0 1px rgba(5, 150, 105, 0.1);
+  }
+  .compare-tag {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 22px;
+  }
+  .compare-col.win .compare-tag { color: var(--emerald); }
+  .compare-col:not(.win) .compare-tag { color: var(--text-muted); }
+  .compare-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .compare-list li { display: flex; gap: 12px; font-size: 14.5px; color: var(--text-body); line-height: 1.6; }
+  .compare-list li b { color: var(--text-main); font-weight: 600; }
+  .compare-list li .icon { font-weight: 800; flex: none; font-size: 15px; }
+  .compare-col.win .icon { color: var(--emerald); }
+  .compare-col:not(.win) .icon { color: #94a3b8; }
+
+  /* Pricing / Scope Section */
+  .pricing-section { background: #ffffff; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .price-card {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 18px; padding: 36px 30px;
+    display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s;
+    box-shadow: var(--shadow-sm);
+  }
+  .price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(37, 99, 235, 0.3); }
+  .price-card.featured {
+    border-color: rgba(37, 99, 235, 0.45);
+    background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+    box-shadow: 0 20px 50px -15px rgba(37, 99, 235, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.12);
+  }
+  .price-tier-name {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .price-card h3 { font-size: 23px; font-weight: 700; margin: 8px 0 12px; }
+  .price-timeline {
+    font-size: 14px; font-weight: 600; color: var(--primary); font-family: var(--font-mono); margin-bottom: 22px;
+  }
+  .price-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; flex: 1; }
+  .price-list li { font-size: 14px; color: var(--text-body); display: flex; gap: 10px; }
+  .price-list li span { color: var(--emerald); font-weight: 700; flex: none; }
+
+  /* CTA Section */
+  .cta-section {
+    padding: clamp(70px, 9vw, 110px) 0; text-align: center; background: #fdfdfd;
+    border-top: 1px solid var(--border);
+  }
+  .cta-box {
+    max-width: 840px; margin: 0 auto; background: #ffffff;
+    border: 1px solid var(--border); border-radius: 24px;
+    padding: clamp(40px, 5vw, 64px) clamp(24px, 4vw, 56px);
+    box-shadow: var(--shadow-lg);
+  }
+  .cta-box h2 { font-size: clamp(28px, 3.8vw, 44px); font-weight: 800; letter-spacing: -0.03em; margin: 16px 0 16px; }
+  .cta-box p { color: var(--text-body); font-size: 16px; max-width: 580px; margin: 0 auto 34px; line-height: 1.7; }
+  .contact-chips { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+  .contact-chip {
+    display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 13.5px;
+    background: var(--bg-subtle); padding: 10px 18px; border-radius: 30px; border: 1px solid var(--border);
+    color: var(--text-body);
+  }
+
+  /* Footer */
+  footer {
+    padding: 44px 0; border-top: 1px solid var(--border); text-align: center;
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); background: #f8fafc;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .stats-strip { grid-template-columns: 1fr 1fr; }
+    .arch-content { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .case-grid { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="navbar">
+  <div class="wrap nav-inner">
+    <div class="brand-group">
+      <a href="./preview-light.html" class="brand-logo">YOYANT<span>.</span></a>
+      <span class="brand-badge">远洋软件 · 极简工坊版</span>
+    </div>
+    <div class="nav-links">
+      <a href="#services">软件定制</a>
+      <a href="#arch">三端架构</a>
+      <a href="#cases">交付案例</a>
+      <a href="#compare">交付标准</a>
+      <a href="#pricing">方案报价</a>
+    </div>
+    <div class="nav-right">
+      <a href="./preview.html" class="theme-toggle-btn" title="查看暗黑深色版本">
+        <span>☾</span> 切换暗黑深色版
+      </a>
+      <a href="#contact" class="btn btn-dark">咨询软件定制 →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker-pill">
+      <span class="kicker-dot"></span>
+      <span>独立数字化研发工作室 · 阿里/优酷全栈工程背景</span>
+    </div>
+    
+    <h1 class="hero-title">
+      高端软件定制与全栈数字化交付<br>
+      <em>App · 微信小程序 · 商家中台 · 出海官网</em>
+    </h1>
+    
+    <p class="hero-sub">
+      美术学院与计算机工程双专业底色。摒弃模板拼凑与低质套壳：从高保真交互原型到生产级代码工程，<strong>100% 完整交付源码与数据库</strong>，私有化部署，数据安全自主可控。
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-dark" style="font-size:15px; padding:12px 28px;">发起定制方案评估 →</a>
+      <a href="#cases" class="btn btn-white" style="font-size:15px; padding:12px 26px;">浏览 9 款线上交付案例 ↓</a>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-strip">
+      <div class="stat-cell">
+        <div class="stat-val">100<span>%</span></div>
+        <div class="stat-label">源码与设计源文件完整交付</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">46<span>+屏</span></div>
+        <div class="stat-label">复杂跨境商业业务流单体闭环</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">3<span>端</span></div>
+        <div class="stat-label">移动 App + 小程序 + 商家中台互通</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">0<span>死重</span></div>
+        <div class="stat-label">原创干净工程 · 拒绝任何模板年费</div>
+      </div>
+    </div>
+
+    <!-- Interactive Architecture Blueprint -->
+    <div class="arch-section" id="arch">
+      <div class="arch-box">
+        <div class="arch-header">
+          <div class="arch-kicker">
+            <div class="traffic-lights">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span>三端一体生产级架构交互 (Click to switch)</span>
+          </div>
+          <div class="arch-tabs">
+            <button class="arch-tab-btn active" onclick="switchArch('app', this)">01 移动端 App</button>
+            <button class="arch-tab-btn" onclick="switchArch('mini', this)">02 小程序商城</button>
+            <button class="arch-tab-btn" onclick="switchArch('admin', this)">03 商家管理中台</button>
+          </div>
+        </div>
+
+        <div class="arch-content">
+          <div class="code-terminal">
+            <pre id="arch-code"><code><span class="cmt">// [移动端 App 客户端 · iOS & Android Native/Flutter]</span>
+<span class="kw">class</span> <span class="fn">CommercialAppEngine</span> <span class="kw">implements</span> AppCore {
+  <span class="kw">final</span> UserSession session = AuthGateway.<span class="fn">verifyBiometrics</span>();
+  <span class="kw">final</span> WebSocketStream pipe = StreamChannel.<span class="fn">connect</span>(<span class="str">"wss://api.yoyant.com"</span>);
+
+  <span class="cmt">// 业务闭环：多规格选型 -> 毫秒级购物车 -> 安全直连支付</span>
+  <span class="kw">Future</span>&lt;<span class="num">OrderResult</span>&gt; <span class="fn">executeCheckout</span>(CartModel cart) <span class="kw">async</span> {
+    <span class="kw">final</span> order = <span class="kw">await</span> OrderPipeline.<span class="fn">generateOrder</span>(cart.skuList);
+    <span class="kw">return</span> PaymentEngine.<span class="fn">dispatch</span>(order.id, Currency.RMB);
+  }
+}</code></pre>
+          </div>
+
+          <div class="arch-info" style="text-align: left;">
+            <h3 id="arch-title">移动端原生与跨端 App 定制</h3>
+            <p id="arch-desc">
+              面向商业交易、社交互动、AI 伴聊及智能硬件配网的高质感移动客户端。具备大厂级 60fps 动效、离线状态同步、本地缓存机制与应用商店合规上架全流程。
+            </p>
+            <div class="pill-group" id="arch-pills">
+              <span class="pill-tag">iOS Swift / SwiftUI</span>
+              <span class="pill-tag">Android Kotlin</span>
+              <span class="pill-tag">Flutter 跨端高保真</span>
+              <span class="pill-tag">硬件蓝牙/USB 协议</span>
+              <span class="pill-tag">应用商店上架辅导</span>
+            </div>
+            <a href="#contact" class="btn btn-white" style="font-size: 13px;">评估该类型的开发周期 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- 4 Core Pillars Section -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-kicker">Core Capabilities</div>
+      <h2>四大核心定制工程板块</h2>
+      <p>从业务场景真实推演交互边界，拒绝低质套壳，交付结构清晰、高可扩展的代码资产。</p>
+    </div>
+
+    <div class="pillars-grid">
+      <!-- Pillar 1: App -->
+      <div class="pillar-card">
+        <div>
+          <div class="pillar-num">01 / NATIVE & CROSS-PLATFORM</div>
+          <h3>App 定制开发</h3>
+          <p>针对消费者体验或企业现场作业打造的高性能 App。涵盖 iOS 原生、Android 原生与 Flutter 跨端方案。</p>
+          <ul class="pillar-bullets">
+            <li><span>✓</span> 复杂商业下单与支付交易闭环</li>
+            <li><span>✓</span> AI 角色模型端侧集成（如 AVATAR）</li>
+            <li><span>✓</span> 工业与手持硬件通信（蓝牙 BLE/USB）</li>
+            <li><span>✓</span> 极度讲究交互流畅度与 60fps 动效</li>
+            <li><span>✓</span> App Store / Google Play / 国内应用市场上架</li>
+          </ul>
+        </div>
+        <a href="#cases" onclick="filterCases('app', document.querySelector('.case-filter-btn[data-target=\'app\']'))" class="btn btn-white" style="width:100%; justify-content:center;">查看 App 案例 →</a>
+      </div>
+
+      <!-- Pillar 2: Mini Program -->
+      <div class="pillar-card featured">
+        <div>
+          <div class="pillar-num">02 / WECHAT COMMERCE</div>
+          <h3>微信小程序商城定制</h3>
+          <p>直面微信生态数亿流量的品牌零售、B2B 批发订货与私域复购系统。极速冷启动，支付转化率高。</p>
+          <ul class="pillar-bullets">
+            <li><span>✓</span> 多规格复杂 SKU 矩阵选型与阶梯报价</li>
+            <li><span>✓</span> 微信商户号直连结算、自动分账</li>
+            <li><span>✓</span> 分销返佣、拼团海报与裂变体系</li>
+            <li><span>✓</span> 线下扫码核销、同城配送与快递物流打通</li>
+            <li><span>✓</span> 100% 自主开发，绝无第三方 SaaS 年费抽佣</li>
+          </ul>
+        </div>
+        <a href="#contact" class="btn btn-dark" style="width:100%; justify-content:center;">咨询小程序定制 →</a>
+      </div>
+
+      <!-- Pillar 3: Admin Portal -->
+      <div class="pillar-card">
+        <div>
+          <div class="pillar-num">03 / CONTROL CENTER & BI</div>
+          <h3>商家后台管理中台</h3>
+          <p>支撑前端交易流的高效率运营中台。让业务人员、仓管与财务在清爽直观的界面中高频流转。</p>
+          <ul class="pillar-bullets">
+            <li><span>✓</span> 商品与库存多仓联动、入库/出库闭环</li>
+            <li><span>✓</span> 订单履约、售后工单、多物流打通</li>
+            <li><span>✓</span> 多商户/多门店/细粒度角色权限（RBAC）</li>
+            <li><span>✓</span> 实时数据大屏看板、财务对账与报表导出</li>
+            <li><span>✓</span> 私有化部署，数据安全沉淀在企业自己手中</li>
+          </ul>
+        </div>
+        <a href="#pricing" class="btn btn-white" style="width:100%; justify-content:center;">查看后台报价档位 →</a>
+      </div>
+    </div>
+
+    <!-- Expansion Banner: High-End Web & Export Sites -->
+    <div class="expansion-banner">
+      <div class="exp-left">
+        <span class="exp-pill">04 / BRAND & EXPORT DTC SITES</span>
+        <h4>高端企业官网与出海独立站定制</h4>
+        <p>面向高端制造、出海新能源、医疗科技与品牌外贸：纯手写极速秒开架构、Google 国际化深度 SEO 与多语言全球化展示体系，彻底终结低质模板带来的品牌损耗。</p>
+      </div>
+      <a href="#cases" onclick="filterCases('web', document.querySelector('.case-filter-btn[data-target=\'web\']'))" class="btn btn-white" style="white-space: nowrap; font-size: 13.5px;">查看出海官网案例 ↓</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Selected Cases Section -->
+<section id="cases" class="cases-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-kicker">Proven Production</div>
+      <h2>精选案例 · 真实在线运行</h2>
+      <p>每一个案例都包含端到端的交互设计与稳健工程交付，涵盖 App 客户端、复杂中后台与出海品牌站。</p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="case-filter-tabs">
+      <button class="case-filter-btn active" data-target="all" onclick="filterCases('all', this)">全部精选案例 (10)</button>
+      <button class="case-filter-btn" data-target="app" onclick="filterCases('app', this)">App · 软件系统 (5)</button>
+      <button class="case-filter-btn" data-target="web" onclick="filterCases('web', this)">企业官网 · 出海独立站 (3)</button>
+      <button class="case-filter-btn" data-target="mall" onclick="filterCases('mall', this)">小程序 · 品牌商城 (2)</button>
+    </div>
+
+    <div class="case-grid">
+      <!-- 1. Epaifa (app) -->
+      <a href="/work/epaifa/" class="case-card" data-category="app">
+        <div class="case-thumb">
+          <span class="case-badge">B2B 商城 App + 仓储端</span>
+          <img src="./uploads/webp/c-epaifa-lg.webp" alt="Epaifa Mall B2B 跨境商城 App 案例" onerror="this.src='./uploads/avatar-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>Epaifa Mall — 46 屏跨境供应链批发商城</h4>
+            <p>打通采购入库、库存补货、多规格下单、拣货出库、COD 物流追踪与售后对账，将跨国复杂业务串成完整闭环。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">移动端 App</span>
+            <span class="case-tag">商家中台</span>
+            <span class="case-tag">多规格下单</span>
+            <span class="case-tag">国际化 i18n</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. VeinScope (app) -->
+      <a href="/work/veinscope/" class="case-card" data-category="app">
+        <div class="case-thumb">
+          <span class="case-badge">工业设备软件 · 3D 测量</span>
+          <img src="./uploads/webp/c-veinscope-lg.webp" alt="VeinScope 工业内窥镜软硬件检测测量界面" onerror="this.src='./uploads/veinscope-device.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>VeinScope — 工业内窥镜软硬件检测系统</h4>
+            <p>为工业狭窄腔体检测打造的手持终端软件：2D/3D 分屏、高精度点面测量、深度图伪彩分析与点云导出，针对强光环境深度优化。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">软硬件交互</span>
+            <span class="case-tag">2D/3D测量</span>
+            <span class="case-tag">工业级设备</span>
+            <span class="case-tag">现场操作优化</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. SUNVOLT (web) -->
+      <a href="/work/sunvolt/" class="case-card" data-category="web">
+        <div class="case-thumb">
+          <span class="case-badge">新能源出海官网 · 品牌站</span>
+          <img src="./uploads/webp/c-sv-lg.webp" alt="SUNVOLT 晟阳储能 工商业储能与新能源出海官网" onerror="this.src='./uploads/avatar-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>SUNVOLT 晟阳储能 — 工商业储能出海官网</h4>
+            <p>针对海外新能源电站与工商业买家决策链：全案工业 3D 视觉语言、储能系统拓扑图解、多语言架构与毫秒级静态加载。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">出海品牌站</span>
+            <span class="case-tag">新能源储能</span>
+            <span class="case-tag">全案视觉</span>
+            <span class="case-tag">99分性能评级</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. AVATAR (app) -->
+      <a href="/work/avatar/" class="case-card" data-category="app">
+        <div class="case-thumb">
+          <span class="case-badge">移动 App · AI 应用</span>
+          <img src="./uploads/webp/c-avatar-lg.webp" alt="AVATAR AI 陪伴应用交互界面" onerror="this.src='./uploads/avatar-home3.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>AVATAR — AI 角色陪伴与聊天移动 App</h4>
+            <p>沉浸式 AI 伴聊移动应用：角色发现流、高保真聊天交互动效、好感度进阶模式与多档会员订阅付费系统一体化实现。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">iOS 原生</span>
+            <span class="case-tag">AI 客户端</span>
+            <span class="case-tag">高保真动效</span>
+            <span class="case-tag">商业化订阅</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. RESON (mall) -->
+      <a href="/work/reson/" class="case-card" data-category="mall">
+        <div class="case-thumb">
+          <span class="case-badge">3C 硬件商城 · DTC 零售</span>
+          <img src="./uploads/webp/c-reson-lg.webp" alt="RESON 3C 智能硬件数码商城" onerror="this.src='./uploads/avatar-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>RESON — 3C 智能硬件数码品牌商城</h4>
+            <p>暗色极客风格数码商城：全品类多规格 SKU 矩阵、购物车流转、商品详情与微信支付/Stripe 交易转化闭环。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">品牌电商</span>
+            <span class="case-tag">小程序商城</span>
+            <span class="case-tag">多规格 SKU</span>
+            <span class="case-tag">支付闭环</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. VITALINK (web) -->
+      <a href="/work/vitalink/" class="case-card" data-category="web">
+        <div class="case-thumb">
+          <span class="case-badge">医疗科技出海 · 全球官网</span>
+          <img src="./uploads/webp/c-med-lg.webp" alt="VITALINK 维立康 医疗器械与体外诊断全球官网" onerror="this.src='./uploads/avatar-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>VITALINK 维立康 — 医疗器械全球官网</h4>
+            <p>体外诊断与精密医疗器械全球化品牌站：严谨合规的产品矩阵分类、学术文献下载专区与全球代理商询盘对接系统。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">医疗出海官网</span>
+            <span class="case-tag">合规设计</span>
+            <span class="case-tag">学术资料库</span>
+            <span class="case-tag">代理商询盘</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 7. Tarmeer (app) -->
+      <a href="/work/tarmeer/" class="case-card" data-category="app">
+        <div class="case-thumb">
+          <span class="case-badge">分布式 Web 业务平台</span>
+          <img src="./uploads/webp/c-tarmeer-lg.webp" alt="Tarmeer 多国室内设计业务平台" onerror="this.src='./uploads/tarmeer-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>Tarmeer — 多国垂直业务平台 + 商家中台</h4>
+            <p>阿联酋与越南双国站点严格数据隔离，打通装企目录、外勤问卷系统与商家入驻审核，搭载自建免费 CLIP 图像标注引擎。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">全栈架构</span>
+            <span class="case-tag">跨国数据隔离</span>
+            <span class="case-tag">运营中台</span>
+            <span class="case-tag">Next.js SSR</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 8. KST Oilfield (web) -->
+      <a href="/work/kst-oilfield/" class="case-card" data-category="web">
+        <div class="case-thumb">
+          <span class="case-badge">重工装备出海 · 双语官网</span>
+          <img src="./uploads/webp/c-oilfield-lg.webp" alt="KST Oilfield 石油装备与工业工程双语官网" onerror="this.src='./uploads/avatar-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>KST Oilfield — 石油装备工业工程双语官网</h4>
+            <p>重工油气装备出海标杆站：中英双语国际化、严谨的产品技术参数表与 API 国际认证背书展厅，沉淀高价值海外工程大单。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">工业重工出海</span>
+            <span class="case-tag">中英双语</span>
+            <span class="case-tag">国际认证展厅</span>
+            <span class="case-tag">工程询盘转化</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 9. 云裳珠宝 (mall) -->
+      <a href="/work/yunshang/" class="case-card" data-category="mall">
+        <div class="case-thumb">
+          <span class="case-badge">私域小程序 · 高端珠宝商城</span>
+          <img src="./uploads/webp/c-yun-lg.webp" alt="云裳珠宝 东方美学珠宝定制小程序商城" onerror="this.src='./uploads/avatar-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>云裳珠宝 — 东方美学珠宝定制小程序商城</h4>
+            <p>高端珠宝定制与私域零售小程序：一物一证书鉴定查验、定制材质选配、私域 VIP 会员权益与微信商户号直连结算。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">微信小程序</span>
+            <span class="case-tag">珠宝定制</span>
+            <span class="case-tag">一物一码</span>
+            <span class="case-tag">私域结算</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 10. 南海风物 (app) -->
+      <a href="/work/nanhai/" class="case-card" data-category="app">
+        <div class="case-thumb">
+          <span class="case-badge">软件 · 软硬件触屏互动装置</span>
+          <img src="./uploads/webp/c-nanhai-lg.webp" alt="南海风物 沉浸式文化互动装置" onerror="this.src='./uploads/avatar-home.png'">
+        </div>
+        <div class="case-body">
+          <div>
+            <h4>南海风物 — 沉浸式文化互动装置</h4>
+            <p>佛山千灯湖魁星阁沉浸式互动装置：以岭南龙舟为叙事主线，触屏端控台与大屏多端联动，3 种关卡玩法现场稳定落地。</p>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">软硬件交互</span>
+            <span class="case-tag">触屏大屏联动</span>
+            <span class="case-tag">3种玩法系统</span>
+            <span class="case-tag">现场部署</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison: Us vs Traditional Outsourcing -->
+<section id="compare" class="compare-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-kicker">Delivery Standard</div>
+      <h2>设计与工程一体，终结传统外包扯皮</h2>
+      <p>为什么市面上很多软件外包最后都烂尾？因为普通外包设计与开发脱节、层层分包、代码死重无数。</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-col win">
+        <div class="compare-tag">✓ YOYANT 数字化工程标准 · 放心交付</div>
+        <ul class="compare-list">
+          <li><span class="icon">✓</span><span><b>100% 完整源码与数据私有化交付</b>，绝无隐藏后门，不强行绑定私有云服务器。</span></li>
+          <li><span class="icon">✓</span><span><b>计算机 + 美院双专业大厂全栈落地</b>，原型怎么画、代码就怎么写，还原度 100%。</span></li>
+          <li><span class="icon">✓</span><span><b>模块化高扩展架构</b>，代码干净利落，支持企业未来业务持续演进与内部团队交接。</span></li>
+          <li><span class="icon">✓</span><span><b>明细里程碑阶段验收与完善交接文档</b>，包含 API 接口文档、部署脚本与上线辅导。</span></li>
+        </ul>
+      </div>
+
+      <div class="compare-col">
+        <div class="compare-tag">✕ 普通低价套壳外包 · 常见陷阱</div>
+        <ul class="compare-list">
+          <li><span class="icon">—</span><span>开源模板生搬硬拼，界面卡顿粗糙，严重损伤品牌信誉。</span></li>
+          <li><span class="icon">—</span><span>结构臃肿混乱，Bug 越改越多，后续业务一调整全盘崩溃。</span></li>
+          <li><span class="icon">—</span><span>源码不给或核心加密，次年收取高额“维护费”与服务器绑架。</span></li>
+          <li><span class="icon">—</span><span>售前吹得天花乱坠，实际交由实习生或廉价三包，成品与预期完全脱节。</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Tiers -->
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-kicker">Transparent Scope</div>
+      <h2>清晰的交付档位与评估</h2>
+      <p>根据您的真实业务需求评估排期与开发量，需求确立后提供固定透明报价，绝无中途隐形增项。</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Tier 1 -->
+      <div class="price-card">
+        <div>
+          <div class="price-tier-name">Mini-Program Commerce</div>
+          <h3>小程序商城与私域交易</h3>
+          <div class="price-timeline">2 – 4 周交付周期</div>
+          <ul class="price-list">
+            <li><span>✓</span> 微信小程序客户端 + 基础商家中台</li>
+            <li><span>✓</span> 商品多规格 SKU 矩阵、阶梯价与微信支付</li>
+            <li><span>✓</span> 订单状态流转、库存核销与快递追踪</li>
+            <li><span>✓</span> 原创高保真交互视觉，告别模板套壳</li>
+            <li><span>✓</span> 100% 完整源码交付与商户号直连配置</li>
+          </ul>
+        </div>
+        <a href="#contact" class="btn btn-white" style="width:100%; justify-content:center;">获取该档位方案 →</a>
+      </div>
+
+      <!-- Tier 2 (Featured) -->
+      <div class="price-card featured">
+        <div>
+          <div class="price-tier-name">App & Control Center</div>
+          <h3>移动 App 与商家中后台</h3>
+          <div class="price-timeline">4 – 8 周交付周期</div>
+          <ul class="price-list">
+            <li><span>✓</span> iOS / Android 原生或 Flutter 跨端 App</li>
+            <li><span>✓</span> 商家运营中台（多仓库存/履约/RBAC权限）</li>
+            <li><span>✓</span> 复杂商业逻辑、通知推送、支付与双端联调</li>
+            <li><span>✓</span> 大厂级 60fps 动效、UI 交互规范全交付</li>
+            <li><span>✓</span> 压力测试、应用市场上架辅导与完整工程文档</li>
+          </ul>
+        </div>
+        <a href="#contact" class="btn btn-dark" style="width:100%; justify-content:center;">咨询 App 与中台定制 →</a>
+      </div>
+
+      <!-- Tier 3 -->
+      <div class="price-card">
+        <div>
+          <div class="price-tier-name">Enterprise Platform</div>
+          <h3>企业复杂系统 / 软硬件一体</h3>
+          <div class="price-timeline">按需深度排期</div>
+          <ul class="price-list">
+            <li><span>✓</span> 工业设备、手持仪器端软硬件交互软件</li>
+            <li><span>✓</span> 数据可视化大屏 BI 与实时决策看板</li>
+            <li><span>✓</span> 多租户跨国数据隔离平台与 AI 模型集成</li>
+            <li><span>✓</span> 私有化服务器高可用集群部署与安全加固</li>
+            <li><span>✓</span> 上线后长期技术护航与版本演进支持</li>
+          </ul>
+        </div>
+        <a href="#contact" class="btn btn-white" style="width:100%; justify-content:center;">预约架构方案沟通 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact & CTA Section -->
+<section id="contact" class="cta-section">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="sec-kicker" style="justify-content:center;">Start Your Project</div>
+      <h2>聊聊您的软件定制想法</h2>
+      <p>无需繁琐流程，直接与全栈研发负责人沟通。发来您的需求描述或原型草图，我们免费为您梳理业务架构、技术选型与排期预算。</p>
+
+      <div class="contact-chips">
+        <div class="contact-chip">
+          <span>创始人电话：</span>
+          <strong>13760680715</strong>
+        </div>
+        <div class="contact-chip">
+          <span>工作邮箱：</span>
+          <a href="mailto:bbtizan@gmail.com" style="color:var(--primary); font-weight:600;">bbtizan@gmail.com</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 36px; display: inline-flex; flex-direction: column; align-items: center; gap: 12px;">
+        <img src="./uploads/webp/wechat-qr.webp" alt="微信二维码" width="136" height="136" onerror="this.style.display='none'" style="border-radius:14px; border:1px solid var(--border); background:#fff; padding:6px; box-shadow:var(--shadow-md);">
+        <span style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">扫一扫添加创始人微信 · 免费获取架构评估方案</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <p>© 2026 YOYANT 远洋软件 · 专注高端定制研发 | App · 微信小程序商店 · 商家管理中后台</p>
+    <p style="margin-top: 6px; color: var(--text-muted);">广州市天河区车陂南中融广场 · 100% 完整源码与数据私有化交付</p>
+  </div>
+</footer>
+
+<script>
+  const archData = {
+    app: {
+      title: "移动端原生与跨端 App 定制 (iOS / Android / Flutter)",
+      desc: "面向商业交易、社交互动、AI 伴聊及智能硬件配网的高质感移动客户端。具备大厂级 60fps 动效、离线状态同步、本地缓存机制与应用商店合规上架全流程。",
+      pills: ["iOS Swift / SwiftUI", "Android Kotlin", "Flutter 跨端高保真", "硬件蓝牙/USB 协议", "应用商店上架辅导"],
+      code: `<span class="cmt">// [移动端 App 客户端 · iOS & Android Native/Flutter]</span>
+<span class="kw">class</span> <span class="fn">CommercialAppEngine</span> <span class="kw">implements</span> AppCore {
+  <span class="kw">final</span> UserSession session = AuthGateway.<span class="fn">verifyBiometrics</span>();
+  <span class="kw">final</span> WebSocketStream pipe = StreamChannel.<span class="fn">connect</span>(<span class="str">"wss://api.yoyant.com"</span>);
+
+  <span class="cmt">// 业务闭环：多规格选型 -> 毫秒级购物车 -> 安全直连支付</span>
+  <span class="kw">Future</span>&lt;<span class="num">OrderResult</span>&gt; <span class="fn">executeCheckout</span>(CartModel cart) <span class="kw">async</span> {
+    <span class="kw">final</span> order = <span class="kw">await</span> OrderPipeline.<span class="fn">generateOrder</span>(cart.skuList);
+    <span class="kw">return</span> PaymentEngine.<span class="fn">dispatch</span>(order.id, Currency.RMB);
+  }
+}`
+    },
+    mini: {
+      title: "微信小程序商城与私域交易系统",
+      desc: "专为微信生态定制的零售商城、B2B 批发订货与分销裂变小程序。极速首屏冷启动、复杂多规格商品选型、微信直连分账与线下扫码核销闭环。",
+      pills: ["微信原生 / Taro 跨端", "多规格 SKU 阶梯价", "微信支付直连", "分销裂变与海报", "线下扫码核销闭环"],
+      code: `<span class="cmt">// [微信小程序商城端 · 订单与交易管线]</span>
+<span class="kw">export async function</span> <span class="fn">onMiniProgramPay</span>(skuOrder) {
+  <span class="kw">const</span> wxPayParams = <span class="kw">await</span> api.<span class="fn">createWechatPrepay</span>({
+    orderId: skuOrder.id,
+    amount: skuOrder.totalAmount,
+    openid: wx.<span class="fn">getStorageSync</span>(<span class="str">'wx_openid'</span>)
+  });
+  
+  <span class="cmt">// 唤起微信支付并执行本地库存预扣与状态流转</span>
+  <span class="kw">return</span> wx.<span class="fn">requestPayment</span>({ ...wxPayParams });
+}`
+    },
+    admin: {
+      title: "商家运营管理中台与数据看板 (Admin Portal)",
+      desc: "支撑业务运转的数字化控制中枢。订单多态履约、商品与多仓库存流转、财务分账报表、多角色细粒度权限控制与实时可视化大屏。",
+      pills: ["Vue 3 / React + TypeScript", "RBAC 细粒度权限", "实时数据大屏 BI", "多仓库存核销", "私有化安全部署"],
+      code: `<span class="cmt">// [商家管理后台系统 · 多仓库存与履约中枢]</span>
+<span class="kw">export const</span> <span class="fn">dispatchWarehouseFulfillment</span> = <span class="kw">async</span> (orderId, targetWarehouse) => {
+  <span class="kw">const</span> tx = <span class="kw">await</span> db.<span class="fn">transaction</span>();
+  <span class="kw">try</span> {
+    <span class="kw">await</span> tx.inventory.<span class="fn">lockSku</span>(orderId.skuId, targetWarehouse);
+    <span class="kw">await</span> tx.logistics.<span class="fn">generateWaybill</span>(orderId);
+    <span class="kw">await</span> tx.<span class="fn">commit</span>();
+  } <span class="kw">catch</span> (err) {
+    <span class="kw">await</span> tx.<span class="fn">rollback</span>();
+  }
+};`
+    }
+  };
+
+  function switchArch(type, btn) {
+    document.querySelectorAll('.arch-tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = archData[type];
+    document.getElementById('arch-title').textContent = d.title;
+    document.getElementById('arch-desc').textContent = d.desc;
+    document.getElementById('arch-code').innerHTML = d.code;
+    const pillsContainer = document.getElementById('arch-pills');
+    pillsContainer.innerHTML = d.pills.map(p => `<span class="pill-tag">${p}</span>`).join('');
+  }
+
+  function filterCases(category, btn) {
+    if (!btn) return;
+    document.querySelectorAll('.case-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.case-card');
+    cards.forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

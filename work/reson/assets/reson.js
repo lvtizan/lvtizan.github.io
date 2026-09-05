@@ -1,6 +1,8 @@
 /* RESON — shared shop logic: catalog · cart(localStorage) · search · nav active · UI */
 (function () {
-  var BASE = '/work/reson/';
+  var isLocal = window.location.protocol === 'file:';
+  var BASE = isLocal ? (window.location.pathname.includes('/work/reson/') ? (window.location.pathname.split('/work/reson/')[0] + '/work/reson/') : './') : '/work/reson/';
+  var IMG_BASE = isLocal ? (window.location.pathname.split('/work/reson/')[0] + '/uploads/webp/') : '/uploads/webp/';
   var CAT = [
     { id: 'one',   name: 'RESON One',   price: 399, img: 'reson-p1', cat: 'Headphones',  blurb: 'Flagship over-ear headphones. Machined aluminium yokes, 40mm beryllium-coated drivers and adaptive noise cancellation tuned by ear, not by spec sheet. 40-hour battery.' },
     { id: 'air',   name: 'RESON Air',   price: 199, img: 'reson-p2', cat: 'Earbuds',     blurb: 'True-wireless earbuds with dual drivers and a machined aluminium case. Low-latency mode for film and games, 8 hours per charge, 32 in the case.' },
@@ -88,7 +90,7 @@
         q = (q || '').trim().toLowerCase();
         var res = q ? CAT.filter(function (p) { return (p.name + ' ' + p.cat + ' ' + p.blurb).toLowerCase().indexOf(q) > -1; }) : CAT;
         hint.textContent = q ? (res.length + ' result' + (res.length === 1 ? '' : 's')) : 'Try “headphones”, “earbuds”, “amp”…';
-        grid.innerHTML = res.map(function (p) { return '<a class="card" href="' + BASE + 'product/?p=' + p.id + '"><div class="ph"><img src="/uploads/webp/' + p.img + '.webp" alt="' + p.name + '"></div><div class="meta"><div class="nm">' + p.name + '</div><div class="pr">' + money(p.price) + '</div></div></a>'; }).join('');
+        grid.innerHTML = res.map(function (p) { return '<a class="card" href="' + BASE + 'product/?p=' + p.id + '"><div class="ph"><img src="' + IMG_BASE + p.img + '.webp" alt="' + p.name + '"></div><div class="meta"><div class="nm">' + p.name + '</div><div class="pr">' + money(p.price) + '</div></div></a>'; }).join('');
       }
       function openS() { ov.classList.add('open'); document.body.style.overflow = 'hidden'; render(''); setTimeout(function () { inp.focus(); }, 50); }
       function closeS() { ov.classList.remove('open'); document.body.style.overflow = ''; }

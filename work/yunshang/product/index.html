@@ -14,16 +14,16 @@
 <body>
 <div class="anno">Complimentary worldwide shipping · Made in limited runs</div>
 <nav class="top"><div class="wrap nav-in">
-  <div class="nav-links"><a href="/work/yunshang/shop/">Shop</a><a href="/work/yunshang/#collection">Collections</a><a href="/work/yunshang/journal/">Journal</a><a href="/work/yunshang/about/">About</a></div>
-  <a class="brand" href="/work/yunshang/">YUNSHANG</a>
-  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="/work/yunshang/about/">Account</a><a class="cart" href="/work/yunshang/cart/">Bag<span class="n" data-cart-n>0</span></a></div>
+  <div class="nav-links"><a href="../../../work/yunshang/shop/index.html">Shop</a><a href="/work/yunshang/#collection">Collections</a><a href="../../../work/yunshang/journal/index.html">Journal</a><a href="../../../work/yunshang/about/index.html">About</a></div>
+  <a class="brand" href="../../../work/yunshang/index.html">YUNSHANG</a>
+  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="../../../work/yunshang/about/index.html">Account</a><a class="cart" href="../../../work/yunshang/cart/index.html">Bag<span class="n" data-cart-n>0</span></a></div>
 </div></nav>
 
 <section class="pagehead" style="padding-bottom:clamp(40px,6vw,80px)">
   <div class="wrap">
-    <div class="crumb" id="crumb"><a href="/work/yunshang/">Home</a> — <a href="/work/yunshang/shop/">Shop</a></div>
+    <div class="crumb" id="crumb"><a href="../../../work/yunshang/index.html">Home</a> — <a href="../../../work/yunshang/shop/index.html">Shop</a></div>
     <div class="pdp" style="margin-top:22px">
-      <div class="ph"><img id="pImg" src="/uploads/webp/yun-p1.webp" alt=""></div>
+      <div class="ph"><img id="pImg" src="../../../uploads/webp/yun-p1.webp" alt=""></div>
       <div class="info">
         <div class="lbl" id="pCat">Qipao</div>
         <h1 class="serif" id="pName">Crimson Silk Qipao</h1>
@@ -48,7 +48,7 @@
 
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><h2 class="serif" style="font-size:clamp(24px,3vw,36px)">You may also like</h2><a class="lnk" href="/work/yunshang/shop/">View all</a></div>
+    <div class="sec-head"><h2 class="serif" style="font-size:clamp(24px,3vw,36px)">You may also like</h2><a class="lnk" href="../../../work/yunshang/shop/index.html">View all</a></div>
     <div class="grid" id="also"></div>
   </div>
 </section>
@@ -56,13 +56,13 @@
 <footer><div class="wrap">
   <div class="foot-grid">
     <div><div class="fb serif">YUNSHANG</div><p style="max-width:30ch">Modern qipao & cheongsam in pure silk. Made to be worn, not stored.</p></div>
-    <div><h4>Shop</h4><a href="/work/yunshang/shop/">New arrivals</a><a href="/work/yunshang/shop/">Qipao</a><a href="/work/yunshang/shop/">Ceremony</a><a href="/work/yunshang/shop/">Separates</a></div>
+    <div><h4>Shop</h4><a href="../../../work/yunshang/shop/index.html">New arrivals</a><a href="../../../work/yunshang/shop/index.html">Qipao</a><a href="../../../work/yunshang/shop/index.html">Ceremony</a><a href="../../../work/yunshang/shop/index.html">Separates</a></div>
     <div><h4>Client care</h4><a href="#">Shipping & returns</a><a href="#">Size guide</a><a href="#">Garment care</a><a href="#">Contact</a></div>
-    <div><h4>House</h4><a href="/work/yunshang/about/">Our story</a><a href="/work/yunshang/about/">Materials</a><a href="/work/yunshang/journal/">Journal</a></div>
+    <div><h4>House</h4><a href="../../../work/yunshang/about/index.html">Our story</a><a href="../../../work/yunshang/about/index.html">Materials</a><a href="../../../work/yunshang/journal/index.html">Journal</a></div>
   </div>
   <div class="foot-bot"><span>© 2026 Yunshang</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
 </div></footer>
-<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+<a class="concept" href="../../../index.html#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
 
 <script>
   window.addEventListener('DOMContentLoaded', function(){
@@ -80,12 +80,12 @@
     document.getElementById('pDesc').textContent=p.blurb;
     document.getElementById('pMat').textContent=mats[p.id]||'Natural fibre';
     var add=document.getElementById('pAdd'); add.setAttribute('data-id',p.id); add.textContent='Add to bag — '+money(p.price);
-    document.getElementById('crumb').innerHTML='<a href="/work/yunshang/">Home</a> — <a href="/work/yunshang/shop/">Shop</a> — '+p.name;
+    document.getElementById('crumb').innerHTML='<a href="../../../work/yunshang/index.html">Home</a> — <a href="../../../work/yunshang/shop/index.html">Shop</a> — '+p.name;
     // also like: other products
     var others=window.YUN_CAT.filter(function(x){return x.id!==p.id;}).slice(0,3);
-    document.getElementById('also').innerHTML=others.map(function(o){return '<a class="card" href="/work/yunshang/product/?p='+o.id+'"><div class="ph"><img src="/uploads/webp/'+o.img+'.webp" alt="'+o.name+'"></div><div class="meta"><div class="nm">'+o.name+'</div><div class="pr">'+money(o.price)+'</div></div></a>';}).join('');
+    document.getElementById('also').innerHTML=others.map(function(o){return '<a class="card" href="/work/yunshang/product/?p='+o.id+'"><div class="ph"><img src="../../../uploads/webp/'+o.img+'.webp" alt="'+o.name+'"></div><div class="meta"><div class="nm">'+o.name+'</div><div class="pr">'+money(o.price)+'</div></div></a>';}).join('');
   });
 </script>
-<script src="/work/yunshang/assets/yunshang.js" defer></script>
+<script src="../assets/yunshang.js" defer></script>
 </body>
 </html>

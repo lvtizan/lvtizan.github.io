@@ -54,6 +54,10 @@
     var it = items[i];
     var thumb = it.el.currentSrc || it.el.src;
     var full = it.el.getAttribute('data-full') || thumb;
+    if (window.location.protocol === 'file:' && typeof full === 'string' && full.charAt(0) === '/') {
+      var depthPrefix = (window.location.pathname.includes('/work/') || window.location.pathname.includes('/resources/') || window.location.pathname.includes('/services/')) ? '../../' : '../';
+      full = depthPrefix + full.slice(1);
+    }
     var myToken = ++loadToken;
     // 立即显示已加载的缩略图（不留空白），高清源下完再无缝换上；翻页竞态用 token 防串图
     lbImg.classList.add('rdy');

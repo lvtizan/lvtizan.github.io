@@ -18,13 +18,13 @@
 <body>
 <div class="anno">Free 2-year warranty · Ships worldwide in 48h · 60-day returns</div>
 <nav class="top"><div class="wrap nav-in">
-  <div class="nav-links"><a href="/work/reson/shop/">Shop</a><a href="/work/reson/#lineup">Lineup</a><a href="/work/reson/journal/">Journal</a><a href="/work/reson/about/">About</a></div>
-  <a class="brand" href="/work/reson/">RESON</a>
-  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="/work/reson/about/">Account</a><a class="cart" href="/work/reson/cart/">Bag<span class="n" data-cart-n>0</span></a></div>
+  <div class="nav-links"><a href="../../../work/reson/shop/index.html">Shop</a><a href="/work/reson/#lineup">Lineup</a><a href="../../../work/reson/journal/index.html">Journal</a><a href="../../../work/reson/about/index.html">About</a></div>
+  <a class="brand" href="../../../work/reson/index.html">RESON</a>
+  <div class="nav-right"><button class="hide-sm" data-search>Search</button><a class="hide-sm" href="../../../work/reson/about/index.html">Account</a><a class="cart" href="../../../work/reson/cart/index.html">Bag<span class="n" data-cart-n>0</span></a></div>
 </div></nav>
 
 <div class="wrap pagehead">
-  <div class="crumb"><a href="/work/reson/">Home</a> — Shop</div>
+  <div class="crumb"><a href="../../../work/reson/index.html">Home</a> — Shop</div>
   <h1 class="page serif">All products</h1>
   <p style="color:var(--ink2);max-width:46ch;margin-bottom:34px">The full RESON lineup — headphones, earbuds, speakers and the gear that drives them. Every product tuned by ear.</p>
 </div>
@@ -46,13 +46,13 @@
 <footer><div class="wrap">
   <div class="foot-grid">
     <div><div class="fb serif">RESON</div><p style="max-width:30ch">Premium wireless audio, engineered to disappear. Machined, driver-first, built to last.</p></div>
-    <div><h4>Shop</h4><a href="/work/reson/shop/">Headphones</a><a href="/work/reson/shop/">Earbuds</a><a href="/work/reson/shop/">Speakers</a><a href="/work/reson/shop/">Accessories</a></div>
+    <div><h4>Shop</h4><a href="../../../work/reson/shop/index.html">Headphones</a><a href="../../../work/reson/shop/index.html">Earbuds</a><a href="../../../work/reson/shop/index.html">Speakers</a><a href="../../../work/reson/shop/index.html">Accessories</a></div>
     <div><h4>Support</h4><a href="#">Shipping & returns</a><a href="#">Warranty</a><a href="#">Firmware & manuals</a><a href="#">Contact</a></div>
-    <div><h4>Company</h4><a href="/work/reson/about/">Our story</a><a href="/work/reson/about/">Sound philosophy</a><a href="/work/reson/journal/">Journal</a></div>
+    <div><h4>Company</h4><a href="../../../work/reson/about/index.html">Our story</a><a href="../../../work/reson/about/index.html">Sound philosophy</a><a href="../../../work/reson/journal/index.html">Journal</a></div>
   </div>
   <div class="foot-bot"><span>© 2026 RESON Audio</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
 </div></footer>
-<a class="concept" href="/#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
+<a class="concept" href="../../../index.html#cases" aria-label="返回 YOYANT">← 返回 <b>YOYANT</b></a>
 
 <script>
   window.addEventListener('DOMContentLoaded', function(){
@@ -60,13 +60,13 @@
     function draw(f){
       var list = (f==='all')? window.RESON_CAT : window.RESON_CAT.filter(function(p){return p.cat===f;});
       g.innerHTML = list.length ? list.map(function(p){
-        return '<a class="card" href="/work/reson/product/?p='+p.id+'"><div class="ph"><img src="/uploads/webp/'+p.img+'.webp" alt="'+p.name+'"><button class="add" data-add data-id="'+p.id+'">Add to bag</button></div><div class="meta"><div class="lbl" style="color:var(--accent);font-size:10px">'+p.cat+'</div><div class="nm" style="margin-top:6px">'+p.name+'</div><div class="pr">'+window.RESON_CART.money(p.price)+'</div></div></a>';
+        return '<a class="card" href="/work/reson/product/?p='+p.id+'"><div class="ph"><img src="../../../uploads/webp/'+p.img+'.webp" alt="'+p.name+'"><button class="add" data-add data-id="'+p.id+'">Add to bag</button></div><div class="meta"><div class="lbl" style="color:var(--accent);font-size:10px">'+p.cat+'</div><div class="nm" style="margin-top:6px">'+p.name+'</div><div class="pr">'+window.RESON_CART.money(p.price)+'</div></div></a>';
       }).join('') : '<p style="color:var(--muted);grid-column:1/-1">No pieces in this category yet.</p>';
     }
     document.querySelectorAll('#filters button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#filters button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');draw(b.getAttribute('data-f'));});});
     draw('all');
   });
 </script>
-<script src="/work/reson/assets/reson.js" defer></script>
+<script src="../assets/reson.js" defer></script>
 </body>
 </html>
