@@ -10,7 +10,7 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://yoyant.com/">
-<title>YOYANT 远洋软件 · 谷歌设计大师版 | 独立软件定制开发工坊 · App · 小程序商城 · 商家管理中后台</title>
+<title>软件定制开发_App定制开发_微信小程序商城_商家后台系统 — YOYANT 远洋软件</title>
 <meta name="description" content="YOYANT 远洋数字工作室：以硅谷工程架构与殿堂级美学，主推定制软件开发（App、微信小程序商店、商家运营管理后台）与高端出海品牌官网。100% 完整全量源码交付，美院与计算机双背景。连航空级 0.01mm 空间三维无损检测软件都能攻克。">
 <meta name="keywords" content="软件定制开发, App定制开发, 微信小程序商城开发, 商家管理后台系统, 工业软件开发, 航空航天无损检测, 工业内窥镜软件, 0.01mm三维测量, 出海品牌官网, 源码全量私有化交付, YOYANT远洋软件">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -146,7 +146,7 @@
 
   /* Global Resets & Smoothing */
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
     background-color: var(--bg);
     color: var(--text-primary);
@@ -155,6 +155,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    width: 100%;
     transition: background-color 0.4s ease, color 0.4s ease;
     position: relative;
   }
@@ -1136,6 +1137,15 @@
     margin-top: 8px;
     opacity: 0.6;
   }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border-subtle);
+    text-align: left;
+    margin-bottom: 28px;
+  }
 
   /* ==========================================================================
      FLAGSHIP BENCHMARK CARD (VEINSCOPE PROOF OF WORK)
@@ -1553,11 +1563,215 @@
     .bento-cell.col-8, .bento-cell.col-4, .bento-cell.col-6 { grid-column: span 12; }
   }
 
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+  }
+
+  .btn-text-mobile { display: none; }
+
   @media (max-width: 768px) {
-    .dock-links { display: none; }
+    .btn-text-full { display: none !important; }
+    .btn-text-mobile { display: inline !important; }
+    .wrap { padding: 0 14px; }
+
+    /* Top Floating Dock Mobile Adaptation */
+    .dock-nav-wrapper {
+      top: 8px;
+      padding: 0 10px;
+      margin-bottom: -8px;
+    }
+    .dock-nav {
+      height: 48px;
+      padding: 0 10px;
+      border-radius: 24px;
+    }
+    .brand-signature {
+      gap: 7px;
+    }
+    .brand-symbol {
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+      border-radius: 7px;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 13.5px;
+      white-space: nowrap;
+    }
+    .brand-tag {
+      display: none !important;
+    }
+    .dock-links {
+      display: none !important;
+    }
+    .dock-actions {
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .theme-toggle-switch {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .theme-toggle-switch #themeLabel {
+      display: none !important;
+    }
+    .theme-toggle-switch #themeIcon {
+      font-size: 13px;
+      line-height: 1;
+    }
+    .dock-actions .atelier-btn {
+      padding: 6px 11px;
+      font-size: 11.5px;
+      gap: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dock-actions .atelier-btn svg {
+      width: 11px;
+      height: 11px;
+    }
+
+    /* Hero Section Mobile Adaptation */
+    .hero-atelier {
+      padding: clamp(54px, 10vw, 76px) 0 36px;
+    }
+    .hero-display-title {
+      font-size: clamp(22px, 6.2vw, 30px);
+      line-height: 1.25;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .hero-kicker-row {
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .hero-lead-text {
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .hero-cta-cluster {
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 32px;
+      gap: 10px;
+    }
+    .hero-cta-cluster .atelier-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 11px 18px;
+      font-size: 13.5px;
+    }
+    .hero-pledge-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    /* Workbench & Section Layouts */
+    .workbench-header {
+      padding: 12px 14px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .workbench-tabs {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 3px;
+    }
+    .workbench-tab {
+      padding: 5px 12px;
+      font-size: 11.5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .workbench-grid {
+      padding: 20px 14px;
+      gap: 20px;
+    }
+    .code-terminal-card {
+      padding: 16px;
+    }
+
+    /* Grids & Cards */
     .projects-stage { grid-template-columns: 1fr; }
     .manifesto-grid { grid-template-columns: 1fr; }
     .bento-capabilities { grid-template-columns: 1fr; }
+
+    /* Concierge Section */
+    .concierge-card {
+      padding: 32px 16px;
+    }
+    .concierge-headline {
+      font-size: 24px;
+    }
+    .concierge-sub {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .concierge-channels {
+      flex-direction: column;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto 24px;
+      gap: 10px;
+    }
+    .concierge-channels .atelier-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .direct-credentials-strip {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .benchmark-metrics-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .benchmark-metric-val {
+      font-size: 18px;
+    }
+    .benchmark-metric-label {
+      font-size: 10.5px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .brand-title {
+      font-size: 12.5px;
+    }
+    .dock-actions .atelier-btn {
+      padding: 5px 8px;
+      font-size: 11px;
+    }
   }
 </style>
 </head>
@@ -1596,7 +1810,8 @@
       </button>
 
       <a href="#concierge" class="atelier-btn atelier-btn-primary">
-        <span>直连方案团队</span>
+        <span class="btn-text-full">直连方案团队</span>
+        <span class="btn-text-mobile">方案咨询</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -2375,7 +2590,7 @@
      ========================================================================== -->
 <footer class="atelier-footer">
   <div class="wrap">
-    <div style="display:grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border-subtle); text-align: left; margin-bottom: 28px;">
+    <div class="footer-grid">
       <div>
         <div style="font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 10px;">YOYANT 远洋软件</div>
         <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7; max-width: 340px;">专注高端软件定制研发与全栈数字化交付。大厂全栈工程底色，100% 完整全量源码与设计源文件私有化交付。</p>
