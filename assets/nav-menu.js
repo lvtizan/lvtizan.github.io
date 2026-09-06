@@ -20,12 +20,25 @@
     '.nav-drawer .dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}' +
     '.nav-drawer .dh .wm{font-family:var(--disp,sans-serif);font-weight:700;font-size:19px;color:var(--ink,#F6F7FB)}.nav-drawer .dh .wm i{color:var(--accent,#4361FF);font-style:normal}' +
     '.nav-drawer .dx{background:none;border:none;color:var(--muted,#787C8B);font-size:24px;line-height:1;cursor:pointer;padding:2px 6px}.nav-drawer .dx:hover{color:var(--ink,#fff)}' +
-    '.nav-drawer a{font-family:var(--sans,sans-serif);font-size:16.5px;color:var(--ink-2,#B7BAC6);padding:14px 2px;border-bottom:1px solid var(--line,rgba(255,255,255,.09));transition:color .2s}' +
+    '.nav-drawer a{font-family:var(--sans,sans-serif);font-size:16.5px;color:var(--ink-2,#B7BAC6);padding:14px 2px;border-bottom:1px solid var(--line,rgba(255,255,255,.09));transition:color .2s;text-decoration:none}' +
     '.nav-drawer a:hover{color:var(--ink,#fff)}' +
-    '.nav-drawer .dcta{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent,#4361FF);color:#fff;font-weight:700;font-size:15px;padding:13px 20px;border-radius:40px;border:none}' +
+    '.nav-drawer .dcta{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent,#4361FF);color:#fff;font-weight:700;font-size:15px;padding:13px 20px;border-radius:40px;border:none;text-decoration:none}' +
     '.nav-links a{position:relative}' +
     '.nav-links a.active{color:var(--ink,#fff)}' +
-    '.nav-links a.active::after,.nav-links a.on::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent,#4361FF);border-radius:2px}';
+    '.nav-links a.active::after,.nav-links a.on::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent,#4361FF);border-radius:2px}' +
+    '@media (max-width: 640px) {' +
+    '  .nav-right > a.btn { display: none !important; }' +
+    '  .nav-right { gap: 8px !important; }' +
+    '  .nav-in { height: 56px !important; padding: 0 16px !important; }' +
+    '  .brand-main { white-space: nowrap !important; }' +
+    '  .brand .cn { white-space: nowrap !important; }' +
+    '}' +
+    '@media (min-width: 641px) and (max-width: 820px) {' +
+    '  .nav-right > a.btn { white-space: nowrap !important; padding: 7px 13px !important; font-size: 12px !important; }' +
+    '  .nav-right { gap: 10px !important; }' +
+    '  .brand-main { white-space: nowrap !important; }' +
+    '  .brand .cn { white-space: nowrap !important; }' +
+    '}';
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
@@ -46,6 +59,16 @@
   drawer.setAttribute('aria-label', '移动端导航');
 
   var linksHTML = '';
+  // Check if "首页" is already included; if not, prepend Home link
+  var hasHome = false;
+  links.querySelectorAll('a').forEach(function (a) {
+    if (a.textContent.trim() === '首页') hasHome = true;
+  });
+  if (!hasHome) {
+    var brandA = document.querySelector('a.brand') || document.querySelector('a[data-brand-nav]');
+    var homeUrl = brandA ? brandA.getAttribute('href') : '/';
+    linksHTML += '<a href="' + homeUrl + '">首页</a>';
+  }
   links.querySelectorAll('a').forEach(function (a) {
     linksHTML += '<a href="' + a.getAttribute('href') + '">' + a.textContent + '</a>';
   });

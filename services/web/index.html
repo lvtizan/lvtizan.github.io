@@ -14,6 +14,13 @@
 <meta name="description" content="外贸独立站、出海品牌官网、定制商城与多语言网站建设：大厂全栈研发底色，原创国际化设计、手写静态 0.1–2 秒秒开、Lighthouse 全绿、技术 SEO 与 Schema 结构化数据深度优化，100% 完整源码交付。">
 <meta name="keywords" content="外贸独立站建设, 出海品牌官网定制, 网站定制开发, 多语言网站建设, 谷歌SEO优化, Lighthouse全绿, YOYANT远洋软件">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- GEO: Geographic & Local Search Meta Tags -->
+<meta name="geo.region" content="CN-GD">
+<meta name="geo.placename" content="广州市天河区">
+<meta name="geo.position" content="23.1189;113.3857">
+<meta name="ICBM" content="23.1189, 113.3857">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="YOYANT 远洋软件">
 <meta property="og:locale" content="zh_CN">
@@ -215,8 +222,14 @@
   .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:11px 20px;border-radius:40px;background:var(--accent);color:#fff;transition:.25s;cursor:pointer;border:1px solid transparent}
   .btn:hover{background:#5674ff}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
-  .btn.ghost:hover{border-color:var(--ink)}
   @media(max-width:900px){.nav-links{display:none}}
+  @media(max-width:640px){
+    .nav-in{height:56px;padding:0 16px}
+    .brand-main{white-space:nowrap}
+    .brand .cn{white-space:nowrap;font-size:11px}
+    .nav-right{gap:8px}
+    .nav-right > .btn{display:none}
+  }
 
   header.hd{padding:clamp(64px,9vw,110px) 0 clamp(36px,5vw,64px)}
   header.hd .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted);margin-bottom:22px}

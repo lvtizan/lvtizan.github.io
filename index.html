@@ -1529,6 +1529,12 @@
       grid-template-columns: 1fr;
       padding: clamp(28px, 4vw, 44px);
     }
+    .benchmark-stage {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 100%;
+    }
   }
   .benchmark-card::before {
     content: "";
@@ -1568,9 +1574,41 @@
     white-space: nowrap;
   }
   @media (max-width: 640px) {
+    .benchmark-card {
+      padding: 24px 16px;
+      border-radius: var(--radius-lg);
+      gap: 26px;
+    }
+    .benchmark-stage {
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
     .benchmark-line {
       white-space: normal;
       text-wrap: balance;
+    }
+    .benchmark-metrics-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 12px 0;
+    }
+    .benchmark-metric-val {
+      font-size: clamp(14px, 4vw, 18px);
+    }
+    .benchmark-metric-lbl {
+      font-size: 10px;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+    .benchmark-cta-btn {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 16px !important;
+      font-size: 13.5px !important;
+      white-space: normal !important;
+      text-align: center;
+      justify-content: center;
     }
   }
   .benchmark-punchline {
@@ -1793,14 +1831,14 @@
   }
   .stage-card-thumb .thumb-img-wrap {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #040508;
   }
   .stage-card-thumb .thumb-img-wrap img {
     width: 100%;
     height: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
@@ -2506,8 +2544,8 @@
         </div>
 
         <div>
-          <a href="./work/veinscope/index.html" class="atelier-btn atelier-btn-primary" style="padding: 13px 28px; font-size: 14.5px;">
-            <span>深入检阅 VeinScope 5 大测量模式全案设计 →</span>
+          <a href="./work/veinscope/index.html" class="atelier-btn atelier-btn-primary benchmark-cta-btn">
+            <span>检阅 VeinScope 5 大测量模式全案设计 →</span>
           </a>
         </div>
       </div>
