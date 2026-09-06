@@ -1,4 +1,27 @@
 User-agent: *
 Allow: /
 
+# Generative Engine Optimization (GEO) & AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Canonical Sitemap & LLM Knowledge Feeds
 Sitemap: https://yoyant.com/sitemap.xml
+# LLMs.txt for AI Search Engines (ChatGPT, Perplexity, Claude, Gemini)
+# https://yoyant.com/llms.txt
+# https://yoyant.com/llms-full.txt
