@@ -724,13 +724,16 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Screen Viewport */
+  /* Screen Viewport (Clickable Pro Display) */
   .apple-screen-viewport {
     position: relative;
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #020306;
+    cursor: pointer;
+    text-decoration: none;
   }
   .apple-screen-img {
     width: 100%;
@@ -738,7 +741,41 @@
     object-fit: cover;
     object-position: center top;
     display: block;
-    transition: opacity 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition: opacity 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .apple-screen-viewport:hover .apple-screen-img {
+    transform: scale(1.02);
+  }
+  /* Floating Hover Action Chip */
+  .apple-screen-hover-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 15px;
+    border-radius: var(--radius-full);
+    background: rgba(14, 16, 24, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    opacity: 0.88;
+    transition: all 0.25s ease;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .apple-screen-viewport:hover .apple-screen-hover-badge {
+    background: var(--accent-primary);
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-2px);
+    opacity: 1;
+    box-shadow: 0 12px 34px rgba(67, 97, 255, 0.65);
   }
   /* Screen Glass Sheen Reflection */
   .apple-screen-viewport::after {
@@ -809,6 +846,25 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     flex: 1;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+  .apple-status-caption:hover {
+    color: var(--text-primary);
+  }
+  .caption-link-arrow {
+    color: var(--accent-primary);
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.9;
+    transition: transform 0.2s;
+  }
+  .apple-status-caption:hover .caption-link-arrow {
+    transform: translateX(2px);
   }
 
   /* Apple CTA Cluster */
@@ -2436,10 +2492,14 @@
         <!-- Floating Apple Pro Device Frame (Zero Gap, Perfectly Symmetrical Display) -->
         <div class="apple-device-frame" id="appleDeviceFrame">
           <div class="apple-device-bezel">
-            <!-- Screen Viewport (100% Edge-to-Edge Pure Display) -->
-            <div class="apple-screen-viewport">
+            <!-- Screen Viewport (Clickable Link to Case Study Subpage) -->
+            <a id="appleHeroLink" href="./work/avatar/index.html" class="apple-screen-viewport" title="点击穿透检阅项目全案详情">
               <img id="appleHeroImg" src="./uploads/webp/avatar-showcase.webp" alt="AVATAR 商业移动 App 定制实战" class="apple-screen-img" />
-            </div>
+              <!-- Floating Hover Action Chip (Reveals on hover) -->
+              <div class="apple-screen-hover-badge">
+                <span id="appleHoverHint">进入全案详情 →</span>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -2449,9 +2509,10 @@
             <span class="badge-dot green"></span>
             <span id="appleBadgeText">原生 60fps 流畅交互 · AI 伴聊 App</span>
           </div>
-          <div class="apple-status-caption">
+          <a id="appleHeroDetailLink" href="./work/avatar/index.html" class="apple-status-caption" title="点击穿透检阅项目全案详情">
             <span id="appleHeroCaption">已交付实战案例 · 原生移动端 App 高保真定制架构</span>
-          </div>
+            <span class="caption-link-arrow">穿透查看详情 ↗</span>
+          </a>
           <div class="apple-status-pill right">
             <span class="badge-dot blue"></span>
             <span>100% 全量源码私有化交付</span>
@@ -3549,25 +3610,33 @@
       img: './uploads/webp/avatar-showcase.webp',
       badge: '原生 60fps 流畅交互 · AI 伴聊 App',
       caption: '已交付实战案例 · 原生移动端 App 高保真定制架构',
-      alt: 'AVATAR 商业移动 App 定制实战'
+      alt: 'AVATAR 商业移动 App 定制实战',
+      url: './work/avatar/index.html',
+      hint: '进入 AVATAR 全案详情 →'
     },
     'wechat': {
       img: './uploads/webp/epaifa-cover.webp',
       badge: '跨境电商 & 微信小程序商城系统',
       caption: '中越跨境千万级流水 · 微信小程序商城与全链路履约中台',
-      alt: 'Epaifa 微信小程序与跨境商城实战'
+      alt: 'Epaifa 微信小程序与跨境商城实战',
+      url: './work/epaifa/index.html',
+      hint: '进入 Epaifa 全案详情 →'
     },
     'industrial': {
       img: './uploads/webp/veinscope-ui-01-std.webp',
       badge: '0.01mm 空间精密测距 · C++/Qt 端侧',
       caption: '航空级无损检测 · 实时点云与 3D 重建工业级客户端',
-      alt: 'VeinScope 工业级 3D 测量实战'
+      alt: 'VeinScope 工业级 3D 测量实战',
+      url: './work/veinscope/index.html',
+      hint: '进入 VeinScope 全案详情 →'
     },
     'admin': {
       img: './uploads/webp/tsh-dashboard-full.webp',
       badge: '企业中后台 · 权限架构与实时调度',
       caption: '高并发多租户中后台 · 供应商、订单、履约与账期协同',
-      alt: '企业管理中后台系统实战'
+      alt: '企业管理中后台系统实战',
+      url: './work/tarmeer/index.html',
+      hint: '进入 Tarmeer 全案详情 →'
     }
   };
 
@@ -3581,6 +3650,9 @@
     const img = document.getElementById('appleHeroImg');
     const badge = document.getElementById('appleBadgeText');
     const caption = document.getElementById('appleHeroCaption');
+    const link = document.getElementById('appleHeroLink');
+    const detailLink = document.getElementById('appleHeroDetailLink');
+    const hoverHint = document.getElementById('appleHoverHint');
 
     // Update buttons
     document.querySelectorAll('.apple-tab-pill').forEach(b => {
@@ -3596,6 +3668,16 @@
         target.classList.add('active');
         target.setAttribute('aria-selected', 'true');
       }
+    }
+
+    if (link && data.url) {
+      link.href = data.url;
+    }
+    if (detailLink && data.url) {
+      detailLink.href = data.url;
+    }
+    if (hoverHint && data.hint) {
+      hoverHint.textContent = data.hint;
     }
 
     if (img) {
