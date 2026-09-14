@@ -746,10 +746,37 @@
   .apple-screen-viewport:hover .apple-screen-img {
     transform: scale(1.02);
   }
+  .apple-screen-project-meta {
+    position: absolute;
+    left: 22px;
+    bottom: 20px;
+    z-index: 4;
+    max-width: min(62%, 560px);
+    color: #fff;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+  }
+  .apple-screen-project-kicker {
+    display: block;
+    margin-bottom: 5px;
+    color: #b8d7ff;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .apple-screen-project-title {
+    display: block;
+    font-size: clamp(19px, 2.15vw, 30px);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.16;
+  }
   /* Floating Hover Action Chip */
   .apple-screen-hover-badge {
     position: absolute;
-    top: 18px;
+    bottom: 20px;
     right: 18px;
     display: inline-flex;
     align-items: center;
@@ -776,6 +803,12 @@
     transform: translateY(-2px);
     opacity: 1;
     box-shadow: 0 12px 34px rgba(67, 97, 255, 0.65);
+  }
+  @media (max-width: 640px) {
+    .apple-screen-project-meta { left: 14px; bottom: 14px; max-width: 56%; }
+    .apple-screen-project-kicker { font-size: 8px; margin-bottom: 3px; }
+    .apple-screen-project-title { font-size: 15px; }
+    .apple-screen-hover-badge { right: 12px; bottom: 12px; padding: 6px 10px; font-size: 9px; }
   }
   /* Screen Glass Sheen Reflection */
   .apple-screen-viewport::after {
@@ -2421,7 +2454,7 @@
     <div class="dock-links">
       <a href="./services/software/index.html" class="dock-link">软件定制</a>
       <a href="./services/web/index.html" class="dock-link">出海官网</a>
-      <a href="#cases" class="dock-link">实战案例 (10)</a>
+      <a href="#cases" class="dock-link">实战案例 (11)</a>
       <a href="./about/index.html" class="dock-link">关于我们</a>
       <a href="./resources/index.html" class="dock-link">技术洞察</a>
       <a href="#engagement" class="dock-link">方案报价</a>
@@ -2487,6 +2520,10 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             <span>企业管理中后台</span>
           </button>
+          <button class="apple-tab-pill" onclick="switchAppleHero('website', this)" role="tab" aria-selected="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>国际项目官网</span>
+          </button>
         </div>
 
         <!-- Floating Apple Pro Device Frame (Zero Gap, Perfectly Symmetrical Display) -->
@@ -2498,6 +2535,10 @@
               <!-- Floating Hover Action Chip (Reveals on hover) -->
               <div class="apple-screen-hover-badge">
                 <span id="appleHoverHint">进入全案详情 →</span>
+              </div>
+              <div class="apple-screen-project-meta">
+                <span id="appleProjectKicker" class="apple-screen-project-kicker">移动 App · AI 陪伴</span>
+                <strong id="appleProjectTitle" class="apple-screen-project-title">AVATAR 情感陪伴应用</strong>
               </div>
             </a>
           </div>
@@ -2527,7 +2568,7 @@
           <span>免费评估方案架构与报价 →</span>
         </a>
         <a href="#cases" class="apple-text-link">
-          <span>检阅 10 款商业落地案例</span>
+          <span>检阅 11 款商业落地案例</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
         </a>
       </div>
@@ -3633,15 +3674,19 @@
       caption: '已交付实战案例 · 原生移动端 App 高保真定制架构',
       alt: 'AVATAR 商业移动 App 定制实战',
       url: './work/avatar/index.html',
-      hint: '进入 AVATAR 全案详情 →'
+      hint: '进入 AVATAR 全案详情 →',
+      projectKicker: '移动 App · AI 陪伴',
+      projectTitle: 'AVATAR 情感陪伴应用'
     },
     'wechat': {
-      img: './uploads/webp/epaifa-cover.webp',
+      img: './uploads/webp/epaifa-hero-v2.webp',
       badge: '跨境电商 & 微信小程序商城系统',
       caption: '中越跨境千万级流水 · 微信小程序商城与全链路履约中台',
       alt: 'Epaifa 微信小程序与跨境商城实战',
       url: './work/epaifa/index.html',
-      hint: '进入 Epaifa 全案详情 →'
+      hint: '进入 Epaifa 全案详情 →',
+      projectKicker: '跨境电商 · 小程序商城',
+      projectTitle: 'Epaifa 供应链商城系统'
     },
     'industrial': {
       img: './uploads/webp/veinscope-onsite1.webp',
@@ -3649,7 +3694,9 @@
       caption: '工业级实战现场 · 航空级无损检测与 3D 点云精密测量软硬件系统',
       alt: 'VeinScope 工业级 3D 测量软硬件现场实战',
       url: './work/veinscope/index.html',
-      hint: '进入 VeinScope 全案详情 →'
+      hint: '进入 VeinScope 全案详情 →',
+      projectKicker: '工业软件 · 3D 测量',
+      projectTitle: 'VeinScope 内窥镜检测系统'
     },
     'admin': {
       img: './uploads/webp/tarmeer-admin-saas.webp',
@@ -3657,7 +3704,19 @@
       caption: '已交付实战案例 · 真实多租户中后台管理系统与协同中枢',
       alt: 'Tarmeer 企业管理中后台系统实战',
       url: './work/tarmeer/index.html',
-      hint: '进入 Tarmeer 全案详情 →'
+      hint: '进入 Tarmeer 全案详情 →',
+      projectKicker: '企业软件 · 管理中台',
+      projectTitle: 'Tarmeer 协同管理系统'
+    },
+    'website': {
+      img: './uploads/webp/c-ots-airport-lg.webp',
+      badge: '国际工程项目 · B2B 网站设计开发',
+      caption: 'OTS 国际电梯项目交付官网 · 信息架构、响应式开发与技术 SEO',
+      alt: 'OTS 国际机场与基础设施项目官网封面',
+      url: './work/ots/index.html',
+      hint: '查看 OTS 官网制作过程 →',
+      projectKicker: '英文 B2B 官网 · 国际工程',
+      projectTitle: 'OTS 国际电梯项目交付官网'
     }
   };
 
@@ -3674,6 +3733,8 @@
     const link = document.getElementById('appleHeroLink');
     const detailLink = document.getElementById('appleHeroDetailLink');
     const hoverHint = document.getElementById('appleHoverHint');
+    const projectKicker = document.getElementById('appleProjectKicker');
+    const projectTitle = document.getElementById('appleProjectTitle');
 
     // Update buttons
     document.querySelectorAll('.apple-tab-pill').forEach(b => {
@@ -3700,6 +3761,12 @@
     if (hoverHint && data.hint) {
       hoverHint.textContent = data.hint;
     }
+    if (projectKicker && data.projectKicker) {
+      projectKicker.textContent = data.projectKicker;
+    }
+    if (projectTitle && data.projectTitle) {
+      projectTitle.textContent = data.projectTitle;
+    }
 
     if (img) {
       img.style.opacity = '0.35';
@@ -3716,7 +3783,7 @@
   }
 
   (function initAppleHero() {
-    const keys = ['app', 'wechat', 'industrial', 'admin'];
+    const keys = ['app', 'wechat', 'industrial', 'admin', 'website'];
     let idx = 0;
     const frame = document.getElementById('appleDeviceFrame');
 
