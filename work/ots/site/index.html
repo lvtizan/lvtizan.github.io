@@ -53,5 +53,60 @@
     <section class="contactSection"><p class="sectionKickerLight">START A PROJECT WITH OTS</p><h2>Start your next building with a vertical-transportation solution you can rely on.</h2><a href="mailto:hello@yoyant.com">Contact Us <span>→</span></a></section>
     <footer class="footer"><strong>OTS</strong><p>GLOBAL R&amp;D · MADE IN CHINA · INTERNATIONAL DELIVERY · LIFECYCLE SERVICE</p><a href="../">View the YOYANT case study</a></footer>
   </main>
+  <script>
+    (() => {
+      const selectors = ['.caseCard', '.mirrorPortfolio .photoProject'];
+      const cards = selectors.flatMap((selector) => [...document.querySelectorAll(selector)]);
+      const groupFor = (card) => card.closest('.caseCategory, .mirrorPortfolio') || document.body;
+      const items = (card) => cards.filter((entry) => groupFor(entry) === groupFor(card));
+      let activeCard = null;
+      let activeItems = [];
+
+      const readCard = (card) => {
+        const image = card.querySelector('img');
+        const country = card.querySelector('.caseCardMeta span, .photoProjectImage span')?.textContent.trim() || '';
+        const title = card.querySelector('.caseCardMeta strong, .photoProjectMeta strong')?.textContent.trim() || image.alt;
+        const quantity = card.querySelector('.caseCardMeta b, .photoProjectMeta b')?.textContent.trim() || '';
+        return { src: image.currentSrc || image.src, alt: image.alt, country, title, quantity };
+      };
+
+      const dialog = document.createElement('dialog');
+      dialog.className = 'lightbox';
+      dialog.setAttribute('aria-label', 'Project image viewer');
+      dialog.innerHTML = '<button class="lightboxClose" type="button" aria-label="Close image viewer">×</button><button class="lightboxArrow lightboxPrev" type="button" aria-label="Previous project">←</button><div class="lightboxPanel"><div class="lightboxImage"><img alt=""></div><div class="lightboxCaption"><span></span><h3></h3><dl class="lightboxFacts"><div><dt>Location</dt><dd class="lightboxLocation"></dd></div><div><dt>Equipment quantity</dt><dd class="lightboxQuantity"></dd></div></dl><p class="lightboxHint">Use the left and right arrow keys to browse. Press ESC to close.</p></div></div><button class="lightboxArrow lightboxNext" type="button" aria-label="Next project">→</button>';
+      document.body.append(dialog);
+
+      const close = () => { dialog.close(); activeCard?.focus(); };
+      const render = () => {
+        const item = readCard(activeCard);
+        const index = activeItems.indexOf(activeCard);
+        const image = dialog.querySelector('.lightboxImage img');
+        image.src = item.src; image.alt = item.alt;
+        dialog.querySelector('.lightboxCaption > span').textContent = `${String(index + 1).padStart(2, '0')} / ${String(activeItems.length).padStart(2, '0')} · ${item.country}`;
+        dialog.querySelector('.lightboxCaption h3').textContent = item.title;
+        dialog.querySelector('.lightboxLocation').textContent = item.country;
+        dialog.querySelector('.lightboxQuantity').textContent = item.quantity;
+      };
+      const move = (direction) => {
+        const index = activeItems.indexOf(activeCard);
+        activeCard = activeItems[(index + direction + activeItems.length) % activeItems.length];
+        render();
+      };
+      const open = (card) => { activeCard = card; activeItems = items(card); render(); dialog.showModal(); dialog.querySelector('.lightboxClose').focus(); };
+
+      cards.forEach((card) => {
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Enlarge ${readCard(card).title}`);
+        card.addEventListener('click', () => open(card));
+        card.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(card); } });
+      });
+      dialog.querySelector('.lightboxClose').addEventListener('click', close);
+      dialog.querySelector('.lightboxPrev').addEventListener('click', () => move(-1));
+      dialog.querySelector('.lightboxNext').addEventListener('click', () => move(1));
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) close(); });
+      document.addEventListener('keydown', (event) => { if (!dialog.open) return; if (event.key === 'ArrowLeft') move(-1); if (event.key === 'ArrowRight') move(1); });
+    })();
+  </script>
 </body>
 </html>
