@@ -10,6 +10,9 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://yoyant.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://yoyant.com/">
+<link rel="alternate" hreflang="en" href="https://yoyant.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://yoyant.com/en/">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt - AI Search Knowledge Feed">
 <title>软件定制开发、建材家居平台与品牌官网 | YOYANT 远洋软件</title>
 <meta name="description" content="YOYANT 远洋软件提供 App、工业设备软件、建材家居平台与品牌官网的设计开发。Tarmeer 案例展示多国家目录、企业展厅、供应商后台和询盘管理的完整业务流程。">
@@ -507,6 +510,13 @@
   .theme-toggle-switch:hover {
     border-color: var(--accent-primary);
     background: var(--surface-container-high);
+  }
+  .language-switch {
+    min-width: 38px;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: .06em;
   }
 
   /* Global Buttons */
@@ -2265,6 +2275,12 @@
       font-size: 13px;
       line-height: 1;
     }
+    .language-switch {
+      width: 32px;
+      min-width: 32px;
+      height: 32px;
+      padding: 0;
+    }
     .dock-actions .atelier-btn {
       padding: 6px 11px;
       font-size: 11.5px;
@@ -2477,6 +2493,7 @@
     </div>
 
     <div class="dock-actions">
+      <a class="theme-toggle-switch language-switch" href="./en/index.html" hreflang="en" lang="en" aria-label="Switch to English" title="English" onclick="try{localStorage.setItem('yoyant_lang','en')}catch(e){}">EN</a>
       <!-- Theme Switcher: Dark Obsidian <-> Light Alabaster -->
       <button class="theme-toggle-switch" id="themeBtn" onclick="toggleTheme()" title="切换 Google Atelier 调色盘">
         <span id="themeIcon">🌓</span>
