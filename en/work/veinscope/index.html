@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics 4 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0VE5EQQE12"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0VE5EQQE12');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="../../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../../favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../apple-touch-icon.png" rel="apple-touch-icon"/>
+<title>VeinScope — Aerospace NDT &amp; Precision 3D Measurement Software</title>
+<meta content="VeinScope Industrial Inspectroscope Non-Destruction (NDT) software and hardware system: specially designed for aerial engine turboleas, wing composites and cavity detection. Support 2D/3D sub-screen, 0.01mm spatial geometry, MTD profile depth, deep pseudo-hospital heat, and PLY dot cloud, to meet the requirements of extreme light and zero-composed airworthiness tests." name="description"/>
+<meta content="Aerospace non-damage detection, industrial endoscope detection software, aircraft engine vortex detection, composite solid hole detection, 3D spatial geometry, 0.01 mm spatial resolution, deep pseudo-hospital efforts, Qt C++ industrial software customization development, Aerospace NDT, Non-Destructive Testing, Videoscope Software" name="keywords"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<!-- GEO: Geographic & Local Search Meta Tags -->
+<meta content="CN-GD" name="geo.region"/>
+<meta content="Tianhe District, Guangzhou" name="geo.placename"/>
+<meta content="23.1189;113.3857" name="geo.position"/>
+<meta content="23.1189, 113.3857" name="ICBM"/>
+<meta content="article" property="og:type"/>
+<meta content="VeinScope — Aerospace NDT — Design case" property="og:title"/>
+<meta content="Earmarked for zero error aerial structures: aircraft engine turbine turbo blades, wing composites and fast-fixed pore-free detection, 0.01 mm space three-dimensional precision measurements and end-side Qt/C++ software architecture." property="og:description"/>
+<meta content="https://yoyant.com/en/work/veinscope/" property="og:url"/>
+<meta content="https://yoyant.com/uploads/veinscope_aero_hangar.jpg" property="og:image"/>
+<link href="https://yoyant.com/en/work/veinscope/" rel="canonical"/><link href="https://yoyant.com/work/veinscope/" hreflang="zh-CN" rel="alternate"/><link href="https://yoyant.com/en/work/veinscope/" hreflang="en" rel="alternate"/><link href="https://yoyant.com/en/work/veinscope/" hreflang="x-default" rel="alternate"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://yoyant.com/en/work/veinscope/#article","headline":"VeinScope — Aerospace NDT Software and Hardware Design and Measurement Model","alternativeHeadline":"Inspection Tools Built for What You Can’t Afford to Miss: Aerospace NDT Solutions","description":"Industrial Endoscope Non-Direct (NDT) Software and hardware system: Real-time collection, 3D reconstruction and precision measurement software for narrow plumbing and aerial engine cavity detection. Supports 2D/3D subscreens, point-to-point/area/section/deep false colour model measurements and PLY point cloud export.","url":"https://yoyant.com/en/work/veinscope/","image":["https://yoyant.com/uploads/veinscope_aero_hangar.jpg","https://yoyant.com/uploads/veinscope_wing_inspection.jpg","https://yoyant.com/uploads/veinscope_device_hero.jpg","https://yoyant.com/uploads/webp/veinscope-ui-01.webp"],"dateCreated":"2026-01-15","datePublished":"2026-01-15","dateModified":"2026-09-05","inLanguage":"en","keywords":"Aerospace non-destructive, industrial endoscope, Aerospace NDT, Non-Destructive Testing, Turboleape Spectrum, Composite Material Detection, 0.01 mm spatial measurement, PLY dot cloud, Qt C++ industrial software development","author":{"@type":"Organization","name":"YOYANT Software Atelier","url":"https://yoyant.com/en/"}},{"@type":"SoftwareApplication","@id":"https://yoyant.com/en/work/veinscope/#software","name":"VeinScope NDT 3D Inspection System","operatingSystem":"Embedded Linux / Windows / Qt","applicationCategory":"IndustrialSoftwareApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yoyant.com/en/"},{"@type":"ListItem","position":2,"name":"Featured Cases","item":"https://yoyant.com/en/#cases"},{"@type":"ListItem","position":3,"name":"VeinScope Industrial Endoscope (Aerospace NDT)","item":"https://yoyant.com/en/work/veinscope/"}]}]}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://api.fontshare.com" rel="preconnect"/>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=satoshi@400,500,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#08080C; --bg-2:#0F1017; --surface:#14151E; --surface-2:#1B1D28;
+    --ink:#F6F7FB; --ink-2:#B7BAC6; --muted:#787C8B; --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.17);
+    --accent:#4361FF; --accent-2:#7DA0FF;
+    --disp:'Clash Display','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Source Han Sans SC',sans-serif; --sans:'Satoshi','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Source Han Sans SC',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace; --wrap:1160px;
+  }
+  html[data-theme="light"]{
+    --bg:#F8F9FB; --bg-2:#F1F3F8; --surface:#FFFFFF; --surface-2:#F5F7FC;
+    --ink:#0A0D18; --ink-2:#474D5E; --muted:#7A8092; --line:rgba(11,14,23,.10); --line-2:rgba(11,14,23,.17);
+    --accent:#3B54F0; --accent-2:#2A40D6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+  .kick{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2)}
+  .kick::before{content:"";width:24px;height:1px;background:var(--accent)}
+  h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+
+  nav.top{position:sticky;top:0;z-index:100;background:rgba(8,8,12,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  html[data-theme="light"] nav.top{background:rgba(248,249,251,.78)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+  .brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;justify-content:center}.brand-main{display:flex;align-items:baseline;gap:8px}.brand .wm{font-family:var(--disp);font-weight:700;font-size:22px}.brand .cn{font-size:12px;color:var(--muted);letter-spacing:.14em}.brand .dot{color:var(--accent)}.brand-desc{font-family:var(--mono,ui-monospace,monospace);font-size:9px;letter-spacing:.06em;color:var(--muted,#787C8B);opacity:.82;line-height:1;white-space:nowrap}@media(max-width:560px){.brand-desc{display:none}}
+  .brand .cn{font-size:12px;color:var(--muted);letter-spacing:.14em}
+  .brand .dot{color:var(--accent)}
+  .nav-links{display:flex;gap:26px}
+  .nav-links a{font-size:14px;color:var(--ink-2)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .theme-tg{background:transparent;border:1px solid var(--line-2);color:var(--ink);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:14px;display:grid;place-items:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:10px 18px;border-radius:40px;background:var(--accent);color:#fff;transition:.25s}
+  .btn:hover{background:#5674ff}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  header.hero{padding:clamp(56px,8vw,100px) 0 clamp(30px,4vw,48px)}
+  .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted);margin-bottom:24px}
+  .crumb a:hover{color:var(--accent-2)}
+  header.hero h1{font-size:clamp(34px,5.4vw,62px);margin:16px 0 16px}
+  header.hero .sub{color:var(--ink-2);font-size:clamp(16px,1.7vw,20px);max-width:640px}
+  .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
+  .meta .n{font-family:var(--disp);font-weight:600;font-size:15px}
+  .meta .l{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+  section{padding:clamp(40px,5vw,72px) 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px)}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;gap:24px}}
+  .ov{font-size:clamp(16px,1.6vw,19px);color:var(--ink-2)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 26px}
+  .chips span{font-family:var(--mono);font-size:11.5px;padding:7px 13px;border:1px solid var(--line-2);border-radius:20px;color:var(--ink-2)}
+  .contrib{list-style:none}
+  .contrib li{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line);font-size:15px;color:var(--ink-2)}
+  .contrib li .cn{font-family:var(--mono);color:var(--accent-2);flex:none}
+
+  .sec-head{margin-bottom:clamp(26px,3vw,40px)}
+  .sec-head h2{font-size:clamp(26px,3.4vw,40px);margin-top:14px}
+  .sec-head p{color:var(--muted);font-size:14px;margin-top:12px;max-width:560px}
+
+  .grp{display:flex;align-items:center;gap:12px;margin:clamp(30px,3vw,44px) 0 18px}
+  .grp .d{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+  .grp .t{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+  .grp .ln{flex:1;height:1px;background:var(--line)}
+
+  .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(260px,30vw,360px),1fr));gap:clamp(12px,1.5vw,18px)}
+  .gal.wide{grid-template-columns:repeat(auto-fill,minmax(clamp(300px,44vw,520px),1fr))}
+  figure{margin:0;position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+  figure{align-self:start}
+  figure img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  figcaption{padding:15px 16px 17px;border-top:1px solid var(--line)}
+  figcaption b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);font-weight:500;margin-bottom:8px}
+  figcaption span{display:block;font-family:var(--sans);font-size:13.5px;color:var(--ink-2);line-height:1.55}
+
+  .highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .hl{background:var(--surface);padding:clamp(24px,2.6vw,34px)}
+  .hl .n{font-family:var(--mono);font-size:12px;color:var(--accent-2)}
+  .hl h3{font-size:clamp(18px,1.9vw,22px);margin:14px 0 10px;font-weight:600}
+  .hl p{color:var(--ink-2);font-size:14.5px}
+  @media(max-width:700px){.highlights{grid-template-columns:1fr}}
+
+  .backcta{border-top:1px solid var(--line);padding:clamp(40px,5vw,64px) 0;text-align:center}
+  .backcta h2{font-size:clamp(24px,3vw,38px);margin-bottom:24px}
+  footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--muted);padding:40px 0;margin-top:10px}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .foot-in .wm{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink);text-transform:none}
+
+  /* related cases */
+  .rel{padding:clamp(50px,6vw,84px) 0 clamp(20px,3vw,40px)}
+  .rel .kick{margin-bottom:12px}
+  .rel h2{font-size:clamp(23px,2.8vw,34px);margin-bottom:24px}
+  .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+  .relc{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--surface);transition:.3s;display:block}
+  .relc:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .relc img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
+  .relc .b{padding:14px 16px}
+  .relc .t{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2)}
+  .relc h3{font-size:15.5px;margin-top:7px;line-height:1.35;font-weight:600}
+  /* Aerospace NDT Standards Section */
+  .aero-section {
+    padding: clamp(50px, 7vw, 90px) 0;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 50%, var(--bg) 100%);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .aero-banner-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+  @media(max-width: 860px) {
+    .aero-banner-grid { grid-template-columns: 1fr; }
+  }
+  .aero-quote-card {
+    background: var(--surface);
+    border: 1px solid var(--line-2);
+    border-radius: 16px;
+    padding: clamp(24px, 3.5vw, 40px);
+    position: relative;
+    overflow: hidden;
+  }
+  .aero-quote-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--accent), #00E5FF);
+  }
+  .aero-quote-title {
+    font-size: clamp(20px, 2.4vw, 30px);
+    line-height: 1.25;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+  .aero-quote-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-2);
+    margin-bottom: 16px;
+  }
+  .aero-quote-text.en {
+    font-size: 13.5px;
+    font-style: italic;
+    color: var(--muted);
+    border-top: 1px dashed var(--line);
+    padding-top: 14px;
+    line-height: 1.65;
+  }
+  .aero-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 2.5vw, 32px);
+    margin-top: 36px;
+  }
+  @media(max-width: 760px) {
+    .aero-showcase-grid { grid-template-columns: 1fr; }
+  }
+  .aero-showcase-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .aero-showcase-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-2);
+  }
+  .aero-showcase-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+  }
+  .aero-showcase-body {
+    padding: clamp(20px, 2.5vw, 28px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .aero-showcase-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #00E5FF;
+    margin-bottom: 8px;
+  }
+  .aero-showcase-body h3 {
+    font-size: clamp(18px, 2vw, 22px);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .aero-showcase-body p {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .aero-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .aero-chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .aero-matrix {
+    margin-top: clamp(40px, 5vw, 64px);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: clamp(28px, 3.5vw, 44px);
+  }
+  .aero-matrix-head h3 {
+    font-size: clamp(20px, 2.2vw, 26px);
+    margin-bottom: 10px;
+  }
+  .aero-matrix-head p {
+    font-size: 14.5px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .aero-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media(max-width: 820px) {
+    .aero-matrix-grid { grid-template-columns: 1fr; }
+  }
+  .aero-matrix-item {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .aero-matrix-item .num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #00E5FF;
+    margin-bottom: 8px;
+  }
+  .aero-matrix-item h4 {
+    font-size: 15.5px;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .aero-matrix-item p {
+    font-size: 13.5px;
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<nav class="top">
+<div class="nav-in">
+<a aria-label="YOYANT Software Atelier" class="brand" data-brand-nav="" href="../../index.html"><span class="brand-main"><span class="wm">YOYANT<span class="dot">.</span></span><span class="cn">Software Atelier</span></span><span class="brand-desc">Software Custom Development . App Applet . Business backstage</span></a>
+<div class="nav-links">
+<a href="../../services/web/index.html">Web Services</a><a href="../../services/software/index.html">Software Services</a><a href="../../index.html#cases">Cases</a><a href="../../about/index.html">About</a><a href="../../resources/index.html">Insights</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Dark/Light" class="theme-tg" id="themeTg">☾</button>
+<a class="btn" href="../../index.html#contact">Get diagnostics →</a>
+</div>
+</div>
+</nav>
+<header class="hero">
+<div class="wrap">
+<div class="crumb"><a href="../../index.html">Home</a> / <a href="../../index.html#cases">Featured Cases</a> / VeinScope</div>
+<div class="kick">Product &amp; UI Design &amp; Interface Design</div>
+<h1>VeinScope — Industrial Borescope Inspection &amp; Measurement System</h1>
+<p class="sub">Real-time collection, 3D reconstruction and precision measurement software for narrow plumbing and equipment cavity detection. In a field-light environment, readability is balanced with single-hand operation efficiency.</p>
+<div class="meta">
+<div><div class="n">Product Design · UI/UX</div><div class="l">Role</div></div>
+<div><div class="n">Device software · On-site workflow</div><div class="l">Domain</div></div>
+<div><div class="n">2026</div><div class="l">Year</div></div>
+</div>
+</div>
+</header>
+<section>
+<div class="wrap grid2">
+<div>
+<div class="kick" style="margin-bottom:18px">Project Overview · Overview</div>
+<p class="ov">The software and hardware interface of the industrial endoscope detection system. Real-time image acquisition, 3D reconstruction and precision measurement tools designed for narrow piping and equipment cavity detection - support 2D/3D view switching, point-to-point/area/section/ angle multi-modular measurements, deep pseudo-colour maps and PLY dot clouds, balancing readability and operational efficiency in high-light environments on the ground.</p>
+</div>
+<div>
+<div class="chips"><span>2D/3D Switching</span><span>Multi-mode measurement</span><span>Depth Pseudo Color Chart</span><span>Pry Export</span><span>Hardware key mapping</span></div>
+<div class="kick" style="margin-bottom:6px">Our work.</div>
+<ul class="contrib">
+<li><span class="cn">01</span>Field workflow study</li>
+<li><span class="cn">02</span>Acquisition and measurement interface design</li>
+<li><span class="cn">03</span>3D reconstruction and multi-mode measurements (point to point/ profile/ depth / PLY)</li>
+<li><span class="cn">04</span>Device-side interaction and hardware key mapping</li>
+<li><span class="cn">05</span>System Optimization and Performance Tuning</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="sec-head"><div class="kick">Software UI · Software Interface</div><h2>Software Interface Display</h2><p>A consistent and interactive paradigm runs through the process, from observation, measurement to records management.</p></div>
+<div class="grp"><span class="d"></span><span class="t">Observation · 2D/3D split screen and depth map</span><span class="ln"></span></div>
+<div class="gal wide">
+<figure><img alt="VeinScope 2D/3D subscreen observation interface" loading="lazy" src="../../../uploads/webp/veinscope-ui-01.webp"/><figcaption><b>2D/3D split screen</b><span>The scenery image is contrasted with the three-dimensional reconstruction screen, and the engineer creates a first-hand judgement of the pattern of defects; the two-sided, wide layouts, information weights are consistent and non-disturbing.</span></figcaption></figure>
+<figure><img alt="VeinScope Depth Pseudo Color Chart" loading="lazy" src="../../../uploads/webp/veinscope-ui-07.webp"/><figcaption><b>Depth Pseudo Color Chart</b><span>The 3-D data are mapd to the depth of false colour, red is close to the blue, and the depth distribution of the dim/bump is visible at a glance; the ribbons are parallel to the numeric scale to avoid miscalculation by colour only.</span></figcaption></figure>
+</div>
+<div class="grp"><span class="d"></span><span class="t">Measurement · Five measuring tools</span><span class="ln"></span></div>
+<div class="gal">
+<figure><img alt="VeinScope measurement interface" loading="lazy" src="../../../uploads/webp/veinscope-ui-02.webp"/><figcaption><b>Measurement interface</b><span>Five measurement tools are included in the right-hand fixed toolbar, leaving the main view area to the image in its entirety, with the controls side by side and without covering the observations.</span></figcaption></figure>
+<figure><img alt="VeinScope Magnifier Pick-Up Point" loading="lazy" src="../../../uploads/webp/veinscope-ui-03.webp"/><figcaption><b>Magnifying glass pickup point</b><span>When the point is taken, the magnifier is popped, and the area is magnified by the fingertips, and the tiny cracks can also be precise.</span></figcaption></figure>
+<figure><img alt="VeinScope Point-to-Point Measurement" loading="lazy" src="../../../uploads/webp/veinscope-ui-04.webp"/><figcaption><b>Point-to-point measurement</b><span>The two-point connection takes place at a physical distance, and the reading is shown at the top in real time; the line of measurement is in high contrast and is clearly visible in a strong light.</span></figcaption></figure>
+<figure><img alt="VeinScope Area Perimeter Measurement" loading="lazy" src="../../../uploads/webp/veinscope-ui-05.webp"/><figcaption><b>Area perimeter</b><span>Synthesizing polygons in turn, automatically calculating the area and the perimeter, which are suitable for a quantitative assessment of irregular losses.</span></figcaption></figure>
+<figure><img alt="VeinScope Profile Trend Diagram" loading="lazy" src="../../../uploads/webp/veinscope-ui-06.webp"/><figcaption><b>Profile Trend Chart</b><span>A cross-section contour curve is generated by sampling along the cut-off line and gives MTD readings to determine how the defects are moving in the direction of depth.</span></figcaption></figure>
+</div>
+<div class="grp"><span class="d"></span><span class="t">Manage · Gallery &amp; Settings</span><span class="ln"></span></div>
+<div class="gal">
+<figure><img alt="VeinScope Measurement Gallery" loading="lazy" src="../../../uploads/webp/veinscope-ui-08.webp"/><figcaption><b>Measurement Gallery</b><span>All measurement records are archived by type, thumbnails are accompanied by measurement type and numeric labels to facilitate on-site backtracking and delivery.</span></figcaption></figure>
+<figure><img alt="VeinScope Gallery Full Screen Preview" loading="lazy" src="../../../uploads/webp/veinscope-ui-09.webp"/><figcaption><b>Gallery fullscreen preview</b><span>A single record is viewed on a full screen, the measurement label is stacked on the original map and the accuracy of the measurement points and results is reviewed at any time.</span></figcaption></figure>
+<figure><img alt="VeinScope Delete Confirmation Popup" loading="lazy" src="../../../uploads/webp/veinscope-ui-10.webp"/><figcaption><b>Delete Confirmation</b><span>Remove such irreversible operations and double-check bullet windows to prevent the deletion of critical detection data by mistake at the site.</span></figcaption></figure>
+<figure><img alt="VeinScope Setup Interface" loading="lazy" src="../../../uploads/webp/veinscope-ui-11.webp"/><figcaption><b>Settings</b><span>The measurement units, the width, the line and the color of the measurement points can be customised and adapted to different test criteria and personal operating habits.</span></figcaption></figure>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="sec-head"><div class="kick">Design notes</div><h2>Designed for the field</h2></div>
+<div class="highlights">
+<div class="hl"><div class="n">01</div><h3>High Contrast Dark UI in Glare Scene</h3><p>Tests are often conducted in high-light, reflective environments, with a dark interface + high-comparison emphasis on colour, ensuring that readings, guides and controls remain clear in sunlight.</p></div>
+<div class="hl"><div class="n">02</div><h3>One-handed operation and hardware key mapping</h3><p>Most of the equipment is held on one hand, the interface is aligned with the hardware buttons at the end of the device, and critical operations are within reach, reducing error on the site.</p></div>
+<div class="hl"><div class="n">03</div><h3>Consistent interaction of multi-mode measurements</h3><p>The point-to-point, area, profile, angle, depth, etc., are the same "take-to-valid-read" paradigm, which reduces learning costs and improves field efficiency.</p></div>
+<div class="hl"><div class="n">04</div><h3>Seamless switching between 2D/3D/depth maps</h3><p>The same goal is transposed between the scenes, three-dimensional reconstruction, and the poignant in depth to help engineers quickly locate and determine the location and depth of the defects.</p></div>
+</div>
+</div>
+</section>
+<!-- ==========================================================================
+     AEROSPACE NDT & CRITICAL INSPECTION STANDARDS
+     ========================================================================== -->
+<section class="aero-section">
+<div class="wrap">
+<div class="sec-head">
+<div class="kick">Aerospace NDT Standards / / Aerospace Zero Perception</div>
+<h2>Inspection Tools Built for What You Can’t Afford to Miss<br/>Designed for critical aerospace structures that never miss inspection</h2>
+<p style="max-width: 720px; font-size: 15.5px; color: var(--ink-2); line-height: 1.7; margin-top: 14px;">
+        From the bilge of the wing complex structure and the fuselage, to the core cavity of the turbo blades of the aviation engine and to the bolts of the hard-walled bolt, every key component must bear an extreme high-speed, high-temperature, and high-voltage interlocking load. Even the smallest cracks and corrosives, if not detected, will turn into catastrophic flight safety hazards and millions of expensive downages.
+      </p>
+</div>
+<div class="aero-banner-grid">
+<div class="aero-quote-card">
+<h3 class="aero-quote-title">How NDT protects aviation security and assets throughout their life cycle</h3>
+<p class="aero-quote-text">
+          The Industrial Non-Destruction (NDT) allowed the aviation mainframe plant and the maintenance crew to be present.<strong>Without damaging the physical structure of the part at all</strong>The continuous and regulated air quality certification, regulatory compliance audits, and life-cycle maintenance decisions are the numerical building blocks.
+        </p>
+<p class="aero-quote-text en">
+          “NDT allows aerospace manufacturers and maintenance teams to inspect critical components without causing damage, enabling defects to be identified before they become costly repairs or safety risks. Regular aerospace NDT inspections support quality assurance, regulatory compliance, and informed maintenance decisions throughout an aircraft’s service life.”
+        </p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px;">
+<div style="font-family: var(--mono); font-size: 11px; color: #00E5FF; margin-bottom: 6px;">Tolerance//accuracy boundary</div>
+<div style="font-family: var(--disp); font-size: 26px; font-weight: 700; color: var(--ink);">±0.01 mm</div>
+<div style="font-size: 13px; color: var(--muted); margin-top: 4px;">Spatial 3D Geometry Double Cross Targeting Measurement Limit</div>
+</div>
+<div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px;">
+<div style="font-family: var(--mono); font-size: 11px; color: #00E5FF; margin-bottom: 6px;">Compliance//Airworthiness</div>
+<div style="font-family: var(--disp); font-size: 26px; font-weight: 700; color: var(--ink);">100% Raw Data</div>
+<div style="font-size: 13px; color: var(--muted); margin-top: 4px;">PLY Light Cloud Space Model, Panoramic View and Measuring Tracks cannot be tampered with and left behind by privatization</div>
+</div>
+<div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px;">
+<div style="font-family: var(--mono); font-size: 11px; color: #00E5FF; margin-bottom: 6px;">ERGONOMICS//extreme environment</div>
+<div style="font-family: var(--disp); font-size: 26px; font-weight: 700; color: var(--ink);">100,000 Lux</div>
+<div style="font-size: 13px; color: var(--muted); margin-top: 4px;">The hangar's hot and luminous, one-hand gloves, full-physic key blind mapping.</div>
+</div>
+</div>
+</div>
+<!-- Aerospace High-Resolution Scene Showcase -->
+<div class="aero-showcase-grid">
+<div class="aero-showcase-card">
+<img alt="The Boeing hangar air engine turbo blades have been undamaged." loading="lazy" src="../../../uploads/veinscope_aero_hangar.jpg"/>
+<div class="aero-showcase-body">
+<div class="aero-showcase-tag">Scenario 01 Turbo and Core Burning Room</div>
+<h3>Deep Flaw Detection and 3D Modeling of Civil Aircraft Turbine Engines</h3>
+<p>
+            In the hangar site, engineers are able to access the core of complex aviation engines with ultra-skinned fibre-optic probes. The system provides a millisecond-level, bi-eye metalloid matching and three-dimensional depth reconstruction, tackles the extreme optical environment where metal reflectors and dark light are interwoven, and captures, in real time, blade microfissions, external damage (FOD) and calibration pits.
+          </p>
+<div class="aero-chip-list">
+<span class="aero-chip">Binocular stereoscopic 3D reconstruction</span>
+<span class="aero-chip">Narrow guide hole penetration</span>
+<span class="aero-chip">Deep pseudo-color real-time mapping</span>
+</div>
+</div>
+</div>
+<div class="aero-showcase-card">
+<img alt="Air passenger-wing composite material structure and tight-stamped poaching" loading="lazy" src="../../../uploads/veinscope_wing_inspection.jpg"/>
+<div class="aero-showcase-body">
+<div class="aero-showcase-tag">Scenario 02 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div>
+<h3>Wing Carbon Fiber Structure Layered Evaluation with Fastening Hole Microcracks</h3>
+<p>
+            Quantification assessment reports are produced for flight crews by point-to-point precision ranging and MTD profile depth algorithms for stress cracks on the edges of the plane's wing, pelvis of the pelvis of the pelvis of the composite material (Delamination) and the Fastner Holes.
+          </p>
+<div class="aero-chip-list">
+<span class="aero-chip">Stress cracks in fastener holes</span>
+<span class="aero-chip">MTD Profile Depth Analysis</span>
+<span class="aero-chip">Polygonal Area Quantification</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Five Core Aerospace NDT Challenges Solved -->
+<div class="aero-matrix">
+<div class="aero-matrix-head">
+<div class="kick" style="margin-bottom: 8px;">Technical Breakthrough // Core Attack</div>
+<h3>Aerospace NDT Five Core Challenges and VeinScope Solutions</h3>
+<p>In the face of the increasing complexity of complex materials and stringent quality controls on modern aircraft, we have been able to provide system-level answers, from human efficiency, bottom algorithms to data architecture.</p>
+</div>
+<div class="aero-matrix-grid">
+<div class="aero-matrix-item">
+<div class="num">01 / CHALLENGE</div>
+<h4>Early Microcracks and Material Defects Identification</h4>
+<p>VeinScope provides a three-dimensional geometry resolution of 0.01 mm space and a subpixel magnifier point to protect against microduration.</p>
+</div>
+<div class="aero-matrix-item">
+<div class="num">02 / CHALLENGE</div>
+<h4>Extreme Narrowing and Blocked Sight Areas</h4>
+<p>Air engine bends, gear case dead angles are difficult to detect. The full electric four-way bending probes match the 2D scene with the 3D dots of clouds, allowing engineers to see the deep structure.</p>
+</div>
+<div class="aero-matrix-item">
+<div class="num">03 / CHALLENGE</div>
+<h4>Composite Layering and 3D Depth Judgment</h4>
+<p>Two-dimensional images of the plane do not detect dimples or condensed. Deep, pseudo-hot, attempts to transform the three-dimensional data into a visual motif, red near the blue and condensed milliseconds.</p>
+</div>
+<div class="aero-matrix-item">
+<div class="num">04 / CHALLENGE</div>
+<h4>Consistency of testing processes across sites</h4>
+<p>The operating habits of different groups and stations vary significantly. The consistency of the "observation-take point-confirmation-reading" motion lines and standardized key-button maps are used to avoid errors and errors.</p>
+</div>
+<div class="aero-matrix-item">
+<div class="num">05 / CHALLENGE</div>
+<h4>Traceability of airworthiness audit and quality data</h4>
+<p>Flight safety depends on a tight desk account. Measurement labels are stored locally and encrypted with original images, PLY point cloud models, a key export of traceable detection records, and 100 per cent data privatization sovereignty.</p>
+</div>
+<div class="aero-matrix-item">
+<div class="num">06 / CHALLENGE</div>
+<h4>On-site harsh working conditions and one-handed operation</h4>
+<p>The tarmac is tanned with oil-resistant gloves. High-matched dark-colour systems are aligned to the key points of the body physics hardware, with one hand to hold blind, and no cumbersome layers to block.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="sec-head"><div class="kick">On-site · On-site</div><h2>On-site inspection scenarios</h2></div>
+<div class="gal wide">
+<figure><img alt="VeinScope industrial endoscope field test scene" loading="lazy" src="../../../uploads/webp/veinscope-onsite1.webp"/><figcaption>On-site inspection scenarios</figcaption></figure>
+<figure><img alt="VeinScope Equipment Field Use" loading="lazy" src="../../../uploads/webp/veinscope-onsite4.webp"/><figcaption>On-site use of equipment</figcaption></figure>
+<figure><img alt="VeinScope Pipe Cavity Inspection" loading="lazy" src="../../../uploads/webp/veinscope-onsite7.webp"/><figcaption>Pipe Cavity Inspection</figcaption></figure>
+<figure><img alt="VeinScope Inspection Equipment Operation Site" loading="lazy" src="../../../uploads/webp/veinscope-onsite6.webp"/><figcaption>Equipment operation site</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="rel"><div class="wrap">
+<div class="kick">More cases · Related cases</div>
+<h2>Continue to other cases</h2>
+<div class="rel-grid">
+<a aria-label="See Epaifa Mall - B2B Cross-border Supply Chain Business City, App case details" class="relc" href="../../work/epaifa/index.html">
+<img alt="Epaifa Mall B2B Cross-border Supply Chain Business City App Interface Group" loading="lazy" src="../../../uploads/webp/epaifa-cover.webp"/>
+<div class="b"><div class="t">Software · B2B SaaS App</div><h3>Epaifa Mall — B2B Cross-border Supply Chain Business City App</h3></div>
+</a>
+<a aria-label="Look at the Southern Sea wind, the insulated cultural interaction, the case details." class="relc" href="../../work/nanhai/index.html">
+<img alt="South China Sea Scenery Immersive Cultural Interaction Installation Main Vision" loading="lazy" src="../../../uploads/webp/nanhai-title.webp"/>
+<div class="b"><div class="t">Software · Interactive Devices</div><h3>Nanhai Scenery — Immersive Cultural Interaction Installation</h3></div>
+</a>
+<a aria-label="View AVATAR - AI Role-Accompaniment Chat App Case Details" class="relc" href="../../work/avatar/index.html">
+<img alt="AVATAR AI character accompany chat App multi-end interface presentation" loading="lazy" src="../../../uploads/webp/avatar-showcase.webp"/>
+<div class="b"><div class="t">Software · Mobile App</div><h3>AVATAR - AI Role Watcher Chat App</h3></div>
+</a>
+</div>
+</div></section>
+<div class="backcta">
+<div class="wrap">
+<h2>Interested in product and interface design?</h2>
+<a class="btn" href="../../index.html#contact">Talk about your project →</a>
+      
+    <a class="btn" href="../../index.html#cases" style="background:transparent;color:var(--ink);border:1px solid var(--line-2)">← Back to all cases</a>
+</div>
+</div>
+<footer>
+<div class="wrap foot-in">
+<span class="wm" data-brand-foot=""><span class="fwm">YOYANT<span style="color:var(--accent)">.</span> Software Atelier</span><span class="fdesc">Software Custom Development . App Applet . Business backstage</span></span>
+<span>VeinScope . Product and UI Design Case . 2026</span>
+<span><a href="../../index.html" style="color:var(--muted)">←</a></span>
+</div>
+</footer>
+<script>
+  const root=document.documentElement,tg=document.getElementById('themeTg');
+  const setTheme=t=>{root.setAttribute('data-theme',t);tg.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('yoyant-theme',t)}catch(e){}};
+  setTheme((()=>{try{return localStorage.getItem('yoyant-theme')}catch(e){return null}})()||'dark');
+  tg.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+</script>
+<script defer="" src="../../../assets/lightbox.js"></script>
+<script defer="" src="../../../assets/consult-widget.js?v=20260916-wa"></script>
+<script defer="" src="../../../assets/nav-menu.js"></script>
+<script defer="" src="../../../assets/brand-logo.js"></script>
+<script defer="" src="/assets/language-switch.js"></script>
+</body>
+</html>

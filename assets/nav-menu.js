@@ -2,6 +2,7 @@
    自动适配各页不同断点：JS 检测 .nav-links 是否被 CSS 隐藏，隐藏时才显示汉堡，
    汉堡菜单从现有 .nav-links + 主 CTA 克隆链接，无需改各页 HTML/CSS。 */
 (function () {
+  var english = document.documentElement.lang === 'en';
   var links = document.querySelector('.nav-links');
   var right = document.querySelector('.nav-right');
   if (!links || !right) return;
@@ -46,7 +47,7 @@
   // burger button
   var burger = document.createElement('button');
   burger.className = 'nav-burger';
-  burger.setAttribute('aria-label', '打开菜单');
+  burger.setAttribute('aria-label', english ? 'Open menu' : '打开菜单');
   burger.setAttribute('aria-expanded', 'false');
   burger.innerHTML = '<span></span>';
   right.appendChild(burger);
@@ -56,18 +57,18 @@
   scrim.className = 'nav-scrim';
   var drawer = document.createElement('nav');
   drawer.className = 'nav-drawer';
-  drawer.setAttribute('aria-label', '移动端导航');
+  drawer.setAttribute('aria-label', english ? 'Mobile navigation' : '移动端导航');
 
   var linksHTML = '';
   // Check if "首页" is already included; if not, prepend Home link
   var hasHome = false;
   links.querySelectorAll('a').forEach(function (a) {
-    if (a.textContent.trim() === '首页') hasHome = true;
+    if (a.textContent.trim() === (english ? 'Home' : '首页')) hasHome = true;
   });
   if (!hasHome) {
     var brandA = document.querySelector('a.brand') || document.querySelector('a[data-brand-nav]');
     var homeUrl = brandA ? brandA.getAttribute('href') : '/';
-    linksHTML += '<a href="' + homeUrl + '">首页</a>';
+    linksHTML += '<a href="' + homeUrl + '">' + (english ? 'Home' : '首页') + '</a>';
   }
   links.querySelectorAll('a').forEach(function (a) {
     linksHTML += '<a href="' + a.getAttribute('href') + '">' + a.textContent + '</a>';
@@ -78,7 +79,7 @@
     : '';
   drawer.innerHTML =
     '<div class="dh"><span class="wm">YOYANT<i>.</i></span>' +
-    '<button class="dx" aria-label="关闭菜单">✕</button></div>' +
+    '<button class="dx" aria-label="' + (english ? 'Close menu' : '关闭菜单') + '">✕</button></div>' +
     linksHTML + ctaHTML;
   document.body.appendChild(scrim);
   document.body.appendChild(drawer);

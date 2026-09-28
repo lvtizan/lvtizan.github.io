@@ -1,6 +1,7 @@
 /* YOYANT 在线咨询组件 · 单一来源 · 每页 <script src="/assets/consult-widget.js" defer> 引入 */
 (function(){
   if(document.getElementById("voyant-consult"))return; // 防重复注入
+  var english=document.documentElement.lang==='en';
   var CSS=`#voyant-consult{--bg:#08080C;--bg-2:#0F1017;--surface:#14151E;--surface-2:#1B1D28;--ink:#F6F7FB;--ink-2:#B7BAC6;--muted:#787C8B;--line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.17);--accent:#4361FF;--accent-2:#7DA0FF;--disp:'Clash Display','Noto Sans SC',sans-serif;--sans:'Satoshi','Noto Sans SC',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
   /* 在线咨询 widget */
   .contact-actions{position:fixed;right:22px;bottom:22px;z-index:300;display:flex;align-items:center;gap:10px}.contact-actions.hide{opacity:0;pointer-events:none;transform:translateY(14px)}
@@ -70,6 +71,10 @@
   var isSubdir = window.location.pathname.includes('/work/') || window.location.pathname.includes('/services/') || window.location.pathname.includes('/resources/') || window.location.pathname.includes('/about/');
   var qrPath = isLocal ? (isSubdir ? '../../uploads/webp/wechat-qr.webp' : './uploads/webp/wechat-qr.webp') : '/uploads/webp/wechat-qr.webp';
   var HTML="<div id=\"voyant-consult\">\n<!-- 微信与 WhatsApp 咨询入口 -->\n<div class=\"contact-actions\" id=\"contactActions\"><a class=\"wa-launch\" href=\"https://wa.me/8613760680715\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"通过 WhatsApp 联系 +86 137 6068 0715\"><span class=\"wa-mark\" aria-hidden=\"true\">WA</span><span>WhatsApp</span></a><button class=\"chat-launch\" id=\"chatLaunch\" aria-label=\"加微信咨询\"><svg class=\"wx\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M9.2 3C5.02 3 1.7 5.86 1.7 9.35c0 1.98 1.08 3.74 2.77 4.9L3.7 16.9l2.72-1.4c.72.2 1.48.32 2.28.36a5.7 5.7 0 0 1-.22-1.57c0-3.24 3.1-5.84 6.94-5.84.23 0 .46.01.68.03C15.4 5.05 12.6 3 9.2 3ZM6.75 7.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm4.9 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z\"/><path d=\"M22.3 14.1c0-2.86-2.82-5.18-6.3-5.18s-6.3 2.32-6.3 5.18 2.82 5.18 6.3 5.18c.73 0 1.42-.1 2.07-.28l2.02 1.08-.57-1.82c1.68-.95 2.78-2.47 2.78-4.16Zm-8.35-1.15a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7Zm4.1 0a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7Z\"/></svg><span>加微信咨询</span></button></div>\n<div class=\"chat-tip\" id=\"chatTip\">\n  <span class=\"dot\" id=\"tipDot\"></span>\n  <span class=\"tx\" id=\"tipText\"><b>软件方案评估</b> · 加微信直接聊 👋</span>\n  <span class=\"cx\" id=\"tipClose\" role=\"button\" aria-label=\"关闭提示\">✕</span>\n</div>\n<div class=\"chat-panel\" id=\"chatPanel\" role=\"dialog\" aria-label=\"加微信咨询\">\n  <div class=\"chat-hd\">\n    <div class=\"row\"><div class=\"t\"><span class=\"live\" id=\"liveDot2\"></span>加微信 · 直接聊需求</div><button class=\"x\" id=\"chatClose\" aria-label=\"关闭\">✕</button></div>\n    <div class=\"s\" id=\"liveText\">工作时间 9:00–23:00 · 加微信当日答复</div>\n  </div>\n  <div class=\"chat-bd\" id=\"chatBody\">\n    <form id=\"chatForm\">\n      <div class=\"fld\"><label>称呼</label><input name=\"称呼\" placeholder=\"怎么称呼您\" required></div>\n      <div class=\"fld\"><label>联系方式（微信 / 邮箱 / 电话）</label><input name=\"联系方式\" placeholder=\"方便回复您\" required></div>\n      <div class=\"fld\"><label>留言</label><textarea name=\"留言\" rows=\"3\" placeholder=\"简单说说您的软件定制构想或需求\" required></textarea></div>\n      <button class=\"btn btn-solid send\" type=\"submit\" id=\"chatSend\">发送留言 →</button>\n    </form>\n    <div class=\"wx-div\">或扫码加微信 · 更快</div>\n    <div class=\"wx-qr\">\n      <img src=\""+qrPath+"\" alt=\"YOYANT 远洋软件 微信二维码\" width=\"168\" height=\"168\">\n      <div class=\"wx-id\">微信号 <b id=\"wxId\">lvtizan</b> <button class=\"wx-copy\" id=\"wxCopy\">复制</button></div>\n      <p class=\"wx-tip\">扫码或搜索微信号加我，发来您的项目需求或原型草图，免费为您评估技术架构与排期预算。</p>\n    </div>\n  </div>\n</div>\n</div>";
+  if(english){
+    var englishCopy={'通过 WhatsApp 联系':'Contact via WhatsApp','加微信咨询':'WeChat','软件方案评估':'Project evaluation','加微信直接聊':'Chat on WeChat','关闭提示':'Close tip','加微信 · 直接聊需求':'WeChat · Discuss your project','关闭':'Close','工作时间 9:00–23:00 · 加微信当日答复':'Available 9:00–23:00 CST · Same-day reply','称呼':'Name','怎么称呼您':'Your name','联系方式（微信 / 邮箱 / 电话）':'Contact (WeChat / email / phone)','联系方式':'Contact','方便回复您':'How should we reach you?','留言':'Message','简单说说您的软件定制构想或需求':'Tell us briefly about your product or project','发送留言':'Send message','或扫码加微信 · 更快':'Or scan to add us on WeChat','远洋软件 微信二维码':'YOYANT WeChat QR code','微信号':'WeChat ID','复制':'Copy','扫码或搜索微信号加我，发来您的项目需求或原型草图，免费为您评估技术架构与排期预算。':'Scan or search the WeChat ID. Send your brief or prototype for a free architecture and timeline review.'};
+    Object.keys(englishCopy).sort(function(a,b){return b.length-a.length;}).forEach(function(key){HTML=HTML.split(key).join(englishCopy[key]);});
+  }
   var st=document.createElement("style");st.id="voyant-consult-css";st.textContent=CSS;document.head.appendChild(st);
   var tmp=document.createElement("div");tmp.innerHTML=HTML;var rootEl=tmp.firstElementChild;document.body.appendChild(rootEl);
   // ---- 行为（从原 index.html 原样抽取）----
@@ -85,19 +90,19 @@
       setTimeout(()=>{if(!panel.classList.contains('open')&&!tip.classList.contains('hide'))tip.classList.add('show');},1400);
     }
   }
-  (function(){const h=new Date().getHours(),online=h>=9&&h<23;if(!online){document.getElementById('liveDot2').classList.add('off');document.getElementById('liveText').textContent='● 暂离 · 加微信留言必回，通常当日答复';var td=document.getElementById('tipDot'),tt=document.getElementById('tipText');if(td)td.classList.add('off');if(tt)tt.innerHTML='<b>留言必回</b> · 加微信，通常当日答复 👋';}})();
+  (function(){const h=new Date().getHours(),online=h>=9&&h<23;if(!online){document.getElementById('liveDot2').classList.add('off');document.getElementById('liveText').textContent=english?'● Away · Leave a WeChat message for a same-day reply':'● 暂离 · 加微信留言必回，通常当日答复';var td=document.getElementById('tipDot'),tt=document.getElementById('tipText');if(td)td.classList.add('off');if(tt)tt.innerHTML=english?'<b>Leave a message</b> · We usually reply the same day 👋':'<b>留言必回</b> · 加微信，通常当日答复 👋';}})();
   // 复制微信号
   document.getElementById('wxCopy').addEventListener('click',async()=>{
     const btn=document.getElementById('wxCopy'),id=document.getElementById('wxId').textContent.trim();
     try{await navigator.clipboard.writeText(id);}catch(e){const t=document.createElement('textarea');t.value=id;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove();}
-    btn.textContent='已复制 ✓';btn.classList.add('done');setTimeout(()=>{btn.textContent='复制';btn.classList.remove('done');},1800);
+    btn.textContent=english?'Copied ✓':'已复制 ✓';btn.classList.add('done');setTimeout(()=>{btn.textContent=english?'Copy':'复制';btn.classList.remove('done');},1800);
   });
   const form=document.getElementById('chatForm');
   form.addEventListener('submit',async(e)=>{
-    e.preventDefault();const btn=document.getElementById('chatSend');btn.textContent='发送中…';btn.disabled=true;
-    const data=new FormData(form);data.append('_subject','YOYANT 官网在线留言');data.append('_captcha','false');data.append('_template','table');
+    e.preventDefault();const btn=document.getElementById('chatSend');btn.textContent=english?'Sending…':'发送中…';btn.disabled=true;
+    const data=new FormData(form);data.append('_subject',english?'YOYANT English website enquiry':'YOYANT 官网在线留言');data.append('_captcha','false');data.append('_template','table');
     try{const r=await fetch('https://formsubmit.co/ajax/bbtizan@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:data});if(!r.ok)throw 0;
-      document.getElementById('chatBody').innerHTML='<div class="chat-ok"><div class="ic">✓</div><h4>已收到，谢谢！</h4><p>我们会尽快与您联系。也可直接加微信 <b style="color:var(--accent-2)">lvtizan</b>。</p></div>';
-    }catch(err){btn.textContent='发送留言 →';btn.disabled=false;alert('发送失败，请直接邮件 bbtizan@gmail.com 或加微信 lvtizan');}
+      document.getElementById('chatBody').innerHTML=english?'<div class="chat-ok"><div class="ic">✓</div><h4>Thank you!</h4><p>We will get back to you shortly. You can also add <b style="color:var(--accent-2)">lvtizan</b> on WeChat.</p></div>':'<div class="chat-ok"><div class="ic">✓</div><h4>已收到，谢谢！</h4><p>我们会尽快与您联系。也可直接加微信 <b style="color:var(--accent-2)">lvtizan</b>。</p></div>';
+    }catch(err){btn.textContent=english?'Send message →':'发送留言 →';btn.disabled=false;alert(english?'Unable to send. Please email bbtizan@gmail.com or add lvtizan on WeChat.':'发送失败，请直接邮件 bbtizan@gmail.com 或加微信 lvtizan');}
   });
 })();
