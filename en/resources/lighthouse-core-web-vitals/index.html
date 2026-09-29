@@ -6,18 +6,18 @@
 <link href="../../../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../../../favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="../../../apple-touch-icon.png" rel="apple-touch-icon"/>
-<title>Why is the website pursuing Lighthouse green? What does it measure?</title>
-<meta content="What does Lighthouse have to do with total green? Tell me about Core Web Vitals (LCP/CLCS/INP) three core indicators, and how they affect transformation and Google ranking." name="description"/>
+<title>Lighthouse &amp; Core Web Vitals: LCP, INP and CLS Guide</title>
+<meta content="A practical guide to Lighthouse and Core Web Vitals, including LCP, INP and CLS, what they measure, and how performance affects users and search visibility." name="description"/>
 <meta content="index, follow, max-image-preview:large" name="robots"/>
 <meta content="article" property="og:type"/>
-<meta content="Why is the website pursuing Lighthouse green? What does it measure?" property="og:title"/>
-<meta content="What does Lighthouse have to do with total green? Tell me about Core Web Vitals (LCP/CLCS/INP) three core indicators, and how they affect transformation and Google ranking." property="og:description"/>
+<meta content="Lighthouse &amp; Core Web Vitals: LCP, INP and CLS Guide" property="og:title"/>
+<meta content="A practical guide to Lighthouse and Core Web Vitals, including LCP, INP and CLS, what they measure, and how performance affects users and search visibility." property="og:description"/>
 <meta content="https://yoyant.com/en/resources/lighthouse-core-web-vitals/" property="og:url"/>
 <meta content="https://yoyant.com/uploads/og-card.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://yoyant.com/uploads/og-card.jpg" name="twitter:image"/>
 <link href="https://yoyant.com/en/resources/lighthouse-core-web-vitals/" rel="canonical"/><link href="https://yoyant.com/resources/lighthouse-core-web-vitals/" hreflang="zh-CN" rel="alternate"/><link href="https://yoyant.com/en/resources/lighthouse-core-web-vitals/" hreflang="en" rel="alternate"/><link href="https://yoyant.com/en/resources/lighthouse-core-web-vitals/" hreflang="x-default" rel="alternate"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://yoyant.com/en/resources/lighthouse-core-web-vitals/#article","headline":"Why is the website pursuing Lighthouse green? What does it measure?","description":"What does Lighthouse have to do with total green? Tell me about Core Web Vitals (LCP/CLCS/INP) three core indicators, and how they affect transformation and Google ranking.","inLanguage":"en","datePublished":"2026-07-29","dateModified":"2026-07-29","image":"https://yoyant.com/uploads/og-card.jpg","author":{"@id":"https://yoyant.com/en/#org"},"publisher":{"@id":"https://yoyant.com/en/#org"},"mainEntityOfPage":"https://yoyant.com/en/resources/lighthouse-core-web-vitals/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yoyant.com/en/"},{"@type":"ListItem","position":2,"name":"Insights · Resources","item":"https://yoyant.com/en/resources/"},{"@type":"ListItem","position":3,"name":"Why is the website pursuing Lighthouse green? What does it measure?"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://yoyant.com/en/resources/lighthouse-core-web-vitals/#article","headline":"Lighthouse & Core Web Vitals: LCP, INP and CLS Guide","description":"A practical guide to Lighthouse and Core Web Vitals, including LCP, INP and CLS, what they measure, and how performance affects users and search visibility.","inLanguage":"en","datePublished":"2026-07-29","dateModified":"2026-07-29","image":"https://yoyant.com/uploads/og-card.jpg","author":{"@type":"Organization","name":"YOYANT Software Atelier","url":"https://yoyant.com/en/about/"},"publisher":{"@type":"Organization","name":"YOYANT Software Atelier","url":"https://yoyant.com/en/","logo":{"@type":"ImageObject","url":"https://yoyant.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://yoyant.com/en/resources/lighthouse-core-web-vitals/"},"name":"Lighthouse & Core Web Vitals: LCP, INP and CLS Guide","url":"https://yoyant.com/en/resources/lighthouse-core-web-vitals/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yoyant.com/en/"},{"@type":"ListItem","position":2,"name":"Insights · Resources","item":"https://yoyant.com/en/resources/"},{"@type":"ListItem","position":3,"name":"Why is the website pursuing Lighthouse green? What does it measure?"}]}]}</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://api.fontshare.com" rel="preconnect"/>
@@ -107,17 +107,21 @@
   .svc-cta{margin-top:30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border:1px solid var(--line-2);border-radius:16px;padding:24px 26px;background:linear-gradient(120deg,rgba(67,97,255,.10),transparent)}
   .svc-cta .st{font-family:var(--disp);font-weight:600;font-size:clamp(17px,2vw,21px);color:var(--ink)}
 </style>
+<meta property="og:site_name" content="YOYANT Software Atelier">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:title" content="Lighthouse &amp; Core Web Vitals: LCP, INP and CLS Guide">
+<meta name="twitter:description" content="A practical guide to Lighthouse and Core Web Vitals, including LCP, INP and CLS, what they measure, and how performance affects users and search visibility.">
 </head>
 <body>
 <nav class="top"><div class="nav-in">
-<a aria-label="YOYANT Software Atelier" class="brand" data-brand-nav="" href="../../index.html"><span class="brand-main"><span class="wm">YOYANT<span class="dot">.</span></span><span class="cn">Software Atelier</span></span><span class="brand-desc">Software Custom Development . App Applet . Business backstage</span></a>
+<a aria-label="YOYANT Software Atelier" class="brand" data-brand-nav="" href="../../index.html"><span class="brand-main"><span class="wm">YOYANT<span class="dot">.</span></span><span class="cn">Software Atelier</span></span><span class="brand-desc">Custom Software · Mobile Apps · Business Platforms</span></a>
 <div class="nav-links"><a href="../../services/web/index.html">Web Services</a><a href="../../services/software/index.html">Software Services</a><a href="../../index.html#cases">Cases</a><a href="../../about/index.html">About</a><a href="../../resources/index.html">Insights</a></div>
 <div class="nav-right"><button aria-label="Toggle Dark/Light" class="theme-tg" id="themeTg">☾</button><a class="btn" href="../../index.html#contact">Get diagnostics →</a></div>
 </div></nav>
 <header class="hero article-hero"><div class="wrap" style="max-width:820px">
 <div class="crumb"><a href="../../index.html">Home</a> / <a href="../../resources/index.html">Insights · Resources</a> Why is the website pursuing Lighthouse green? What does it measure?</div>
 <div class="kick">Website construction and performance · Insight</div>
-<h1>Why is the website pursuing Lighthouse green? What does it measure?</h1>
+<h1>Lighthouse &amp; Core Web Vitals: LCP, INP and CLS Guide</h1>
 <div class="date">Published in 2026-07-29 YOYANT</div>
 </div></header>
 <section style="padding-top:0"><div class="wrap" style="max-width:820px">
@@ -134,17 +138,17 @@
 <a class="cta-in" href="../../index.html#contact">Do a performance diagnostics for your website →</a>
 </article>
 <div class="svc-cta">
-<span class="st">Web services • Independent Foreign Trade Station / Official Network / SEO</span>
+<span class="st">Web services • International B2B Website / Official Network / SEO</span>
 <a class="btn" href="../../services/web/index.html">Look at website building services →</a>
 </div>
 </div></section>
 <section><div class="wrap" style="max-width:820px">
 <div class="sec-head"><div class="kick">Related · Related Reading</div></div>
-<div class="rl-grid"><a class="rl-card" href="../../resources/web-image-optimization/index.html"><span class="rl-cat">Website construction and performance</span><span class="rl-t">How are website images handled for clarity and speed?</span></a><a class="rl-card" href="../../resources/static-vs-wordpress/index.html"><span class="rl-cat">Independent Foreign Trade Station</span><span class="rl-t">Independent Trade, why suggest that handwritten static rather than a set of WordPress?</span></a><a class="rl-card" href="../../resources/b2b-website-7-modules/index.html"><span class="rl-cat">Independent Foreign Trade Station</span><span class="rl-t">A stand-alone foreign trade that brings questions, which requires seven modules</span></a></div>
+<div class="rl-grid"><a class="rl-card" href="../../resources/web-image-optimization/index.html"><span class="rl-cat">Website construction and performance</span><span class="rl-t">Website Image Optimization: WebP, Srcset, Lazy Loading &amp; LCP</span></a><a class="rl-card" href="../../resources/static-vs-wordpress/index.html"><span class="rl-cat">International B2B Website</span><span class="rl-t">Static Website vs WordPress for International B2B SEO</span></a><a class="rl-card" href="../../resources/b2b-website-7-modules/index.html"><span class="rl-cat">International B2B Website</span><span class="rl-t">7 Essential Modules for a B2B Website That Generates Leads</span></a></div>
 </div></section>
 <footer><div class="wrap foot-in">
-<span class="wm" data-brand-foot=""><span class="fwm">YOYANT<span style="color:var(--accent)">.</span> Software Atelier</span><span class="fdesc">Software Custom Development . App Applet . Business backstage</span></span>
-<span>South China Sea Winds • Experience and Interactive Design Case 2026</span>
+<span class="wm" data-brand-foot=""><span class="fwm">YOYANT<span style="color:var(--accent)">.</span> Software Atelier</span><span class="fdesc">Custom Software · Mobile Apps · Business Platforms</span></span>
+<span>YOYANT Software Atelier · Product Design & Engineering</span>
 <span><a href="../../index.html" style="color:var(--muted)">←</a></span>
 </div></footer>
 <script>

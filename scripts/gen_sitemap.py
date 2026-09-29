@@ -43,7 +43,8 @@ RULES = [
 DEFAULT_META = ("monthly", "0.5")
 
 NOINDEX_RE = re.compile(
-    r'<meta\s+name=["\']robots["\']\s+content=["\'][^"\']*noindex', re.I
+    r'<meta\b(?=[^>]*\bname=["\']robots["\'])(?=[^>]*\bcontent=["\'][^"\']*noindex)[^>]*>',
+    re.I,
 )
 
 
