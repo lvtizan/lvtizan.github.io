@@ -447,12 +447,15 @@
 
   /* Apple Keynote Headline */
   .apple-hero-title {
-    font-size: clamp(34px, 5.2vw, 68px);
+    font-size: clamp(34px, 4.8vw, 62px);
     font-weight: 800;
     letter-spacing: -0.035em;
-    line-height: 1.12;
+    line-height: 1.08;
     margin-bottom: 20px;
     text-wrap: balance;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .apple-gradient-text {
     display: block;
@@ -525,7 +528,9 @@
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
+  .apple-tabs-bar::-webkit-scrollbar { display: none; }
   .apple-tab-pill {
     display: inline-flex;
     align-items: center;
@@ -1080,7 +1085,7 @@
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 48px;
+    margin-bottom: 38px;
   }
   .filter-pill-btn {
     font-family: var(--font-mono);
@@ -1162,6 +1167,10 @@
     color: #ffffff;
     letter-spacing: 0.02em;
     z-index: 2;
+    max-width: calc(100% - 28px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .project-body {
@@ -1172,7 +1181,7 @@
     flex: 1;
   }
   .project-body h4 {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.3;
@@ -1183,7 +1192,11 @@
     font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.65;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 
   .project-tag-row {
@@ -1201,6 +1214,7 @@
     color: var(--text-tertiary);
     border: 1px solid var(--border-subtle);
   }
+  .project-tag:nth-child(n+4) { display: none; }
 
   .project-view-link {
     display: flex;
@@ -1214,6 +1228,9 @@
     padding-top: 14px;
     border-top: 1px solid var(--border-subtle);
     transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .project-card:hover .project-view-link {
     color: var(--text-primary);
@@ -1533,13 +1550,14 @@
     font-size: clamp(21px, 2.3vw, 32px);
     font-weight: 800;
     letter-spacing: -0.02em;
-    line-height: 1.35;
+    line-height: 1.2;
     margin-bottom: 18px;
     color: var(--text-primary);
   }
   .benchmark-line {
     display: block;
-    white-space: nowrap;
+    white-space: normal;
+    text-wrap: balance;
   }
   @media (max-width: 640px) {
     .benchmark-card {
@@ -1580,7 +1598,7 @@
     }
   }
   .benchmark-punchline {
-    white-space: nowrap;
+    white-space: normal;
     color: #4361FF;
     font-style: normal;
     font-weight: 800;
@@ -1629,6 +1647,7 @@
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
   }
+  .benchmark-mode-pill:nth-child(n+4) { display: none; }
 
   /* ==========================================================================
      PRO ATELIER STAGE (VEINSCOPE PROOF OF WORK SHOWCASE)
@@ -2362,33 +2381,33 @@
 </div>
 <!-- Apple Keynote Headline -->
 <h1 class="apple-hero-title">
-<span class="apple-gradient-text">High-quality custom software, built for business.</span>
-<span class="apple-sub-text">Senior full-stack engineering—never a low-cost template shell.</span>
+<span class="apple-gradient-text">Custom software, engineered for business.</span>
+<span class="apple-sub-text">Senior product thinking. Production-ready code.</span>
 </h1>
-<p class="apple-hero-lead">We design and build <strong>commercial mobile apps</strong>, <strong>building-materials platforms</strong>, <strong>industrial software</strong> and <strong>enterprise systems</strong>—from product interfaces and business workflows to production-ready frontend and backend engineering.</p>
+<p class="apple-hero-lead">We build <strong>mobile apps</strong>, <strong>industrial software</strong>, <strong>enterprise platforms</strong> and <strong>global websites</strong>—from product design through deployment.</p>
 <!-- Apple Hardware Device Stage (The Visual Centerpiece) -->
 <div class="apple-device-stage">
 <!-- Apple-style Category Switcher Pills -->
 <div class="apple-tabs-bar" role="tablist">
 <button aria-selected="true" class="apple-tab-pill active" onclick="switchAppleHero('app', this)" role="tab">
 <svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><rect height="20" rx="3" width="14" x="5" y="2"></rect><line x1="12" x2="12.01" y1="18" y2="18"></line></svg>
-<span>Business Mobile Apps</span>
+<span>Mobile Apps</span>
 </button>
 <button aria-selected="false" class="apple-tab-pill" onclick="switchAppleHero('wechat', this)" role="tab">
 <svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" x2="21" y1="6" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-<span>WeChat Mini Program Mall</span>
+<span>Mini Program Commerce</span>
 </button>
 <button aria-selected="false" class="apple-tab-pill" onclick="switchAppleHero('industrial', this)" role="tab">
 <svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-<span>Industrial-grade 3D systems</span>
+<span>Industrial 3D</span>
 </button>
 <button aria-selected="false" class="apple-tab-pill" onclick="switchAppleHero('admin', this)" role="tab">
 <svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><rect height="14" rx="2" width="20" x="2" y="3"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
-<span>Business management in the background</span>
+<span>Operations Software</span>
 </button>
 <button aria-selected="false" class="apple-tab-pill" onclick="switchAppleHero('website', this)" role="tab">
 <svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-<span>Official website of the international project</span>
+<span>Global Websites</span>
 </button>
 </div>
 <!-- Floating Apple Pro Device Frame (Zero Gap, Perfectly Symmetrical Display) -->
@@ -2412,25 +2431,25 @@
 <div class="apple-device-statusbar">
 <div class="apple-status-pill left">
 <span class="badge-dot green"></span>
-<span id="appleBadgeText">Original 60fps Fluent Interact AI Accompanies App</span>
+<span id="appleBadgeText">60fps AI companion app</span>
 </div>
 <a class="apple-status-caption" href="./work/avatar/index.html" id="appleHeroDetailLink" title="Click through to review the full project details">
-<span id="appleHeroCaption">Delivery of field cases . Native Mobile End App High-Purpose Custom Structure</span>
-<span class="caption-link-arrow">Penetration View Details ↗</span>
+<span id="appleHeroCaption">Native mobile product, designed and delivered end to end</span>
+<span class="caption-link-arrow">View case ↗</span>
 </a>
 <div class="apple-status-pill right">
 <span class="badge-dot blue"></span>
-<span>100% full source code privatization delivery</span>
+<span>Full source-code delivery</span>
 </div>
 </div>
 </div>
 <!-- Action Cluster: Apple Pill CTA + Clean Link -->
 <div class="apple-cta-cluster">
 <a class="atelier-btn atelier-btn-primary apple-cta-btn" href="#concierge">
-<span>Free Evaluation Scheme Architecture and Quotation →</span>
+<span>Discuss your project →</span>
 </a>
 <a class="apple-text-link" href="#cases">
-<span>Review 11 business landing cases</span>
+<span>View 11 selected cases</span>
 <svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><path d="M7 17l9.2-9.2M17 17V8H8"></path></svg>
 </a>
 </div>
@@ -2438,15 +2457,15 @@
 <div class="apple-guarantee-pills">
 <div class="apple-pill-item">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>
-<span>100% full source code and database privatization delivery</span>
+<span>Full source code and database</span>
 </div>
 <div class="apple-pill-item">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>
-<span>Reject inexpensive casings and semi-finished products</span>
+<span>No template shells</span>
 </div>
 <div class="apple-pill-item">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>
-<span>Dachang Computer + Academy of Fine Arts Double Major Leadership</span>
+<span>Senior engineering and design</span>
 </div>
 </div>
 </div>
@@ -2460,44 +2479,38 @@
 <div class="benchmark-card">
 <div>
 <div class="benchmark-badge-row">
-<span class="benchmark-tech-chip">Flegship Proof of Work // / Industrial software poles</span>
+<span class="benchmark-tech-chip">Flagship case · Industrial software</span>
 <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--text-tertiary);">Qt / C++ · Embedded 3D Rebuild</span>
 </div>
 <h2 class="benchmark-title">
-<span class="benchmark-line">Even aeroplane-grade 0.01 mm of spatial measurements can be accessed.</span>
-<span class="benchmark-line">Commercial system development is even more<em class="benchmark-punchline">Dimension Reduction Strike</em></span>
+<span class="benchmark-line">Aerospace-grade measurement.</span>
+<span class="benchmark-line"><em class="benchmark-punchline">Production-ready industrial software.</em></span>
 </h2>
-<p class="benchmark-desc">A real-time point-cloud capture and precision measurement system for industrial borescope inspection. It combines high-contrast field ergonomics, one-handed gloved operation, and millisecond 2D/3D reconstruction for demanding inspection work.</p>
-<div style="margin: 16px 0 20px; padding: 14px 18px; border-left: 3px solid #4361FF; background: rgba(67, 97, 255, 0.06); border-radius: 0 10px 10px 0;">
-<div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #7DA0FF; margin-bottom: 5px;">Inspection Tools Built for What You Can’t Afford to Miss</div>
-<p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; margin: 0;">
-            Aerospace tolerance is zero. From small to wing carbon-fibre layers, to close micro-resistance cracks, to size of the jet engine turbo vortex cavity, with 0.01 mm spatial geometry and full life-cycle seaworthiness as industrial enablers.
-          </p>
-</div>
+<p class="benchmark-desc">VeinScope combines real-time point-cloud capture, precision measurement and high-contrast field controls in one handheld inspection system.</p>
 <div class="benchmark-metrics-grid">
 <div>
 <div class="benchmark-metric-val">0.01 mm</div>
-<div class="benchmark-metric-lbl">Spatial 3D Geometry Resolution</div>
+<div class="benchmark-metric-lbl">3D resolution</div>
 </div>
 <div>
 <div class="benchmark-metric-val">&lt; 16 ms</div>
-<div class="benchmark-metric-lbl">2D/3D Same-Screen Real-Time Rendering Delay</div>
+<div class="benchmark-metric-lbl">2D/3D latency</div>
 </div>
 <div>
 <div class="benchmark-metric-val">100,000 Lux</div>
-<div class="benchmark-metric-lbl">High Contrast Tuning for Outdoor Glare Operations</div>
+<div class="benchmark-metric-lbl">Outdoor visibility</div>
 </div>
 </div>
 <div class="benchmark-modes-row">
-<span class="benchmark-mode-pill">Point-to-point precision ranging</span>
-<span class="benchmark-mode-pill">Polygon Area and Perimeter</span>
-<span class="benchmark-mode-pill">MTD Profile Maximum Depth Analysis</span>
+<span class="benchmark-mode-pill">Point-to-point measurement</span>
+<span class="benchmark-mode-pill">Area and perimeter</span>
+<span class="benchmark-mode-pill">Depth profile analysis</span>
 <span class="benchmark-mode-pill">Deep pseudo-color thermogram</span>
 <span class="benchmark-mode-pill">Ply Point Cloud Spatial Export</span>
 </div>
 <div>
 <a class="atelier-btn atelier-btn-primary benchmark-cta-btn" href="./work/veinscope/index.html">
-<span>View VeinScope 5 Large Measuring Mode Full Project Design</span>
+<span>View the VeinScope case</span>
 </a>
 </div>
 </div>
@@ -2573,8 +2586,8 @@
 <section class="pillars-section" id="services">
 <div class="wrap">
 <div class="section-header">
-<div class="google-chip" style="margin-bottom: 14px;">Core Companies Core Business</div>
-<h2 class="section-headline">Three custom software hubs covering commercial full links</h2>
+<div class="google-chip" style="margin-bottom: 14px;">Core Services</div>
+<h2 class="section-headline">Four product systems. One engineering partner.</h2>
 <p class="section-desc">From fast, polished end-user experiences to high-concurrency commerce and the operational systems behind them, we deliver one continuous engineering stack.</p>
 </div>
 <div class="bento-showcase">
@@ -2660,7 +2673,7 @@
 <div class="wrap">
 <div class="platform-intro">
 <div class="google-chip">Platform Engineering</div>
-<h2 class="section-headline">Building materials home platform, from finding suppliers to receiving inquiries</h2>
+<h2 class="section-headline">From product discovery to qualified enquiries</h2>
 <p class="section-desc">Tarmeer connects owners, design firms and building-materials suppliers in one journey: discover services and products, review proven work, contact companies, then manage showrooms and leads from the supplier portal.</p>
 </div>
 <div class="platform-layout">
@@ -2683,29 +2696,29 @@
 <section class="portfolio-section" id="cases">
 <div class="wrap">
 <div class="section-header">
-<div class="google-chip" style="margin-bottom: 14px;">Secured Engineerings. Real Project</div>
-<h2 class="section-headline">Cases that have been done, and all operate stably online</h2>
+<div class="google-chip" style="margin-bottom: 14px;">Selected Work · Live Products</div>
+<h2 class="section-headline">Proven work, running in production</h2>
 <p class="section-desc">No speculative concepts. Every project combines end-to-end product design, disciplined engineering and a real production release.</p>
 </div>
 <!-- Filter Control Dock -->
 <div class="filter-dock">
-<button class="filter-pill-btn active" onclick="filterPortfolio('all', this)">All Featured Cases (11)</button>
-<button class="filter-pill-btn" onclick="filterPortfolio('app', this)">App · Software System (5)</button>
-<button class="filter-pill-btn" onclick="filterPortfolio('web', this)">Brand official website · Independent sea station (4)</button>
-<button class="filter-pill-btn" onclick="filterPortfolio('mall', this)">Mini Program · Brand Mall (2)</button>
+<button class="filter-pill-btn active" onclick="filterPortfolio('all', this)">All cases (11)</button>
+<button class="filter-pill-btn" onclick="filterPortfolio('app', this)">Apps &amp; software (5)</button>
+<button class="filter-pill-btn" onclick="filterPortfolio('web', this)">Global websites (4)</button>
+<button class="filter-pill-btn" onclick="filterPortfolio('mall', this)">Commerce (2)</button>
 </div>
 <!-- 9 Case Grid -->
 <div class="projects-stage" id="portfolioStage">
 <!-- 1. OTS (web) -->
 <a class="project-card" data-category="web" href="./work/ots/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">International Engineering Delivery Website · B2B</span>
+<span class="project-type-chip">Global B2B Website</span>
 <img alt="OTS International Elevator Project Delivery Official Website" onerror="this.src='./uploads/ots-airport-cover.png'" src="../uploads/webp/c-ots-airport-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>OTS — Official Website for International Elevator Project Delivery</h4>
-<p>A global engineering website that turns airport, metro and infrastructure delivery—from manufacturing and logistics to installation and service—into credible sales proof.</p>
+<h4>OTS — Global Engineering Website</h4>
+<p>A B2B website that turns complex airport and infrastructure delivery into clear, credible sales proof.</p>
 </div>
 <div class="project-tag-row">
 <span class="project-tag">English B2B</span>
@@ -2713,67 +2726,67 @@
 <span class="project-tag">Content Architecture</span>
 <span class="project-tag">Technical SEO</span>
 </div>
-<div class="project-view-link">Check the production process of the official website <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 1. Epaifa (app) -->
 <a class="project-card" data-category="app" href="./work/epaifa/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">B2B Mall App + Warehousing</span>
+<span class="project-type-chip">B2B Commerce App</span>
 <img alt="Epaifa Mall B2B Cross-border Business City App Case" onerror="this.src='./uploads/avatar-home.png'" src="../uploads/webp/c-epaifa-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>Epaifa Mall — 46 Screen Cross-border Supply Chain Business City</h4>
-<p>A 46-screen cross-border purchasing, inventory, ordering, fulfilment, COD tracking and reconciliation product that connects a complex international operation end to end.</p>
+<h4>Epaifa — Cross-border Supply Chain App</h4>
+<p>A 46-screen product connecting purchasing, inventory, fulfilment, COD tracking and reconciliation.</p>
 </div>
 <div class="project-tag-row">
 <span class="project-tag">Mobile app</span>
-<span class="project-tag">Merchant Middle Desk</span>
-<span class="project-tag">Multi-standard ordering</span>
+<span class="project-tag">Merchant ops</span>
+<span class="project-tag">Complex ordering</span>
 <span class="project-tag">International i18n</span>
 </div>
-<div class="project-view-link">View 46-screen case details <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 2. VeinScope (app) -->
 <a class="project-card" data-category="app" href="./work/veinscope/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">Software for industrial equipment · 3D measurement</span>
+<span class="project-type-chip">Industrial 3D Software</span>
 <img alt="VeinScope industrial endoscope hardware detection measurement interface" onerror="this.src='./uploads/veinscope-device.png'" src="../uploads/webp/c-veinscope-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>VeinScope — Industrial Endoscope Test Measurement System</h4>
-<p>Handheld industrial software with 2D/3D views, precise point and area measurement, depth-map analysis and point-cloud export, tuned for bright outdoor fieldwork.</p>
+<h4>VeinScope — Precision Inspection System</h4>
+<p>Handheld 2D/3D measurement software designed for fast, precise inspection in demanding field conditions.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Hardware and software interactions</span>
+<span class="project-tag">Hardware integration</span>
 <span class="project-tag">2D/3D measurement</span>
-<span class="project-tag">Handheld Industrial Control Screen</span>
+<span class="project-tag">Handheld UI</span>
 <span class="project-tag">On-site job tuning</span>
 </div>
-<div class="project-view-link">View Industrial Software Case Study <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 3. SUNVOLT (web) -->
 <a class="project-card" data-category="web" href="./work/sunvolt/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">New energy outbound official website · brand site</span>
+<span class="project-type-chip">Clean Energy Website</span>
 <img alt="SUNVOLT Sunyang Solar Energy Business Storage and New Energy Access Network" onerror="this.src='./uploads/avatar-home.png'" src="../uploads/webp/c-sv-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>SUNVOLT Sunyang Solar Energy -- Business and Industry Reserves Out of the Sea</h4>
-<p>A global energy-storage website with an industrial 3D visual system, clear system architecture, multilingual content and fast static delivery.</p>
+<h4>SUNVOLT — Solar &amp; Energy Storage</h4>
+<p>A fast global website for solar modules, storage systems and international distribution.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Outbound Brand Station</span>
-<span class="project-tag">New energy storage</span>
-<span class="project-tag">The Whole Case 3D Visual Effects</span>
+<span class="project-tag">Global website</span>
+<span class="project-tag">Energy storage</span>
+<span class="project-tag">3D visuals</span>
 <span class="project-tag">Lighthouse 99 points</span>
 </div>
-<div class="project-view-link">View Energy Storage Case Study <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 4. AVATAR (app) -->
@@ -2784,16 +2797,16 @@
 </div>
 <div class="project-body">
 <div>
-<h4>AVATAR - AI Role Emotional Movement Application</h4>
+<h4>AVATAR — AI Companion App</h4>
 <p>An immersive AI companion app with expressive chat motion, relationship progression, tiered subscriptions and low-latency streaming responses.</p>
 </div>
 <div class="project-tag-row">
 <span class="project-tag">iOS / Android</span>
 <span class="project-tag">AI Client</span>
 <span class="project-tag">High-fidelity animation</span>
-<span class="project-tag">Commercial Subscriptions</span>
+<span class="project-tag">Subscriptions</span>
 </div>
-<div class="project-view-link">View AI App Story <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 5. RESON (mall) -->
@@ -2804,8 +2817,8 @@
 </div>
 <div class="project-body">
 <div>
-<h4>RESON - 3C Digital Branding City of Smart Hardware</h4>
-<p>A dark, technology-led DTC store with a full multi-SKU catalogue, fast cart flow, product detail and WeChat Pay/Stripe checkout.</p>
+<h4>RESON — Premium Audio Store</h4>
+<p>A focused DTC storefront with a multi-SKU catalogue, fast cart flow and international checkout.</p>
 </div>
 <div class="project-tag-row">
 <span class="project-tag">Brand E-commerce</span>
@@ -2813,107 +2826,107 @@
 <span class="project-tag">Multi-Spec SKUs</span>
 <span class="project-tag">Payment Closed Loop</span>
 </div>
-<div class="project-view-link">See the case for the 3C store <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 6. VITALINK (web) -->
 <a class="project-card" data-category="web" href="./work/vitalink/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">Medical Technology · Global Official Website</span>
+<span class="project-type-chip">Medical Technology Website</span>
 <img alt="VITALINK Willicon Medical Devices and In vitro Diagnosis Global Network of Officials" onerror="this.src='./uploads/avatar-home.png'" src="../uploads/webp/c-med-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>VITALINK Vilikon - Global Network of Medical Devices</h4>
-<p>A rigorous international website for in-vitro diagnostics and precision medical devices, including product systems, research resources and distributor enquiries.</p>
+<h4>VITALINK — Global Medical Devices</h4>
+<p>An international product and research website for precision medical devices and distributor enquiries.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Medical Dispatch Official Website</span>
-<span class="project-tag">Compliance Design System</span>
-<span class="project-tag">Academic Repository</span>
+<span class="project-tag">Medical website</span>
+<span class="project-tag">Compliance UX</span>
+<span class="project-tag">Research library</span>
 <span class="project-tag">Agent Inquiry</span>
 </div>
-<div class="project-view-link">View medical cases at sea <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 7. Tarmeer (platform) -->
 <a class="project-card" data-category="app" href="./work/tarmeer/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">Building Material Home Platform · Reception + Backstage</span>
+<span class="project-type-chip">Building Materials Platform</span>
 <img alt="Tarmeer Multinational Interior Design Business Platform" onerror="this.src='./uploads/tarmeer-home.png'" src="../uploads/webp/c-tarmeer-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>Tarmeer — Multinational Building Materials and Home Furnishing Platform</h4>
-<p>A multi-country platform connecting owners, design firms and suppliers through city-based discovery, company showrooms, product catalogues, enquiries and supplier self-service.</p>
+<h4>Tarmeer — Multinational B2B Platform</h4>
+<p>A multi-country platform connecting property owners, design firms and suppliers through one operating system.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Full Stack Architecture</span>
-<span class="project-tag">Building material selection</span>
-<span class="project-tag">Supplier Back Office</span>
+<span class="project-tag">Full-stack</span>
+<span class="project-tag">Product discovery</span>
+<span class="project-tag">Supplier portal</span>
 <span class="project-tag">Multi-country directory</span>
 </div>
-<div class="project-view-link">View Platform Design &amp; Development <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 8. KST Oilfield (web) -->
 <a class="project-card" data-category="web" href="./work/kst-oilfield/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">Heavy industry equipment out to sea · bilingual official website</span>
+<span class="project-type-chip">Industrial B2B Website</span>
 <img alt="KST Oilfield Bilingual Network of Petroleum Equipment and Industrial Engineering Officials" onerror="this.src='./uploads/avatar-home.png'" src="../uploads/webp/c-oilfield-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>KST Oilfield — Bilingual Global Network of Officials for Petroleum Engineering</h4>
-<p>A bilingual global website for oilfield and power equipment, combining technical specifications, international certifications and a conversion path for high-value engineering enquiries.</p>
+<h4>KST Oilfield — Global Equipment Website</h4>
+<p>A bilingual product website built around specifications, certifications and high-value engineering enquiries.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Industrial heavy industry goes to sea</span>
-<span class="project-tag">Chinese-English Bilingual</span>
-<span class="project-tag">International certification exhibition hall</span>
+<span class="project-tag">Heavy industry</span>
+<span class="project-tag">Bilingual</span>
+<span class="project-tag">Certifications</span>
 <span class="project-tag">Engineering Inquiry Conversion</span>
 </div>
-<div class="project-view-link">View Heavy Industry Cases <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 9. 云裳珠宝 (mall) -->
 <a class="project-card" data-category="mall" href="./work/yunshang/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">Private applet · High-end jewelry mall</span>
+<span class="project-type-chip">Jewellery Mini Program</span>
 <img alt="Yunshang Jewelry Oriental Aesthetics Jewelry Custom Mini Program Mall" onerror="this.src='./uploads/avatar-home.png'" src="../uploads/webp/c-yun-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>Cloud Jewellery — Eastern American Jewellery Customized Small Program Business City</h4>
-<p>A private-domain jewellery Mini Program with certificate verification, material customisation, VIP benefits and direct WeChat merchant settlement.</p>
+<h4>Yunshang — Custom Jewellery Commerce</h4>
+<p>A private Mini Program for custom jewellery, certificates, VIP services and direct merchant settlement.</p>
 </div>
 <div class="project-tag-row">
 <span class="project-tag">WeChat Mini Program</span>
-<span class="project-tag">Oriental aesthetics</span>
-<span class="project-tag">One thing, one yard</span>
+<span class="project-tag">Art direction</span>
+<span class="project-tag">Certificates</span>
 <span class="project-tag">Private Settlement</span>
 </div>
-<div class="project-view-link">View Applet Store Cases <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 10. 南海风物 (app) -->
 <a class="project-card" data-category="app" href="./work/nanhai/index.html">
 <div class="project-viewport">
-<span class="project-type-chip">Software · Hardware and software touchscreen interactive device</span>
+<span class="project-type-chip">Interactive Installation</span>
 <img alt="South China Sea Scenery Immersive Cultural Interaction Installation" onerror="this.src='./uploads/avatar-home.png'" src="../uploads/webp/c-nanhai-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>Nanhai Scenery — Immersive Cultural Interaction Installation</h4>
-<p>An immersive cultural installation in Foshan, linking a touch-screen console with a large display across three stable, on-site interactive experiences.</p>
+<h4>Nanhai — Immersive Cultural Experience</h4>
+<p>A touch-screen installation connecting a control console and large display across three on-site experiences.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Hardware and software interactions</span>
-<span class="project-tag">Touch screen large screen linkage</span>
+<span class="project-tag">Hardware integration</span>
+<span class="project-tag">Dual-screen control</span>
 <span class="project-tag">3 gameplay systems</span>
 <span class="project-tag">Onsite Deployment</span>
 </div>
-<div class="project-view-link">View Interactive Installation Case Study <span>→</span></div>
+<div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 </div>
@@ -2928,29 +2941,29 @@
 <div class="manifesto-panel">
 <div class="section-header text-left">
 <div class="google-chip" style="margin-bottom: 12px;">Principles · Delivery Charter</div>
-<h2 class="section-headline">Why would a world-class team choose a direct, workshop job instead of a mediocre outsourcing?</h2>
+<h2 class="section-headline">Direct collaboration, complete ownership</h2>
 <p class="section-desc">We do not assemble template code or lock products inside proprietary platforms. Every layer is traceable, transferable and deployable under your control.</p>
 </div>
 <div class="manifesto-grid">
 <div class="manifesto-item">
 <div class="manifesto-num">01 / SOVEREIGNTY</div>
-<h4>100% complete full-volume source code delivery</h4>
-<p>The front page, back end microservices to the database structure and transport deployment script are delivered to you in full. No code is withheld, no hidden back door is set, and a digital asset is actually held.</p>
+<h4>Complete source-code delivery</h4>
+<p>Frontend, backend, database schema and deployment configuration are transferred in full—without encrypted modules or hidden dependencies.</p>
 </div>
 <div class="manifesto-item">
 <div class="manifesto-num">02 / CRAFTSMANSHIP</div>
-<h4>Computers in large factories + dual-material literacy in beauty academies</h4>
-<p>There is no "designer drew it, but the programmer couldn't do it." The same brain runs through the design system and compiles the level code, and it's 100% interlocking, and the millisecond kinetic corroded.</p>
+<h4>Design and engineering in one team</h4>
+<p>The people shaping the interface also understand the implementation, keeping the product vision intact from prototype to production.</p>
 </div>
 <div class="manifesto-item">
 <div class="manifesto-num">03 / UNLOCKED</div>
-<h4>Zero Private Platform Binding</h4>
-<p>Domain names, databases, and business names are registered directly in your name.</p>
+<h4>No proprietary lock-in</h4>
+<p>Your domains, infrastructure, databases and business accounts remain under your control.</p>
 </div>
 <div class="manifesto-item">
 <div class="manifesto-num">04 / RELIABILITY</div>
-<h4>Strict engineering specifications and on-line escort</h4>
-<p>A detailed RESTful API interface document, an initialized environmental script, module testing and architecture instructions.</p>
+<h4>Documented, maintainable delivery</h4>
+<p>Clear API documentation, environment setup, testing and architecture notes support a clean handover.</p>
 </div>
 </div>
 </div>
@@ -2962,8 +2975,8 @@
 <section class="compare-section">
 <div class="wrap">
 <div class="section-header">
-<div class="google-chip" style="margin-bottom: 14px;">Host Transparency. Industry delivers the truth.</div>
-<h2 class="section-headline">Refusal to outsource: Common low-cost outsourcing vs Yoyant software workshop</h2>
+<div class="google-chip" style="margin-bottom: 14px;">Delivery Transparency</div>
+<h2 class="section-headline">Template outsourcing vs. product engineering</h2>
 <p class="section-desc">A transparent comparison of architecture, ownership, deployment and long-term cost—so you can evaluate the real value of the deliverable.</p>
 </div>
 <div class="compare-table-wrap">
@@ -2971,49 +2984,49 @@
 <thead>
 <tr>
 <th style="width: 22%;">Key Delivery Dimensions</th>
-<th style="width: 39%;">Market Cheap Outsourcing/Formwork Shell Team</th>
-<th class="highlight-th" style="width: 39%;">YOYANT Sino-Ocean Software Workshop</th>
+<th style="width: 39%;">Low-cost template outsourcing</th>
+<th class="highlight-th" style="width: 39%;">YOYANT Software Atelier</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="compare-dim">Underlying Core Source</td>
-<td class="compare-bad">The seizure of the core source code or only the condensed confusion package is followed by a field that is charged a daily price of “for ransom”.</td>
+<td class="compare-dim">Source ownership</td>
+<td class="compare-bad">Core modules may be withheld, encrypted or tied to recurring vendor fees.</td>
 <td class="compare-good highlight-td">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M20 6L9 17l-5-5"></path></svg>
-<span><b>100% complete full source code privatization</b>Front/end, back-end micro-services, database modelling and full delivery of Docker deployment scripts.</span>
+<span><b>Complete source delivery.</b> Frontend, backend, database schema and deployment configuration are included.</span>
 </td>
 </tr>
 <tr>
-<td class="compare-dim">Code Architecture and Performance</td>
-<td class="compare-bad">The open source poor code is co-mingled, applied to backward templates, page carton frames, memory leaks, and cannot be reviewed for compliance.</td>
+<td class="compare-dim">Architecture</td>
+<td class="compare-bad">Generic templates and mixed-quality dependencies make maintenance difficult.</td>
 <td class="compare-good highlight-td">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M20 6L9 17l-5-5"></path></svg>
-<span><b>Pure Blood Native and Modern Engineering Architecture</b>: Swift / Kotlin / Flutter / Next.js, 60fps touch curve, millisecond cold.</span>
+<span><b>Modern, reviewable architecture.</b> Technology is selected for the product, performance and operating environment.</span>
 </td>
 </tr>
 <tr>
-<td class="compare-dim">Communication Roles and Understanding</td>
-<td class="compare-bad">The previous period had been full of sales of drawing cakes, which had been contracted and dumped to school interns; there had been no business logic, and the function had been extended over time.</td>
+<td class="compare-dim">Collaboration</td>
+<td class="compare-bad">Requirements pass through sales layers before reaching the delivery team.</td>
 <td class="compare-good highlight-td">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M20 6L9 17l-5-5"></path></svg>
-<span><b>Dachang Technology + Academy of Fine Arts Double Professional Founder Direct Docking</b>: Knowledge of the co-production and distribution of low-level computers, and of the interaction between business and aesthetics.</span>
+<span><b>Direct senior collaboration.</b> Product, design and engineering decisions stay connected throughout delivery.</span>
 </td>
 </tr>
 <tr>
-<td class="compare-dim">Complex engineering and technical barriers</td>
-<td class="compare-bad">Only the simplest database additions, deletions and rechecks can be made, and ground-floor hardware communications, 3D space reconstruction or the paralysis of the direct cloud crust can be encountered.</td>
+<td class="compare-dim">Technical depth</td>
+<td class="compare-bad">Template teams are often limited to basic database-driven applications.</td>
 <td class="compare-good highlight-td">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M20 6L9 17l-5-5"></path></svg>
-<span><b>Aerospace/industrial-grade hardcore systems</b>: Attack industrial endoscope 0.01 mm geometry, 2D/3D subscreen, Bluetooth/USB hardware communications.</span>
+<span><b>Industrial-grade capability.</b> Precision 3D measurement, hardware integration and complex operational systems.</span>
 </td>
 </tr>
 <tr>
-<td class="compare-dim">Post-deployment tied to vendor</td>
-<td class="compare-bad">Their expensive private servers and SaaS must be rented and the business system shut down directly the following year.</td>
+<td class="compare-dim">After launch</td>
+<td class="compare-bad">The product may depend on a proprietary hosting or SaaS platform.</td>
 <td class="compare-good highlight-td">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M20 6L9 17l-5-5"></path></svg>
-<span><b>Enterprise Private Cloud and Private Server Deployment</b>Domain names, servers, and micro-creditors are in the name of their clients, kidnapping at zero monthly fees, and dependence on zero suppliers.</span>
+<span><b>Independent deployment.</b> Infrastructure and accounts remain in your name, with no platform lock-in.</span>
 </td>
 </tr>
 </tbody>
@@ -3027,8 +3040,8 @@
 <section class="pricing-section" id="engagement">
 <div class="wrap">
 <div class="section-header">
-<div class="google-chip" style="margin-bottom: 14px;">Spope &amp; Timeline &amp; Collaboration</div>
-<h2 class="section-headline">Transparent specification R&amp;D cycle and collaboration phase</h2>
+<div class="google-chip" style="margin-bottom: 14px;">Scope · Timeline · Collaboration</div>
+<h2 class="section-headline">A clear path from brief to launch</h2>
 <p class="section-desc">We define business use cases, technical choices, scope and acceptance standards in writing before implementation begins.</p>
 </div>
 <div class="tiers-grid">
@@ -3139,8 +3152,8 @@
 <section class="insights-section" id="insights">
 <div class="wrap">
 <div class="section-header">
-<div class="google-chip" style="margin-bottom: 14px;">Engineering Insights // Technology and Product Insight</div>
-<h2 class="section-headline">In-depth insight from front-line full-stack R&amp;D and architecture combat</h2>
+<div class="google-chip" style="margin-bottom: 14px;">Engineering Insights</div>
+<h2 class="section-headline">Practical thinking from real product work</h2>
 <p class="section-desc">Practical writing on architecture choices, product decisions and delivery risks—drawn from real software projects.</p>
 </div>
 <div class="insights-grid">
@@ -3188,10 +3201,10 @@
 <section class="concierge-section" id="concierge">
 <div class="wrap">
 <div class="concierge-card">
-<div class="google-chip" style="margin-bottom: 16px;">Fast Evaluation / / Free Technology Assessment Channel</div>
-<h2 class="concierge-headline">Free access to Custom Software Architecture Recommendations and Schedule Budget Assessment</h2>
+<div class="google-chip" style="margin-bottom: 16px;">Project Assessment</div>
+<h2 class="concierge-headline">Get a clear technical direction for your project</h2>
 <p class="concierge-sub">
-        Send you a functional concept, a prototype sketch or a point of business pain, which the founders will comb directly. 24 hours to export to you a professional technical assessment containing technical selection, development cycle, range of delivery and pit-proofing advice, no harassment.
+        Share a brief, prototype or business problem. We will respond with practical recommendations on architecture, scope, timeline and delivery risk.
       </p>
 <div class="concierge-channels">
 <a class="atelier-btn atelier-btn-primary" href="mailto:bbtizan@gmail.com?subject=软件定制开发需求咨询&amp;body=公司/团队：%0A需求类型（App/小程序/商家后台）：%0A核心功能简述：%0A预期上线时间：" style="padding: 14px 32px; font-size: 15px;">
@@ -3470,8 +3483,8 @@
   const appleHeroData = {
     'app': {
       img: '../uploads/webp/avatar-showcase.webp',
-      badge: 'Original 60fps Fluent Interact AI Accompanies App',
-      caption: 'Delivery of field cases . Native Mobile End App High-Purpose Custom Structure',
+      badge: '60fps AI companion app',
+      caption: 'Native mobile product, designed and delivered end to end',
       alt: 'AVATAR Business Move App Custom field',
       url: './work/avatar/index.html',
       hint: 'Access to the full Avatar case details →',
@@ -3480,8 +3493,8 @@
     },
     'wechat': {
       img: '../uploads/webp/epaifa-hero-v2.webp',
-      badge: 'Cross-border E-commerce & WeChat Mini Program Mall System',
-      caption: 'We\'ve got a million-degree water flow from the middle to the middle of the border.',
+      badge: 'Cross-border commerce platform',
+      caption: 'Ordering, inventory and fulfilment in one connected flow',
       alt: 'Epaifa WeChat Mini Program and Cross-border Mall Battle',
       url: './work/epaifa/index.html',
       hint: 'Access to the full Epaifa case details →',
@@ -3490,8 +3503,8 @@
     },
     'industrial': {
       img: '../uploads/webp/veinscope-onsite1.webp',
-      badge: '0.01 mm Space precision ranging . Industrial field operations',
-      caption: '• Aero-class non-destructive detection and 3D point cloud precision measurement software and hardware systems',
+      badge: '0.01 mm precision measurement',
+      caption: 'Industrial 3D inspection software for demanding fieldwork',
       alt: 'VeinScope Industrial Level 3D Measuring Software and Hardware On-Stand',
       url: './work/veinscope/index.html',
       hint: 'Enter VeinScope full case details',
@@ -3500,8 +3513,8 @@
     },
     'admin': {
       img: '../uploads/webp/tarmeer-admin-saas.webp',
-      badge: '• Authority structure and real-time movement',
-      caption: '• A real multi-tenant back-office management system and synergy hub',
+      badge: 'Multi-tenant operations platform',
+      caption: 'Permissions, workflows and live operational data',
       alt: 'Tarmeer enterprise management in the background system combat',
       url: './work/tarmeer/index.html',
       hint: 'Access to all Tarmeer case details →',
@@ -3510,8 +3523,8 @@
     },
     'website': {
       img: '../uploads/webp/c-ots-airport-lg.webp',
-      badge: '• B2B Web site design development',
-      caption: '• Information architecture, responsive development and technology',
+      badge: 'Global B2B website',
+      caption: 'Clear information architecture and responsive delivery',
       alt: 'OTS International Airport & Infrastructure Projects Official Website Cover',
       url: './work/ots/index.html',
       hint: 'Check out the OTS website production process →',
