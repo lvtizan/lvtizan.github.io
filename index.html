@@ -350,8 +350,10 @@
   .theme-toggle-switch {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 7px 14px;
+    justify-content: center;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0 14px;
     border-radius: var(--radius-full);
     background: var(--surface-container);
     border: 1px solid var(--border-medium);
@@ -366,20 +368,21 @@
     background: var(--surface-container-high);
   }
   .language-switch {
-    min-width: 38px;
+    min-width: 52px;
     justify-content: center;
     text-decoration: none;
     font-weight: 700;
     letter-spacing: .06em;
   }
-
   /* Global Buttons */
   .atelier-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 9px;
-    padding: 10px 24px;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0 24px;
     border-radius: var(--radius-full);
     font-size: 14px;
     font-weight: 600;
@@ -2122,13 +2125,6 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    .theme-toggle-switch #themeLabel {
-      display: none !important;
-    }
-    .theme-toggle-switch #themeIcon {
-      font-size: 13px;
-      line-height: 1;
-    }
     .language-switch {
       width: 32px;
       min-width: 32px;
@@ -2136,6 +2132,7 @@
       padding: 0;
     }
     .dock-actions .atelier-btn {
+      height: 32px;
       padding: 6px 11px;
       font-size: 11.5px;
       gap: 4px;
@@ -2347,11 +2344,6 @@
 
     <div class="dock-actions">
       <a class="theme-toggle-switch language-switch" href="./en/index.html" hreflang="en" lang="en" aria-label="Switch to English" title="English" onclick="try{localStorage.setItem('yoyant_lang','en')}catch(e){}">EN</a>
-      <!-- Theme Switcher: Dark Obsidian <-> Light Alabaster -->
-      <button class="theme-toggle-switch" id="themeBtn" onclick="toggleTheme()" title="切换 Google Atelier 调色盘">
-        <span id="themeIcon">🌓</span>
-        <span id="themeLabel">石墨暗色</span>
-      </button>
 
       <a href="#concierge" class="atelier-btn atelier-btn-primary">
         <span class="btn-text-full">直连方案团队</span>
@@ -3483,25 +3475,6 @@
     });
   }
 
-  // Google Atelier Theme Switcher (Dark Obsidian <-> Light Alabaster)
-  function toggleTheme() {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-theme');
-    const next = current === 'atelier-dark' ? 'atelier-light' : 'atelier-dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('yoyant_theme', next);
-
-    const icon = document.getElementById('themeIcon');
-    const label = document.getElementById('themeLabel');
-    if (next === 'atelier-light') {
-      icon.textContent = '☀️';
-      label.textContent = '白陶明色';
-    } else {
-      icon.textContent = '🌓';
-      label.textContent = '石墨暗色';
-    }
-  }
-
   // Copy WeChat Helper
   function copyWechat() {
     const val = document.getElementById('wxVal').textContent;
@@ -3736,22 +3709,6 @@
     startTimer();
   })();
 
-  // Initialize theme from preference if available
-  (function initTheme() {
-    const saved = localStorage.getItem('yoyant_theme');
-    if (saved) {
-      document.documentElement.setAttribute('data-theme', saved);
-      const icon = document.getElementById('themeIcon');
-      const label = document.getElementById('themeLabel');
-      if (saved === 'atelier-light') {
-        icon.textContent = '☀️';
-        label.textContent = '白陶明色';
-      } else {
-        icon.textContent = '🌓';
-        label.textContent = '石墨暗色';
-      }
-    }
-  })();
 </script>
 
 <!-- 右下角常驻 加微信咨询 互动组件 -->

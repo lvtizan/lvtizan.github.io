@@ -365,8 +365,8 @@
     html[lang="en"] .dock-links { gap: 12px; }
     html[lang="en"] .dock-link { font-size: 13px; }
     html[lang="en"] .dock-actions { gap: 8px; }
-    html[lang="en"] .theme-toggle-switch { padding: 7px 10px; }
-    html[lang="en"] .dock-actions .atelier-btn { padding: 9px 16px; }
+    html[lang="en"] .language-switch { padding: 0 10px; }
+    html[lang="en"] .dock-actions .atelier-btn { padding: 0 16px; }
   }
 
   @media (max-width: 980px) and (min-width: 769px) {
@@ -377,8 +377,10 @@
   .theme-toggle-switch {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 7px 14px;
+    justify-content: center;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0 14px;
     border-radius: var(--radius-full);
     background: var(--surface-container);
     border: 1px solid var(--border-medium);
@@ -393,20 +395,21 @@
     background: var(--surface-container-high);
   }
   .language-switch {
-    min-width: 38px;
+    min-width: 52px;
     justify-content: center;
     text-decoration: none;
     font-weight: 700;
     letter-spacing: .06em;
   }
-
   /* Global Buttons */
   .atelier-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 9px;
-    padding: 10px 24px;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0 24px;
     border-radius: var(--radius-full);
     font-size: 14px;
     font-weight: 600;
@@ -2168,13 +2171,6 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    .theme-toggle-switch #themeLabel {
-      display: none !important;
-    }
-    .theme-toggle-switch #themeIcon {
-      font-size: 13px;
-      line-height: 1;
-    }
     .language-switch {
       width: 32px;
       min-width: 32px;
@@ -2182,6 +2178,7 @@
       padding: 0;
     }
     .dock-actions .atelier-btn {
+      height: 32px;
       padding: 6px 11px;
       font-size: 11.5px;
       gap: 4px;
@@ -2388,11 +2385,6 @@
 </div>
 <div class="dock-actions">
 <a aria-label="切换到中文" class="theme-toggle-switch language-switch" href="/en/" hreflang="zh-CN" lang="zh-CN" onclick="try{localStorage.setItem('yoyant_lang','en')}catch(e){}" title="English">中文</a>
-<!-- Theme Switcher: Dark Obsidian <-> Light Alabaster -->
-<button class="theme-toggle-switch" id="themeBtn" onclick="toggleTheme()" title="Toggle Atelier Palette">
-<span id="themeIcon">🌓</span>
-<span id="themeLabel">Graphite Dark</span>
-</button>
 <a class="atelier-btn atelier-btn-primary" href="#concierge">
 <span class="btn-text-full">Talk to the Team</span>
 <span class="btn-text-mobile">Consultation</span>
@@ -3423,25 +3415,6 @@
     });
   }
 
-  // Google Atelier Theme Switcher (Dark Obsidian <-> Light Alabaster)
-  function toggleTheme() {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-theme');
-    const next = current === 'atelier-dark' ? 'atelier-light' : 'atelier-dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('yoyant_theme', next);
-
-    const icon = document.getElementById('themeIcon');
-    const label = document.getElementById('themeLabel');
-    if (next === 'atelier-light') {
-      icon.textContent = '☀️';
-      label.textContent = 'White Pottery Bright Color';
-    } else {
-      icon.textContent = '🌓';
-      label.textContent = 'Graphite Dark';
-    }
-  }
-
   // Copy WeChat Helper
   function copyWechat() {
     const val = document.getElementById('wxVal').textContent;
@@ -3676,22 +3649,6 @@
     startTimer();
   })();
 
-  // Initialize theme from preference if available
-  (function initTheme() {
-    const saved = localStorage.getItem('yoyant_theme');
-    if (saved) {
-      document.documentElement.setAttribute('data-theme', saved);
-      const icon = document.getElementById('themeIcon');
-      const label = document.getElementById('themeLabel');
-      if (saved === 'atelier-light') {
-        icon.textContent = '☀️';
-        label.textContent = 'White Pottery Bright Color';
-      } else {
-        icon.textContent = '🌓';
-        label.textContent = 'Graphite Dark';
-      }
-    }
-  })();
 </script>
 <!-- 右下角常驻 加微信咨询 互动组件 -->
 <script defer="" src="../assets/consult-widget.js?v=20260916-wa"></script>
