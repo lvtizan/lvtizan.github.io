@@ -1,7 +1,19 @@
 User-agent: *
 Allow: /
 
-# Generative Engine Optimization (GEO) & AI Crawlers
+# AI search crawlers: allow discovery, grounding and citation.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -20,8 +32,6 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-# Canonical Sitemap & LLM Knowledge Feeds
+# Canonical URL inventory. AI knowledge feeds are available at /llms.txt and
+# /llms-full.txt; robots.txt does not define a standard directive for them.
 Sitemap: https://yoyant.com/sitemap.xml
-# LLMs.txt for AI Search Engines (ChatGPT, Perplexity, Claude, Gemini)
-# https://yoyant.com/llms.txt
-# https://yoyant.com/llms-full.txt

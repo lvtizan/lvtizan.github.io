@@ -209,6 +209,48 @@ THIN_DEMOS = {
     for page in ("about", "journal", "shop")
 }
 
+EN_ORG_OFFERS = [
+    ("Custom Mobile App Development", "Native iOS and Android or Flutter applications, from product definition and UX to engineering, testing and store-ready delivery."),
+    ("WeChat Mini Program Commerce", "Mini Program storefronts with product variants, payments, inventory, fulfilment and merchant operations."),
+    ("Enterprise Operations Platforms", "Role-based administration, multi-warehouse inventory, order workflows, reporting and integration-ready APIs."),
+    ("Industrial Software Engineering", "C++ and Qt interfaces for inspection, measurement, hardware interaction and real-time professional workflows."),
+    ("International B2B Websites", "Multilingual B2B websites with product architecture, enquiry paths, technical SEO, structured data and private deployment."),
+]
+
+EN_SERVICE_OFFERS = {
+    f"{BASE}/en/services/software/": (
+        "Custom Software Design and Development",
+        [
+            ("Product Discovery and UX/UI Design", "Requirements, user flows, prototypes, high-fidelity interfaces and production-ready design systems."),
+            ("Mobile App Development", "Native iOS and Android or Flutter applications with backend services and deployment support."),
+            ("Enterprise Platforms", "SaaS administration, operations workflows, dashboards, permissions and business-system integrations."),
+            ("Industrial Software", "Professional C++ and Qt interfaces for inspection, measurement and hardware-connected workflows."),
+            ("Source-Code Handover", "Complete agreed source code, database assets, design files and deployment documentation."),
+        ],
+    ),
+    f"{BASE}/en/services/web/": (
+        "International Website Design and Development",
+        [
+            ("Multilingual B2B Websites", "Localized content architecture, product catalogues, enquiry journeys and hreflang implementation."),
+            ("Corporate and Product Websites", "Responsive brand and product websites with clear positioning, proof and conversion paths."),
+            ("B2B Platforms and Catalogues", "Supplier directories, company profiles, product discovery, RFQ and operations workflows."),
+            ("Technical SEO", "Crawl architecture, metadata, canonical signals, structured data, sitemaps and performance optimization."),
+            ("Private Deployment", "Portable source code and deployment assets without proprietary website-builder lock-in."),
+        ],
+    ),
+}
+
+
+def offer_catalog(name: str, items: list[tuple[str, str]]) -> dict:
+    return {
+        "@type": "OfferCatalog",
+        "name": name,
+        "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": item_name, "description": description}}
+            for item_name, description in items
+        ],
+    }
+
 
 def replace_attr(tag: str, attr: str, value: str) -> str:
     escaped = html.escape(value, quote=True)
@@ -392,11 +434,33 @@ def update_jsonld(text: str, canonical: str, title: str, description: str, is_en
                 node["inLanguage"] = "en" if is_en else "zh-CN"
                 if any(kind in {"Article", "TechArticle"} for kind in node_types):
                     node["mainEntityOfPage"] = {"@type": "WebPage", "@id": canonical}
-                    node["author"] = {"@type": "Organization", "name": "YOYANT Software Atelier", "url": f"{BASE}/en/about/"}
-                    node["publisher"] = {"@type": "Organization", "name": "YOYANT Software Atelier", "url": f"{BASE}/en/", "logo": {"@type": "ImageObject", "url": f"{BASE}/favicon.svg"}}
+                    if is_en:
+                        node["author"] = {"@type": "Organization", "@id": f"{BASE}/#organization", "name": "YOYANT Software Atelier", "url": f"{BASE}/en/about/"}
+                        node["publisher"] = {"@type": "Organization", "@id": f"{BASE}/#organization", "name": "YOYANT Software Atelier", "url": f"{BASE}/", "logo": {"@type": "ImageObject", "url": f"{BASE}/favicon.svg"}}
+                    else:
+                        node["author"] = {"@type": "Organization", "@id": f"{BASE}/#organization", "name": "YOYANT 远洋软件", "url": f"{BASE}/about/"}
+                        node["publisher"] = {"@type": "Organization", "@id": f"{BASE}/#organization", "name": "YOYANT 远洋软件", "url": f"{BASE}/", "logo": {"@type": "ImageObject", "url": f"{BASE}/favicon.svg"}}
                     node["image"] = image_url
                     if is_en and isinstance(node.get("isPartOf"), dict):
                         node["isPartOf"]["name"] = "International B2B Website Growth Series"
+            if is_en and "Service" in node_types and canonical in EN_SERVICE_OFFERS:
+                catalog_name, catalog_items = EN_SERVICE_OFFERS[canonical]
+                node["provider"] = {"@id": f"{BASE}/#organization"}
+                node["areaServed"] = "Worldwide"
+                node["availableLanguage"] = ["English", "Chinese"]
+                node["hasOfferCatalog"] = offer_catalog(catalog_name, catalog_items)
+                if canonical.endswith("/software/"):
+                    node["serviceType"] = [
+                        "Custom software development", "Mobile app development",
+                        "Enterprise platform development", "Industrial software development",
+                        "Product design", "UI/UX design",
+                    ]
+                elif canonical.endswith("/web/"):
+                    node["serviceType"] = [
+                        "B2B website design", "Multilingual website development",
+                        "International website development", "Technical SEO",
+                        "Website performance optimization",
+                    ]
             if is_en and "Organization" in node_types:
                 node.update({
                     "@id": f"{BASE}/#organization",
@@ -407,6 +471,13 @@ def update_jsonld(text: str, canonical: str, title: str, description: str, is_en
                     "telephone": "+86-137-6068-0715",
                     "email": "bbtizan@gmail.com",
                     "areaServed": "Worldwide",
+                    "knowsAbout": [
+                        "Custom software development", "Mobile app development",
+                        "WeChat Mini Program development", "Enterprise operations platforms",
+                        "Industrial C++ and Qt software", "Product design", "UI/UX design",
+                        "Multilingual B2B websites", "Technical SEO",
+                    ],
+                    "hasOfferCatalog": offer_catalog("Product Design and Software Engineering Services", EN_ORG_OFFERS),
                     "sameAs": ["https://github.com/lvtizan", f"{BASE}/"],
                     "contactPoint": {"@type": "ContactPoint", "telephone": "+86-137-6068-0715", "email": "bbtizan@gmail.com", "contactType": "sales", "availableLanguage": ["English", "Chinese"]},
                 })

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
@@ -188,6 +189,41 @@ def main() -> int:
     expected_urls = {page_url(path) for path in indexable}
     if sitemap_urls != expected_urls:
         failures.append(f"sitemap mismatch: missing={sorted(expected_urls-sitemap_urls)}, extra={sorted(sitemap_urls-expected_urls)}")
+
+    # GEO / AI-search discoverability: make search-specific crawlers explicit,
+    # keep citation feeds resolvable and prevent split organization entities.
+    robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
+    for bot in ("OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"):
+        if not re.search(rf"User-agent:\s*{re.escape(bot)}\s+Allow:\s*/", robots, re.I):
+            failures.append(f"robots.txt: {bot} is not explicitly allowed")
+    for filename in ("llms.txt", "llms-full.txt"):
+        feed = ROOT / filename
+        if not feed.exists() or feed.stat().st_size < 500:
+            failures.append(f"{filename}: missing or too small")
+            continue
+        content = feed.read_text(encoding="utf-8")
+        if "https://yoyant.com/en/" not in content:
+            failures.append(f"{filename}: missing English canonical sources")
+        for url in set(re.findall(r"https://yoyant\.com[^\s)]+", content)):
+            clean = url.rstrip(".,;:")
+            if clean.endswith(("llms.txt", "llms-full.txt", "sitemap.xml")):
+                continue
+            parsed_url = urlparse(clean)
+            target = ROOT / parsed_url.path.lstrip("/")
+            if parsed_url.path.endswith("/"):
+                target /= "index.html"
+            if not target.exists():
+                failures.append(f"{filename}: broken citation URL {clean}")
+    indexnow_key = "e9b7d4c2f1a84e6b9c3d5f7081a2b4c6"
+    key_file = ROOT / f"{indexnow_key}.txt"
+    if not key_file.exists() or key_file.read_text(encoding="utf-8").strip() != indexnow_key:
+        failures.append("IndexNow ownership key is missing or invalid")
+    for path, page in indexable.items():
+        if not path.relative_to(ROOT).as_posix().startswith("en/"):
+            continue
+        for block in page.jsonld:
+            if f'{BASE}/#org"' in block:
+                failures.append(f"{path.relative_to(ROOT)}: obsolete organization @id in JSON-LD")
 
     print(f"SEO audit: {len(indexable)} indexable pages, {len(failures)} failures, {len(warnings)} warnings")
     for warning in warnings:
