@@ -1171,6 +1171,20 @@
     border-color: var(--border-strong);
     box-shadow: var(--shadow-elevated);
   }
+  .project-card.story-feature {
+    grid-column: span 2;
+    min-height: 430px;
+    flex-direction: row;
+  }
+  .project-card.story-feature .project-viewport {
+    flex: 0 0 54%;
+    aspect-ratio: auto;
+    border-bottom: 0;
+    border-right: 1px solid var(--border-subtle);
+  }
+  .project-card.story-feature .project-body {
+    padding: clamp(28px, 3vw, 40px);
+  }
 
   .project-viewport {
     position: relative;
@@ -1225,6 +1239,11 @@
     margin-bottom: 10px;
     color: var(--text-primary);
   }
+  .project-card.story-feature .project-body h4 {
+    font-size: clamp(23px, 2.2vw, 31px);
+    line-height: 1.18;
+    text-wrap: balance;
+  }
   .project-body p {
     font-size: 14px;
     color: var(--text-secondary);
@@ -1235,23 +1254,36 @@
     -webkit-line-clamp: 3;
     overflow: hidden;
   }
+  .project-body p strong {
+    display: inline;
+    color: var(--accent-spark);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
 
   .project-tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
     margin-top: auto;
   }
   .project-tag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.35;
+    padding: 8px 10px;
+    border-radius: 9px;
     background: var(--surface-container);
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
     border: 1px solid var(--border-subtle);
   }
-  .project-tag:nth-child(n+4) { display: none; }
 
   .project-view-link {
     display: flex;
@@ -1275,6 +1307,21 @@
   .project-card:hover .project-view-link span {
     transform: translateX(4px);
     transition: transform 0.2s ease;
+  }
+  @media (max-width: 768px) {
+    .project-card.story-feature {
+      grid-column: span 1;
+      min-height: 0;
+      flex-direction: column;
+    }
+    .project-card.story-feature .project-viewport {
+      flex-basis: auto;
+      aspect-ratio: 16 / 10;
+      border-right: 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .project-card.story-feature .project-body { padding: 24px 20px 26px; }
+    .project-card.story-feature .project-body h4 { font-size: 20px; }
   }
 
   /* ==========================================================================
@@ -2722,8 +2769,8 @@
 <div class="wrap">
 <div class="section-header">
 <div class="google-chip" style="margin-bottom: 14px;">Selected Work · Live Products</div>
-<h2 class="section-headline">Proven work, running in production</h2>
-<p class="section-desc">No speculative concepts. Every project combines end-to-end product design, disciplined engineering and a real production release.</p>
+<h2 class="section-headline">Eleven real problems. Eleven shipped answers.</h2>
+<p class="section-desc">Each case begins with the operating constraint, not a feature list—then shows the product decision and the evidence behind the result.</p>
 </div>
 <!-- Filter Control Dock -->
 <div class="filter-dock">
@@ -2735,21 +2782,19 @@
 <!-- 9 Case Grid -->
 <div class="projects-stage" id="portfolioStage">
 <!-- 1. OTS (web) -->
-<a class="project-card" data-category="web" href="./work/ots/index.html">
+<a class="project-card story-feature" data-category="web" href="./work/ots/index.html">
 <div class="project-viewport">
 <span class="project-type-chip">Global B2B Website</span>
 <img alt="OTS International Elevator Project Delivery Official Website" decoding="async" loading="lazy" onerror="this.src='../uploads/ots-airport-cover.png'" src="../uploads/webp/c-ots-airport-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>OTS — Global Engineering Website</h4>
-<p>A B2B website that turns complex airport and infrastructure delivery into clear, credible sales proof.</p>
+<h4>Turning complex global delivery into a path buyers can trust</h4>
+<p><strong>The challenge</strong>Airport and metro buyers need to validate manufacturing, shipping, installation and service—not simply browse another elevator catalogue.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">English B2B</span>
-<span class="project-tag">International Engineering</span>
-<span class="project-tag">Content Architecture</span>
-<span class="project-tag">Technical SEO</span>
+<span class="project-tag">Manufacture → service narrative</span>
+<span class="project-tag">English architecture + technical SEO</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2762,34 +2807,30 @@
 </div>
 <div class="project-body">
 <div>
-<h4>Epaifa — Cross-border Supply Chain App</h4>
-<p>A 46-screen product connecting purchasing, inventory, fulfilment, COD tracking and reconciliation.</p>
+<h4>One operating flow for a fragmented cross-border supply chain</h4>
+<p><strong>The challenge</strong>Purchasing, warehousing, COD delivery and reconciliation ran as separate steps, allowing stock and payment errors to compound.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Mobile app</span>
-<span class="project-tag">Merchant ops</span>
-<span class="project-tag">Complex ordering</span>
-<span class="project-tag">International i18n</span>
+<span class="project-tag">46 connected screens</span>
+<span class="project-tag">Purchasing → reconciliation</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
 </a>
 <!-- 2. VeinScope (app) -->
-<a class="project-card" data-category="app" href="./work/veinscope/index.html">
+<a class="project-card story-feature" data-category="app" href="./work/veinscope/index.html">
 <div class="project-viewport">
 <span class="project-type-chip">Industrial 3D Software</span>
 <img alt="VeinScope industrial endoscope hardware detection measurement interface" decoding="async" loading="lazy" onerror="this.src='../uploads/veinscope-device.png'" src="../uploads/webp/c-veinscope-lg.webp"/>
 </div>
 <div class="project-body">
 <div>
-<h4>VeinScope — Precision Inspection System</h4>
-<p>Handheld 2D/3D measurement software designed for fast, precise inspection in demanding field conditions.</p>
+<h4>Finding a 0.01 mm defect—outdoors, one-handed and in gloves</h4>
+<p><strong>In the field</strong>Inspectors must compare live 2D imagery with 3D depth data on a handheld device, under glare and inside confined equipment.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Hardware integration</span>
-<span class="project-tag">2D/3D measurement</span>
-<span class="project-tag">Handheld UI</span>
-<span class="project-tag">On-site job tuning</span>
+<span class="project-tag">0.01 mm spatial measurement</span>
+<span class="project-tag">&lt;16 ms 2D/3D latency</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2802,14 +2843,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>SUNVOLT — Solar &amp; Energy Storage</h4>
-<p>A fast global website for solar modules, storage systems and international distribution.</p>
+<h4>Helping global buyers understand the energy system before they enquire</h4>
+<p><strong>The challenge</strong>Modules, storage and utility-scale systems are difficult to evaluate when a website behaves like a flat product catalogue.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Global website</span>
-<span class="project-tag">Energy storage</span>
-<span class="project-tag">3D visuals</span>
-<span class="project-tag">Lighthouse 99 points</span>
+<span class="project-tag">Three clean-energy product lines</span>
+<span class="project-tag">Lighthouse score: 99</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2822,14 +2861,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>AVATAR — AI Companion App</h4>
-<p>An immersive AI companion app with expressive chat motion, relationship progression, tiered subscriptions and low-latency streaming responses.</p>
+<h4>Designing an AI conversation that grows into a relationship</h4>
+<p><strong>The challenge</strong>A companion product needs more than a chat box: character response, relationship progress and membership value must reinforce one another.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">iOS / Android</span>
-<span class="project-tag">AI Client</span>
-<span class="project-tag">High-fidelity animation</span>
-<span class="project-tag">Subscriptions</span>
+<span class="project-tag">iOS + Android</span>
+<span class="project-tag">Streaming responses + subscriptions</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2842,14 +2879,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>RESON — Premium Audio Store</h4>
-<p>A focused DTC storefront with a multi-SKU catalogue, fast cart flow and international checkout.</p>
+<h4>Making complex hardware choices feel effortless</h4>
+<p><strong>The challenge</strong>As colours, storage and bundles multiply, customers still need to compare, confirm availability and check out without friction.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Brand E-commerce</span>
-<span class="project-tag">Mini Program Mall</span>
-<span class="project-tag">Multi-Spec SKUs</span>
-<span class="project-tag">Payment Closed Loop</span>
+<span class="project-tag">Multi-variant SKU system</span>
+<span class="project-tag">WeChat Pay + Stripe</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2862,14 +2897,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>VITALINK — Global Medical Devices</h4>
-<p>An international product and research website for precision medical devices and distributor enquiries.</p>
+<h4>Moving medical buyers from evidence to distributor enquiry</h4>
+<p><strong>The challenge</strong>Medical trust cannot rest on visuals alone; specifications, research and compliance evidence must support every product claim.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Medical website</span>
-<span class="project-tag">Compliance UX</span>
-<span class="project-tag">Research library</span>
-<span class="project-tag">Agent Inquiry</span>
+<span class="project-tag">Products + evidence library</span>
+<span class="project-tag">Distributor enquiry journey</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2882,14 +2915,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>Tarmeer — Multinational B2B Platform</h4>
-<p>A multi-country platform connecting property owners, design firms and suppliers through one operating system.</p>
+<h4>Bringing owners, designers and suppliers into one journey</h4>
+<p><strong>The challenge</strong>Building-material information was fragmented, while suppliers lacked a reliable way to maintain showrooms and follow up enquiries.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Full-stack</span>
-<span class="project-tag">Product discovery</span>
-<span class="project-tag">Supplier portal</span>
-<span class="project-tag">Multi-country directory</span>
+<span class="project-tag">Three-sided marketplace</span>
+<span class="project-tag">Multi-country directory + portal</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2902,14 +2933,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>KST Oilfield — Global Equipment Website</h4>
-<p>A bilingual product website built around specifications, certifications and high-value engineering enquiries.</p>
+<h4>Turning heavy-equipment specifications into procurement confidence</h4>
+<p><strong>The challenge</strong>Global buyers must verify specifications, certifications and operating conditions before a high-value oilfield enquiry can begin.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Heavy industry</span>
-<span class="project-tag">Bilingual</span>
-<span class="project-tag">Certifications</span>
-<span class="project-tag">Engineering Inquiry Conversion</span>
+<span class="project-tag">Bilingual specification system</span>
+<span class="project-tag">Certification + enquiry evidence</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2922,14 +2951,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>Yunshang — Custom Jewellery Commerce</h4>
-<p>A private Mini Program for custom jewellery, certificates, VIP services and direct merchant settlement.</p>
+<h4>Extending jewellery trust from certificate to checkout</h4>
+<p><strong>The challenge</strong>High-value custom jewellery needs an elegant experience backed by verifiable certificates, clear options and attentive private service.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">WeChat Mini Program</span>
-<span class="project-tag">Art direction</span>
-<span class="project-tag">Certificates</span>
-<span class="project-tag">Private Settlement</span>
+<span class="project-tag">Item-level certificates</span>
+<span class="project-tag">Custom options + direct settlement</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -2942,14 +2969,12 @@
 </div>
 <div class="project-body">
 <div>
-<h4>Nanhai — Immersive Cultural Experience</h4>
-<p>A touch-screen installation connecting a control console and large display across three on-site experiences.</p>
+<h4>Turning Lingnan heritage into a participatory public experience</h4>
+<p><strong>The challenge</strong>A cultural venue needs durable interaction, shared viewing and immediate feedback between a touch console and a large display.</p>
 </div>
 <div class="project-tag-row">
-<span class="project-tag">Hardware integration</span>
-<span class="project-tag">Dual-screen control</span>
-<span class="project-tag">3 gameplay systems</span>
-<span class="project-tag">Onsite Deployment</span>
+<span class="project-tag">Touch console + large display</span>
+<span class="project-tag">Three on-site experiences</span>
 </div>
 <div class="project-view-link">View case study <span>→</span></div>
 </div>
@@ -3653,6 +3678,6 @@
 <!-- 右下角常驻 加微信咨询 互动组件 -->
 <script defer="" src="../assets/consult-widget.js?v=20260916-wa"></script>
 <script defer="" src="../assets/analytics-events.js?v=20260930"></script>
-<script defer="" src="/assets/language-switch.js"></script>
+<script defer="" src="/assets/language-switch.js?v=20260930-dark"></script>
 </body>
 </html>

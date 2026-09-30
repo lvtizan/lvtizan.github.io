@@ -1139,6 +1139,20 @@
     border-color: var(--border-strong);
     box-shadow: var(--shadow-elevated);
   }
+  .project-card.story-feature {
+    grid-column: span 2;
+    min-height: 430px;
+    flex-direction: row;
+  }
+  .project-card.story-feature .project-viewport {
+    flex: 0 0 54%;
+    aspect-ratio: auto;
+    border-bottom: 0;
+    border-right: 1px solid var(--border-subtle);
+  }
+  .project-card.story-feature .project-body {
+    padding: clamp(28px, 3vw, 40px);
+  }
 
   .project-viewport {
     position: relative;
@@ -1189,26 +1203,45 @@
     margin-bottom: 10px;
     color: var(--text-primary);
   }
+  .project-card.story-feature .project-body h4 {
+    font-size: clamp(23px, 2.2vw, 31px);
+    line-height: 1.18;
+    text-wrap: balance;
+  }
   .project-body p {
     font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.65;
     margin-bottom: 20px;
   }
+  .project-body p strong {
+    display: inline;
+    color: var(--accent-spark);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
 
   .project-tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
     margin-top: auto;
   }
   .project-tag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.35;
+    padding: 8px 10px;
+    border-radius: 9px;
     background: var(--surface-container);
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
     border: 1px solid var(--border-subtle);
   }
 
@@ -1231,6 +1264,21 @@
   .project-card:hover .project-view-link span {
     transform: translateX(4px);
     transition: transform 0.2s ease;
+  }
+  @media (max-width: 768px) {
+    .project-card.story-feature {
+      grid-column: span 1;
+      min-height: 0;
+      flex-direction: column;
+    }
+    .project-card.story-feature .project-viewport {
+      flex-basis: auto;
+      aspect-ratio: 16 / 10;
+      border-right: 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .project-card.story-feature .project-body { padding: 24px 20px 26px; }
+    .project-card.story-feature .project-body h4 { font-size: 20px; }
   }
 
   /* ==========================================================================
@@ -2731,8 +2779,8 @@
     
     <div class="section-header">
       <div class="google-chip" style="margin-bottom: 14px;">Selected Engagements · 真实工程</div>
-      <h2 class="section-headline">做过的案例，且全部在线上稳定运转</h2>
-      <p class="section-desc">拒绝概念稿与虚构飞机稿。每一个作品皆包含端到端的产品设计、严谨代码交付与商业上线闭环。</p>
+      <h2 class="section-headline">不是作品陈列，而是 11 个真实问题的解法</h2>
+      <p class="section-desc">从现场限制、业务冲突到关键决策与最终交付。先看问题有多难，再看我们如何把它做成可运行的产品。</p>
     </div>
 
     <!-- Filter Control Dock -->
@@ -2747,21 +2795,19 @@
     <div class="projects-stage" id="portfolioStage">
       
       <!-- 1. OTS (web) -->
-      <a href="./work/ots/index.html" class="project-card" data-category="web">
+      <a href="./work/ots/index.html" class="project-card story-feature" data-category="web">
         <div class="project-viewport">
           <span class="project-type-chip">国际工程交付官网 · B2B</span>
           <img src="./uploads/webp/c-ots-airport-lg.webp" alt="OTS 国际电梯项目交付英文官网" loading="lazy" decoding="async" onerror="this.src='./uploads/ots-airport-cover.png'">
         </div>
         <div class="project-body">
           <div>
-            <h4>OTS — 国际电梯项目交付官网</h4>
-            <p>围绕机场、轨道交通与基础设施项目，重构从制造、物流到安装运维的国际工程交付叙事，并完成响应式开发与技术 SEO。</p>
+            <h4>让复杂跨境工程，变成买家能理解的交付路径</h4>
+            <p><strong>挑战</strong>机场与轨交采购方不只在找一台电梯，更要判断制造、发运、安装和维保能否由同一条责任链落地。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">英文 B2B</span>
-            <span class="project-tag">国际工程</span>
-            <span class="project-tag">内容架构</span>
-            <span class="project-tag">技术 SEO</span>
+            <span class="project-tag">制造 → 发运 → 安装 → 服务</span>
+            <span class="project-tag">英文内容架构 + 技术 SEO</span>
           </div>
           <div class="project-view-link">查看官网制作过程 <span>→</span></div>
         </div>
@@ -2775,35 +2821,31 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>Epaifa Mall — 46 屏跨境供应链商城</h4>
-            <p>打通采购入库、库存补货、多规格下单、拣货出库、COD 物流追踪与售后对账，将跨国复杂业务串成完整闭环。</p>
+            <h4>把跨境批发最容易断裂的环节，连成一条业务链</h4>
+            <p><strong>挑战</strong>采购、仓储、下单、COD 配送和售后分别运转，库存与账款一旦不同步，问题会沿整条链路放大。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">移动端 App</span>
-            <span class="project-tag">商家中台</span>
-            <span class="project-tag">多规格下单</span>
-            <span class="project-tag">国际化 i18n</span>
+            <span class="project-tag">46 个业务界面</span>
+            <span class="project-tag">采购入库 → 售后对账</span>
           </div>
           <div class="project-view-link">查看 46 屏案例详情 <span>→</span></div>
         </div>
       </a>
 
       <!-- 2. VeinScope (app) -->
-      <a href="./work/veinscope/index.html" class="project-card" data-category="app">
+      <a href="./work/veinscope/index.html" class="project-card story-feature" data-category="app">
         <div class="project-viewport">
           <span class="project-type-chip">工业设备端软件 · 3D 测量</span>
           <img src="./uploads/webp/c-veinscope-lg.webp" alt="VeinScope 工业内窥镜软硬件检测测量界面" loading="lazy" decoding="async" onerror="this.src='./uploads/veinscope-device.png'">
         </div>
         <div class="project-body">
           <div>
-            <h4>VeinScope — 工业内窥镜检测测量系统</h4>
-            <p>手持终端工业软件：2D/3D 分屏、高精度点面测量、深度图伪彩分析与点云导出，针对户外强光作业深度调优。</p>
+            <h4>戴着手套、顶着强光，也要看清 0.01mm 的缺陷</h4>
+            <p><strong>现场</strong>检测人员需要单手操作手持终端，在户外强光和狭窄设备内部同时判断 2D 实景与 3D 深度数据。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">软硬件交互</span>
-            <span class="project-tag">2D/3D 测量</span>
-            <span class="project-tag">手持工控屏</span>
-            <span class="project-tag">现场作业调优</span>
+            <span class="project-tag">0.01mm 空间测量</span>
+            <span class="project-tag">&lt;16ms 2D/3D 同屏延迟</span>
           </div>
           <div class="project-view-link">查看工业软件案例 <span>→</span></div>
         </div>
@@ -2817,14 +2859,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>SUNVOLT 晟阳储能 — 工商业储能出海官网</h4>
-            <p>针对海外储能电站买家决策链：全案工业 3D 视觉语言、储能系统拓扑图解、多语言架构与毫秒级静态预渲染。</p>
+            <h4>让海外买家先理解能源方案，再发起询盘</h4>
+            <p><strong>挑战</strong>光伏组件、储能系统与电站方案技术门槛高，传统产品目录很难让不同市场的采购方快速完成判断。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">出海品牌站</span>
-            <span class="project-tag">新能源储能</span>
-            <span class="project-tag">全案 3D 视效</span>
-            <span class="project-tag">Lighthouse 99分</span>
+            <span class="project-tag">3 条清洁能源产品线</span>
+            <span class="project-tag">Lighthouse 99 分</span>
           </div>
           <div class="project-view-link">查看储能出海案例 <span>→</span></div>
         </div>
@@ -2838,14 +2878,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>AVATAR — AI 角色情感陪伴移动应用</h4>
-            <p>沉浸式 AI 角色互动流：高保真聊天动效、好感度进阶系统、多档会员订阅付费与低延迟流式响应一体化落地。</p>
+            <h4>把一次 AI 对话，设计成持续发展的角色关系</h4>
+            <p><strong>挑战</strong>聊天机器人很容易只剩输入框。产品需要让角色回应、关系进阶和会员权益共同形成长期体验。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">iOS / Android</span>
-            <span class="project-tag">AI 客户端</span>
-            <span class="project-tag">高保真动效</span>
-            <span class="project-tag">商业化订阅</span>
+            <span class="project-tag">iOS + Android</span>
+            <span class="project-tag">流式响应 + 订阅闭环</span>
           </div>
           <div class="project-view-link">查看 AI App 案例 <span>→</span></div>
         </div>
@@ -2859,14 +2897,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>RESON — 3C 智能硬件数码品牌商城</h4>
-            <p>暗调极客美学数码商城：全品类多规格 SKU 矩阵、毫秒级购物车流转、商品详情与微信支付/Stripe 交易闭环。</p>
+            <h4>让复杂硬件规格，不再拖慢购买决策</h4>
+            <p><strong>挑战</strong>颜色、容量和套装组合不断增加时，用户仍需要快速比较差异、确认库存并顺畅完成支付。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">品牌电商</span>
-            <span class="project-tag">小程序商城</span>
-            <span class="project-tag">多规格 SKU</span>
-            <span class="project-tag">支付闭环</span>
+            <span class="project-tag">多规格 SKU 矩阵</span>
+            <span class="project-tag">微信支付 + Stripe</span>
           </div>
           <div class="project-view-link">查看 3C 商城案例 <span>→</span></div>
         </div>
@@ -2880,14 +2916,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>VITALINK 维立康 — 医疗器械全球官网</h4>
-            <p>体外诊断与精密医疗器械国际化品牌站：严谨合规的产品矩阵、学术文献资料库与海外代理商直联询盘系统。</p>
+            <h4>让医疗采购方从产品证据，走到代理合作</h4>
+            <p><strong>挑战</strong>医疗器械不能只靠视觉建立信任，产品参数、研究资料和合规信息必须共同支撑海外采购判断。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">医疗出海官网</span>
-            <span class="project-tag">合规设计体系</span>
-            <span class="project-tag">学术资料库</span>
-            <span class="project-tag">代理商询盘</span>
+            <span class="project-tag">产品 + 学术证据库</span>
+            <span class="project-tag">海外代理询盘路径</span>
           </div>
           <div class="project-view-link">查看医疗出海案例 <span>→</span></div>
         </div>
@@ -2901,14 +2935,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>Tarmeer — 多国家建材家居平台</h4>
-            <p>连接业主、设计公司与建材供应商：按城市筛选服务，浏览企业展厅与产品目录，在线询盘；商家在后台自助管理内容和线索。</p>
+            <h4>让业主、设计公司和供应商在同一条路径相遇</h4>
+            <p><strong>挑战</strong>多国家建材信息分散，用户难以找到可信服务商，供应商也缺少持续维护展厅和线索的工具。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">全栈架构</span>
-            <span class="project-tag">建材选品</span>
-            <span class="project-tag">供应商后台</span>
-            <span class="project-tag">多国家目录</span>
+            <span class="project-tag">三方业务平台</span>
+            <span class="project-tag">多国家目录 + 供应商后台</span>
           </div>
           <div class="project-view-link">查看平台设计与开发 <span>→</span></div>
         </div>
@@ -2922,14 +2954,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>KST Oilfield — 石油工程双语全球官网</h4>
-            <p>重工油气装备出海标杆站：中英双语国际化、严谨的产品技术参数表与 API 国际认证背书展厅，沉淀高价值海外工程大单。</p>
+            <h4>把重工设备参数，转化为工程采购信任</h4>
+            <p><strong>挑战</strong>海外买家需要核对规格、认证与适用工况；模糊的品牌描述无法支撑高价值油气装备决策。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">工业重工出海</span>
-            <span class="project-tag">中英双语</span>
-            <span class="project-tag">国际认证展厅</span>
-            <span class="project-tag">工程询盘转化</span>
+            <span class="project-tag">中英双语参数体系</span>
+            <span class="project-tag">认证证据 + 工程询盘</span>
           </div>
           <div class="project-view-link">查看重工出海案例 <span>→</span></div>
         </div>
@@ -2943,14 +2973,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>云裳珠宝 — 东方美学珠宝定制小程序商城</h4>
-            <p>高端珠宝定制与私域零售小程序：一物一证书鉴定查验、定制材质选配、私域 VIP 会员权益与微信商户号直连结算。</p>
+            <h4>让珠宝定制的信任，从证书延伸到交易</h4>
+            <p><strong>挑战</strong>高客单珠宝既需要东方审美，也需要可核验的鉴定信息、清晰定制流程与稳定私域服务。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">微信小程序</span>
-            <span class="project-tag">东方美学</span>
-            <span class="project-tag">一物一码</span>
-            <span class="project-tag">私域结算</span>
+            <span class="project-tag">一物一码证书</span>
+            <span class="project-tag">定制选配 + 私域结算</span>
           </div>
           <div class="project-view-link">查看小程序商城案例 <span>→</span></div>
         </div>
@@ -2964,14 +2992,12 @@
         </div>
         <div class="project-body">
           <div>
-            <h4>南海风物 — 沉浸式文化互动装置</h4>
-            <p>佛山千灯湖魁星阁沉浸式互动装置：以岭南龙舟为叙事主线，触屏端控台与大屏多端联动，3 种关卡玩法现场稳定落地。</p>
+            <h4>把岭南文化，从展板变成可以参与的现场体验</h4>
+            <p><strong>挑战</strong>公共文化空间需要兼顾叙事、多人观看与耐用操作，让触屏选择能即时驱动大屏内容和游戏反馈。</p>
           </div>
           <div class="project-tag-row">
-            <span class="project-tag">软硬件交互</span>
-            <span class="project-tag">触屏大屏联动</span>
-            <span class="project-tag">3种玩法系统</span>
-            <span class="project-tag">现场部署</span>
+            <span class="project-tag">触屏 + 大屏联动</span>
+            <span class="project-tag">3 种现场玩法</span>
           </div>
           <div class="project-view-link">查看互动装置案例 <span>→</span></div>
         </div>
@@ -3714,6 +3740,6 @@
 <!-- 右下角常驻 加微信咨询 互动组件 -->
 <script src="./assets/consult-widget.js?v=20260916-wa" defer></script>
 <script src="./assets/analytics-events.js?v=20260930" defer></script>
-<script src="/assets/language-switch.js" defer></script>
+<script src="/assets/language-switch.js?v=20260930-dark" defer></script>
 </body>
 </html>

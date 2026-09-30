@@ -54,6 +54,7 @@
   header.hero .sub{color:var(--ink-2);font-size:clamp(16px,1.7vw,20px);max-width:720px}
   .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
   .meta .n{font-family:var(--disp);font-weight:600;font-size:15px}.meta .l{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .story-arc{padding-top:0}.story-panel{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-2);border-radius:18px;overflow:hidden;background:linear-gradient(145deg,rgba(67,97,255,.12),var(--surface) 46%)}.story-beat{padding:clamp(24px,3vw,38px);border-left:1px solid var(--line)}.story-beat:first-child{border-left:0}.story-beat .step{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--accent-2);text-transform:uppercase}.story-beat h2{font-size:clamp(20px,2vw,27px);line-height:1.22;margin:14px 0 10px}.story-beat p{font-size:14px;color:var(--ink-2);line-height:1.7}.story-beat.proof h2{font-family:var(--mono);font-size:clamp(25px,3vw,38px);color:var(--accent-2)}@media(max-width:760px){.story-panel{grid-template-columns:1fr}.story-beat{border-left:0;border-top:1px solid var(--line)}.story-beat:first-child{border-top:0}}
   .cover{margin-top:clamp(30px,4vw,46px);border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--bg-2)}
   .cover img{width:100%;height:100%;object-fit:cover;display:block}
   section{padding:clamp(40px,5vw,72px) 0}
@@ -127,14 +128,14 @@
 <nav class="top"><div class="nav-in">
   <a class="brand" href="../../index.html" data-brand-nav aria-label="YOYANT 远洋软件"><span class="brand-main"><span class="wm">YOYANT<span class="dot">.</span></span><span class="cn">远洋软件</span></span><span class="brand-desc">软件定制开发 · App · 小程序 · 商家后台</span></a>
   <div class="nav-links"><a href="../../services/web/index.html">网站服务</a><a href="../../services/software/index.html">软件服务</a><a href="../../index.html#cases">案例</a><a href="../../about/index.html">关于</a><a href="../../resources/index.html">洞察</a></div>
-  <div class="nav-right"><button class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button><a class="btn" href="../../index.html#contact">获取诊断 →</a></div>
+  <div class="nav-right"><button hidden class="theme-tg" id="themeTg" aria-label="切换深色 / 浅色">☾</button><a class="btn" href="../../index.html#contact">获取诊断 →</a></div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="crumb"><a href="../../index.html">首页</a> / <a href="../../index.html#cases">精选案例</a> / Epaifa Mall</div>
   <div class="kick">Product Design · B2B SaaS</div>
-  <h1>Epaifa Mall — B2B 跨境批发供应链 + 商城 App</h1>
-  <p class="sub">面向中↔越跨境批发商的供应链与交易一体化移动端。从云单一键采购、多仓收货入库、库存补货，到多规格阶梯价下单、拣货出库、COD 物流与退货售后——把 46 个真实界面串成一条带状态机的业务闭环。</p>
+  <h1>把跨境批发最容易断裂的环节，连成一条业务链</h1>
+  <p class="sub">Epaifa 用 46 个相互连接的移动端界面，把采购、仓储、库存、下单、COD 履约与售后对账收进同一套状态流。</p>
   <div class="meta">
     <div><div class="n">产品设计 · UI/UX · 界面流程</div><div class="l">Role</div></div>
     <div><div class="n">B2B SaaS · 供应链 · 跨境电商</div><div class="l">Domain</div></div>
@@ -144,22 +145,11 @@
   <div class="cover"><img src="../../uploads/webp/epaifa-cover.webp" alt="Epaifa Mall 手机端界面群像：采购、下单、入库、结账"></div>
 </div></header>
 
-<section><div class="wrap grid2">
-  <div>
-    <div class="kick" style="margin-bottom:18px">项目概述 · Overview</div>
-    <p class="ov">Epaifa Mall 是为跨境批发商打造的供应链 + 商城一体化移动应用。它把过去分散在采购、仓库、销售、财务之间的动作，收敛进一部手机：老板端一键接单采购、多仓收货入库、逐箱清点与不良品带图上报、按库存量自动补货；作业端拣货出库、发货任务与跨境头程跟踪；交易端多规格阶梯价下单、结账收银（货款 / VAT / COD / 运费 + 现金收款与欠款对账）、退货退款闭环。<br><br>库存居于两条链路正中，双向驱动上游补货与下游履约，形成一条可追溯的业务闭环。</p>
-  </div>
-  <div>
-    <div class="chips"><span>一键采购</span><span>收货入库</span><span>库存补货</span><span>多规格阶梯价</span><span>拣货出库</span><span>COD 物流</span><span>退货售后</span><span>中越双语</span><span>扫码作业</span></div>
-    <div class="kick" style="margin-bottom:6px">我们的工作 · Contribution</div>
-    <ul class="contrib">
-      <li><span class="cn">01</span>端到端业务流梳理：采购 → 入库 → 库存 → 下单 → 履约 → 售后</li>
-      <li><span class="cn">02</span>供应链后台：采购 / 收货 / 入库清点 / 不良品 / 补货 / 出库 / 拣货界面</li>
-      <li><span class="cn">03</span>交易前台：CRM / 多规格下单 / 结账收银 / 物流 / 退货退款界面</li>
-      <li><span class="cn">04</span>多单位（箱 / 盒 / 个 · Thùng / cái）与中越双语本地化设计</li>
-    </ul>
-  </div>
-</div></section>
+<section class="story-arc"><div class="wrap"><div class="story-panel">
+  <article class="story-beat"><div class="step">01 · BROKEN FLOW</div><h2>每个部门都能工作，整条链路却无法对账</h2><p>采购、仓库、销售与财务各自保存状态。库存变化、COD 回款与退货一旦错位，问题只能靠人工追溯。</p></article>
+  <article class="story-beat"><div class="step">02 · SYSTEM DECISION</div><h2>让库存成为上下游共同的业务中枢</h2><p>上游采购与补货、下游下单与履约围绕同一库存状态机运转；异常、退款和欠款都能回写原始订单。</p></article>
+  <article class="story-beat proof"><div class="step">03 · SHIPPED SCOPE</div><h2>46 屏 · 3 种语言</h2><p>从老板端到仓管作业端，再到客户交易端，一套产品覆盖中、英、越多语言及箱、盒、个多单位规则。</p></article>
+</div></div></section>
 
 <section id="flow"><div class="wrap">
   <div class="sec-head"><div class="kick">Screen Flow · 业务流程连线</div><h2>一条闭环：从采购到履约</h2><p>把真实界面按业务走向连起来——上游采购入库补货，下游下单拣货发货，库存居中双向驱动，退货售后回写。横向可滑动查看每一步。</p></div>
@@ -294,6 +284,6 @@
 <script src="../../assets/consult-widget.js?v=20260916-wa" defer></script>
 <script src="../../assets/nav-menu.js" defer></script>
 <script src="../../assets/brand-logo.js" defer></script>
-<script src="/assets/language-switch.js" defer></script>
+<script src="/assets/language-switch.js?v=20260930-dark" defer></script>
 </body>
 </html>

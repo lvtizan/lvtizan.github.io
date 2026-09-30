@@ -52,6 +52,7 @@
   header.hero .sub{color:var(--ink-2);font-size:clamp(16px,1.7vw,20px);max-width:720px}
   .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
   .meta .n{font-family:var(--disp);font-weight:600;font-size:15px}.meta .l{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .story-arc{padding-top:0}.story-panel{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-2);border-radius:18px;overflow:hidden;background:linear-gradient(145deg,rgba(67,97,255,.12),var(--surface) 46%)}.story-beat{padding:clamp(24px,3vw,38px);border-left:1px solid var(--line)}.story-beat:first-child{border-left:0}.story-beat .step{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--accent-2);text-transform:uppercase}.story-beat h2{font-size:clamp(20px,2vw,27px);line-height:1.22;margin:14px 0 10px}.story-beat p{font-size:14px;color:var(--ink-2);line-height:1.7}.story-beat.proof h2{font-family:var(--mono);font-size:clamp(25px,3vw,38px);color:var(--accent-2)}@media(max-width:760px){.story-panel{grid-template-columns:1fr}.story-beat{border-left:0;border-top:1px solid var(--line)}.story-beat:first-child{border-top:0}}
   .cover{margin-top:clamp(30px,4vw,46px);border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--bg-2)}
   .cover img{width:100%;height:100%;object-fit:cover;display:block}
   section{padding:clamp(40px,5vw,72px) 0}
@@ -122,13 +123,13 @@
 <nav class="top"><div class="nav-in">
 <a aria-label="YOYANT Software Atelier" class="brand" data-brand-nav="" href="../../index.html"><span class="brand-main"><span class="wm">YOYANT<span class="dot">.</span></span><span class="cn">Software Atelier</span></span><span class="brand-desc">Custom Software · Mobile Apps · Business Platforms</span></a>
 <div class="nav-links"><a href="../../services/web/index.html">Web Services</a><a href="../../services/software/index.html">Software Services</a><a href="../../index.html#cases">Cases</a><a href="../../about/index.html">About</a><a href="../../resources/index.html">Insights</a></div>
-<div class="nav-right"><button aria-label="Toggle Dark/Light" class="theme-tg" id="themeTg">☾</button><a class="btn" href="../../index.html#contact">Get diagnostics →</a></div>
+<div class="nav-right"><button hidden aria-label="Toggle Dark/Light" class="theme-tg" id="themeTg">☾</button><a class="btn" href="../../index.html#contact">Get diagnostics →</a></div>
 </div></nav>
 <header class="hero"><div class="wrap">
 <div class="crumb"><a href="../../index.html">Home</a> / <a href="../../index.html#cases">Featured Cases</a> / Epaifa Mall</div>
 <div class="kick">Product Design · B2B SaaS</div>
-<h1>Epaifa — Cross-Border Supply Chain Commerce Platform</h1>
-<p class="sub">The supply chain and the transactional transport end are integrated for Chinese trans-border wholesalers. From cloud single-key purchases, multiple warehouse receipt depots, stock replenishments, to multi-specified step price orders, pick-up depots, COD logistics and re-sale sales, 46 real interfaces are linked to a closed business loop of a state-of-the-art machine.</p>
+<h1>One operating flow for a fragmented cross-border supply chain</h1>
+<p class="sub">Across 46 connected mobile screens, Epaifa brings purchasing, warehousing, inventory, ordering, COD fulfilment and after-sales reconciliation into one state-driven product.</p>
 <div class="meta">
 <div><div class="n">Product design UI/UX Interface process</div><div class="l">Role</div></div>
 <div><div class="n">B2B SaaS Supply Chain Cross-border electrician</div><div class="l">Domain</div></div>
@@ -137,22 +138,11 @@
 </div>
 <div class="cover"><img alt="Epaifa Mall Cellular Interface Group: Purchasing, Billing, Repository, Closing" src="../../../uploads/webp/epaifa-cover.webp"/></div>
 </div></header>
-<section><div class="wrap grid2">
-<div>
-<div class="kick" style="margin-bottom:18px">Project Overview · Overview</div>
-<p class="ov">Epaifa Mall is a supply chain created for cross-border wholesalers + integrated commercial mobile application. It divides the past between purchases, warehouses, sales, and finance, and absorbs a mobile phone: a single-key purchase order for the boss, multiple warehouse receipts, a case-by-case count and a bad goods belt report, automatic replenishment at stock levels; a business-side pick-up warehouse, dispatching task and cross-border lead-tracking; a billing line at the end of the transaction; a closing order (cargo / VAT / COD/ freight) + cash collection and outstanding reconciliation; and a refund-back loop.<br/><br/>The stock is in the middle of two chains, with a two-way drive-up upstream replenishment and downstream performance, creating a retroactive business closed loop.</p>
-</div>
-<div>
-<div class="chips"><span>One-click purchasing</span><span>Receiving and warehousing</span><span>Inventory replenishment</span><span>Multi-standard stair pricing</span><span>Picking Outbound</span><span>COD Logistics</span><span>After-sales return</span><span>Sino-Vietnamese biling</span><span>Scanning job</span></div>
-<div class="kick" style="margin-bottom:6px">Our work.</div>
-<ul class="contrib">
-<li><span class="cn">01</span>End-to-end business flow combing: procurement poignant inventory poignant billing poignant sale</li>
-<li><span class="cn">02</span>Supply chain backstage: purchase / receipt / inventory in library / bad / replenishment / repository / pick-up interface</li>
-<li><span class="cn">03</span>Trading front desk: CRM / Multi-Specific Billing / Cash Repayment / Logistics / Refunding Interface</li>
-<li><span class="cn">04</span>Multi-unit (box / box / individual thung / cái) and bilingual localization design</li>
-</ul>
-</div>
-</div></section>
+<section class="story-arc"><div class="wrap"><div class="story-panel">
+<article class="story-beat"><div class="step">01 · BROKEN FLOW</div><h2>Every team could work. The business still could not reconcile.</h2><p>Purchasing, warehouse, sales and finance held separate states. When stock, COD receipts or returns diverged, teams had to trace the discrepancy by hand.</p></article>
+<article class="story-beat"><div class="step">02 · SYSTEM DECISION</div><h2>Make inventory the shared operating centre</h2><p>Upstream purchasing and replenishment, downstream ordering and fulfilment all run on one inventory state machine. Exceptions and refunds write back to the source order.</p></article>
+<article class="story-beat proof"><div class="step">03 · SHIPPED SCOPE</div><h2>46 screens · 3 languages</h2><p>One product spans owner, warehouse and customer workflows, with Chinese, English and Vietnamese localisation plus carton, box and unit rules.</p></article>
+</div></div></section>
 <section id="flow"><div class="wrap">
 <div class="sec-head"><div class="kick">Screen Flow Business Process Connect</div><h2>A Closed Loop: From Procurement to Fulfillment</h2><p>Connects the real interface along business lines — upstream purchases are made to fill the stock, downstream to pick up the shipment, the inventory is driven in a two-way medium, and the returned goods are sold back.</p></div>
 <div class="flow">
@@ -273,6 +263,6 @@
 <script defer="" src="../../../assets/consult-widget.js?v=20260916-wa"></script>
 <script defer="" src="../../../assets/nav-menu.js"></script>
 <script defer="" src="../../../assets/brand-logo.js"></script>
-<script defer="" src="/assets/language-switch.js"></script>
+<script defer="" src="/assets/language-switch.js?v=20260930-dark"></script>
 </body>
 </html>
