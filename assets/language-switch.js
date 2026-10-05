@@ -1,16 +1,5 @@
 /* YOYANT 中英文切换 · 在同一路径的 /en 镜像间往返 */
 (function () {
-  var root = document.documentElement;
-  var fixedDarkTheme = (root.getAttribute('data-theme') || '').indexOf('atelier') !== -1 ? 'atelier-dark' : 'dark';
-  root.setAttribute('data-theme', fixedDarkTheme);
-  try {
-    localStorage.removeItem('yoyant-theme');
-    localStorage.removeItem('yoyant_theme');
-  } catch (e) {}
-  document.querySelectorAll('#themeTg, #themeBtn:not(.language-switch), .theme-tg').forEach(function (control) {
-    control.remove();
-  });
-
   var path = window.location.pathname;
   var isEnglish = path === '/en' || path.indexOf('/en/') === 0;
   var counterpart = isEnglish ? (path.replace(/^\/en(?=\/|$)/, '') || '/') : '/en' + (path === '/' ? '/' : path);

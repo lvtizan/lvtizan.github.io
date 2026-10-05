@@ -102,7 +102,8 @@ def collect_pages():
     """扫描全站 index.html，返回应收录的 URL 路径集合。"""
     pages = set()
     for html in ROOT.rglob("index.html"):
-        if any(part in SKIP_DIRS for part in html.relative_to(ROOT).parts):
+        rel_parts = html.relative_to(ROOT).parts
+        if any(part.startswith(".") or part in SKIP_DIRS for part in rel_parts):
             continue
         if is_noindex(html):
             continue

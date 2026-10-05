@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VE5EQQE12"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0VE5EQQE12');</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Shop the piece — AVELINE</title>
 <meta name="robots" content="noindex">
@@ -25,13 +28,13 @@
 <body>
 <div class="anno">Complimentary worldwide shipping · Made in limited runs</div>
 <nav class="top"><div class="wrap nav-in">
-<div class="nav-links"><a href="../../../work/aveline/shop/index.html">Shop</a><a href="/en/work/aveline/#collection">Collections</a><a href="../../../work/aveline/journal/index.html">Journal</a><a href="../../../work/aveline/about/index.html">About</a></div>
-<a class="brand" href="../../../work/aveline/index.html">AVELINE</a>
-<div class="nav-right"><button class="hide-sm" data-search="">Search</button><a class="hide-sm" href="../../../work/aveline/about/index.html">Account</a><a class="cart" href="../../../work/aveline/cart/index.html">Bag<span class="n" data-cart-n="">0</span></a></div>
+<div class="nav-links"><a href="/en/work/aveline/shop/">Shop</a><a href="/en/work/aveline/#collection">Collections</a><a href="/en/work/aveline/journal/">Journal</a><a href="/en/work/aveline/about/">About</a></div>
+<a class="brand" href="/en/work/aveline/">AVELINE</a>
+<div class="nav-right"><button class="hide-sm" data-search="">Search</button><a class="hide-sm" href="/en/work/aveline/about/">Account</a><a class="cart" href="/en/work/aveline/cart/">Bag<span class="n" data-cart-n="">0</span></a></div>
 </div></nav>
 <section class="pagehead" style="padding-bottom:clamp(40px,6vw,80px)">
 <div class="wrap">
-<div class="crumb" id="crumb"><a href="../../../work/aveline/index.html">Home</a> — <a href="../../../work/aveline/shop/index.html">Shop</a></div>
+<div class="crumb" id="crumb"><a href="/en/work/aveline/">Home</a> — <a href="/en/work/aveline/shop/">Shop</a></div>
 <div class="pdp" style="margin-top:22px">
 <div class="ph"><img alt="" id="pImg" src="../../../../uploads/webp/aveline-p1.webp"/></div>
 <div class="info">
@@ -57,20 +60,20 @@
 </section>
 <section style="padding-top:0">
 <div class="wrap">
-<div class="sec-head"><h2 class="serif" style="font-size:clamp(24px,3vw,36px)">You may also like</h2><a class="lnk" href="../../../work/aveline/shop/index.html">View all</a></div>
+<div class="sec-head"><h2 class="serif" style="font-size:clamp(24px,3vw,36px)">You may also like</h2><a class="lnk" href="/en/work/aveline/shop/">View all</a></div>
 <div class="grid" id="also"></div>
 </div>
 </section>
 <footer><div class="wrap">
 <div class="foot-grid">
 <div><div class="fb serif">AVELINE</div><p style="max-width:30ch">Considered womenswear in natural fibres. Made to be worn for years, not seasons.</p></div>
-<div><h4>Shop</h4><a href="../../../work/aveline/shop/index.html">New arrivals</a><a href="../../../work/aveline/shop/index.html">Outerwear</a><a href="../../../work/aveline/shop/index.html">Knitwear</a><a href="../../../work/aveline/shop/index.html">Dresses</a></div>
+<div><h4>Shop</h4><a href="/en/work/aveline/shop/">New arrivals</a><a href="/en/work/aveline/shop/">Outerwear</a><a href="/en/work/aveline/shop/">Knitwear</a><a href="/en/work/aveline/shop/">Dresses</a></div>
 <div><h4>Client care</h4><a href="#">Shipping &amp; returns</a><a href="#">Size guide</a><a href="#">Garment care</a><a href="#">Contact</a></div>
-<div><h4>House</h4><a href="../../../work/aveline/about/index.html">Our story</a><a href="../../../work/aveline/about/index.html">Materials</a><a href="../../../work/aveline/journal/index.html">Journal</a></div>
+<div><h4>House</h4><a href="/en/work/aveline/about/">Our story</a><a href="/en/work/aveline/about/">Materials</a><a href="/en/work/aveline/journal/">Journal</a></div>
 </div>
 <div class="foot-bot"><span>© 2026 Aveline</span><span>Visa · Mastercard · Amex · PayPal · Alipay</span></div>
 </div></footer>
-<a aria-label="Back TO YOYANT" class="concept" href="../../../index.html#cases">← Back <b>YOYANT</b></a>
+<a aria-label="Back TO YOYANT" class="concept" href="/en/#cases">← Back <b>YOYANT</b></a>
 <script>
   window.addEventListener('DOMContentLoaded', function(){
     if(!window.AVELINE_CAT) return;
@@ -87,13 +90,13 @@
     document.getElementById('pDesc').textContent=p.blurb;
     document.getElementById('pMat').textContent=mats[p.id]||'Natural fibre';
     var add=document.getElementById('pAdd'); add.setAttribute('data-id',p.id); add.textContent='Add to bag — '+money(p.price);
-    document.getElementById('crumb').innerHTML='<a href="../../../work/aveline/index.html">Home</a> — <a href="../../../work/aveline/shop/index.html">Shop</a> — '+p.name;
+    document.getElementById('crumb').innerHTML='<a href="/en/work/aveline/">Home</a> — <a href="/en/work/aveline/shop/">Shop</a> — '+p.name;
     // also like: other products
     var others=window.AVELINE_CAT.filter(function(x){return x.id!==p.id;}).slice(0,3);
     document.getElementById('also').innerHTML=others.map(function(o){return '<a class="card" href="/en/work/aveline/product/?p='+o.id+'"><div class="ph"><img src="../../../uploads/webp/'+o.img+'.webp" alt="'+o.name+'"></div><div class="meta"><div class="nm">'+o.name+'</div><div class="pr">'+money(o.price)+'</div></div></a>';}).join('');
   });
 </script>
 <script defer="" src="../../../../work/aveline/assets/aveline.js"></script>
-<script defer="" src="/assets/language-switch.js?v=20260930-dark"></script>
+<script defer="" src="/assets/language-switch.js"></script>
 </body>
 </html>

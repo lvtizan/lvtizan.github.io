@@ -80,8 +80,7 @@
   // ---- 行为（从原 index.html 原样抽取）----
   const launch=document.getElementById('chatLaunch'),panel=document.getElementById('chatPanel'),actions=document.getElementById('contactActions');
   const tip=document.getElementById('chatTip');
-  const track=(name,params)=>{if(typeof window.gtag==='function')window.gtag('event',name,Object.assign({page_language:document.documentElement.lang||'zh-CN'},params||{}));};
-  const openPanel=()=>{panel.classList.add('open');actions.classList.add('hide');if(tip){tip.classList.remove('show');tip.classList.add('hide');}track('contact_start',{contact_method:'wechat_panel'});};
+  const openPanel=()=>{panel.classList.add('open');actions.classList.add('hide');if(tip){tip.classList.remove('show');tip.classList.add('hide');}};
   launch.addEventListener('click',openPanel);
   document.getElementById('chatClose').addEventListener('click',()=>{panel.classList.remove('open');actions.classList.remove('hide');});
   if(tip){
@@ -97,7 +96,6 @@
     const btn=document.getElementById('wxCopy'),id=document.getElementById('wxId').textContent.trim();
     try{await navigator.clipboard.writeText(id);}catch(e){const t=document.createElement('textarea');t.value=id;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove();}
     btn.textContent=english?'Copied ✓':'已复制 ✓';btn.classList.add('done');setTimeout(()=>{btn.textContent=english?'Copy':'复制';btn.classList.remove('done');},1800);
-    track('contact_start',{contact_method:'wechat_copy'});
   });
   const form=document.getElementById('chatForm');
   form.addEventListener('submit',async(e)=>{
@@ -105,7 +103,6 @@
     const data=new FormData(form);data.append('_subject',english?'YOYANT English website enquiry':'YOYANT 官网在线留言');data.append('_captcha','false');data.append('_template','table');
     try{const r=await fetch('https://formsubmit.co/ajax/bbtizan@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:data});if(!r.ok)throw 0;
       document.getElementById('chatBody').innerHTML=english?'<div class="chat-ok"><div class="ic">✓</div><h4>Thank you!</h4><p>We will get back to you shortly. You can also add <b style="color:var(--accent-2)">lvtizan</b> on WeChat.</p></div>':'<div class="chat-ok"><div class="ic">✓</div><h4>已收到，谢谢！</h4><p>我们会尽快与您联系。也可直接加微信 <b style="color:var(--accent-2)">lvtizan</b>。</p></div>';
-      track('generate_lead',{lead_source:'website_form'});
     }catch(err){btn.textContent=english?'Send message →':'发送留言 →';btn.disabled=false;alert(english?'Unable to send. Please email bbtizan@gmail.com or add lvtizan on WeChat.':'发送失败，请直接邮件 bbtizan@gmail.com 或加微信 lvtizan');}
   });
 })();

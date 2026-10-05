@@ -108,7 +108,7 @@ def main() -> int:
     warnings: list[str] = []
     for path in sorted(ROOT.rglob("index.html")):
         rel = path.relative_to(ROOT).as_posix()
-        if ".git" in path.parts or rel in SKIP:
+        if ".git" in path.parts or rel in SKIP or any(part.startswith(".") for part in path.relative_to(ROOT).parts):
             continue
         page = parse(path)
         parsed[path] = page
