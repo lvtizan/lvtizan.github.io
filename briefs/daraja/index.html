@@ -1,0 +1,1401 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Daraja — a bilingual discussion guide to platform architecture, open-source foundations and a practical delivery roadmap.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://yoyant.com/briefs/daraja/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Daraja · Product &amp; Technology Brief">
+  <meta property="og:description" content="Seven practical discussions on a proprietary B2B sourcing and procurement platform. 中英双语技术方案与实施路线。">
+  <meta property="og:url" content="https://yoyant.com/briefs/daraja/">
+  <meta name="theme-color" content="#ffffff">
+  <title>Daraja · A platform, thoughtfully built.</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTciIGZpbGw9IiMxZDFkMWYiLz48cGF0aCBkPSJNMzkgMTR2MzVoLTZ2LTNjLTIgMy01IDQtOCA0LTcgMC0xMi02LTEyLTE0czUtMTQgMTItMTRjMyAwIDYgMSA4IDRWMTRoNlpNMjYgMjhjLTQgMC03IDMtNyA4czMgOCA3IDggNy0zIDctOC0zLTgtNy04WiIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSI0OCIgY3k9IjQ2IiByPSI0IiBmaWxsPSIjMjk5N2ZmIi8+PC9zdmc+Cg==" type="image/svg+xml">
+  <style>:root{--ink:#1d1d1f;--muted:#6e6e73;--line:#e8e8ed;--surface:#f5f5f7;--blue:#0066cc;--sidebar:250px;--radius:24px;--font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:var(--font);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}button,a,summary{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #2997ff;outline-offset:5px}button:disabled{opacity:.35;cursor:default}button,summary{touch-action:manipulation}button{color:inherit}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.2}button{border:0;background:none}.zh,.en{display:block}body[data-language=zh] .en,body[data-language=en] .zh{display:none!important}.en{color:var(--muted)}body[data-language=en] .en{color:inherit}body[data-language=en] .secondary .en{color:var(--muted)}[hidden]{display:none!important}.skip-link{position:fixed;top:-80px;left:20px;z-index:50;background:white;padding:10px 18px;border:1px solid var(--line);border-radius:10px}.skip-link:focus{top:10px}
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);background:#fafafa;border-right:1px solid var(--line);padding:38px 20px 24px;display:flex;flex-direction:column;z-index:30;overflow:auto}.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:27px;letter-spacing:-1px;font-weight:650;padding-left:13px;line-height:1.1}.brand:hover{text-decoration:none}.brand-mark{width:32px;height:32px;border-radius:9px;background:var(--ink);color:white;text-align:center;line-height:28px;font-size:27px;letter-spacing:-2px;padding-right:3px}.brand-dot{font-size:10px;align-self:flex-start;margin:4px 0 0 -6px}.sidebar-caption{padding:22px 13px 30px;font-size:12px;color:var(--muted);line-height:1.6}.sidebar-caption .en{font-size:11px;margin-top:2px}.nav-link{display:flex;align-items:center;gap:13px;color:var(--muted);padding:13px 13px;margin:3px 0;border-radius:12px;font-size:13px;line-height:1.5;transition:background .2s,color .2s}.nav-link:hover{background:#f0f0f2;text-decoration:none}.nav-link[aria-current=page]{background:#eaf3fc;color:var(--blue)}.nav-link[aria-current=page] .en{color:var(--blue);opacity:.8}.nav-link .en{font-size:10px;margin-top:3px}.nav-number{font-size:11px;font-variant-numeric:tabular-nums;letter-spacing:.04em;align-self:flex-start;padding-top:2px;color:inherit}.nav-label{font-weight:550}.nav-label .en{font-weight:400}.sidebar-foot{margin-top:auto;padding:40px 13px 0;font-size:11px;color:var(--muted)}.sidebar-foot>.zh,.sidebar-foot>.en{display:inline}.sidebar-foot>.en{margin-left:4px}.status-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#86868b;margin-right:7px;vertical-align:middle}.sidebar-foot p{margin:13px 0 5px;font-size:11px}.sidebar-foot small{font-size:9px;letter-spacing:.1em;color:#86868b}.workspace{margin-left:var(--sidebar)}.toolbar{height:72px;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:0 46px;display:flex;align-items:center;justify-content:space-between;gap:20px}.toolbar-location{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--muted)}.toolbar-location>span:first-child{font-weight:600;color:var(--ink)}.toolbar-location .divider{color:#c7c7cc}.toolbar-location .en{font-size:11px}.toolbar-location .zh{font-size:12px}.toolbar-location .zh+.en{display:none}body[data-language=en] .toolbar-location .en{display:block}.toolbar-actions{display:flex;align-items:center;gap:25px}.language-switch{display:flex;background:var(--surface);padding:3px;border-radius:9px}.language-switch button{font-size:11px;min-width:42px;height:28px;padding:0 10px;line-height:1;border-radius:7px;white-space:nowrap}.language-switch button[aria-pressed=true]{background:white;box-shadow:0 1px 5px #00000015}.text-button{font-size:11px;display:flex;gap:4px;align-items:center;color:var(--muted);padding:8px 0}.text-button .en{display:none}body[data-language=en] .text-button .en{display:block}.text-button:hover{color:var(--blue)}.mobile-menu{display:none}.sidebar-shade{display:none}
+main{max-width:1440px;margin:auto;padding:65px 64px 0;min-height:calc(100vh - 190px);outline:none}.chapter{animation:appear .35s ease-out}.eyebrow{font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.015em}.eyebrow .en{font-size:11px;color:var(--blue);font-weight:450;margin-top:3px}.hero{padding-bottom:46px}.hero h1{margin-top:28px;font-size:clamp(36px,4vw,61px);letter-spacing:-.05em;line-height:1.16;font-weight:650;white-space:pre-line}.hero h1 .en{font-size:clamp(23px,2.2vw,31px);font-weight:500;letter-spacing:-.035em;line-height:1.25;margin-top:20px;color:#86868b}body[data-language=en] .hero h1 .en{font-size:clamp(38px,4vw,61px);color:var(--ink);margin-top:0;line-height:1.1}.hero-lead{max-width:740px;margin-top:30px;font-size:18px;line-height:1.7;color:#515154}.hero-lead .en{font-size:14px;line-height:1.65;margin-top:10px;max-width:740px}body[data-language=en] .hero-lead .en{font-size:19px;color:#515154}.takeaway{border-left:2px solid var(--blue);padding-left:16px;margin-top:29px;font-size:13px;line-height:1.65}.takeaway .en{font-size:12px;margin-top:5px}.brief-note{margin-top:28px;color:var(--muted);font-size:10px;line-height:1.7}.brief-note .en{margin-top:2px}.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:8px 0 53px}.pillar{border-top:1px solid var(--line);padding-top:22px}.pillar-index{font-size:10px;color:#86868b;margin-bottom:18px;display:block;font-variant-numeric:tabular-nums}.pillar h2{font-size:20px;letter-spacing:-.025em;font-weight:600}.pillar h2 .en{font-size:13px;font-weight:450;margin-top:8px}.pillar p{margin-top:16px;font-size:13px;line-height:1.8;color:#515154}.pillar p .en{font-size:12px;line-height:1.65;margin-top:10px}
+.section-kicker{font-size:11px;letter-spacing:.05em;color:var(--muted);font-weight:500;margin-bottom:24px}.section-kicker .en{font-size:10px;letter-spacing:.08em;margin-top:3px;text-transform:uppercase}.visual{background:var(--surface);border-radius:var(--radius);padding:30px;margin-bottom:48px}.visual .section-kicker{margin-bottom:25px}.diagram-row{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:12px}.diagram-node{border:1px solid #e4e4e9;background:white;border-radius:13px;padding:17px 10px;text-align:center;font-size:13px;line-height:1.5}.diagram-node .en{font-size:10px;margin-top:5px;line-height:1.5}.diagram-node.strong{background:var(--ink);border-color:var(--ink);color:white}.diagram-node.strong .en{color:#c7c7cc}.diagram-node.blue{background:#e8f2ff;border-color:transparent;color:#0055b3}.diagram-node.blue .en{color:#426b99}.connector{text-align:center;color:#b2b2b7;height:28px;line-height:28px;font-size:18px}.diagram-caption{font-size:11px;color:var(--muted);line-height:1.65;margin-top:19px}.diagram-caption .en{font-size:10px;margin-top:5px}.branch-label{color:var(--muted);font-size:10px;margin:20px 0 10px}.flow-scroll{overflow-x:auto;padding:3px 2px 8px}.workflow-path{display:grid;grid-template-columns:repeat(6,minmax(108px,1fr));gap:15px;min-width:730px}.flow-node{position:relative;border:1px solid #dddde3;background:white;border-radius:14px;padding:17px 8px;font-size:12px;text-align:center;line-height:1.5}.flow-node .en{font-size:10px;margin-top:6px}.flow-node:not(:last-child):after{content:'→';position:absolute;right:-14px;top:43%;font-size:12px;color:#b2b2b7}.flow-node[aria-pressed=true]{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue);color:var(--blue)}.flow-node[aria-pressed=true] .en{color:#426b99}.flow-number{display:block;color:#86868b;font-size:10px;margin-bottom:12px}.flow-description{border-top:1px solid #dddde3;margin-top:20px;padding-top:20px;min-height:106px;font-size:14px}.flow-description .en{font-size:12px;margin-top:8px}.role-rule{text-align:center;margin-top:23px;font-size:12px;color:var(--muted)}.role-rule .en{font-size:11px;margin-top:5px}.diagram-steps{display:flex;align-items:stretch;gap:10px}.diagram-steps .diagram-node{flex:1;min-width:0}.diagram-arrow{align-self:center;color:#aaa;font-size:15px}.market-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.market-tag{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.timeline-step{position:relative;padding-top:26px;border-top:1px solid #d2d2d7}.timeline-step:before{content:'';position:absolute;left:0;top:-4px;width:7px;height:7px;background:var(--ink);border-radius:50%}.timeline-period{font-size:10px;color:var(--muted)}.timeline-step h3{font-size:17px;margin-top:12px}.timeline-step h3 .en{font-size:12px;font-weight:450;margin-top:8px}.timeline-step p{font-size:11px;line-height:1.7;margin-top:15px;color:#515154}.timeline-step p .en{font-size:10px;margin-top:7px}.timeline-period .en{font-size:9px;margin-top:3px}
+.details-heading{font-size:23px;letter-spacing:-.03em;margin:0 0 25px;font-weight:600}.details-heading .en{font-size:14px;font-weight:400;margin-top:9px}.detail{border-top:1px solid var(--line)}.detail:last-child{border-bottom:1px solid var(--line)}.detail>summary{cursor:pointer;list-style:none;padding:23px 34px 23px 0;position:relative;font-size:16px;font-weight:550;line-height:1.5}.detail>summary::-webkit-details-marker{display:none}.detail>summary:after{content:'+';position:absolute;right:3px;top:25px;font-size:22px;color:var(--muted);font-weight:300;line-height:1}.detail[open]>summary:after{content:'−'}.detail>summary .en{font-size:12px;font-weight:400;margin-top:5px}.detail-body{padding:0 0 28px;max-width:870px}.detail-body p{font-size:14px;line-height:1.9;margin-top:19px;color:#424245}.detail-body p:first-child{margin-top:0}.detail-body p .en{font-size:13px;line-height:1.75;margin-top:9px}.detail-body a{font-size:12px}.table-scroll{overflow-x:auto;margin:12px 0 22px}table{border-collapse:collapse;width:100%;font-size:12px;min-width:620px;text-align:left}th{font-size:11px;font-weight:600;background:var(--surface);padding:15px;vertical-align:top}td{border-bottom:1px solid var(--line);padding:17px 15px;vertical-align:top;line-height:1.8}th .en,td .en{font-size:10px;line-height:1.65;margin-top:6px}table tr td:first-child{width:16%;font-weight:500}.outcome{margin-top:38px;font-size:13px;line-height:1.85;color:#515154}.outcome .en{font-size:12px;margin-top:8px}.meeting-box{margin-top:45px;padding:29px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.meeting-box .section-kicker{margin-bottom:16px}.meeting-box p{font-size:16px;font-weight:500;line-height:1.8}.meeting-box p .en{font-size:13px;font-weight:400;margin-top:10px}.talk{margin-top:30px}.talk>summary{list-style:none;cursor:pointer;color:var(--blue);font-size:12px;display:flex;gap:7px;align-items:center}.talk>summary::-webkit-details-marker{display:none}.talk>summary:after{content:'＋';font-size:16px;margin-left:3px}.talk[open]>summary:after{content:'−'}.talk>summary .zh,.talk>summary .en{display:inline;color:var(--blue)}.talk>summary .en{font-size:11px}.talk blockquote{margin:20px 0 0;padding:23px 25px;background:var(--surface);border-radius:16px;font-size:15px;line-height:1.85}.talk blockquote .en{margin-top:15px;font-size:15px;color:var(--ink)}.sources{margin-top:38px;color:var(--muted);font-size:10px}.sources .source-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px}.source-links a{font-size:10px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}.research{margin:0 0 49px}.research-title{font-size:29px;letter-spacing:-.04em;font-weight:600}.research-title .en{font-size:16px;font-weight:450;margin-top:9px}.research-intro{font-size:13px;color:#515154;margin:17px 0 24px;max-width:790px}.research-intro .en{font-size:12px;margin-top:8px}.candidate-list{margin-top:25px}.candidate>summary{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:22px 35px 22px 0}.candidate-title{font-size:20px;letter-spacing:-.02em}.candidate-tag{font-size:10px;font-weight:450;color:var(--muted);max-width:190px;text-align:right}.candidate-tag .en{font-size:10px}.candidate-meta{font-size:11px;color:var(--muted);margin:0 0 24px}.candidate-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 35px}.candidate-grid h3{font-size:12px;font-weight:600}.candidate-grid h3 .en{font-size:10px;font-weight:400;margin-top:4px}.candidate-grid p{font-size:13px;margin-top:9px;line-height:1.8}.candidate-grid p .en{font-size:12px;margin-top:7px}.candidate .source-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px}.research-note{margin-top:21px;font-size:11px;color:var(--muted);line-height:1.8}.research-note .en{font-size:10px;margin-top:6px}.research-status{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:10px;color:var(--muted)}.research-status:before{content:'';width:5px;height:5px;background:#86868b;border-radius:50%}.page-footer{max-width:1440px;margin:60px auto 0;padding:27px 64px 34px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;color:var(--muted)}.page-control{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:12px;color:var(--ink)}.page-control .en{font-size:10px}.page-control:hover:not(:disabled){color:var(--blue)}#page-counter{font-size:11px;font-variant-numeric:tabular-nums;letter-spacing:.08em}.print-brand{display:none}
+@keyframes appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1600px){main{padding-top:82px}.hero h1{font-size:66px}.hero h1 .en{font-size:32px}.hero-lead{font-size:20px}.hero-lead .en{font-size:15px}}
+@media(max-width:1150px){:root{--sidebar:220px}.sidebar{padding-left:13px;padding-right:13px}.toolbar{padding:0 32px}.toolbar-actions{gap:18px}main{padding:50px 36px 0}.page-footer{padding-left:36px;padding-right:36px}.pillars{gap:22px}.hero h1{font-size:47px}.hero h1 .en{font-size:26px}.timeline{gap:15px}.diagram-row{gap:9px}}
+@media(max-width:850px){:root{--sidebar:210px}main{padding:42px 28px 0}.toolbar{padding:0 27px}.toolbar-location>span:first-child,.toolbar-location>.divider{display:none}.hero h1{font-size:39px}.hero h1 .en{font-size:23px}.hero-lead{font-size:16px}.pillars{gap:16px}.pillar h2{font-size:17px}.pillar h2 .en{font-size:11px}.pillar p{font-size:12px}.visual{padding:23px}.timeline{grid-template-columns:1fr 1fr;gap:28px}.candidate-grid{grid-template-columns:1fr}.diagram-steps{flex-direction:column}.diagram-arrow{transform:rotate(90deg)}.candidate-tag{max-width:125px}}
+@media(max-width:700px){:root{--sidebar:260px}.sidebar{transform:translateX(-100%);transition:transform .25s ease;visibility:hidden}.sidebar.open{transform:translateX(0);visibility:visible}.sidebar-shade:not([hidden]){display:block;position:fixed;inset:0;background:#0004;z-index:25}.workspace{margin-left:0}.toolbar{height:64px;padding:0 20px;gap:12px}.mobile-menu{display:block;font-size:17px;width:28px;padding:5px 0;line-height:1}.toolbar-location{margin-right:auto;font-size:10px;min-width:0}.toolbar-location .zh{font-size:10px}.toolbar-location .en{font-size:10px}.toolbar-actions{gap:12px}.language-switch button{min-width:33px;font-size:10px;padding:0 7px;height:27px}.language-switch{padding:2px}.text-button{font-size:10px}main{padding:42px 25px 0}.hero{padding-bottom:33px}.hero h1{font-size:42px;letter-spacing:-.05em;margin-top:24px}.hero h1 .en{font-size:24px;margin-top:17px}body[data-language=en] .hero h1 .en{font-size:41px}.hero-lead{font-size:16px;margin-top:24px}.hero-lead .en{font-size:12px}.takeaway{font-size:12px;margin-top:23px}.takeaway .en{font-size:11px}.eyebrow{font-size:11px}.eyebrow .en{font-size:10px}.pillars{grid-template-columns:1fr;gap:22px;padding-bottom:34px}.pillar{display:grid;grid-template-columns:28px 1fr;column-gap:7px;padding-top:19px}.pillar-index{grid-row:1 / 3;margin:3px 0 0}.pillar h2{font-size:19px}.pillar h2 .en{font-size:12px;margin-top:5px}.pillar p{grid-column:2;margin-top:12px;font-size:13px;max-width:490px}.pillar p .en{font-size:12px;margin-top:7px}.visual{padding:22px 19px;margin-bottom:36px;border-radius:20px}.diagram-node{font-size:11px;padding:14px 6px;border-radius:10px}.diagram-node .en{font-size:9px}.diagram-row{gap:7px}.diagram-row.four{grid-template-columns:1fr 1fr}.diagram-steps .diagram-node{padding:15px;font-size:13px}.market-row{gap:10px}.details-heading{font-size:22px}.detail>summary{font-size:15px;padding-top:21px;padding-bottom:21px}.detail>summary .en{font-size:11px}.detail-body p{font-size:13px}.detail-body p .en{font-size:12px}.outcome{font-size:12px}.outcome .en{font-size:11px}.meeting-box{margin-top:33px;padding:23px 0}.meeting-box p{font-size:14px}.meeting-box p .en{font-size:12px}.talk blockquote{padding:21px;font-size:14px}.talk blockquote .en{font-size:14px}.page-footer{padding:21px 25px 25px;margin-top:39px}.page-control{gap:5px;font-size:11px}.page-control .en{display:none}body[data-language=en] .page-control .en{display:block;font-size:11px}.research-title{font-size:26px}.candidate-title{font-size:18px}.candidate-tag{font-size:9px;max-width:122px}.candidate-tag .en{font-size:9px}.candidate>summary{gap:10px}.research-intro{font-size:12px}.table-scroll{margin-right:-4px}.timeline-step h3{font-size:17px}.brief-note{font-size:9px}.sources{margin-top:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+/* Restrained emphasis for named foundations and their role in each proposal. */
+.tech-name{font-weight:700;color:#0057ad;background:#edf5ff;border-radius:4px;padding:0 .18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.technology-strip{display:flex;flex-wrap:wrap;gap:20px 34px;margin-top:28px}
+.technology-item{--tech-color:#0057ad;--tech-bg:#edf5ff;min-width:0;max-width:100%}
+.technology-item.support{--tech-color:#08665c;--tech-bg:#eaf6f2}
+.technology-item.custom{--tech-color:#784515;--tech-bg:#fff3e7}
+.technology-label{display:inline-flex;align-items:center;gap:8px;border-radius:7px;padding:5px 10px;color:var(--tech-color);background:var(--tech-bg);font-size:15px;font-weight:700;line-height:1.5}
+.technology-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+.technology-role{display:block;margin-top:8px;font-size:12px;line-height:1.65;color:var(--muted)}
+.technology-role .en{font-size:11px;margin-top:3px}
+.diagram-node.strong .tech-name{color:#a9d2ff;background:#ffffff16}
+.candidate-title .tech-name{background:none;padding:0}
+/* Keep explanatory copy readable in both languages, including on mobile. */
+@media screen{
+  .hero-lead{max-width:1000px}
+  .hero-lead .en{max-width:1000px}
+  .detail-body{max-width:none}
+  .hero-lead .en,.takeaway,.takeaway .en,
+  .pillar p,.pillar p .en,.detail-body p,.detail-body p .en,
+  .outcome,.outcome .en,.meeting-box p,.meeting-box p .en,
+  .flow-description,.flow-description .en,.diagram-caption,.diagram-caption .en,
+  .role-rule,.role-rule .en,.talk blockquote,.talk blockquote .en,
+  .research-intro,.research-intro .en,.research-note,.research-note .en,
+  .candidate-grid p,.candidate-grid p .en,.timeline-step p,.timeline-step p .en,
+  table,th,td,th .en,td .en{font-size:16px;line-height:1.8}
+  .candidate-grid h3{font-size:16px}
+  .candidate-grid h3 .en,.detail>summary .en,.pillar h2 .en{font-size:14px}
+  .diagram-node,.flow-node{font-size:16px}
+  .diagram-node .en,.flow-node .en{font-size:14px}
+  .brief-note,.brief-note .en,.sources,.source-links a{font-size:12px}
+  .timeline{gap:28px}
+}
+@media screen and (max-width:700px){
+  .technology-strip{gap:19px 24px}
+  .technology-label{font-size:14px}
+  .diagram-row:not(.four){grid-template-columns:1fr}
+  .pillar p{max-width:none}
+}
+@media print{@page{size:A4;margin:17mm 16mm}body{font-size:10pt;background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}.sidebar,.toolbar,.page-footer,.sidebar-shade,.skip-link,.mobile-menu{display:none!important}.workspace{margin:0}main{max-width:none;padding:0;min-height:0}.chapter,.chapter[hidden]{display:block!important;animation:none;break-before:page}.chapter:first-child{break-before:auto}.hero{padding-bottom:20px}.hero h1,.hero h1 .en,body[data-language=en] .hero h1 .en{font-size:29pt}.hero h1 .en{font-size:17pt}.hero-lead{font-size:12pt}.hero-lead .en{font-size:10pt}.eyebrow{font-size:10pt}.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:22px}.pillar{display:block}.pillar h2{font-size:12pt}.pillar p{font-size:9pt}.visual{break-inside:avoid;margin-bottom:20px;padding:18px}.detail-body{display:block!important;padding-bottom:15px}.detail>summary{padding:14px 0 10px;font-size:12pt}.detail>summary:after{display:none}.detail-body p{font-size:10pt;margin-top:12px}.detail-body p .en{font-size:9pt}.detail{break-inside:auto}.detail>summary{break-after:avoid}.candidate-grid{grid-template-columns:1fr 1fr}.research,.details-heading{break-after:avoid}.table-scroll{overflow:visible}table{min-width:0;font-size:9pt}td,th{padding:8px}.diagram-steps{flex-direction:row}.diagram-arrow{transform:none}.timeline{grid-template-columns:repeat(4,1fr)}.flow-scroll{overflow:visible}.workflow-path{min-width:0;grid-template-columns:repeat(6,1fr);gap:12px}.flow-node{padding:10px 4px;font-size:9pt}.flow-node .en{font-size:7pt}.flow-description{min-height:0}.candidate>summary{grid-template-columns:1fr auto}.candidate-title{font-size:15pt}.talk{display:block}.talk blockquote{font-size:10pt}.talk blockquote .en{font-size:10pt}.talk>summary{font-size:10pt}.sources a{font-size:8pt}.outcome,.meeting-box p{font-size:10pt}.meeting-box{margin-top:22px;padding:16px 0}.print-brand{display:block;color:#6e6e73;font-size:9pt;margin-bottom:18px}.brief-note{font-size:8pt}a{overflow-wrap:anywhere}.market-row{grid-template-columns:1fr 1fr}.diagram-row.four{grid-template-columns:repeat(4,1fr)}}
+</style>
+  
+  
+  
+</head>
+<body data-language="both">
+  <a class="skip-link" href="#main">跳到内容 / Skip to content</a>
+  <aside class="sidebar" id="sidebar" aria-label="章节导航 / Chapter navigation">
+    <a href="#architecture" class="brand" aria-label="Daraja 首页 / Home"><span class="brand-mark" aria-hidden="true">d.</span>Daraja</a>
+    <p class="sidebar-caption"><span class="zh" lang="zh-CN">产品与技术讨论</span><span class="en" lang="en">Product & technology brief</span></p>
+    <nav id="chapter-nav"></nav>
+    <div class="sidebar-foot">
+      <span class="status-dot"></span><span class="zh" lang="zh-CN">会面讨论稿</span><span class="en" lang="en">For discussion</span>
+      <p>Kenya first. Africa next.</p>
+      <small>09 OCT 2026 · V1.1</small>
+    </div>
+  </aside>
+  <button class="sidebar-shade" id="sidebar-shade" aria-label="关闭导航 / Close navigation" hidden></button>
+  <div class="workspace">
+    <header class="toolbar">
+      <button id="menu-button" class="icon-button mobile-menu" aria-expanded="false" aria-controls="sidebar" aria-label="打开导航 / Open navigation"><span aria-hidden="true">☰</span></button>
+      <div class="toolbar-location"><span>Daraja</span><span class="divider">/</span><span id="current-chapter"></span></div>
+      <div class="toolbar-actions">
+        <div class="language-switch" role="group" aria-label="显示语言 / Display language">
+          <button data-language="both" aria-pressed="true">中 / EN</button>
+          <button data-language="zh" aria-pressed="false">中文</button>
+          <button data-language="en" aria-pressed="false">EN</button>
+        </div>
+        <button id="print-button" class="text-button"><span class="zh" lang="zh-CN">打印</span><span class="en" lang="en">Print</span><span aria-hidden="true">↗</span></button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="page-footer">
+      <button id="previous" class="page-control"><span aria-hidden="true">←</span><span class="zh" lang="zh-CN">上一问题</span><span class="en" lang="en">Previous</span></button>
+      <span id="page-counter" aria-live="polite">01 / 07</span>
+      <button id="next" class="page-control"><span class="zh" lang="zh-CN">下一问题</span><span class="en" lang="en">Next</span><span aria-hidden="true">→</span></button>
+    </footer>
+  </div>
+  <noscript>请启用 JavaScript 以查看七个问题的中英双语方案。Please enable JavaScript to view the bilingual discussion guide.</noscript>
+<script>
+/* Meeting content. [Chinese, English] pairs keep every explanation together. */
+window.BRIEF = [
+  {
+    id: 'architecture', nav: ['平台架构', 'Architecture'],
+    title: ['从业务出发。\n为增长留好空间。', 'Built around your business.\nReady for what comes next.'],
+    question: ['01 · 我们如何架构 Daraja？', '01 · How would we architect Daraja?'],
+    lead: ['以一个清晰的业务核心，连接买家、供应商与运营团队。先让一条真实交易跑通，再逐步扩展。', 'Connect buyers, suppliers and operations around one coherent business core. Prove a real trading journey first, then expand.'],
+    takeaway: ['建议：定制门户 + 成熟业务底座 + Daraja 专属业务模块。', 'Recommendation: custom portals, a proven business foundation and Daraja-specific modules.'],
+    cards: [
+      {title:['体验独立','Your own experience'], body:['买家、供应商、运营各有工作空间，共享同一套业务事实。','Dedicated workspaces for buyers, suppliers and operations, sharing the same business records.']},
+      {title:['核心模块化','A modular core'], body:['采购、订单、仓储、物流有清晰边界，首期集中部署，控制复杂度。','Clear procurement, order, warehouse and logistics boundaries; initially deployed together to limit complexity.']},
+      {title:['资产可交接','Built for handover'], body:['在客户控制的账户中部署，交付源码、数据结构、部署与运维说明。','Deploy in client-controlled accounts and hand over source, data models, deployment assets and runbooks.']}
+    ],
+    diagram: 'architecture',
+    details: [
+      {title:['先确认 Daraja 的交易身份','First establish Daraja’s trading role'], paragraphs:[
+        ['如果 Daraja 向买家销售并向工厂采购，系统需要销售单、采购单和应收应付；如果是代采购，需要委托关系、服务费和代付记录；如果只撮合交易，则要明确交易双方和平台服务边界。','If Daraja buys from factories and resells, we need sales orders, purchase orders, receivables and payables. An agency model needs mandates, service fees and payment-on-behalf records. A marketplace model needs explicit trading parties and platform responsibilities.'],
+        ['首期选择一种主交易模式。商品品类、货源国家、仓库位置和收款责任都需要结合 Technology Brief 确认，不能由技术方案默认。','Choose one primary trading model for the pilot. Product categories, sourcing countries, warehouse locations and payment responsibilities must be confirmed against the Technology Brief.'],
+        ['货物所有权、实际保管方和记账主体分别记录。ERPNext 自营采购与库存流程是否适用，要先用真实单据验证；代采或第三方保管不能仅因货物入仓就自动确认为 Daraja 的库存资产或应付账款。','Record the goods owner, physical custodian and accounting entity separately. Validate ERPNext purchasing and stock flows against real documents. Receipt of agency or third-party goods must not automatically recognise Daraja-owned inventory or payables.']
+      ]},
+      {title:['让每一份业务数据只有一个权威来源','Give each business record one authoritative home'], paragraphs:[
+        ['企业、商品、询价、报价、订单、包装件、集运批次、付款和单证分别建模。明确每个对象由哪个模块创建和修改；门户只通过有权限控制的 API 访问。','Model organisations, products, RFQs, quotations, orders, packages, consolidation batches, payments and documents separately. Assign ownership of each record to one module; portals access it through authorised APIs.'],
+        ['报价确认与订单创建采用事务或可恢复工作流。通知、PDF、物流同步放入后台任务，失败可重试；业务事件与原始修改一起可靠保存，避免订单成功但后续任务丢失。','Use transactions or recoverable workflows for quotation acceptance and order creation. Run notifications, PDFs and logistics updates as retryable background jobs. Persist business events reliably with the original change so follow-up work is not lost.']
+      ]},
+      {title:['私有部署与长期可维护性怎么落实','Make private deployment maintainable'], paragraphs:[
+        ['生产与测试环境分开；数据库和文件备份定期恢复演练。运营人员启用多因素认证，重要操作留审计记录。日志、告警和升级流程作为交付的一部分。','Separate production and staging. Regularly rehearse database and file restoration. Require MFA for operational staff and audit sensitive actions. Include monitoring, alerts and an upgrade process in the handover.'],
+        ['定制代码的权利在合同中约定；第三方开源组件保留原有许可证。交付依赖清单、版本锁定、数据导出和接手说明，让客户能够更换维护团队。','Define rights to custom code in the contract; third-party components retain their own licences. Supply a dependency inventory, pinned versions, data exports and handover instructions so the client can change maintainers.'],
+        ['需要确认 proprietary 指品牌、数据和独立运营，还是要求所有交付代码闭源且可独占再许可。选择 ERPNext 前，应审查拟交付模块与 GPL 底座的组合及分发方式；独立目录、Frappe 应用或 API 边界本身不构成闭源许可结论。','Clarify whether proprietary means control of brand, data and operation, or a requirement for all delivered code to remain closed and exclusively relicensable. Before selecting ERPNext, review how delivered modules combine with and distribute the GPL foundation; a separate directory, Frappe app or API boundary alone does not establish proprietary licensing rights.']
+      ]}
+    ],
+    outcome:['本部分交付：业务边界图、系统架构图、核心数据模型、部署与交接清单。','Deliverables: business boundaries, an architecture diagram, core data model and deployment/handover checklist.'],
+    ask:['会议确认：Daraja 是贸易商、代采购服务商，还是撮合平台？首期谁签合同、谁收款、谁承担履约？','Discuss: is Daraja a reseller, sourcing agent or marketplace? Who contracts, collects payment and owns fulfilment in the pilot?'],
+    talk:['“我们会围绕你的实际交易方式设计系统。首期采用模块化架构，让平台可以独立运营，也能随着业务增长逐步扩展。”','“We would design the platform around how your business actually trades. A modular foundation lets you operate independently today and expand as your business grows.”'],
+    sources:[['Frappe REST API','https://docs.frappe.io/framework/user/en/api/rest'],['Medusa commerce modules','https://docs.medusajs.com/learn/fundamentals/modules/commerce-modules']]
+  },
+  {
+    id:'foundations', nav:['自研与开源底座','Build & reuse'],
+    title:['成熟能力，复用。\n业务差异，定制。','Reuse what is proven.\nBuild what makes you different.'],
+    question:['02 · 哪些自研，哪些采用现有技术？','02 · What should we build, and what should we reuse?'],
+    lead:['优先验证能承接采购与仓储的成熟底座，再判断电商引擎是否更适合业务重心。开源降低重复开发，不会消除产品设计和集成工作。','Validate foundations with procurement and warehouse capabilities first, then assess whether commerce is the better centre of gravity. Open source reduces repeated work; product design and integration still matter.'],
+    takeaway:['初步方向：采购运营主导，先验证 ERPNext；商城交易主导，再验证 Medusa。','Initial direction: evaluate ERPNext for procurement-led operations; evaluate Medusa if commerce leads.'],
+    cards:[
+      {title:['复用基础能力','Reuse the foundations'],body:['ERPNext 已有采购、基础报价对比、质检与到岸成本能力，先验证再扩展。','ERPNext provides procurement, basic quote comparison, inspections and landed costs. Validate these before extending them.']},
+      {title:['定制核心差异','Build the differentiators'],body:['买家寻源体验、包裹照片、跨货主集运及客户费用结算，按底座差距定制。','Customise buyer sourcing, package photos, multi-owner consolidation and customer charge settlement where the foundation has gaps.']},
+      {title:['连接专业服务','Integrate specialist services'],body:['支付、承运商、通知与 AI，通过可替换适配器接入。','Payments, carriers, notifications and AI connected through replaceable adapters.']}
+    ],
+    diagram:'foundations',
+    details:[
+      {title:['如何在两个主候选之间做决定','How we choose between the two leading candidates'],paragraphs:[
+        ['ERPNext 路线：复用采购与库存业务，在 Frappe 独立应用中扩展 Daraja 模块，并定制外部门户。重点验证外部企业隔离、报价体验及跨客户集运，不能把企业内部 ERP 界面直接当作 marketplace。','ERPNext route: reuse procurement and stock workflows, extend through a separate Frappe app and build external portals. Validate external-company isolation, the quotation experience and cross-customer consolidation; an internal ERP interface is not a ready-made marketplace.'],
+        ['Medusa 路线：复用商品、定价和销售订单能力，在其框架内扩展寻源、采购与集运。它更贴近商城，但采购与仓储现场流程需要更多定制。首期不同时引入两个业务底座。','Medusa route: reuse products, pricing and sales orders, then extend its framework for sourcing, purchasing and consolidation. It is closer to storefront commerce, but procurement and warehouse operations require more custom work. Start with one business foundation.']
+      ]},
+      {title:['用一个小型验证决定底座','Choose the foundation with a bounded proof of concept'],paragraphs:[
+        ['用同一组样例比较：一个多明细 RFQ，按行选定两家供应商，分批收货，并与第二买家的货物合并发运。贸易商模式验证销售单拆采购单；代采模式改用委托及实际交易方关系，检查货权和记账。','Compare candidates using a multi-line RFQ awarded by line to two suppliers, partial receipts and consolidation with a second buyer’s goods. Test sales-to-purchase splitting for resale; for agency, use mandates and actual trading parties and verify ownership and accounting.'],
+        ['先在主候选上做有边界的验证，备选做功能差距对比。必须检查跨买家、跨供应商访问，包装件数量追溯，重复付款通知，以及一次兼容版本升级。可先用接口样例模拟第三方服务，不能把该验证当作生产集成验收。','Run a bounded proof on the leading candidate and a gap comparison on alternatives. Check cross-buyer and cross-supplier access, package quantity traceability, duplicate payment events and one compatible upgrade. Provider fixtures may be used initially; this is not production integration acceptance.']
+      ]},
+      {title:['开源底座的真实成本与源码边界','The real cost and ownership boundaries'],paragraphs:[
+        ['总成本包含业务二开、数据整理、第三方接口、部署、维护升级，以及需要时的商业扩展授权。当前没有完整 Brief，不承诺固定复用比例或报价。','Total cost includes custom workflows, data preparation, third-party integrations, hosting, upgrades and any commercial extensions. Without the full Brief, we should not promise a fixed reuse percentage or quotation.'],
+        ['GPL 系列许可不等于不能商业使用，但交付、修改及组合方式会影响相关义务。框架与应用、社区版与企业版要分别核对；定制代码的合同归属也不能改变第三方许可。','GPL-family licensing does not prohibit commercial use, but distribution, modification and integration choices affect obligations. Review the framework and application, and community and enterprise editions, separately. Custom-code ownership does not override third-party licences.']
+      ]}
+    ],
+    outcome:['本部分交付：候选对比、样例验证、复用与定制清单、依赖许可清单、选型决策记录。','Deliverables: a candidate comparison, proof of concept, reuse/customisation map, licence inventory and architecture decision record.'],
+    ask:['会议确认：核心是采购运营还是商城交易？proprietary 需要怎样的代码许可与独占权？未来谁负责维护？','Discuss: is procurement or commerce the core? What code-licensing and exclusivity rights does proprietary require? Who will maintain the platform?'],
+    talk:['“我们会使用成熟开源能力，把开发投入集中到 Daraja 独有的业务流程上。最终底座会由真实场景验证决定。”','“We would reuse mature open-source capabilities and focus development on Daraja’s unique workflows. The final foundation would be selected through a real business scenario.”'],
+    sources:[['ERPNext quotation comparison','https://docs.frappe.io/erpnext/supplier-quotation'],['ERPNext quality inspection','https://docs.frappe.io/erpnext/quality-inspection'],['ERPNext landed costs','https://docs.frappe.io/erpnext/landed-cost-voucher'],['Frappe licensing guidance','https://docs.frappe.io/legal/others/license-and-trademark']]
+  },
+  {
+    id:'workspaces',nav:['三端与权限','Workspaces'],
+    title:['各有工作空间。\n协作始终一致。','Different workspaces.\nOne connected operation.'],
+    question:['03 · 买家、供应商和管理员如何组织？','03 · How should buyer, supplier and administrator environments work?'],
+    lead:['以企业作为业务主体，以员工角色分配权限。每个人看到自己的工作，也清楚下一步由谁负责。','Make the organisation the business entity, with employee roles controlling access. Each person sees their own work and knows who owns the next step.'],
+    takeaway:['一个身份体系，三个业务门户；仓库使用面向现场的简化界面。','One identity system, three business portals and a focused warehouse interface.'],
+    cards:[
+      {title:['买家端','Buyer workspace'],body:['创建采购需求、审批报价、查看付款与交付、下载单证、发起售后。','Create requests, approve quotations, track payments and deliveries, download documents and raise claims.']},
+      {title:['供应商端','Supplier workspace'],body:['提交资质、维护商品、回复询价、更新交期、提交发货信息。','Submit credentials, maintain products, respond to RFQs, update lead times and provide dispatch information.']},
+      {title:['运营端','Operations workspace'],body:['审核、寻源、采购、财务和仓储各有权限，通过异常队列协作。','Give verification, sourcing, procurement, finance and warehouse teams scoped access and shared exception queues.']}
+    ],
+    diagram:'workspaces',
+    details:[
+      {title:['组织、角色、数据范围一起判断','Combine organisation, role and record scope'],paragraphs:[
+        ['一个企业可以有管理员、采购员、审批人和财务人员。同一个人如属于多家企业，必须明确切换当前企业。供应商只能访问发给自己的询价、自己的报价与履约记录。','An organisation can have owners, buyers, approvers and finance staff. A person belonging to multiple organisations must explicitly select the active organisation. Suppliers only access invitations, quotations and fulfilment records assigned to them.'],
+        ['权限在服务端执行，包括字段与附件：买家能否看到工厂身份、进货价、平台加价，由商业规则决定。运营超级权限需受控；下载、导出和 AI 检索使用相同的数据范围。','Enforce authorisation on the server, including fields and attachments. Commercial rules determine whether buyers see factories, source prices and platform margins. Restrict privileged access; apply the same scope to downloads, exports and AI retrieval.'],
+        ['ERPNext 的 Company 表示内部经营与记账主体，不能直接等同于每个外部买家或供应商租户。外部组织关联 Customer / Supplier 和成员身份；自定义 API、列表、报表及后台任务都要验证对象权限，不能假设框架会自动过滤所有查询。','ERPNext Company represents an internal operating/accounting entity, not every external buyer or supplier tenant. Map external organisations to Customer / Supplier records and memberships. Verify object permissions in custom APIs, lists, reports and background tasks; do not assume every framework query filters access automatically.'],
+        ['企业管理员邀请并审核成员，切换企业时校验有效成员关系，离职或停用后撤销访问。第三方仓库人员仅访问授权仓库和指定货物，跨客户集运时限制价格、客户身份与附件可见范围。','Organisation administrators invite and approve members. Validate active membership on organisation switches and revoke disabled members’ access. Partner warehouse staff only access assigned warehouses and goods, with restricted prices, customer identities and attachments in consolidated views.']
+      ]},
+      {title:['把首页做成待办工作台','Make each home screen a working queue'],paragraphs:[
+        ['买家优先看到待审批报价、待支付订单与预计到货；供应商看到待报价、即将到期和待发货；运营看到资质待审、收货差异、付款待核和物流超时。所有待办都能进入对应原始记录。','Buyers see pending approvals, payments and expected deliveries. Suppliers see open RFQs, deadlines and dispatch tasks. Operations see pending verification, receiving discrepancies, unmatched payments and overdue shipments. Every task links to its source record.'],
+        ['看板指标先选可行动的少数项：询价响应时间、采购交期、异常包裹、在途批次。指标要统一计算口径，并允许追溯明细。','Start with a few actionable metrics: RFQ response time, procurement lead time, package exceptions and shipments in transit. Define consistent calculations and let users inspect the underlying records.']
+      ]},
+      {title:['仓库与手机端分阶段建设','Stage warehouse and mobile delivery'],paragraphs:[
+        ['建议首期采用响应式网页，前提是客户确认满足首发移动任务与分发要求；不能直接替代她提出的移动应用需求。仓库的扫码、拍照、称重量方与异常登记先在实际设备和网络环境中验证。','Propose responsive web for the pilot only if the client confirms it meets initial mobile tasks and distribution needs; it is not automatically a substitute for requested mobile applications. Validate warehouse scanning, photos, weighing, measurement and exceptions on real devices and networks.'],
+        ['如果现场必须离线作业，再交付具备本地队列的 Android 或跨平台应用。恢复网络后按唯一操作 ID 同步，同一包装件被重复分配时返回冲突；不能承诺普通网页天然支持可靠离线扫描。','If offline operations are required, deliver an Android or cross-platform app with a local queue. Sync using unique operation IDs and reject conflicting package allocations. Reliable offline scanning needs explicit design and testing.']
+      ]}
+    ],
+    outcome:['本部分交付：三端页面原型、角色权限矩阵、字段可见性规则、仓库设备验证。','Deliverables: portal prototypes, a permissions matrix, field visibility rules and warehouse device validation.'],
+    ask:['会议确认：买家是否直接看到供应商？是否需要企业内审批？仓库是自营还是第三方？','Discuss: can buyers see suppliers directly? Are internal purchasing approvals required? Are warehouses operated by Daraja or partners?'],
+    talk:['“三端共享同一条业务链，但每个角色只看到自己需要的信息和操作。我们会用具体页面和权限样例与你一起验证。”','“The three environments share one business journey, while each role sees only the information and actions it needs. We would validate this together through screens and permission examples.”'],
+    sources:[['ERPNext user permissions','https://docs.frappe.io/erpnext/user-permissions'],['ERPNext Company','https://docs.frappe.io/erpnext/company-setup'],['Frappe database permissions','https://docs.frappe.io/framework/user/en/api/database']]
+  },
+  {
+    id:'workflow',nav:['采购到交付','End-to-end workflow'],
+    title:['从一份需求，\n到一次可靠交付。','From a sourcing request\nto a delivery you can trust.'],
+    question:['04 · RFQ → 报价 → 采购 → 仓库 → 物流如何衔接？','04 · How do RFQ, quotation, procurement, warehouse and logistics connect?'],
+    lead:['每个阶段都有负责人、业务记录和进入下一步的条件。允许分批采购、分批收货与跨订单集运。','Give every stage an owner, a record and clear conditions for moving forward. Support split purchasing, partial receipts and consolidation across orders.'],
+    takeaway:['订单、包装件、运输批次和付款分别管理，通过明细关联追溯。','Manage orders, packages, shipments and payments separately, with line-level traceability.'],
+    cards:[
+      {title:['成交可追溯','Traceable agreements'],body:['锁定规格、价格、币种、条款和报价版本；变更需要确认。','Freeze specifications, prices, currencies, terms and quote versions; approve subsequent changes.']},
+      {title:['履约可拆分','Flexible fulfilment'],body:['一张订单可对应多家供应商，一批集运可包含多张订单。','One order may involve several suppliers; one shipment may contain several orders.']},
+      {title:['异常有出口','Exceptions have an owner'],body:['短收、破损、延误和退款形成待办，明确处理人与处理记录。','Shortages, damage, delays and refunds become assigned tasks with an auditable resolution.']}
+    ],
+    diagram:'workflow',
+    details:[
+      {title:['01–02 · 询价与报价：先统一比较口径','01–02 · RFQs and quotations: compare like for like'],paragraphs:[
+        ['买家提交品类、规格、数量、目标交期、目的地与附件；运营澄清后邀请供应商。报价保存 MOQ、单价、币种、交期、有效期和交货条件，每次修改生成版本。','Buyers provide category, specifications, quantity, target date, destination and attachments. Operations clarify and invite suppliers. Quotations retain MOQ, unit price, currency, lead time, validity and delivery terms, with versioned revisions.'],
+        ['报价对比同时展示商品价和已知附加费用；未知运费或税费标为待确认。多币种换算显示汇率来源与时间，成交时固化约定金额和汇率，避免把估算当成最终到岸价。','Compare item prices and known additional charges; flag unknown freight or taxes. Currency comparisons show rate source and time. Freeze agreed amounts and rates at acceptance so estimates are not mistaken for final landed costs.'],
+        ['采购需求明细与供应商商品编码分别保存；成交时确认规格版本、替代品、计量单位和换算关系，并按行分配中选数量。同名商品不自动视为同一规格，供应商改目录也不改变历史成交记录。','Keep request lines separate from supplier item codes. At award, confirm specification versions, substitutions, units and conversions, then allocate awarded quantities by line. Matching names do not establish matching specifications, and catalogue changes must not rewrite accepted records.']
+      ]},
+      {title:['03 · 采购与付款：把商业关系建对','03 · Procurement and payments: model the commercial relationship'],paragraphs:[
+        ['在贸易商模式下，买家确认后生成销售单，再按供应商拆成采购单；代采购或撮合模式使用对应委托及订单关系。每条采购明细回指成交明细，保留数量、交期与责任方。','In a resale model, buyer acceptance creates a sales order that splits into supplier purchase orders. Agency or marketplace models use their corresponding mandates and order relationships. Link each purchase line to the accepted line, quantity, due date and responsible party.'],
+        ['订金、尾款、退款与供应商付款单独记账并分配到单据。支付通知以交易标识去重；超时进入查询或人工对账，付款状态不因一次网络错误直接判为失败。M-Pesa 是否首期接入取决于收款主体与客户支付习惯。','Record deposits, balances, refunds and supplier payments separately and allocate them to documents. Deduplicate payment notifications by transaction identity; route timeouts to status checks or reconciliation. Confirm the receiving entity and buyer preferences before making M-Pesa a pilot requirement.'],
+        ['每笔费用记录责任方、币种、估算或实结状态：采购款、服务费、仓储、运输及退款分别处理。按合同约定以重量、体积、金额或固定比例分摊，并保留调整记录。ERPNext 的入库成本分摊与向客户收取集运费用需要区分；收款成功也不代表供应商已结清。','For each charge, record the responsible party, currency and estimated/actual status. Separate goods, service, storage, freight and refund amounts. Allocate by contracted weight, volume, value or fixed shares with adjustment history. Distinguish ERPNext inventory landed-cost allocation from customer consolidation charges; payment received does not mean a supplier has been settled.'],
+        ['记录付款人、收款人、结算对象和未结余额，区分平台收入、应收应付与代收代付资金。退款关联原收款和费用分配，确认可退金额、保留费用及承担方；不预设平台提供资金托管或自动分账。','Record payer, recipient, settlement party and outstanding balance. Separate platform revenue, receivables/payables and funds handled on behalf of clients. Link refunds to original receipts and allocations, defining refundable amounts, retained charges and responsibility. Do not assume escrow or automated split settlement.']
+      ]},
+      {title:['04–05 · 收货与集运：以实际包装件为准','04–05 · Receiving and consolidation: track actual packages'],paragraphs:[
+        ['按采购或委托收货明细分批接收。每个包装件分配条码，记录货主、保管方、实收数量、重量、尺寸、库位、照片和质检结论。货权与估值记账单独确认；短收和破损建立差异记录，未放行货物不能进入可发运池。','Receive in batches against purchase or authorised custody lines. Give packages barcodes and record owners, custodians, actual quantities, weight, dimensions, locations, photos and inspection. Confirm ownership and valuation separately; hold shortages and damage outside the dispatch pool until released.'],
+        ['用包装件内容明细连接订单与集运批次，记录商品、来源行、货主、数量和单位。首期同一包装件不混不同货主；拆包或重装生成新条码并保留父子关系。各阶段校验数量平衡，禁止重复占用或超量发运。','Link orders and shipments through package-content lines with item, source line, owner, quantity and unit. Keep different owners in separate packages for the pilot. Splitting or repacking creates new barcodes with lineage. Reconcile quantities across stages and prevent duplicate allocation or over-dispatch.'],
+        ['在满足付款或信用条件、质检及单证条件后放行；具体门槛由客户确认。重量/体积只是容量校验，首期由操作员确认真实装载可行性。混柜可跨货主，但买家只下载自己的箱单，完整总箱单仅限授权运营与物流人员。','Release goods against agreed payment or credit conditions, inspection and document requirements. Weight/volume checks support an operator’s loading decision. A consolidated container may include several owners, but buyers receive only their own packing lists; the full manifest is limited to authorised operations and logistics staff.']
+      ]},
+      {title:['06 · 物流、单证与售后形成闭环','06 · Close the loop with logistics, documents and claims'],paragraphs:[
+        ['定义已发运、运输中、到港、清关、派送和签收等节点，记录来源与发生时间。没有承运商接口时允许授权人员录入并上传凭证，后续再逐家接入 API。','Define dispatch, transit, arrival, customs, last-mile and delivery milestones with source and event time. Where carrier APIs are unavailable, authorised staff can record updates with evidence; add carrier integrations incrementally.'],
+        ['PI、商业发票和装箱单在签发时保存版本与数据快照，修订生成新版本。签收后处理索赔、补货或退款，保留原订单和库存变动的关联。','Save versioned data snapshots when issuing pro forma invoices, commercial invoices and packing lists. Revisions create new versions. Link claims, replacements and refunds back to the original orders and stock movements.']
+      ]}
+    ],
+    outcome:['验收样例：两个供应商分批送货，其中一件破损；合格货物先发运，剩余货物后补，费用和单证均能追溯。','Acceptance scenario: two suppliers deliver in parts, one package is damaged, released goods ship first and the balance follows later, with traceable charges and documents.'],
+    ask:['会议确认：何时付订金与尾款？谁验货？谁承担破损？哪些物流节点由系统接入、哪些由人员维护？','Discuss: when are deposits and balances due? Who inspects goods and owns damage claims? Which logistics events come from integrations and which from staff?'],
+    talk:['“我们会把交易、货物和运输分别管理。这样即使两家工厂不同时间交货，或者客户要求先发一部分，系统也能准确追踪。”','“We would manage the transaction, the physical goods and the shipment separately. That keeps the records accurate when factories deliver at different times or a customer requests a partial shipment.”'],
+    sources:[['ERPNext procurement','https://docs.frappe.io/erpnext/request-for-quotation'],['ERPNext customer-provided items','https://docs.frappe.io/erpnext/customer-provided-items'],['ERPNext landed costs','https://docs.frappe.io/erpnext/landed-cost-voucher'],['Safaricom payment APIs','https://developer.safaricom.co.ke/']]
+  },
+  {
+    id:'ai',nav:['AI 演进','AI roadmap'],
+    title:['让 AI 有依据。\n让决策有把握。','AI with evidence.\nDecisions with confidence.'],
+    question:['05 · 未来如何构建 AI 能力？','05 · How would we introduce the AI layer?'],
+    lead:['先把采购数据整理好，再从辅助理解与检索开始。业务人员保留对报价、供应商和采购承诺的最终决定权。','Build reliable procurement data first, then start with assistance and retrieval. People retain final control over quotes, supplier selection and purchasing commitments.'],
+    takeaway:['先做资料提取与供应商候选推荐，再用真实反馈改进采购判断。','Start with document extraction and supplier shortlists, then improve recommendations using real feedback.'],
+    cards:[
+      {title:['读懂需求','Understand requests'],body:['从文字或文档提取规格、数量和交期，生成可编辑的询价草稿。','Extract specifications, quantities and deadlines from text or documents into an editable RFQ draft.']},
+      {title:['找到候选','Find candidates'],body:['先筛资质与供货条件，再结合商品语义检索，并解释推荐理由。','Filter by qualification and supply constraints, then use semantic product search with explained recommendations.']},
+      {title:['辅助判断','Support decisions'],body:['汇总报价差异和履约记录，标明数据来源、时间与缺失项。','Summarise quote differences and delivery history, showing sources, dates and missing information.']}
+    ],
+    diagram:'ai',
+    details:[
+      {title:['第一阶段：积累可用的数据','Stage one: establish usable data'],paragraphs:[
+        ['商品属性、计量单位、供应商资质、报价版本、交期与履约结果采用统一结构。保留实际采购人员的入围、淘汰与原因，作为后续评估依据。','Standardise product attributes, units, supplier qualifications, quote versions, lead times and fulfilment outcomes. Record sourcing staff’s shortlist decisions and rejection reasons for future evaluation.'],
+        ['首期可提供文档提取试点，但所有金额、单位和数量必须人工确认再写入正式业务记录；AI 服务不可用时仍能手工完成流程。','An initial document-extraction pilot is possible, but people must confirm amounts, units and quantities before committing business records. The manual workflow remains available when AI is unavailable.']
+      ]},
+      {title:['第二阶段：检索增强的供应商匹配','Stage two: retrieval-based supplier matching'],paragraphs:[
+        ['先按可见权限、品类、资质、MOQ、交期和服务市场过滤，再做关键词与向量检索，最后根据可核验信息排序。推荐卡片展示匹配规格、履约证据和缺失条件。','Filter by access rights, category, credentials, MOQ, lead time and served markets before keyword and vector retrieval. Rank using verifiable evidence. Recommendation cards show matched specifications, delivery evidence and unmet conditions.'],
+        ['模型通过可替换接口调用。向量检索可选择 PostgreSQL + pgvector；如果主业务底座使用其他数据库，仅在需要 AI 时增加独立检索索引，业务数据库仍是权威来源。','Access models through a replaceable interface. PostgreSQL with pgvector is a retrieval option. If the business foundation uses another database, add a separate search index only when needed; the operational database remains authoritative.']
+      ]},
+      {title:['第三阶段：以评估结果决定扩展','Stage three: expand based on measured results'],paragraphs:[
+        ['以历史真实询价建立评估样本，比较候选命中、字段提取正确性、采购员采纳率、响应时间与单次成本。先约定目标再试点，不能把未经验证的准确率写成承诺。','Create an evaluation set from real historical RFQs. Measure shortlist relevance, extraction accuracy, buyer adoption, latency and per-request cost. Agree targets before a pilot rather than promising untested accuracy.'],
+        ['外部文档视为待分析的数据，不能指挥系统执行操作。检索和生成都遵守企业权限；敏感报价不跨企业共享。外部模型与私有模型的选择，由数据边界、质量、预算和运维能力决定。','Treat external documents as data, not instructions to execute actions. Apply organisation permissions to retrieval and generation; do not expose private quotes across companies. Choose external or private models based on data boundaries, quality, budget and operational capability.']
+      ]}
+    ],
+    outcome:['本部分交付：数据准备清单、AI 试点场景、权限边界、评估样本与上线门槛。','Deliverables: data readiness requirements, an AI pilot, access boundaries, evaluation cases and release criteria.'],
+    ask:['会议确认：已有多少可用供应商资料和历史报价？最希望 AI 节省哪一步工作？哪些数据允许发送给外部模型？','Discuss: what supplier data and historical quotes exist? Which task should AI save time on first? What data may be sent to external models?'],
+    talk:['“AI 会先帮助团队更快地理解需求、找到候选和比较信息。每个建议都应该有依据，重要采购决定仍由人确认。”','“AI would first help your team understand requests, find candidates and compare information faster. Recommendations should be evidence-based, with important purchasing decisions confirmed by people.”'],
+    sources:[['pgvector: Postgres vector search','https://github.com/pgvector/pgvector']]
+  },
+  {
+    id:'scale',nav:['从肯尼亚到非洲','Scaling across Africa'],
+    title:['先服务好肯尼亚。\n再走向下一个市场。','Start well in Kenya.\nGrow market by market.'],
+    question:['06 · 如何扩展到其他非洲市场？','06 · How would we scale into other African markets?'],
+    lead:['共享核心交易流程，把国家差异放在配置与集成中。每个新市场都通过真实订单验证后再开放。','Share the core trading workflow and isolate country differences in configuration and integrations. Validate each new market with real operational scenarios before launch.'],
+    takeaway:['可扩展既包括更多交易，也包括不同国家的运营规则。','Scalability means both more transactions and different operating rules across countries.'],
+    cards:[
+      {title:['市场可配置','Configurable markets'],body:['语言、币种、地址、费用、单证和服务区域按市场管理。','Manage languages, currencies, addresses, charges, documents and coverage by market.']},
+      {title:['服务可替换','Replaceable integrations'],body:['支付与物流使用统一接口，每个国家接入适合的服务商。','Use common payment and logistics interfaces, with suitable providers in each country.']},
+      {title:['容量可增长','Capacity that can grow'],body:['从性能实测开始，按需增加应用实例、后台任务和查询能力。','Measure real performance, then add application capacity, workers and query resources where needed.']}
+    ],
+    diagram:'scale',
+    details:[
+      {title:['国家、企业与币种分开建模','Separate markets, legal entities and currencies'],paragraphs:[
+        ['同一个买家可能在多个市场采购，一个国家也可能有多个运营主体。因此市场、企业、仓库、订单币种和结算币种分别保存，不能用一个 country 字段代替全部业务关系。','A buyer may trade in several markets, and a country may contain several operating entities. Store market, organisation, warehouse, order currency and settlement currency separately rather than using one country field for every relationship.'],
+        ['国家配置包含展示语言、地址格式、可用支付方式、配送区域、费用和单证模板。税务、开票与数据处理要求由当地业务及专业顾问确认，再转成可测试的规则。','Market configuration includes language, address formats, payment methods, service regions, charges and document templates. Local business owners and qualified advisers confirm tax, invoicing and data-handling requirements before they become tested system rules.']
+      ]},
+      {title:['用适配器连接支付与物流','Connect payments and logistics through adapters'],paragraphs:[
+        ['每个支付服务商映射到发起、查询、通知、退款和对账能力；不具备某项能力时显式标记，并给出人工处理路径。系统不能假设所有国家的支付行为一致。','Map each provider to initiation, status checks, notifications, refunds and reconciliation. Explicitly flag unsupported capabilities and provide a manual path. Do not assume identical payment behaviour across countries.'],
+        ['承运商状态转换成平台统一节点，同时保留原始事件；重复和乱序通知不能覆盖已确认状态，合法更正或撤回按独立事件审核留痕。切换国家时通过测试账号、真实单证和小范围订单验证连接。','Normalise carrier statuses while retaining original events. Duplicated or out-of-order updates must not overwrite confirmed state; handle legitimate corrections or reversals as separately reviewed, audited events. Validate new markets through test accounts, documents and limited live orders.']
+      ]},
+      {title:['按实际瓶颈扩容，并能恢复故障','Scale measured bottlenecks and recover from failures'],paragraphs:[
+        ['上线前约定并测试峰值并发、商品数量、订单量和关键响应时间。先优化查询、图片与后台任务，再增加无状态服务实例；只有独立模块出现容量或组织需求时才拆分服务。','Agree and test peak concurrency, catalogue size, order volume and response-time targets before release. Optimise queries, media and background work, then add stateless instances. Split services when a module has a demonstrated capacity or ownership need.'],
+        ['部署区域通过肯尼亚实际网络测试与数据要求决定。约定可接受的数据丢失窗口和恢复时长，验证备份可恢复；未来确有区域隔离要求时，再扩展到多区域部署。','Select a hosting region using Kenyan network tests and data requirements. Agree acceptable data loss and recovery time, and test restoration. Introduce multi-region deployment when regional separation is actually needed.']
+      ]}
+    ],
+    outcome:['本部分交付：市场配置模型、支付/物流接口规范、容量测试目标、第二市场上线清单。','Deliverables: market configuration models, payment/carrier contracts, load-test targets and a second-market launch checklist.'],
+    ask:['会议确认：肯尼亚之后最可能进入哪个国家？是否同一法人运营？每个市场有哪些支付、物流和语言需求？','Discuss: which country is most likely to follow Kenya? Will the same legal entity operate there? What payment, carrier and language needs differ?'],
+    talk:['“我们会预留国家差异的扩展位置，尽量复用核心流程。进入第二个市场前，会重新确认当地交易、税务和物流规则，再判断需要配置、集成还是新增模块。”','“We would make room for country differences and reuse the core wherever possible. Before entering the next market, we would reassess local trading, tax and logistics rules to determine what needs configuration, integration or new modules.”'],
+    sources:[['Safaricom developer portal','https://developer.safaricom.co.ke/'],['Frappe sites','https://docs.frappe.io/framework/user/en/basics/sites']]
+  },
+  {
+    id:'delivery',nav:['分期与技术栈','Delivery & stack'],
+    title:['每一步，\n都有可验证的成果。','A clear outcome.\nAt every step.'],
+    question:['07 · 推荐怎样的开发阶段与技术栈？','07 · What development phases and technology stack do we recommend?'],
+    lead:['从业务确认和底座验证开始，以一条可运营的交易流程作为首期目标。时间与投入在范围明确后共同确定。','Begin with business discovery and foundation validation. Make one operational trading journey the pilot objective, then agree timing and investment against a defined scope.'],
+    takeaway:['先验证业务与底座，再开发闭环；移动 App、AI 与多国运营按价值逐步加入。','Validate the business and foundation, then deliver the full journey; add native apps, AI and new markets as value is proven.'],
+    cards:[
+      {title:['阶段有成果','Outcome-led phases'],body:['每阶段用原型、真实业务样例和验收记录评审，而不只看功能数量。','Review prototypes, representative business scenarios and acceptance results at every stage.']},
+      {title:['范围有边界','A bounded pilot'],body:['一个目标市场、一种主交易模式、一条物流链，优先交付可运营版本。','One target market, one primary trading model and one logistics lane for the first operational release.']},
+      {title:['长期可接手','Maintainable delivery'],body:['开发期间持续提供代码和演示，交付部署、恢复、升级及培训材料。','Provide code access and demos throughout development, plus deployment, recovery, upgrade and training materials.']}
+    ],
+    diagram:'delivery',
+    details:[
+      {title:['推荐技术栈：跟随底座，保持一致','Recommended stack: stay coherent with the foundation'],table:{headers:[['层次','Layer'],['采购主导路线 · 初步首选','Procurement-led · initial preference'],['商城主导路线 · 备选','Commerce-led · alternative']],rows:[
+        [['门户与后台','Portals & admin'],['React / Next.js 定制外部门户；运营端优先扩展 Frappe Desk','React / Next.js external portals; extend Frappe Desk for operations first'],['React / Next.js 定制外部门户；运营端评估扩展 Medusa Admin','React / Next.js external portals; assess extending Medusa Admin']],
+        [['业务底座','Business core'],['ERPNext + Frappe 独立应用，Python','ERPNext + a separate Frappe app, Python'],['Medusa + 定制模块，TypeScript','Medusa + custom modules, TypeScript']],
+        [['数据库','Database'],['采用所选 ERPNext 版本支持的 MariaDB 配置','MariaDB configuration supported by the chosen ERPNext release'],['采用所选 Medusa 版本支持的 PostgreSQL 配置','PostgreSQL configuration supported by the chosen Medusa release']],
+        [['任务与文件','Jobs & files'],['Frappe 任务机制；受控文件存储','Frappe background jobs; controlled file storage'],['Medusa 工作流与后台任务；受控文件存储','Medusa workflows and background jobs; controlled file storage']],
+        [['移动端','Mobile'],['先响应式 Web；离线需求明确后评估 Flutter','Responsive web first; assess Flutter for confirmed offline needs'],['先响应式 Web；离线需求明确后评估 Flutter','Responsive web first; assess Flutter for confirmed offline needs']],
+        [['基础设施','Infrastructure'],['容器化部署、测试环境、监控和备份恢复','Container deployment, staging, monitoring and recovery'],['容器化部署、测试环境、监控和备份恢复','Container deployment, staging, monitoring and recovery']]
+      ]},paragraphs:[['这是待验证的技术建议。原型阶段锁定受支持版本与扩展方式，并测试升级；不为统一语言而重复建设已有采购能力。Next.js 可自行托管，不必绑定特定托管平台。','This is a proposal to validate. Pin supported versions and extension patterns during prototyping and test upgrades. Avoid rebuilding procurement solely to standardise languages. Next.js can be self-hosted without a mandatory hosting vendor.']]},
+      {title:['建议的首期范围与后续阶段','Proposed pilot scope and subsequent phases'],paragraphs:[
+        ['首期：企业注册与人工审核、商品目录、RFQ 与报价对比、成交及采购、基础付款记录与已确认的支付连接、收货和集运、单证、物流节点、三端工作台和基本报表。允许有记录的人工操作承接尚未接入的服务。','Pilot: organisation registration and manual verification, catalogues, RFQs and quote comparison, agreed orders and procurement, payment records plus confirmed payment integration, receiving and consolidation, documents, logistics milestones, portals and basic reporting. Auditable manual steps can support services not yet integrated.'],
+        ['后续：正式原生 App、复杂企业审批、更多承运商与国家、AI 匹配与采购情报、自动装载优化。若某项是首批客户的必需条件，则重新估算范围并提前实施。','Later: full native apps, complex enterprise approvals, additional carriers and countries, AI matching and procurement intelligence, and automated load optimisation. If any is essential to the first users, bring it forward and re-estimate scope.']
+      ]},
+      {title:['时间、人力与验收前提','Timing, staffing and acceptance assumptions'],paragraphs:[
+        ['下面的范围与时间仅用于讨论，客户尚未确认。业务梳理阶段必须决定首期是否需要应用商店 App 或仓库离线能力，并锁定实际支付/物流接口清单；这些决定、货权模型和底座许可通过后，再批准实施排期。','The scope and timing below are for discussion and are not client-approved. Discovery must establish whether store-distributed apps or offline warehouse operations are launch-critical and name the actual payment/carrier integrations. Approve the implementation schedule only after these decisions, ownership modelling and foundation licensing are resolved.'],
+        ['讨论级估算：业务梳理 2 周、底座与原型验证 2 周、闭环开发 8–10 周、试运营与加固 2–4 周，合计约 14–18 周。它不是报价或交付承诺；复杂离线 App、多国税务、历史迁移和多承运商深度集成不在该估算内。','Illustrative planning range: 2 weeks of discovery, 2 of foundation/prototype validation, 8–10 of implementation and 2–4 of pilot hardening, totalling roughly 14–18 weeks. This is not a quote or commitment; complex offline apps, multi-country tax, legacy migration and deep multi-carrier integrations are excluded.'],
+        ['假设核心团队约 5–6 人，覆盖产品/架构、设计、前后端及测试，客户安排业务负责人及时决策，并提供样例单据、供应商资料与第三方账号。完成验证后再细化排期和维护成本。','Assume a core team of roughly 5–6 covering product/architecture, design, frontend/backend and QA, with a client business owner available for decisions and sample documents, supplier data and provider accounts supplied. Refine schedule and maintenance cost after validation.'],
+        ['上线门槛：真实流程通过；供应商数据隔离通过；重复通知与断网重试不造成重复记录；金额与单证可核对；备份可恢复；关键故障有负责人。','Release gates: representative workflows pass, supplier isolation passes, repeated notifications and network retries do not duplicate records, amounts reconcile with documents, backups restore and operational incidents have assigned owners.']
+      ]},
+      {title:['此次会面需要带走的决定与材料','Decisions and materials to leave the meeting with'],paragraphs:[
+        ['确认主交易模式、首期客户和品类、第一条物流链、付款责任、最重要的三个工作流，以及客户对成功的判断。获取 Technology Brief 和一组脱敏真实单据，再开展底座验证。','Confirm the primary trading model, first customers and categories, initial logistics lane, payment responsibilities, three priority workflows and the client’s definition of success. Obtain the Technology Brief and a set of anonymised documents before the proof of concept.'],
+        ['准备真实的中国批发商 SaaS 案例：展示相关流程、本人或团队承担的部分和可核实规模。用脱敏页面说明可迁移的经验；未经确认的数据和未实现功能不作为演示事实。','Prepare a genuine Chinese wholesale SaaS case: show relevant workflows, your team’s contribution and verifiable scale. Use anonymised screens to explain transferable experience; do not present unverified numbers or unbuilt functionality as facts.']
+      ]}
+    ],
+    outcome:['本部分交付：分期路线图、MVP 范围、技术选型记录、验收标准、交接与维护方案。','Deliverables: a phased roadmap, pilot scope, stack decision record, acceptance criteria and handover/maintenance plan.'],
+    ask:['会议确认：首批真实用户何时参与？谁有权决定范围？哪些能力必须首发？客户希望自己维护还是由我们长期维护？','Discuss: when can initial users participate? Who owns scope decisions? Which capabilities are launch-critical? Will the client maintain the system or retain us?'],
+    talk:['“我们建议先用短阶段验证业务和技术，再给出可靠的实施计划。每个阶段都会有你能看到、试用和验收的成果。”','“We recommend a short phase to validate the business and technology before committing to the implementation plan. Every phase would produce something you can see, try and accept.”'],
+    sources:[['Next.js self-hosting','https://nextjs.org/docs/app/guides/self-hosting'],['Frappe background jobs','https://docs.frappe.io/framework/user/en/api/background_jobs']]
+  }
+];
+
+</script>
+<script>
+/* Generated from foundations-research.json. */
+window.FOUNDATIONS = {
+  "checkedAt": "2026-10-09",
+  "scope": {
+    "zh": "基于官方文档和所列版本许可证，比较 Daraja 在肯尼亚起步的 B2B 寻源、采购与集货仓底座。适配度和缺口属于分析判断，不是厂商承诺；开发分支用于核验许可，不建议直接用于生产。",
+    "en": "Official documentation and the cited repository licenses reviewed for Daraja’s Kenya-first B2B sourcing, procurement and consolidation operation. Fit and gaps are analyst judgments, not vendor guarantees. Development branches were inspected for license evidence, not recommended for production."
+  },
+  "recommendation": {
+    "zh": "采购与集货仓为核心：优先验证 ERPNext/Frappe，以自研门户呈现 Daraja 品牌，先复用采购、基础报价对比、质检和到岸成本，再定制寻源项目、货主/包裹、包裹照片、合单集运和客户费用结算。Odoo Community 是有成熟 Odoo 团队时的备选。若第一阶段改为目录、购物车和交易为主，优先比较 Medusa 与 Vendure；Medusa 更灵活但当前企业 RBAC/SSO 需单独授权，Vendure 有多卖家基础和插件许可例外。Saleor 适合多渠道电商；Bagisto + B2B Suite 是 PHP 团队的备选。先选一个运营底座，不建议 MVP 同时整合 ERP 和两个电商引擎。",
+    "en": "Procurement and consolidation first: validate ERPNext/Frappe, with a branded Daraja portal reusing procurement, basic quote comparison, inspections and landed costs before customising sourcing cases, cargo/package ownership, photos, consolidation and customer charges. Odoo Community is an alternative with an experienced Odoo team. If phase one becomes catalog/cart/transaction first, compare Medusa and Vendure: Medusa is flexible but current enterprise RBAC/SSO needs separate authorization; Vendure supplies seller/channel primitives and a plugin license exception. Saleor fits multichannel commerce; Bagisto plus B2B Suite is a PHP-team alternative. Choose one operating foundation first; avoid combining an ERP and two commerce engines in the MVP."
+  },
+  "licenseNotes": [
+    {
+      "text": {
+        "zh": "开源允许商业使用。GPLv3 不禁止收费或一般 SaaS；向客户交付副本、分发前端代码或分发修改后的底座时，需逐项满足适用源码与许可证义务。不要将 GPL 与 AGPL 的网络源码条款混为一谈。",
+        "en": "Open source permits commercial use. GPLv3 does not prohibit charging or ordinary SaaS; conveying copies, distributing browser code, or distributing a modified foundation requires satisfying applicable source and license obligations. Do not confuse GPL with AGPL network-source terms."
+      },
+      "sources": [
+        "https://www.gnu.org/licenses/gpl-faq.en.html",
+        "https://github.com/frappe/erpnext/blob/750bf9d9b378fb92eab68733ae727214f3961c0a/license.txt",
+        "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/license/license-faq.md"
+      ]
+    },
+    {
+      "text": {
+        "zh": "“源码归属 Daraja”应指合同约定的自研交付物及权利；ERPNext、Odoo、Medusa 等第三方底座不会因此变为 Daraja 独占资产。需保留第三方声明、许可证、依赖清单，并明确代码仓库、数据库、部署账户和文档交付。",
+        "en": "“Daraja owns the source” should refer to contractually assigned custom deliverables and rights. Third-party foundations do not become Daraja’s exclusive property. Preserve third-party notices, licenses and a dependency inventory; specify repository, database, deployment-account and documentation handover."
+      },
+      "sources": [
+        "https://github.com/frappe/frappe/blob/4c79c8f6c95d58f8e8ff9f076f2d2926dddcf712/LICENSE",
+        "https://github.com/saleor/saleor/blob/bb75f87973abe24056a5d0dff1708ca097e95599/LICENSE"
+      ]
+    },
+    {
+      "text": {
+        "zh": "Frappe Framework 的 MIT 与 ERPNext 的 GPLv3 是两个许可范围。闭源定制能否与 ERPNext 作为衍生作品一并交付，不能仅凭 Frappe 使用 MIT 就下结论；应在选定架构和交付方式后核验。",
+        "en": "Frappe Framework’s MIT and ERPNext’s GPLv3 cover different components. Frappe’s MIT license alone does not settle whether proprietary customizations may be conveyed together with ERPNext as a derivative work; assess the chosen architecture and delivery model."
+      },
+      "sources": [
+        "https://docs.frappe.io/legal/others/license-and-trademark"
+      ]
+    },
+    {
+      "text": {
+        "zh": "所有候选的标准渠道、角色或企业账户均不能自动证明 Daraja 多方数据隔离已完成；应验收买家、供应商、仓库、运营和管理员的对象级权限，包含附件、导出、后台与 API。",
+        "en": "Standard channels, roles or company accounts do not by themselves prove Daraja’s multi-party isolation. Accept object-level access across buyers, suppliers, warehouse staff, operators and administrators, including attachments, exports, admin screens and APIs."
+      },
+      "sources": [
+        "https://docs.medusajs.com/resources/recipes/marketplace",
+        "https://docs.saleor.io/developer/channels/overview"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "erpnext",
+      "name": "ERPNext / Frappe",
+      "stack": "Python · JavaScript · Frappe · MariaDB · Redis",
+      "reviewed": {
+        "erpnextBranch": "develop",
+        "erpnextCommit": "750bf9d9b378fb92eab68733ae727214f3961c0a",
+        "frappeBranch": "develop",
+        "frappeCommit": "4c79c8f6c95d58f8e8ff9f076f2d2926dddcf712"
+      },
+      "license": {
+        "label": "ERPNext GPLv3 · Frappe MIT",
+        "zh": "ERPNext 为 GPLv3；Frappe 框架为 MIT。允许商业运营和私有部署；交付修改后底座时核验 GPL 义务，自研权利与第三方版权分别处理。 独立 Frappe 应用不自动免除 GPL 义务，闭源交付边界取决于组合与交付方式。",
+        "en": "ERPNext is GPLv3; Frappe Framework is MIT. Commercial operation and private hosting are permitted. Review GPL obligations when conveying a modified foundation; separate custom rights from third-party copyright. A separate Frappe app does not automatically remove GPL obligations; proprietary-delivery boundaries depend on composition and delivery."
+      },
+      "builtIn": {
+        "zh": "RFQ、供应商报价及基础报价对比、采购订单与收货；供应商门户可回复询价；库存、质量检查、到岸成本凭证及财务单据可作为运营基础。",
+        "en": "RFQs, supplier quotations with basic comparison, purchase orders and receipts; suppliers can reply through a portal. Stock, quality inspections, landed-cost vouchers and financial records provide an operating foundation."
+      },
+      "gaps": {
+        "zh": "需扩展买家寻源体验、多方权限、委托关系、货权/包装件明细、包裹照片及跨货主集运结算。已有质检和入库成本功能应先验证复用，不能等同于完整的客户集运计费；自有库存和代保管分别验证。",
+        "en": "Extend buyer sourcing, multi-party access, agency relationships, cargo ownership/package contents, photos and multi-owner consolidation settlement. Validate reuse of inspections and inventory landed costs; these do not provide complete customer consolidation billing. Test owned and custody stock separately."
+      },
+      "fit": {
+        "zh": "优先候选：采购与仓库主导的 MVP。此排序为分析判断，需通过真实询价—采购—到仓—集运样例验证。",
+        "en": "Preferred candidate for a procurement/warehouse-led MVP. This ranking is an analyst judgment to validate with a real RFQ–purchase–receipt–consolidation scenario."
+      },
+      "portals": {
+        "zh": "供应商门户与文档权限已有基础，但不等同于现成的多租户采购市场；自定义接口仍需逐对象隔离。",
+        "en": "Supplier portal and document permissions exist; they are not a turnkey multi-tenant procurement marketplace. Custom endpoints still need object-level isolation."
+      },
+      "hosting": {
+        "zh": "可用 Bench/Docker 在自有服务器部署，Frappe Cloud 为可选托管。",
+        "en": "Self-host with Bench/Docker on owned infrastructure; Frappe Cloud is optional managed hosting."
+      },
+      "editionBoundary": {
+        "zh": "本次核验的采购与库存能力属于开源 ERPNext；不要把 Frappe 其他 AGPL 应用或付费托管服务混入同一许可结论。",
+        "en": "Reviewed procurement and inventory capabilities belong to open-source ERPNext. Other Frappe AGPL applications and paid hosting services have separate terms."
+      },
+      "sources": [
+        {
+          "id": "erp-license",
+          "title": "ERPNext license",
+          "url": "https://github.com/frappe/erpnext/blob/750bf9d9b378fb92eab68733ae727214f3961c0a/license.txt",
+          "claim": {
+            "zh": "ERPNext GPLv3 许可。",
+            "en": "ERPNext GPLv3 license."
+          }
+        },
+        {
+          "id": "frappe-license",
+          "title": "Frappe license",
+          "url": "https://github.com/frappe/frappe/blob/4c79c8f6c95d58f8e8ff9f076f2d2926dddcf712/LICENSE",
+          "claim": {
+            "zh": "Frappe 框架 MIT 许可。",
+            "en": "Frappe Framework MIT license."
+          }
+        },
+        {
+          "id": "erp-supplier",
+          "title": "Supplier quotation portal",
+          "url": "https://docs.frappe.io/erpnext/how-to-create-a-supplier-quotation-through-the-supplier-portal",
+          "claim": {
+            "zh": "供应商可登录并回复发送给自己的 RFQ。",
+            "en": "Suppliers log in and respond to RFQs addressed to them."
+          }
+        },
+        {
+          "id": "erp-buying",
+          "title": "Supplier master and purchasing workflow",
+          "url": "https://docs.frappe.io/erpnext/supplier",
+          "claim": {
+            "zh": "供应商关联询价、采购订单、收货、发票及门户用户。",
+            "en": "Supplier records link to RFQs, purchase orders, receipts, invoices and portal users."
+          }
+        },
+        {
+          "id": "erp-stock",
+          "title": "Stock Entry",
+          "url": "https://docs.frappe.io/erpnext/stock-entry",
+          "claim": {
+            "zh": "入库与仓间调拨基础。",
+            "en": "Material receipts and warehouse transfers."
+          }
+        },
+        {
+          "id": "erp-permissions",
+          "title": "Role Based Permissions",
+          "url": "https://docs.frappe.io/erpnext/permissions",
+          "claim": {
+            "zh": "角色权限与特定文档访问限制。",
+            "en": "Roles and document-specific access restrictions."
+          }
+        },
+        {
+          "id": "frappe-host",
+          "title": "Frappe deployment",
+          "url": "https://frappe.io/framework/deployment",
+          "claim": {
+            "zh": "自主部署依赖和 Bench 多站点管理。",
+            "en": "Self-hosting dependencies and Bench multisite management."
+          }
+        },
+        {
+          "id": "erpnext-quotation-comparison",
+          "title": "Supplier quotation comparison",
+          "url": "https://docs.frappe.io/erpnext/supplier-quotation",
+          "claim": {
+            "zh": "基础供应商报价对比",
+            "en": "Basic supplier quotation comparison"
+          }
+        },
+        {
+          "id": "erpnext-quality",
+          "title": "Quality Inspection",
+          "url": "https://docs.frappe.io/erpnext/quality-inspection",
+          "claim": {
+            "zh": "收货相关质量检查",
+            "en": "Receiving-related quality inspections"
+          }
+        },
+        {
+          "id": "erpnext-landed-cost",
+          "title": "Landed Cost Voucher",
+          "url": "https://docs.frappe.io/erpnext/landed-cost-voucher",
+          "claim": {
+            "zh": "库存到岸成本分摊，区别于客户集运计费",
+            "en": "Inventory landed-cost allocation, distinct from customer consolidation billing"
+          }
+        },
+        {
+          "id": "frappe-license-guidance",
+          "title": "Frappe licensing guidance",
+          "url": "https://docs.frappe.io/legal/others/license-and-trademark",
+          "claim": {
+            "zh": "框架与应用的许可范围",
+            "en": "Licensing scope of framework and applications"
+          }
+        }
+      ],
+      "reviewedLabel": {
+        "zh": "许可核验：ERPNext develop @750bf9d；Frappe develop @4c79c8f。生产选用的受支持稳定版本尚待锁定。",
+        "en": "Licence evidence: ERPNext develop @750bf9d; Frappe develop @4c79c8f. A supported stable production release is not yet selected."
+      }
+    },
+    {
+      "id": "odoo",
+      "name": "Odoo Community",
+      "stack": "Python · JavaScript / Owl · PostgreSQL",
+      "reviewed": {
+        "branch": "19.0",
+        "commit": "225bd98e45293a00c0b508c3db40f73e5ff845b5"
+      },
+      "license": {
+        "label": "LGPLv3 Community · proprietary Enterprise",
+        "zh": "Odoo 19 Community 为 LGPLv3；Enterprise 需有效订阅。每个第三方插件许可证独立核验。",
+        "en": "Odoo 19 Community is LGPLv3; Enterprise requires a valid subscription. Check each third-party add-on’s own license."
+      },
+      "builtIn": {
+        "zh": "开源 Purchase、Inventory 与 eCommerce 模块；RFQ 转采购单、供应商价格、收货与库存运营具有成熟基础。",
+        "en": "Open-source Purchase, Inventory and eCommerce modules; mature RFQ-to-PO, vendor pricing, receiving and inventory operations."
+      },
+      "gaps": {
+        "zh": "需要可提交供应商报价的外部界面、平台撮合权限、寻源案件及集货包裹模型；不要将普通门户视为供应商协同报价系统。",
+        "en": "Needs an external supplier quotation-submission interface, platform-party isolation, sourcing cases and consolidation/package models. A standard portal is not a supplier negotiation workspace."
+      },
+      "fit": {
+        "zh": "采购型备选：适合有 Odoo 实施团队且愿意控制模块范围的项目。",
+        "en": "Procurement alternative when an experienced Odoo implementation team can control module scope."
+      },
+      "portals": {
+        "zh": "默认客户/供应商门户以查看单据为主；多公司功能不能替代独立参与方权限设计。",
+        "en": "Default customer/vendor portal primarily exposes documents for viewing; multi-company features do not replace independent party authorization design."
+      },
+      "hosting": {
+        "zh": "Community 可本地部署；选择 Enterprise、自有服务器或 Odoo.sh 时须另核订阅与托管条款。",
+        "en": "Community can be self-hosted. Enterprise, owned servers and Odoo.sh require their respective subscription/hosting terms to be checked."
+      },
+      "editionBoundary": {
+        "zh": "官方文档跨版本/版本类型，不能把全部演示能力都算作 Community；Barcode、Studio 等增强应按当前版本清单与模块许可证确认。",
+        "en": "Official docs span editions; do not count every demonstrated feature as Community. Verify enhancements such as Barcode and Studio against the current edition matrix and module licenses."
+      },
+      "sources": [
+        {
+          "id": "odoo-license",
+          "title": "Odoo 19 licenses",
+          "url": "https://www.odoo.com/documentation/19.0/th/legal/licenses.html",
+          "claim": {
+            "zh": "Community LGPLv3；Enterprise 需要订阅。",
+            "en": "Community LGPLv3; Enterprise subscription terms."
+          }
+        },
+        {
+          "id": "odoo-purchase-module",
+          "title": "Community Purchase manifest",
+          "url": "https://github.com/odoo/odoo/blob/225bd98e45293a00c0b508c3db40f73e5ff845b5/addons/purchase/__manifest__.py",
+          "claim": {
+            "zh": "Purchase 在公开社区仓库中，声明 LGPL-3。",
+            "en": "Purchase is in the public Community repository and declares LGPL-3."
+          }
+        },
+        {
+          "id": "odoo-stock-module",
+          "title": "Community Purchase Stock manifest",
+          "url": "https://github.com/odoo/odoo/blob/225bd98e45293a00c0b508c3db40f73e5ff845b5/addons/purchase_stock/__manifest__.py",
+          "claim": {
+            "zh": "采购与库存连接模块属于社区仓库。",
+            "en": "Procurement/inventory integration is in the Community repository."
+          }
+        },
+        {
+          "id": "odoo-commerce-module",
+          "title": "Community eCommerce manifest",
+          "url": "https://github.com/odoo/odoo/blob/225bd98e45293a00c0b508c3db40f73e5ff845b5/addons/website_sale/__manifest__.py",
+          "claim": {
+            "zh": "eCommerce 在公开社区仓库中，声明 LGPL-3。",
+            "en": "eCommerce is in the public Community repository and declares LGPL-3."
+          }
+        },
+        {
+          "id": "odoo-rfq",
+          "title": "Odoo RFQ workflow",
+          "url": "https://www.odoo.com/documentation/19.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html",
+          "claim": {
+            "zh": "RFQ 到 PO 和自动收货流程；具体功能须对应社区模块。",
+            "en": "RFQ-to-PO and receipt workflow; specific capabilities must be mapped to Community modules."
+          }
+        },
+        {
+          "id": "odoo-portal",
+          "title": "Odoo portal source documentation",
+          "url": "https://github.com/odoo/documentation/blob/19.0/content/applications/general/users/user_portals.rst",
+          "claim": {
+            "zh": "默认门户用户无编辑数据库单据的通用权限。",
+            "en": "Default portal users do not have general document-editing permissions."
+          }
+        },
+        {
+          "id": "odoo-editions",
+          "title": "Odoo edition comparison",
+          "url": "https://www.odoo.com/page/editions",
+          "claim": {
+            "zh": "社区与企业功能边界。",
+            "en": "Community and Enterprise feature boundaries."
+          }
+        }
+      ],
+      "reviewedLabel": {
+        "zh": "许可核验：19.0 分支 @225bd98。实际启用的社区模块和第三方扩展需逐项复核。",
+        "en": "Licence evidence: 19.0 branch @225bd98. Recheck the community modules and third-party extensions actually enabled."
+      }
+    },
+    {
+      "id": "medusa",
+      "name": "Medusa",
+      "stack": "TypeScript · Node.js · PostgreSQL · React Admin · workflows / modules",
+      "reviewed": {
+        "branch": "develop",
+        "commit": "f274f4e0739e487733354f329f2f29ad673a8647",
+        "licenseScope": "Verified v2.21.2 plus the pinned develop commit; review the final production release separately.",
+        "stableRelease": "v2.21.2"
+      },
+      "license": {
+        "label": "MIT core · specified Enterprise RBAC / SSO excluded",
+        "zh": "已核验稳定版 v2.21.2 及所列 develop 提交：核心 MIT；ENTERPRISE-LICENSE.md 列出的 RBAC 与 SSO/OIDC 企业材料需单独商业协议。最终采用版本仍需锁定；旧版本按其原有许可判断。",
+        "en": "Verified stable v2.21.2 and the cited develop commit: MIT core; RBAC and SSO/OIDC Enterprise Materials listed in ENTERPRISE-LICENSE.md require a separate commercial agreement. Pin the final selected release; earlier versions retain their own licensing terms."
+      },
+      "builtIn": {
+        "zh": "商品、价格、购物车、订单与履约模块；多地点库存和预留；自定义模型、接口及工作流适合品牌化电商。",
+        "en": "Product, pricing, cart, order and fulfillment modules; multilocation inventory and reservations; custom models, endpoints and workflows support branded commerce."
+      },
+      "gaps": {
+        "zh": "采购 RFQ、供应商报价、采购单、到仓质检与集货并非完整 ERP 采购链。官方市场示例要求自建供应商模型、门户权限和按供应商拆单。",
+        "en": "Procurement RFQs, supplier quotations, purchase orders, receiving inspections and consolidation are not a full ERP purchasing chain. The official marketplace recipe requires custom vendor models, portal authorization and vendor-based order splitting."
+      },
+      "fit": {
+        "zh": "电商主导候选：适合 TypeScript 团队；若核心是代采和集货，运营域仍需较多开发。",
+        "en": "Commerce-led candidate for a TypeScript team; a sourcing/consolidation-led product still requires substantial operations development."
+      },
+      "portals": {
+        "zh": "可建立自定义 actor 和供应商 API；原生市场功能不是开箱即用，企业 RBAC 也不自动提供多租户隔离。",
+        "en": "Custom actors and vendor APIs are supported. Marketplace behavior is not native turnkey functionality, and Enterprise RBAC does not automatically provide multi-tenant isolation."
+      },
+      "hosting": {
+        "zh": "可自托管应用与 PostgreSQL/Redis；Medusa Cloud 是可选服务。",
+        "en": "Self-host the application with PostgreSQL/Redis; Medusa Cloud is optional."
+      },
+      "editionBoundary": {
+        "zh": "不要在会议中写“全部 MIT、RBAC/SSO 免费”。锁定目标发行版并核验其 LICENSE、企业路径与依赖，再决定购买企业许可或自研权限层。",
+        "en": "Do not describe the entire repository or RBAC/SSO as free MIT software. Pin the target release and review its LICENSE, enterprise paths and dependencies before buying Enterprise rights or implementing a separate authorization layer."
+      },
+      "sources": [
+        {
+          "id": "medusa-license",
+          "title": "Medusa pinned LICENSE",
+          "url": "https://github.com/medusajs/medusa/blob/f274f4e0739e487733354f329f2f29ad673a8647/LICENSE",
+          "claim": {
+            "zh": "MIT 范围明确排除企业材料。",
+            "en": "MIT explicitly excludes Enterprise Materials."
+          }
+        },
+        {
+          "id": "medusa-enterprise",
+          "title": "Medusa pinned Enterprise license",
+          "url": "https://github.com/medusajs/medusa/blob/f274f4e0739e487733354f329f2f29ad673a8647/ENTERPRISE-LICENSE.md",
+          "claim": {
+            "zh": "列出 RBAC/SSO 专有代码路径并保留旧版本许可。",
+            "en": "Lists proprietary RBAC/SSO paths and preserves prior-version licenses."
+          }
+        },
+        {
+          "id": "medusa-inventory",
+          "title": "Medusa Inventory Module",
+          "url": "https://docs.medusajs.com/resources/commerce-modules/inventory",
+          "claim": {
+            "zh": "多地点库存与预留。",
+            "en": "Multilocation stock and reservations."
+          }
+        },
+        {
+          "id": "medusa-marketplace",
+          "title": "Medusa Marketplace Recipe",
+          "url": "https://docs.medusajs.com/resources/recipes/marketplace",
+          "claim": {
+            "zh": "供应商模型、权限 API 与拆单是自定义步骤。",
+            "en": "Vendor models, authorized APIs and order splitting are customization steps."
+          }
+        },
+        {
+          "id": "medusa-example",
+          "title": "Medusa Vendors Example",
+          "url": "https://docs.medusajs.com/resources/recipes/marketplace/examples/vendors",
+          "claim": {
+            "zh": "明确说明不原生提供市场功能。",
+            "en": "Explicitly states marketplace functionality is not native."
+          }
+        },
+        {
+          "id": "medusa-host",
+          "title": "Medusa deployment",
+          "url": "https://docs.medusajs.com/learn/deployment/general",
+          "claim": {
+            "zh": "自托管数据库与应用部署。",
+            "en": "Self-hosted database and application deployment."
+          }
+        },
+        {
+          "id": "medusa-stable-license",
+          "title": "Medusa v2.21.2 LICENSE",
+          "url": "https://github.com/medusajs/medusa/blob/v2.21.2/LICENSE",
+          "claim": {
+            "zh": "稳定发行版 MIT 范围",
+            "en": "MIT scope in a stable release"
+          }
+        },
+        {
+          "id": "medusa-stable-enterprise",
+          "title": "Medusa v2.21.2 Enterprise scope",
+          "url": "https://github.com/medusajs/medusa/blob/v2.21.2/ENTERPRISE-LICENSE.md",
+          "claim": {
+            "zh": "稳定发行版 RBAC/SSO 企业材料范围",
+            "en": "RBAC/SSO Enterprise Materials in a stable release"
+          }
+        }
+      ],
+      "reviewedLabel": {
+        "zh": "许可核验：稳定版 v2.21.2，另附 develop @f274f4e。此核验不等于已选定生产版本。",
+        "en": "Licence evidence: stable v2.21.2 plus develop @f274f4e. This does not select the production release."
+      }
+    },
+    {
+      "id": "vendure",
+      "name": "Vendure",
+      "stack": "TypeScript · NestJS · GraphQL · TypeORM · React Dashboard",
+      "reviewed": {
+        "branch": "master",
+        "commit": "d40d41f387ac8e1047e665fd9ed572911937a17a"
+      },
+      "license": {
+        "label": "GPLv3 / commercial dual license · plugin exception",
+        "zh": "默认 GPLv3，另有商业许可；插件例外允许不包含 Core 源码、使用公开 API 且单独分发的插件采用自选许可。分发 Core 修改仍受 GPL 约束。",
+        "en": "GPLv3 by default, with a commercial alternative. The plugin exception permits a separately distributed plugin that contains no Core source and uses exposed APIs to use a chosen license. Distributed Core modifications remain subject to GPL."
+      },
+      "builtIn": {
+        "zh": "商品、订单、支付、履约、库存位置；Channels、Sellers 和渠道限定管理员角色有利于多卖家电商建模。",
+        "en": "Products, orders, payments, fulfillment and stock locations; Channels, Sellers and channel-limited administrator roles support multi-vendor commerce modeling."
+      },
+      "gaps": {
+        "zh": "官方多卖家插件为示例，并非完整上线市场；采购 RFQ、供应商协商、入库质检、集货与货权模型仍需开发。支付示例是模拟，不代表真实结算已完成。",
+        "en": "The official multi-vendor plugin is an example, not a finished production marketplace. Procurement RFQs, supplier negotiation, receiving inspections, consolidation and cargo ownership remain custom work. Its payment example is simulated, not completed real settlement."
+      },
+      "fit": {
+        "zh": "电商/多卖家候选：现成渠道权限比纯商城更贴近平台；采购型 MVP 的业务域适配较弱。",
+        "en": "Commerce/multi-vendor candidate: channel permissions are closer to platform needs than a plain storefront, but procurement-led MVP domain fit is weaker."
+      },
+      "portals": {
+        "zh": "供应商可借渠道角色访问限定后台；默认 Channel 含全部实体，需验证自定义实体、搜索、附件及接口的跨渠道访问。",
+        "en": "Suppliers can receive channel-scoped admin roles. The default Channel contains all entities, so verify cross-channel access for custom entities, search, attachments and APIs."
+      },
+      "hosting": {
+        "zh": "Core 可在自有服务器部署；托管、商业平台与支持服务另行计费/授权。",
+        "en": "Core can be self-hosted; managed hosting, the commercial platform and support have separate pricing/terms."
+      },
+      "editionBoundary": {
+        "zh": "开源 Core 与商业 Vendure Platform 的 B2B 能力分开核验；插件例外并不免除底座修改的 GPL 条款。",
+        "en": "Check open-source Core separately from commercial Vendure Platform B2B capabilities. The plugin exception does not remove GPL terms for Core modifications."
+      },
+      "sources": [
+        {
+          "id": "vendure-license",
+          "title": "Vendure pinned license",
+          "url": "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/LICENSE.md",
+          "claim": {
+            "zh": "GPLv3/商业双许可。",
+            "en": "GPLv3/commercial dual licensing."
+          }
+        },
+        {
+          "id": "vendure-exception",
+          "title": "Vendure plugin exception",
+          "url": "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/license/plugin-exception.txt",
+          "claim": {
+            "zh": "单独分发且无 Core 源码的插件许可例外。",
+            "en": "Exception for separately distributed plugins without Core source."
+          }
+        },
+        {
+          "id": "vendure-faq",
+          "title": "Vendure license FAQ",
+          "url": "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/license/license-faq.md",
+          "claim": {
+            "zh": "商业使用允许；浏览网页不要求公开服务器源码。",
+            "en": "Commercial use allowed; viewing a website does not require server-source disclosure."
+          }
+        },
+        {
+          "id": "vendure-channels",
+          "title": "Vendure Channels",
+          "url": "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/docs/docs/guides/core-concepts/channels/index.mdx",
+          "claim": {
+            "zh": "渠道实体和管理员权限范围。",
+            "en": "Channel-aware entities and administrator scope."
+          }
+        },
+        {
+          "id": "vendure-marketplace",
+          "title": "Vendure example marketplace plugin",
+          "url": "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/packages/dev-server/example-plugins/multivendor-plugin/README.md",
+          "claim": {
+            "zh": "示例创建供应商、渠道、角色、库存地点并拆分订单；支付是模拟。",
+            "en": "Example creates sellers, channels, roles and stock locations and splits orders; payments are simulated."
+          }
+        },
+        {
+          "id": "vendure-core",
+          "title": "Vendure Core",
+          "url": "https://vendure.io/core",
+          "claim": {
+            "zh": "Core 自托管与技术栈。",
+            "en": "Core self-hosting and stack."
+          }
+        },
+        {
+          "id": "vendure-editions",
+          "title": "Vendure documentation products",
+          "url": "https://docs.vendure.io/",
+          "claim": {
+            "zh": "区分开源 Core 与商业 Platform。",
+            "en": "Distinguishes open-source Core from commercial Platform."
+          }
+        }
+      ],
+      "reviewedLabel": {
+        "zh": "许可核验：master @d40d41f；生产发行版与插件组合另行锁定。",
+        "en": "Licence evidence: master @d40d41f; pin the production release and plugin combination separately."
+      }
+    },
+    {
+      "id": "saleor",
+      "name": "Saleor",
+      "stack": "Python · Django · GraphQL · PostgreSQL · React Dashboard",
+      "reviewed": {
+        "branch": "main",
+        "commit": "bb75f87973abe24056a5d0dff1708ca097e95599"
+      },
+      "license": {
+        "label": "BSD-3-Clause core",
+        "zh": "Core 为 BSD-3-Clause，可商业与闭源定制，须保留适用声明。Cloud、扩展和服务条款需分别核验。",
+        "en": "Core is BSD-3-Clause and permits commercial/proprietary customization with required notices. Cloud, extensions and services have separate terms."
+      },
+      "builtIn": {
+        "zh": "商品、结账、订单、支付、履约；多渠道、仓库、库存分配和预留，适合多地区销售。",
+        "en": "Products, checkout, orders, payments and fulfillment; channels, warehouses, stock allocations and reservations support multiregion commerce."
+      },
+      "gaps": {
+        "zh": "采购 RFQ、供应商报价、采购收货与集货运营需开发或集成。Channels 不是完整供应商租户；官方说明产品等对象权限不全部按渠道划分，供应商特定价格也不适合直接用渠道表示。",
+        "en": "Procurement RFQs, supplier quotations, purchasing receipts and consolidation need custom development/integration. Channels are not complete vendor tenants: product and other object permissions are not fully channel-scoped, and supplier-specific prices do not map cleanly to channels."
+      },
+      "fit": {
+        "zh": "多渠道电商备选：采购/集货优先级高时不建议作为唯一运营底座。",
+        "en": "Multichannel commerce alternative; not the preferred sole operations foundation when procurement/consolidation dominates."
+      },
+      "portals": {
+        "zh": "订单访问可按渠道控制，但供应商、货权和协同门户需自建；共享对象需要额外权限策略。",
+        "en": "Order access can be channel-scoped, but vendors, cargo ownership and collaboration portals are custom; shared objects require additional permission policies."
+      },
+      "hosting": {
+        "zh": "官方支持自托管；Cloud 提供托管控制台，不能把 Cloud 账户管理与 Core 业务权限混淆。",
+        "en": "Official self-hosting is supported. Cloud provides a managed console; Cloud account management is distinct from Core business authorization."
+      },
+      "editionBoundary": {
+        "zh": "Cloud App Store 是 Cloud 专属，自托管可手动安装应用；多数应用开源不表示每个扩展都同一许可。",
+        "en": "The App Store is Cloud-exclusive; self-hosted users install apps manually. Most apps being open source does not mean all extensions share one license."
+      },
+      "sources": [
+        {
+          "id": "saleor-license",
+          "title": "Saleor pinned LICENSE",
+          "url": "https://github.com/saleor/saleor/blob/bb75f87973abe24056a5d0dff1708ca097e95599/LICENSE",
+          "claim": {
+            "zh": "BSD-3-Clause 许可。",
+            "en": "BSD-3-Clause license."
+          }
+        },
+        {
+          "id": "saleor-stack",
+          "title": "Saleor pyproject",
+          "url": "https://github.com/saleor/saleor/blob/bb75f87973abe24056a5d0dff1708ca097e95599/pyproject.toml",
+          "claim": {
+            "zh": "Python/Django/GraphQL 技术栈。",
+            "en": "Python/Django/GraphQL stack."
+          }
+        },
+        {
+          "id": "saleor-channels",
+          "title": "Saleor channels",
+          "url": "https://docs.saleor.io/developer/channels/overview",
+          "claim": {
+            "zh": "渠道权限、共享对象及供应商价格限制。",
+            "en": "Channel permissions, shared objects and supplier-pricing limitations."
+          }
+        },
+        {
+          "id": "saleor-stock",
+          "title": "Saleor stock",
+          "url": "https://docs.saleor.io/developer/stock/overview",
+          "claim": {
+            "zh": "仓库和库存分配/预留。",
+            "en": "Warehouses and stock allocations/reservations."
+          }
+        },
+        {
+          "id": "saleor-host",
+          "title": "Saleor self-hosting",
+          "url": "https://docs.saleor.io/setup/overview",
+          "claim": {
+            "zh": "支持自托管。",
+            "en": "Self-hosting supported."
+          }
+        },
+        {
+          "id": "saleor-apps",
+          "title": "Saleor extensions",
+          "url": "https://docs.saleor.io/developer/app-store/overview",
+          "claim": {
+            "zh": "Cloud App Store 与自托管手动安装的边界。",
+            "en": "Cloud App Store versus manual self-hosted app installation."
+          }
+        }
+      ],
+      "reviewedLabel": {
+        "zh": "许可核验：main @bb75f87；生产发行版、Dashboard 与扩展分别复核。",
+        "en": "Licence evidence: main @bb75f87; review the production release, Dashboard and extensions separately."
+      }
+    },
+    {
+      "id": "bagisto",
+      "name": "Bagisto + B2B Suite",
+      "stack": "PHP · Laravel · Vue.js · MySQL",
+      "reviewed": {
+        "coreBranch": "master",
+        "coreCommit": "10133312509643f1511702dcfc7977789dcd895c",
+        "b2bBranch": "3.0",
+        "b2bCommit": "a2b178e2c5379a9c4e3a0d1d741e23f59dbb39d8",
+        "note": "Core and B2B package compatibility must be checked on selected stable releases."
+      },
+      "license": {
+        "label": "MIT core + MIT B2B Suite · paid marketplace separate",
+        "zh": "Bagisto Core 与独立 bagisto/b2b-ecommerce 套件已核验为 MIT；B2B Marketplace 在官方文档单独标记为付费，不能推定受 Core MIT 覆盖。",
+        "en": "Bagisto Core and separate bagisto/b2b-ecommerce suite were verified as MIT. Official documentation labels B2B Marketplace separately as paid; do not assume Core MIT covers that product."
+      },
+      "builtIn": {
+        "zh": "商城商品、购物车、订单及库存来源；独立 B2B 套件提供公司账户、用户角色、快速下单、RFQ/协商与买家侧采购单。",
+        "en": "Store catalog, cart, orders and inventory sources; separate B2B Suite provides company accounts, user roles, quick ordering, RFQs/negotiation and buyer-side purchase orders."
+      },
+      "gaps": {
+        "zh": "买家采购单不等同于平台向多个供应商发单、收货与财务的完整采购链。多卖家门户、真实供应商协同、货主库存与集货箱单需额外产品/开发；版本兼容应先验证。",
+        "en": "Buyer-side POs are not a complete platform supplier-purchasing, receiving and accounting chain. Multi-vendor portals, supplier collaboration, owner-specific inventory and consolidation manifests need additional products/development. Validate version compatibility first."
+      },
+      "fit": {
+        "zh": "PHP 团队可保留的电商/B2B 备选；不优先用于复杂代采与集货仓。",
+        "en": "Commerce/B2B alternative for a PHP team; not first choice for complex sourcing and warehouse consolidation."
+      },
+      "portals": {
+        "zh": "B2B 公司用户角色可作为买方组织基础；独立买家、供应商、仓库的隔离仍需专门设计。",
+        "en": "B2B company-user roles provide a buyer-organization base. Isolation among independent buyers, suppliers and warehouse staff still needs explicit design."
+      },
+      "hosting": {
+        "zh": "可私有部署 Laravel 应用与数据库，托管为可选服务。",
+        "en": "Privately host the Laravel application and database; managed hosting is optional."
+      },
+      "editionBoundary": {
+        "zh": "区分免费 Core、独立 MIT B2B Suite、付费 B2B Marketplace 与报价插件；不可把全部营销页能力算作免费 Core。",
+        "en": "Distinguish free Core, separate MIT B2B Suite, paid B2B Marketplace and quotation add-ons. Do not count every marketing-page capability as free Core."
+      },
+      "sources": [
+        {
+          "id": "bagisto-license",
+          "title": "Bagisto pinned LICENSE",
+          "url": "https://github.com/bagisto/bagisto/blob/10133312509643f1511702dcfc7977789dcd895c/LICENSE",
+          "claim": {
+            "zh": "Core MIT 许可。",
+            "en": "Core MIT license."
+          }
+        },
+        {
+          "id": "bagisto-b2b-license",
+          "title": "Bagisto B2B pinned LICENSE",
+          "url": "https://github.com/bagisto/b2b-ecommerce/blob/a2b178e2c5379a9c4e3a0d1d741e23f59dbb39d8/LICENSE",
+          "claim": {
+            "zh": "独立 B2B 套件 MIT 许可。",
+            "en": "Separate B2B Suite MIT license."
+          }
+        },
+        {
+          "id": "bagisto-b2b",
+          "title": "Bagisto B2B documentation",
+          "url": "https://docs.bagisto.com/b2b-ecommerce-platform/introduction.html",
+          "claim": {
+            "zh": "公司账户、用户权限和询报价。",
+            "en": "Company accounts, user permissions and RFQs."
+          }
+        },
+        {
+          "id": "bagisto-po",
+          "title": "Bagisto B2B repository",
+          "url": "https://github.com/bagisto/b2b-ecommerce",
+          "claim": {
+            "zh": "单独安装套件；报价协商与采购单能力。",
+            "en": "Separately installed suite with quotation negotiation and POs."
+          }
+        },
+        {
+          "id": "bagisto-boundary",
+          "title": "Bagisto documentation products",
+          "url": "https://docs.bagisto.com/index",
+          "claim": {
+            "zh": "B2B Marketplace 单独标记付费。",
+            "en": "B2B Marketplace separately labeled paid."
+          }
+        },
+        {
+          "id": "bagisto-core",
+          "title": "Bagisto repository",
+          "url": "https://github.com/bagisto/bagisto",
+          "claim": {
+            "zh": "Laravel/Vue 技术栈和私有部署说明。",
+            "en": "Laravel/Vue stack and private deployment instructions."
+          }
+        }
+      ],
+      "reviewedLabel": {
+        "zh": "许可核验：Core master @1013331；B2B 3.0 @a2b178e。尚未验证两个组件所选稳定版本的组合兼容性。",
+        "en": "Licence evidence: Core master @1013331 and B2B 3.0 @a2b178e. Compatibility of the selected stable versions has not been validated."
+      }
+    }
+  ],
+  "featuredSources": [
+    {
+      "id": "erp-license",
+      "title": "ERPNext license",
+      "url": "https://github.com/frappe/erpnext/blob/750bf9d9b378fb92eab68733ae727214f3961c0a/license.txt",
+      "claim": {
+        "zh": "ERPNext GPLv3 许可。",
+        "en": "ERPNext GPLv3 license."
+      }
+    },
+    {
+      "id": "erp-supplier",
+      "title": "Supplier quotation portal",
+      "url": "https://docs.frappe.io/erpnext/how-to-create-a-supplier-quotation-through-the-supplier-portal",
+      "claim": {
+        "zh": "供应商可登录并回复发送给自己的 RFQ。",
+        "en": "Suppliers log in and respond to RFQs addressed to them."
+      }
+    },
+    {
+      "id": "odoo-license",
+      "title": "Odoo 19 licenses",
+      "url": "https://www.odoo.com/documentation/19.0/th/legal/licenses.html",
+      "claim": {
+        "zh": "Community LGPLv3；Enterprise 需要订阅。",
+        "en": "Community LGPLv3; Enterprise subscription terms."
+      }
+    },
+    {
+      "id": "odoo-purchase-module",
+      "title": "Community Purchase manifest",
+      "url": "https://github.com/odoo/odoo/blob/225bd98e45293a00c0b508c3db40f73e5ff845b5/addons/purchase/__manifest__.py",
+      "claim": {
+        "zh": "Purchase 在公开社区仓库中，声明 LGPL-3。",
+        "en": "Purchase is in the public Community repository and declares LGPL-3."
+      }
+    },
+    {
+      "id": "medusa-license",
+      "title": "Medusa pinned LICENSE",
+      "url": "https://github.com/medusajs/medusa/blob/f274f4e0739e487733354f329f2f29ad673a8647/LICENSE",
+      "claim": {
+        "zh": "MIT 范围明确排除企业材料。",
+        "en": "MIT explicitly excludes Enterprise Materials."
+      }
+    },
+    {
+      "id": "medusa-enterprise",
+      "title": "Medusa pinned Enterprise license",
+      "url": "https://github.com/medusajs/medusa/blob/f274f4e0739e487733354f329f2f29ad673a8647/ENTERPRISE-LICENSE.md",
+      "claim": {
+        "zh": "列出 RBAC/SSO 专有代码路径并保留旧版本许可。",
+        "en": "Lists proprietary RBAC/SSO paths and preserves prior-version licenses."
+      }
+    },
+    {
+      "id": "medusa-marketplace",
+      "title": "Medusa Marketplace Recipe",
+      "url": "https://docs.medusajs.com/resources/recipes/marketplace",
+      "claim": {
+        "zh": "供应商模型、权限 API 与拆单是自定义步骤。",
+        "en": "Vendor models, authorized APIs and order splitting are customization steps."
+      }
+    },
+    {
+      "id": "vendure-exception",
+      "title": "Vendure plugin exception",
+      "url": "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/license/plugin-exception.txt",
+      "claim": {
+        "zh": "单独分发且无 Core 源码的插件许可例外。",
+        "en": "Exception for separately distributed plugins without Core source."
+      }
+    },
+    {
+      "id": "vendure-marketplace",
+      "title": "Vendure example marketplace plugin",
+      "url": "https://github.com/vendurehq/vendure/blob/d40d41f387ac8e1047e665fd9ed572911937a17a/packages/dev-server/example-plugins/multivendor-plugin/README.md",
+      "claim": {
+        "zh": "示例创建供应商、渠道、角色、库存地点并拆分订单；支付是模拟。",
+        "en": "Example creates sellers, channels, roles and stock locations and splits orders; payments are simulated."
+      }
+    },
+    {
+      "id": "saleor-license",
+      "title": "Saleor pinned LICENSE",
+      "url": "https://github.com/saleor/saleor/blob/bb75f87973abe24056a5d0dff1708ca097e95599/LICENSE",
+      "claim": {
+        "zh": "BSD-3-Clause 许可。",
+        "en": "BSD-3-Clause license."
+      }
+    },
+    {
+      "id": "saleor-channels",
+      "title": "Saleor channels",
+      "url": "https://docs.saleor.io/developer/channels/overview",
+      "claim": {
+        "zh": "渠道权限、共享对象及供应商价格限制。",
+        "en": "Channel permissions, shared objects and supplier-pricing limitations."
+      }
+    },
+    {
+      "id": "bagisto-b2b-license",
+      "title": "Bagisto B2B pinned LICENSE",
+      "url": "https://github.com/bagisto/b2b-ecommerce/blob/a2b178e2c5379a9c4e3a0d1d741e23f59dbb39d8/LICENSE",
+      "claim": {
+        "zh": "独立 B2B 套件 MIT 许可。",
+        "en": "Separate B2B Suite MIT license."
+      }
+    }
+  ]
+};
+
+</script>
+<script>
+(() => {
+  'use strict';
+  const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const technologyNames = /\b(ERPNext|Frappe|Medusa|Vendure|Odoo(?: Community)?|Saleor|Bagisto|B2B Suite|Next\.js|React|PostgreSQL|pgvector|MariaDB|Redis|Flutter|M-Pesa)\b|Daraja 定制模块|Daraja custom modules/g;
+  const highlight = value => escape(value).replace(technologyNames, name => `<strong class="tech-name">${name}</strong>`);
+  const pair = value => `<span class="zh" lang="zh-CN">${highlight(value[0])}</span><span class="en" lang="en">${highlight(value[1])}</span>`;
+  const technologyMap = {
+    architecture: [
+      ['ERPNext + Frappe', ['采购底座 · 优先验证', 'Procurement core · evaluate first'], 'core'],
+      ['Next.js', ['定制门户 · 建议', 'Custom portals · proposed'], 'support'],
+      ['Daraja', ['集运模块 · 需定制', 'Consolidation · custom work'], 'custom']
+    ],
+    foundations: [
+      ['ERPNext + Frappe', ['采购主导路线', 'Procurement-led candidate'], 'core'],
+      ['Medusa', ['商城主导路线', 'Commerce-led alternative'], 'core']
+    ],
+    workspaces: [
+      ['Next.js', ['买家 / 供应商门户', 'Buyer / supplier portals'], 'support'],
+      ['Frappe', ['采购路线 · 扩展权限', 'ERP route · extend permissions'], 'core'],
+      ['Flutter', ['离线应用 · 后续评估', 'Offline app · assess later'], 'support']
+    ],
+    workflow: [
+      ['ERPNext', ['询价 / 采购 / 收货 · 候选', 'RFQ / purchasing / receipts · candidate'], 'core'],
+      ['Daraja', ['包装件 / 集运 · 需定制', 'Packages / consolidation · custom'], 'custom'],
+      ['M-Pesa', ['本地支付 · 待确认', 'Local payments · to confirm'], 'support']
+    ],
+    ai: [
+      ['PostgreSQL + pgvector', ['向量检索 · 候选', 'Vector retrieval · candidate'], 'support'],
+      ['Daraja', ['AI 编排与审批 · 需定制', 'AI orchestration / approval · custom'], 'custom']
+    ],
+    scale: [
+      ['ERPNext / Medusa', ['选定一个业务核心', 'Select one business core'], 'core'],
+      ['Daraja', ['市场配置与适配器 · 需定制', 'Market settings / adapters · custom'], 'custom']
+    ],
+    delivery: [
+      ['ERPNext + Frappe', ['采购路线 · 初步首选', 'Procurement route · initial preference'], 'core'],
+      ['Medusa', ['商城路线 · 备选', 'Commerce route · alternative'], 'core'],
+      ['Next.js', ['两条路线共享的门户建议', 'Proposed portals for either route'], 'support']
+    ]
+  };
+  const technologyStrip = id => `<div class="technology-strip" aria-label="技术落点 / Technology choices">${technologyMap[id].map(([name,role,type]) => `<div class="technology-item ${type}"><strong class="technology-label"><span class="technology-dot" aria-hidden="true"></span>${escape(name)}</strong><span class="technology-role">${pair(role)}</span></div>`).join('')}</div>`;
+  const objectPair = value => pair([value?.zh || '', value?.en || '']);
+  const node = (label, style = '') => `<div class="diagram-node ${style}">${pair(label)}</div>`;
+  const row = (labels, style = '') => `<div class="diagram-row ${labels.length === 4 ? 'four' : ''}" style="--cols:${labels.length}">${labels.map(l => node(l, style)).join('')}</div>`;
+  const connector = '<div class="connector" aria-hidden="true">↓</div>';
+  const cap = label => `<p class="diagram-caption">${pair(label)}</p>`;
+  const kicker = label => `<h2 class="section-kicker">${pair(label)}</h2>`;
+  const links = sources => sources.map(s => `<a href="${escape(s[1])}" target="_blank" rel="noopener noreferrer">${escape(s[0])} ↗</a>`).join('');
+  const steps = [
+    {name:['询价','RFQ'],body:['采购路线可复用 ERPNext 的供应商 RFQ；买家需求入口通过 Next.js 定制，运营澄清后邀请供应商。','The procurement route can reuse ERPNext supplier RFQs, with custom Next.js buyer intake. Operations clarify requests and invite suppliers.']},
+    {name:['报价','Quotation'],body:['复用 ERPNext 供应商报价和基础对比；Daraja 定制模块扩展买家界面、规格及单位对齐、版本规则与成交审批。','Reuse ERPNext supplier quotations and basic comparison. Daraja custom modules extend buyer screens, specification/unit alignment, version rules and acceptance approval.']},
+    {name:['采购','Procurement'],body:['贸易商模式可复用 ERPNext 销售单与采购单；代采模式先确认委托、实际交易方和资金责任，避免自动把客户款项记成平台收入。','A resale model can reuse ERPNext sales and purchase orders. For agency, establish mandates, trading parties and fund responsibilities first; do not automatically treat client funds as platform revenue.']},
+    {name:['入仓','Receiving'],body:['复用 ERPNext 适用的收货与质检功能，在 Frappe 扩展包装件。分别记录货主、保管方和记账主体，代保管入仓不自动成为 Daraja 自有库存。','Reuse applicable ERPNext receiving and inspection features and extend Frappe for packages. Separate owner, custodian and accounting entity; custody receipt does not automatically create Daraja-owned stock.']},
+    {name:['集运','Consolidation'],body:['Daraja 定制模块按包装件内容明细分配发运数量，保留拆包/重装来源并防止超量；混柜可以跨货主，买家只看到自己的单证。','Daraja custom modules allocate dispatch quantities from package-content lines, preserve repacking lineage and prevent excess dispatch. Containers may combine owners; buyers only see their own documents.']},
+    {name:['交付','Delivery'],body:['Daraja 定制模块连接承运商事件与索赔；采购路线可关联 ERPNext 交货及发票记录，接入细节按物流伙伴确认。','Daraja custom modules connect carrier events and claims. The procurement route can link ERPNext delivery and invoice records, with integrations confirmed per logistics partner.']}
+  ];
+  function diagram(type) {
+    let html = '';
+    if (type === 'architecture') html = kicker(['一个业务核心，连接每个角色','One business core. Every role connected.']) +
+      row([['买家门户','Buyer portal'],['供应商门户','Supplier portal'],['运营与仓库','Operations & warehouse']]) + connector +
+      node(['API · 身份验证 · 数据权限','APIs · Identity · Record-level authorisation'],'blue') + connector +
+      row([['寻源与报价','Sourcing & quotes'],['交易与采购','Orders & procurement'],['包装件与集运','Packages & consolidation'],['付款与单证','Payments & documents']]) + connector +
+      row([['业务数据库','Operational database'],['可靠后台任务','Reliable background jobs'],['受控文件存储','Controlled file storage']],'strong') +
+      cap(['采购路线建议 ERPNext + Frappe 承接业务核心、Next.js 承接门户；商城路线备选 Medusa。包装件集运由 Daraja 定制模块承接，底座在验证后选定。','The procurement route proposes ERPNext + Frappe for the core and Next.js for portals; Medusa is the commerce-led alternative. Daraja custom modules handle package consolidation. Select the foundation after validation.']);
+    if (type === 'foundations') html = kicker(['一条选择路径','A practical decision path']) +
+      node(['Daraja 的核心价值，首先来自哪里？','Where does Daraja create its initial value?'],'strong') + connector +
+      row([['采购与履约运营','Procurement & fulfilment'],['在线商品与商城交易','Catalogues & commerce']]) + connector +
+      row([['优先验证 ERPNext / Frappe','Evaluate ERPNext / Frappe first'],['优先验证 Medusa','Evaluate Medusa first']],'blue') +
+      cap(['两条候选路线，共用一组真实场景验证。功能适配、许可、维护能力与总成本共同决定选择。','Two candidate routes, tested against the same business scenario. Fit, licensing, maintainability and total cost determine the decision.']);
+    if (type === 'workspaces') html = kicker(['从身份到具体业务记录','From identity to the individual record']) +
+      row([['买家企业','Buyer organisation'],['供应商企业','Supplier organisation'],['平台运营团队','Platform team']]) + connector +
+      node(['企业身份 × 员工角色 × 业务关系 × 字段权限','Organisation × Role × Record relationship × Field permissions'],'blue') + connector +
+      row([['自己的采购与交付','Own purchases & deliveries'],['自己的报价与履约','Own quotes & fulfilment'],['授权范围内的待办','Tasks within assigned scope']]) +
+      `<p class="role-rule">${pair(['采购路线在 Frappe 文档权限基础上扩展企业与字段控制；Next.js 负责门户界面，最终授权由服务端执行。','On the procurement route, extend Frappe document permissions for organisations and fields. Next.js provides portals; the server enforces final authorisation.'])}</p>`;
+    if (type === 'workflow') html = kicker(['一条业务链，六个清晰的交接点','One journey. Six clear handoffs.']) +
+      `<div class="flow-scroll" tabindex="0" role="region" aria-label="六步采购流程 / Six-step procurement flow"><div class="workflow-path">${steps.map((step,i) => `<button class="flow-node" data-step="${i}" aria-pressed="${i === 0}" aria-controls="flow-description"><span class="flow-number">0${i+1}</span>${pair(step.name)}</button>`).join('')}</div></div><div class="flow-description" id="flow-description" aria-live="polite">${pair(steps[0].body)}</div>` +
+      cap(['点击步骤查看说明。付款分配、单证版本和异常处理贯穿全程；实际订单关系取决于确认后的交易模式。','Select a step to explain it. Payment allocations, document versions and exceptions span the journey; order relationships depend on the agreed trading model.']);
+    if (type === 'ai') html = kicker(['有依据的推荐流程','An evidence-based recommendation flow']) +
+      `<div class="diagram-steps">${node(['采购需求','Sourcing request'])}<span class="diagram-arrow" aria-hidden="true">→</span>${node(['权限与条件筛选','Access & hard constraints'],'blue')}<span class="diagram-arrow" aria-hidden="true">→</span>${node(['检索与证据排序','Retrieval & evidence ranking'])}<span class="diagram-arrow" aria-hidden="true">→</span>${node(['人工确认','Human approval'],'strong')}</div>` +
+      cap(['向量检索可选 PostgreSQL + pgvector；Daraja 定制模块负责权限过滤、模型编排与审批衔接。业务底座始终保留权威记录。','PostgreSQL + pgvector is a vector-search candidate. Daraja custom modules handle access filtering, model orchestration and approval integration. The business foundation remains the source of truth.']);
+    if (type === 'scale') html = kicker(['共享核心，适配市场','A shared core. Market-specific capabilities.']) +
+      node(['采购 · 订单 · 包装件 · 集运 · 单证','Procurement · Orders · Packages · Consolidation · Documents'],'strong') + connector +
+      `<div class="market-row"><div><p class="market-tag">${pair(['首期市场','Initial market'])}</p>${node(['肯尼亚','Kenya'],'blue')}</div><div><p class="market-tag">${pair(['验证后扩展','Expand after validation'])}</p>${node(['下一个目标市场','Next selected market'])}</div></div>` + connector +
+      row([['币种与语言','Currency & language'],['支付与物流','Payments & carriers'],['规则与单证','Rules & documents']]) +
+      cap(['复用选定的 ERPNext 或 Medusa 核心，用 Daraja 定制模块承接市场配置与支付/物流适配；国家规则仍需逐一验证。','Reuse the selected ERPNext or Medusa core, with Daraja custom modules for market settings and payment/carrier adapters. Validate country-specific rules individually.']);
+    if (type === 'delivery') {
+      const phases = [
+        {period:['01 · 约 2 周','01 · ~2 weeks'],title:['业务梳理','Discovery'],body:['流程、责任与 MVP 边界','Workflows, responsibilities and pilot scope']},
+        {period:['02 · 约 2 周','02 · ~2 weeks'],title:['验证与原型','Validation'],body:['底座样例、三端原型与选型','Foundation proof, portal prototypes and selection']},
+        {period:['03 · 约 8–10 周','03 · ~8–10 weeks'],title:['闭环开发','Implementation'],body:['从 RFQ 到交付的可运行版本','An operational RFQ-to-delivery release']},
+        {period:['04 · 约 2–4 周','04 · ~2–4 weeks'],title:['试运营','Pilot launch'],body:['真实订单、问题修正与交接','Real orders, hardening and handover']}
+      ];
+      html = kicker(['以结果为里程碑','Milestones measured in outcomes']) + `<div class="timeline">${phases.map(p => `<div class="timeline-step"><div class="timeline-period">${pair(p.period)}</div><h3>${pair(p.title)}</h3><p>${pair(p.body)}</p></div>`).join('')}</div>` +
+        cap(['讨论级估算约 14–18 周，假设约 5–6 人核心团队、限定首期范围及及时业务反馈。以 Brief 和验证结果重新估算，非报价或交付承诺。','Illustrative range: ~14–18 weeks with a core team of ~5–6, bounded pilot scope and timely client decisions. Re-estimate after the Brief and validation; not a quote or commitment.']);
+    }
+    return `<section class="visual" aria-label="${escape(type)} diagram">${html}</section>`;
+  }
+  const table = data => `<div class="table-scroll" tabindex="0" role="region" aria-label="技术栈对比 / Technology stack comparison"><table><thead><tr>${data.headers.map(h => `<th scope="col">${pair(h)}</th>`).join('')}</tr></thead><tbody>${data.rows.map(r => `<tr>${r.map(c => `<td>${pair(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  function research() {
+    const data = window.FOUNDATIONS;
+    if (!data) return '';
+    const labels = {
+      erpnext:['采购主导 · 优先验证','Procurement · evaluate first'],
+      odoo:['ERP 生态 · 条件备选','ERP ecosystem · conditional'],
+      medusa:['商城主导 · 优先验证','Commerce · evaluate first'],
+      vendure:['TypeScript · 条件备选','TypeScript · conditional'],
+      saleor:['API 电商 · 条件备选','API commerce · conditional'],
+      bagisto:['PHP B2B · 条件备选','PHP B2B · conditional']
+    };
+    const fields = [
+      ['builtIn',['官方现有能力','Documented capabilities']],
+      ['gaps',['Daraja 仍需补齐','What Daraja still needs']],
+      ['portals',['门户与数据隔离','Portals & data isolation']],
+      ['license',['开源许可范围','Open-source licence scope']],
+      ['editionBoundary',['社区版与商业扩展','Community & commercial editions']],
+      ['fit',['适配判断 · 我方建议','Fit assessment · our judgment']],
+      ['hosting',['部署与维护','Hosting & maintenance']]
+    ];
+    return `<section class="research"><h2 class="research-title">${pair(['六个成熟候选。逐一看清。','Six established candidates. A closer look.'])}</h2>
+      <p class="research-intro">${pair(['以下为官方资料核对后的桌面研究，尚未完成安装验证。点击候选查看现有能力、二开缺口和许可范围。','A documentation-based assessment against official sources; implementation proofs are still pending. Open a candidate to inspect capabilities, customisation gaps and licensing.'])}</p>
+      <div class="candidate-list">${data.candidates.map(c => `<details class="detail candidate"><summary><span class="candidate-title">${highlight(c.name)}</span><span class="candidate-tag">${pair(labels[c.id] || ['条件备选','Conditional alternative'])}</span></summary><div class="detail-body"><div class="candidate-meta">${highlight(typeof c.stack === 'string' ? c.stack : c.stack?.en)} · ${escape(c.license?.label || '')}</div>${c.reviewedLabel ? `<p class="research-note">${objectPair(c.reviewedLabel)}</p>` : ''}<div class="candidate-grid">${fields.filter(([f]) => c[f]).map(([field,label]) => `<div><h3>${pair(label)}</h3><p>${objectPair(c[field])}</p></div>`).join('')}</div><div class="source-links">${links(c.sources.map(s => [s.title,s.url]))}</div></div></details>`).join('')}</div>
+      <p class="research-note">${pair(['“优先验证”是基于目前业务描述的技术判断，不代表客户已选定或我们已经完成性能与功能验证。选定版本、扩展模块和合同交付方式需要逐项复核。','“Evaluate first” is a technical judgment based on the current description, not a client decision or completed feature/performance validation. Recheck the selected release, extensions and delivery arrangement.'])}</p>
+      <span class="research-status">${pair(['资料核对：2026-10-09 · 来源见各候选','Sources checked: 09 Oct 2026 · linked under each candidate'])}</span></section>`;
+  }
+  function renderChapter(chapter,index) {
+    return `<article id="panel-${chapter.id}" class="chapter" aria-labelledby="title-${chapter.id}" hidden>
+      <div class="print-brand">DARAJA · PRODUCT & TECHNOLOGY BRIEF · 09 OCT 2026</div>
+      <div class="hero"><p class="eyebrow">${pair(chapter.question)}</p><h1 id="title-${chapter.id}" tabindex="-1">${pair(chapter.title)}</h1><p class="hero-lead secondary">${pair(chapter.lead)}</p><p class="takeaway">${pair(chapter.takeaway)}</p>${technologyStrip(chapter.id)}${index===0 ? `<p class="brief-note">${pair(['讨论基础：Kui 的往来邮件。Technology Brief 尚待审阅；本页区分建议与待确认事项。','Based on Kui’s correspondence. The Technology Brief is still to be reviewed; proposals and open decisions are identified throughout.'])}</p>`:''}</div>
+      <div class="pillars">${chapter.cards.map((c,i) => `<section class="pillar"><span class="pillar-index">0${i+1}</span><h2>${pair(c.title)}</h2><p>${pair(c.body)}</p></section>`).join('')}</div>
+      ${diagram(chapter.diagram)}${chapter.id==='foundations' ? research() : ''}
+      <section class="explanations"><h2 class="details-heading">${pair(['把方案，讲清楚。','The thinking behind the proposal.'])}</h2><div>${chapter.details.map(d=>`<details class="detail"><summary>${pair(d.title)}</summary><div class="detail-body">${d.table?table(d.table):''}${d.paragraphs.map(p=>`<p>${pair(p)}</p>`).join('')}</div></details>`).join('')}</div></section>
+      <p class="outcome">${pair(chapter.outcome)}</p>
+      <section class="meeting-box">${kicker(['留给这次会面的关键问题','A decision to discuss together'])}<p>${pair(chapter.ask)}</p></section>
+      <details class="talk"><summary>${pair(['讲解提示','Speaker notes'])}</summary><blockquote>${pair(chapter.talk)}</blockquote></details>
+      ${chapter.sources.length ? `<div class="sources">${pair(['技术参考 · 其余内容为建议方案','Technical references · other content is a proposed design'])}<div class="source-links">${links(chapter.sources)}</div></div>`:''}
+    </article>`;
+  }
+  const chapters = window.BRIEF;
+  document.getElementById('main').innerHTML = chapters.map(renderChapter).join('');
+  document.getElementById('chapter-nav').innerHTML = chapters.map((c,i)=>`<a class="nav-link" href="#${c.id}"><span class="nav-number">0${i+1}</span><span class="nav-label">${pair(c.nav)}</span></a>`).join('');
+  let activeIndex = 0;
+  function closeMenu() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebar-shade').hidden = true;
+    document.getElementById('menu-button').setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  function showChapter(focus = false) {
+    const requested = location.hash.slice(1);
+    const found = chapters.findIndex(c => c.id === requested);
+    activeIndex = found >= 0 ? found : 0;
+    const chapter = chapters[activeIndex];
+    document.querySelectorAll('.chapter').forEach((el,i) => {el.hidden = i !== activeIndex;});
+    document.querySelectorAll('.nav-link').forEach((el,i)=>{if(i===activeIndex)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+    document.getElementById('current-chapter').innerHTML = pair(chapter.nav);
+    document.getElementById('page-counter').textContent = `0${activeIndex+1} / 07`;
+    document.getElementById('previous').disabled = activeIndex===0;
+    document.getElementById('next').disabled = activeIndex===chapters.length-1;
+    const language = document.body.dataset.language;
+    document.title = `Daraja · ${chapter.nav[language==='en'?1:0]}`;
+    closeMenu();
+    window.scrollTo({top:0,behavior:'instant'});
+    if(focus) document.getElementById(`title-${chapter.id}`).focus({preventScroll:true});
+  }
+  window.addEventListener('hashchange',()=>showChapter(true));
+  document.querySelectorAll('.nav-link,.brand').forEach(link=>link.addEventListener('click',()=>{
+    closeMenu();
+    if(link.getAttribute('href')===location.hash)showChapter(true);
+  }));
+  document.getElementById('previous').addEventListener('click',()=>{if(activeIndex>0)location.hash=chapters[activeIndex-1].id;});
+  document.getElementById('next').addEventListener('click',()=>{if(activeIndex<chapters.length-1)location.hash=chapters[activeIndex+1].id;});
+  document.querySelectorAll('.language-switch button').forEach(button=>button.addEventListener('click',()=>{
+    const language=button.dataset.language;
+    document.body.dataset.language=language;
+    document.documentElement.lang=language==='en'?'en':'zh-CN';
+    document.querySelectorAll('.language-switch button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    document.title=`Daraja · ${chapters[activeIndex].nav[language==='en'?1:0]}`;
+    try{localStorage.setItem('daraja-language',language);}catch{}
+  }));
+  try{const saved=localStorage.getItem('daraja-language');if(['zh','en','both'].includes(saved))document.querySelector(`.language-switch button[data-language="${saved}"]`).click();}catch{}
+  document.getElementById('menu-button').addEventListener('click',()=>{
+    const sidebar=document.getElementById('sidebar');
+    const opened=sidebar.classList.toggle('open');
+    document.getElementById('sidebar-shade').hidden=!opened;
+    document.getElementById('menu-button').setAttribute('aria-expanded',String(opened));
+    document.body.style.overflow=opened?'hidden':'';
+    if(opened)sidebar.querySelector('[aria-current=page]').focus();
+  });
+  document.getElementById('sidebar-shade').addEventListener('click',closeMenu);
+  window.matchMedia('(max-width:700px)').addEventListener('change',event=>{if(!event.matches)closeMenu();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('sidebar').classList.contains('open')){closeMenu();document.getElementById('menu-button').focus();}});
+  document.querySelectorAll('.flow-node').forEach(button=>button.addEventListener('click',()=>{
+    document.querySelectorAll('.flow-node').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    document.getElementById('flow-description').innerHTML=pair(steps[Number(button.dataset.step)].body);
+  }));
+  let printState=[];
+  window.addEventListener('beforeprint',()=>{printState=Array.from(document.querySelectorAll('details')).map(el=>[el,el.open]);printState.forEach(([el])=>{el.open=true;});});
+  window.addEventListener('afterprint',()=>{printState.forEach(([el,open])=>{el.open=open;});printState=[];});
+  document.getElementById('print-button').addEventListener('click',()=>window.print());
+  showChapter();
+})();
+
+</script>
+</body>
+</html>
