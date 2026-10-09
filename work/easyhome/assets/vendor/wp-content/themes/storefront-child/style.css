@@ -9,7 +9,7 @@ Version: 1.0.0
 Text Domain: storefront-child
 */
 
-@import url("/work/easyhome/assets/vendor/external/a613691e7d3556d1.css");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
   /* --- MADE.COM Color Palette --- */
@@ -1632,7 +1632,7 @@ button:disabled, .button:disabled, .button.disabled, .button[aria-disabled="true
 
 /* Header: compact brand/search/utilities row, with a separate product navigation. */
 .site-header > .col-full { display: block !important; padding-top: 0 !important; padding-bottom: 0 !important; }
-.eh-header-row { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(280px, 480px) minmax(260px, 1fr); align-items: center; gap: 40px; min-height: 88px; }
+.eh-header-row { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(280px, 480px) minmax(260px, 1fr); align-items: center; gap: 40px; min-height: 76px; }
 .eh-header-brand { display: inline-block; width: fit-content; color: #111 !important; font-size: 28px; line-height: 1; font-weight: 800; letter-spacing: 4px; text-decoration: none; }
 .eh-header-row .site-search { display: block !important; width: 100% !important; }
 .eh-header-row .widget_product_search form { height: 44px; background: #f5f5f5 !important; border: 1px solid transparent !important; }

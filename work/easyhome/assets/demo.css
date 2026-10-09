@@ -1,6 +1,8 @@
 /* Static-demo adaptations reuse the live storefront's typography and layout. */
-.demo-notice { display: block; padding: 8px 18px; text-align: center; background: #eeedea; color: #4b4b49; font-size: 12px; line-height: 1.5; text-decoration: none; }
-.demo-notice:hover { color: #111; text-decoration: underline; }
+.demo-notice { display: block; padding: 0; margin: 16px 0; text-align: center; background: transparent; color: #aaa; font-size: 12px; line-height: 1.5; text-decoration: none; }
+.demo-notice:hover { color: #fff; text-decoration: underline; }
+.eh-header-brand { display: inline-flex; align-items: center; gap: 10px; }
+.demo-brand-note { color: #777; font-size: 10px; font-weight: 400; letter-spacing: .5px; }
 .demo-categories { display: flex; gap: 8px 22px; flex-wrap: wrap; border-bottom: 1px solid #e5e5e5; padding: 0 0 22px; margin: 22px 0; }
 .demo-categories a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 0; color: #666; font-size: 14px; border-bottom: 1px solid transparent; }
 .demo-categories a[aria-current], .demo-categories a:hover { color: #111; border-bottom-color: #111; }
