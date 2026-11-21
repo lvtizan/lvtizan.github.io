@@ -12,8 +12,20 @@
   padding: 0;
 }
 
-#cases .section-header { text-align: left; margin-bottom: 28px; }
-#cases .section-headline { color: #f4f6fb; max-width: 22em; }
+#cases .section-header {
+  max-width: none;
+  margin: 0 0 28px;
+  text-align: left;
+}
+#cases .section-headline {
+  margin: 0;
+  color: #f4f6fb;
+}
+#cases .section-desc {
+  max-width: 50ch;
+  margin: 12px 0 0;
+  color: #bec7d7;
+}
 
 #cases .projects-stage {
   grid-template-columns: minmax(0, 1fr);
@@ -86,6 +98,7 @@
 
 #cases .project-viewport {
   min-width: 0;
+  align-self: stretch;
   aspect-ratio: 16 / 10;
   background: #101218;
   border: 0;
@@ -94,7 +107,7 @@
   position: absolute;
   inset: 0;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 #cases .project-card:hover .project-viewport img { transform: none; }
@@ -105,12 +118,6 @@
   padding-top: clamp(28px, 4vw, 48px);
   border-top: 1px solid #2a303d;
 }
-#industry-demos .section-headline {
-  font-size: clamp(25px, 3vw, 38px);
-  margin-bottom: 12px;
-}
-#industry-demos .section-desc { color: #bec7d7; margin-left: 0; }
-
 #industry-demos .industry-demo-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -119,7 +126,6 @@
 #cases #industry-demos .project-card {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr;
-  border-radius: 12px;
 }
 #cases #industry-demos .project-body {
   display: grid;
@@ -139,7 +145,6 @@
 }
 #cases #industry-demos .project-view-link { align-self: center; font-size: 16px; }
 #cases #industry-demos .project-viewport { aspect-ratio: 16 / 9; }
-#cases #industry-demos .project-viewport img { object-fit: cover; }
 
 @media (max-width: 1023px) {
   #industry-demos .industry-demo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
