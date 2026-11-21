@@ -1030,22 +1030,6 @@
   .bento-cell.col-6 { grid-column: span 6; }
   .bento-cell.col-12 { grid-column: span 12; }
 
-  .platform-section { padding: clamp(60px, 8vw, 104px) 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
-  .platform-intro { max-width: 850px; margin-bottom: clamp(28px, 4vw, 48px); }
-  .platform-intro .section-headline { max-width: 20ch; }
-  .platform-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
-  .platform-visual { display: block; min-width: 0; overflow: hidden; border: 1px solid var(--border-medium); border-radius: 8px; background: var(--surface); }
-  .platform-visual img { display: block; width: 100%; height: auto; }
-  .platform-steps { margin: 0; padding: 0; list-style: none; }
-  .platform-steps li { display: grid; grid-template-columns: 32px 1fr; gap: 14px; padding: 18px 0; border-top: 1px solid var(--border-medium); }
-  .platform-steps li:last-child { border-bottom: 1px solid var(--border-medium); }
-  .platform-steps .num { font-family: var(--font-mono); font-size: 11px; color: var(--google-blue); padding-top: 4px; }
-  .platform-steps strong { display: block; color: var(--text-primary); font-size: 16px; margin-bottom: 5px; }
-  .platform-steps span:last-child { color: var(--text-tertiary); font-size: 13px; line-height: 1.6; }
-  .platform-link { display: inline-flex; margin-top: 24px; color: var(--google-blue); font-weight: 700; text-decoration: none; }
-  .platform-link:hover { text-decoration: underline; }
-  @media (max-width: 840px) { .platform-layout { grid-template-columns: 1fr; } }
-
   .bento-tag-line {
     display: flex;
     align-items: center;
@@ -2361,6 +2345,7 @@
     }
   }
 </style>
+<link rel="stylesheet" href="/assets/portfolio-gallery.css?v=20261120-6">
 </head>
 <body>
 <!-- Ambient Lighting Canvas -->
@@ -2694,267 +2679,175 @@
 </div>
 </div>
 </section>
-<section class="platform-section" id="platform-capability">
-<div class="wrap">
-<div class="platform-intro">
-<div class="google-chip">Platform Engineering</div>
-<h2 class="section-headline">From product discovery to qualified enquiries</h2>
-<p class="section-desc">Tarmeer connects owners, design firms and building-materials suppliers in one journey: discover services and products, review proven work, contact companies, then manage showrooms and leads from the supplier portal.</p>
-</div>
-<div class="platform-layout">
-<a aria-label="View the design and development cases of Tarmeer building materials home platform" class="platform-visual" href="/en/work/tarmeer/"><img alt="Catalogue, exhibition hall and back-office interface for Tarmeer building materials" loading="lazy" src="../uploads/webp/tarmeer-hero-showcase.webp"/></a>
-<div>
-<ol class="platform-steps">
-<li><span class="num">01</span><div><strong>Classification &amp; Discovery</strong><span>Companies, designers and building materials are organized by city and type, allowing users to move from demand to appropriate outcomes.</span></div></li>
-<li><span class="num">02</span><div><strong>Corporate showrooms and project certificates</strong><span>It organizes company information, work cases and product catalogues as navigable and accessible front pages.</span></div></li>
-<li><span class="num">03</span><div><strong>Supplier Self-Service Back Office</strong><span>Incoming, improved information, content maintenance and information management form closed loops and reduce the manual costs of the platform ' s operation.</span></div></li>
-<li><span class="num">04</span><div><strong>Multi-country content architecture</strong><span>Support for the continued expansion of the platform by organizing languages, catalogues and local content for different markets.</span></div></li>
-</ol>
-<a class="platform-link" href="/en/work/tarmeer/">View Tarmeer interfaces and project processes</a>
-</div>
-</div>
-</div>
-</section>
 <!-- ==========================================================================
      PROVEN CASE STUDIES
      ========================================================================== -->
 <section class="portfolio-section" id="cases">
 <div class="wrap">
 <div class="section-header">
-<div class="google-chip" style="margin-bottom: 14px;">Selected Work · Live Products</div>
-<h2 class="section-headline">Proven work, running in production</h2>
-<p class="section-desc">No speculative concepts. Every project combines end-to-end product design, disciplined engineering and a real production release.</p>
+  <h2 class="section-headline">Selected projects</h2>
 </div>
-<!-- Filter Control Dock -->
-<div class="filter-dock">
-<button class="filter-pill-btn active" onclick="filterPortfolio('all', this)">All cases (11)</button>
-<button class="filter-pill-btn" onclick="filterPortfolio('app', this)">Apps &amp; software (5)</button>
-<button class="filter-pill-btn" onclick="filterPortfolio('web', this)">Global websites (4)</button>
-<button class="filter-pill-btn" onclick="filterPortfolio('mall', this)">Commerce (2)</button>
-</div>
-<!-- 9 Case Grid -->
-<div class="projects-stage" id="portfolioStage">
-<!-- 1. OTS (web) -->
-<a class="project-card" data-category="web" href="/en/work/ots/">
-<div class="project-viewport">
-<span class="project-type-chip">Global B2B Website</span>
-<img alt="OTS International Elevator Project Delivery Official Website" onerror="this.src='/uploads/ots-airport-cover.png'" src="../uploads/webp/c-ots-airport-lg.webp"/>
-</div>
+<!-- Project case studies -->
+<div class="projects-stage">
+
+<a class="project-card" href="/en/work/ots/">
 <div class="project-body">
 <div>
-<h4>OTS — Global Engineering Website</h4>
+<span class="project-type-chip">Global B2B Website</span>
+<h3>OTS — Global Engineering Website</h3>
 <p>A B2B website that turns complex airport and infrastructure delivery into clear, credible sales proof.</p>
 </div>
-<div class="project-tag-row">
-<span class="project-tag">English B2B</span>
-<span class="project-tag">International Engineering</span>
-<span class="project-tag">Content Architecture</span>
-<span class="project-tag">Technical SEO</span>
+<div class="project-view-link">View case study <span aria-hidden="true">→</span></div>
 </div>
-<div class="project-view-link">View case study <span>→</span></div>
+<div class="project-viewport">
+<img alt="OTS International Elevator Project Delivery Official Website" onerror="this.src='/uploads/ots-airport-cover.png'" loading="lazy" srcset="../uploads/webp/c-ots-airport-sm.webp 760w, ../uploads/webp/c-ots-airport-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="../uploads/webp/c-ots-airport-lg.webp"/>
 </div>
 </a>
-<!-- 1. Epaifa (app) -->
-<a class="project-card" data-category="app" href="/en/work/epaifa/">
-<div class="project-viewport">
-<span class="project-type-chip">B2B Commerce App</span>
-<img alt="Epaifa Mall B2B Cross-border Business City App Case" onerror="this.src='/uploads/avatar-home.png'" src="../uploads/webp/c-epaifa-lg.webp"/>
-</div>
+
+<a class="project-card" href="/en/work/epaifa/">
 <div class="project-body">
 <div>
-<h4>Epaifa — Cross-border Supply Chain App</h4>
+<span class="project-type-chip">B2B Commerce App</span>
+<h3>Epaifa — Cross-border Supply Chain App</h3>
 <p>A 46-screen product connecting purchasing, inventory, fulfilment, COD tracking and reconciliation.</p>
 </div>
-<div class="project-tag-row">
-<span class="project-tag">Mobile app</span>
-<span class="project-tag">Merchant ops</span>
-<span class="project-tag">Complex ordering</span>
-<span class="project-tag">International i18n</span>
+<div class="project-view-link">View case study <span aria-hidden="true">→</span></div>
 </div>
-<div class="project-view-link">View case study <span>→</span></div>
+<div class="project-viewport">
+<img alt="Epaifa Mall concept image showing the product catalogue on a phone beside a warehouse conveyor" loading="lazy" srcset="../uploads/webp/c-epaifa-portfolio-sm.webp?v=fulfillment-conveyor-20261121 760w, ../uploads/webp/c-epaifa-portfolio-lg.webp?v=fulfillment-conveyor-20261121 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="../uploads/webp/c-epaifa-portfolio-lg.webp?v=fulfillment-conveyor-20261121"/>
 </div>
 </a>
-<!-- 2. VeinScope (app) -->
-<a class="project-card" data-category="app" href="/en/work/veinscope/">
-<div class="project-viewport">
-<span class="project-type-chip">Industrial 3D Software</span>
-<img alt="VeinScope industrial endoscope hardware detection measurement interface" onerror="this.src='/uploads/veinscope-device.png'" src="../uploads/webp/c-veinscope-lg.webp"/>
-</div>
+
+<a class="project-card" href="/en/work/veinscope/">
 <div class="project-body">
 <div>
-<h4>VeinScope — Precision Inspection System</h4>
+<span class="project-type-chip">Industrial 3D Software</span>
+<h3>VeinScope — Precision Inspection System</h3>
 <p>Handheld 2D/3D measurement software designed for fast, precise inspection in demanding field conditions.</p>
 </div>
-<div class="project-tag-row">
-<span class="project-tag">Hardware integration</span>
-<span class="project-tag">2D/3D measurement</span>
-<span class="project-tag">Handheld UI</span>
-<span class="project-tag">On-site job tuning</span>
+<div class="project-view-link">View case study <span aria-hidden="true">→</span></div>
 </div>
-<div class="project-view-link">View case study <span>→</span></div>
+<div class="project-viewport">
+<img alt="VeinScope industrial endoscope hardware detection measurement interface" onerror="this.src='/uploads/veinscope-device.png'" loading="lazy" srcset="../uploads/webp/c-veinscope-sm.webp 760w, ../uploads/webp/c-veinscope-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="../uploads/webp/c-veinscope-lg.webp"/>
 </div>
 </a>
-<!-- 3. SUNVOLT (web) -->
-<a class="project-card" data-category="web" href="/en/work/sunvolt/">
-<div class="project-viewport">
-<span class="project-type-chip">Clean Energy Website</span>
-<img alt="SUNVOLT Sunyang Solar Energy Business Storage and New Energy Access Network" onerror="this.src='/uploads/avatar-home.png'" src="../uploads/webp/c-sv-lg.webp"/>
-</div>
+
+<a class="project-card" href="/en/work/avatar/">
 <div class="project-body">
 <div>
-<h4>SUNVOLT — Solar &amp; Energy Storage</h4>
-<p>A fast global website for solar modules, storage systems and international distribution.</p>
-</div>
-<div class="project-tag-row">
-<span class="project-tag">Global website</span>
-<span class="project-tag">Energy storage</span>
-<span class="project-tag">3D visuals</span>
-<span class="project-tag">Lighthouse 99 points</span>
-</div>
-<div class="project-view-link">View case study <span>→</span></div>
-</div>
-</a>
-<!-- 4. AVATAR (app) -->
-<a class="project-card" data-category="app" href="/en/work/avatar/">
-<div class="project-viewport">
 <span class="project-type-chip">Mobile App · AI Emotional Chat</span>
-<img alt="Avatar AI Companion App Interface" onerror="this.src='/uploads/avatar-home3.png'" src="../uploads/webp/c-avatar-lg.webp"/>
-</div>
-<div class="project-body">
-<div>
-<h4>AVATAR — AI Companion App</h4>
+<h3>AVATAR — AI Companion App</h3>
 <p>An immersive AI companion app with expressive chat motion, relationship progression, tiered subscriptions and low-latency streaming responses.</p>
 </div>
-<div class="project-tag-row">
-<span class="project-tag">iOS / Android</span>
-<span class="project-tag">AI Client</span>
-<span class="project-tag">High-fidelity animation</span>
-<span class="project-tag">Subscriptions</span>
+<div class="project-view-link">View case study <span aria-hidden="true">→</span></div>
 </div>
-<div class="project-view-link">View case study <span>→</span></div>
+<div class="project-viewport">
+<img alt="Avatar AI Companion App Interface" onerror="this.src='/uploads/avatar-home3.png'" loading="lazy" srcset="../uploads/webp/c-avatar-sm.webp 760w, ../uploads/webp/c-avatar-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="../uploads/webp/c-avatar-lg.webp"/>
 </div>
 </a>
-<!-- 5. RESON (mall) -->
-<a class="project-card" data-category="mall" href="/en/work/reson/">
-<div class="project-viewport">
-<span class="project-type-chip">3C Hardware Store · DTC Retail</span>
-<img alt="Reson 3C Smart Hardware Digital Mall" onerror="this.src='/uploads/avatar-home.png'" src="../uploads/webp/c-reson-lg.webp"/>
-</div>
+
+<a class="project-card" href="/en/work/tarmeer/" id="platform-capability">
 <div class="project-body">
 <div>
-<h4>RESON — Premium Audio Store</h4>
-<p>A focused DTC storefront with a multi-SKU catalogue, fast cart flow and international checkout.</p>
-</div>
-<div class="project-tag-row">
-<span class="project-tag">Brand E-commerce</span>
-<span class="project-tag">Mini Program Mall</span>
-<span class="project-tag">Multi-Spec SKUs</span>
-<span class="project-tag">Payment Closed Loop</span>
-</div>
-<div class="project-view-link">View case study <span>→</span></div>
-</div>
-</a>
-<!-- 6. VITALINK (web) -->
-<a class="project-card" data-category="web" href="/en/work/vitalink/">
-<div class="project-viewport">
-<span class="project-type-chip">Medical Technology Website</span>
-<img alt="VITALINK Willicon Medical Devices and In vitro Diagnosis Global Network of Officials" onerror="this.src='/uploads/avatar-home.png'" src="../uploads/webp/c-med-lg.webp"/>
-</div>
-<div class="project-body">
-<div>
-<h4>VITALINK — Global Medical Devices</h4>
-<p>An international product and research website for precision medical devices and distributor enquiries.</p>
-</div>
-<div class="project-tag-row">
-<span class="project-tag">Medical website</span>
-<span class="project-tag">Compliance UX</span>
-<span class="project-tag">Research library</span>
-<span class="project-tag">Agent Inquiry</span>
-</div>
-<div class="project-view-link">View case study <span>→</span></div>
-</div>
-</a>
-<!-- 7. Tarmeer (platform) -->
-<a class="project-card" data-category="app" href="/en/work/tarmeer/">
-<div class="project-viewport">
 <span class="project-type-chip">Building Materials Platform</span>
-<img alt="Tarmeer Multinational Interior Design Business Platform" onerror="this.src='/uploads/tarmeer-home.png'" src="../uploads/webp/c-tarmeer-lg.webp"/>
-</div>
-<div class="project-body">
-<div>
-<h4>Tarmeer — Multinational B2B Platform</h4>
+<h3>Tarmeer — Multinational B2B Platform</h3>
 <p>A multi-country platform connecting property owners, design firms and suppliers through one operating system.</p>
 </div>
-<div class="project-tag-row">
-<span class="project-tag">Full-stack</span>
-<span class="project-tag">Product discovery</span>
-<span class="project-tag">Supplier portal</span>
-<span class="project-tag">Multi-country directory</span>
+<div class="project-view-link">View case study <span aria-hidden="true">→</span></div>
 </div>
-<div class="project-view-link">View case study <span>→</span></div>
+<div class="project-viewport">
+<img alt="Tarmeer Multinational Interior Design Business Platform" onerror="this.src='/uploads/tarmeer-home.png'" loading="lazy" srcset="../uploads/webp/c-tarmeer-sm.webp 760w, ../uploads/webp/c-tarmeer-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="../uploads/webp/c-tarmeer-lg.webp"/>
 </div>
 </a>
-<!-- 8. KST Oilfield (web) -->
-<a class="project-card" data-category="web" href="/en/work/kst-oilfield/">
-<div class="project-viewport">
-<span class="project-type-chip">Industrial B2B Website</span>
-<img alt="KST Oilfield Bilingual Network of Petroleum Equipment and Industrial Engineering Officials" onerror="this.src='/uploads/avatar-home.png'" src="../uploads/webp/c-oilfield-lg.webp"/>
-</div>
+
+<a class="project-card" href="/en/work/kst-oilfield/">
 <div class="project-body">
 <div>
-<h4>KST Oilfield — Global Equipment Website</h4>
+<span class="project-type-chip">Industrial B2B Website</span>
+<h3>KST Oilfield — Global Equipment Website</h3>
 <p>A bilingual product website built around specifications, certifications and high-value engineering enquiries.</p>
 </div>
-<div class="project-tag-row">
-<span class="project-tag">Heavy industry</span>
-<span class="project-tag">Bilingual</span>
-<span class="project-tag">Certifications</span>
-<span class="project-tag">Engineering Inquiry Conversion</span>
+<div class="project-view-link">View case study <span aria-hidden="true">→</span></div>
 </div>
-<div class="project-view-link">View case study <span>→</span></div>
+<div class="project-viewport">
+<img alt="KST Oilfield Bilingual Network of Petroleum Equipment and Industrial Engineering Officials" onerror="this.src='/uploads/avatar-home.png'" loading="lazy" srcset="../uploads/webp/c-oilfield-sm.webp 760w, ../uploads/webp/c-oilfield-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="../uploads/webp/c-oilfield-lg.webp"/>
 </div>
 </a>
-<!-- 9. 云裳珠宝 (mall) -->
-<a class="project-card" data-category="mall" href="/en/work/yunshang/">
-<div class="project-viewport">
-<span class="project-type-chip">Jewellery Mini Program</span>
-<img alt="Yunshang Jewelry Oriental Aesthetics Jewelry Custom Mini Program Mall" onerror="this.src='/uploads/avatar-home.png'" src="../uploads/webp/c-yun-lg.webp"/>
-</div>
+
+<a class="project-card" href="/en/work/nanhai/">
 <div class="project-body">
 <div>
-<h4>Yunshang — Custom Jewellery Commerce</h4>
-<p>A private Mini Program for custom jewellery, certificates, VIP services and direct merchant settlement.</p>
-</div>
-<div class="project-tag-row">
-<span class="project-tag">WeChat Mini Program</span>
-<span class="project-tag">Art direction</span>
-<span class="project-tag">Certificates</span>
-<span class="project-tag">Private Settlement</span>
-</div>
-<div class="project-view-link">View case study <span>→</span></div>
-</div>
-</a>
-<!-- 10. 南海风物 (app) -->
-<a class="project-card" data-category="app" href="/en/work/nanhai/">
-<div class="project-viewport">
 <span class="project-type-chip">Interactive Installation</span>
-<img alt="South China Sea Scenery Immersive Cultural Interaction Installation" onerror="this.src='/uploads/avatar-home.png'" src="../uploads/webp/c-nanhai-lg.webp"/>
-</div>
-<div class="project-body">
-<div>
-<h4>Nanhai — Immersive Cultural Experience</h4>
+<h3>Nanhai — Immersive Cultural Experience</h3>
 <p>A touch-screen installation connecting a control console and large display across three on-site experiences.</p>
 </div>
-<div class="project-tag-row">
-<span class="project-tag">Hardware integration</span>
-<span class="project-tag">Dual-screen control</span>
-<span class="project-tag">3 gameplay systems</span>
-<span class="project-tag">Onsite Deployment</span>
+<div class="project-view-link">View case study <span aria-hidden="true">→</span></div>
 </div>
-<div class="project-view-link">View case study <span>→</span></div>
+<div class="project-viewport">
+<img alt="South China Sea Scenery Immersive Cultural Interaction Installation" onerror="this.src='/uploads/avatar-home.png'" loading="lazy" srcset="../uploads/webp/c-nanhai-sm.webp 760w, ../uploads/webp/c-nanhai-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="../uploads/webp/c-nanhai-lg.webp"/>
 </div>
 </a>
 </div>
+
+<section id="industry-demos" aria-labelledby="industry-demos-title">
+<div class="section-header">
+<h2 class="section-headline" id="industry-demos-title">Industry demos</h2>
+<p class="section-desc">Sample websites for fictional projects, covering product catalogues, enquiries and storefronts.</p>
+</div>
+<div class="industry-demo-grid">
+<a href="/en/work/sunvolt/" class="project-card">
+<div class="project-viewport">
+<img alt="SUNVOLT Sunyang Solar Energy Business Storage and New Energy Access Network" onerror="this.src='/uploads/avatar-home.png'" loading="lazy" srcset="../uploads/webp/c-sv-sm.webp 760w, ../uploads/webp/c-sv-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="../uploads/webp/c-sv-lg.webp"/>
+</div>
+<div class="project-body">
+<div>
+<span class="project-type-chip">Clean energy</span>
+<h3>SUNVOLT Energy</h3>
+</div>
+<span class="project-view-link" aria-hidden="true">→</span>
+</div>
+</a>
+
+<a href="/en/work/reson/" class="project-card">
+<div class="project-viewport">
+<img alt="Cover of the RESON consumer audio storefront" onerror="this.src='/uploads/avatar-home.png'" loading="lazy" srcset="../uploads/webp/c-reson-sm.webp 760w, ../uploads/webp/c-reson-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="../uploads/webp/c-reson-lg.webp"/>
+</div>
+<div class="project-body">
+<div>
+<span class="project-type-chip">Consumer electronics</span>
+<h3>RESON Audio Store</h3>
+</div>
+<span class="project-view-link" aria-hidden="true">→</span>
+</div>
+</a>
+
+<a href="/en/work/vitalink/" class="project-card">
+<div class="project-viewport">
+<img alt="Cover of the VITALINK medical devices export website" onerror="this.src='/uploads/avatar-home.png'" loading="lazy" srcset="../uploads/webp/c-med-sm.webp 760w, ../uploads/webp/c-med-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="../uploads/webp/c-med-lg.webp"/>
+</div>
+<div class="project-body">
+<div>
+<span class="project-type-chip">Medical devices</span>
+<h3>VITALINK Medical</h3>
+</div>
+<span class="project-view-link" aria-hidden="true">→</span>
+</div>
+</a>
+
+<a href="/en/work/yunshang/" class="project-card">
+<div class="project-viewport">
+<img alt="A model wearing a red qipao on the Yunshang storefront cover" onerror="this.src='/uploads/avatar-home.png'" loading="lazy" srcset="../uploads/webp/c-yun-sm.webp 760w, ../uploads/webp/c-yun-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="../uploads/webp/c-yun-lg.webp"/>
+</div>
+<div class="project-body">
+<div>
+<span class="project-type-chip">Fashion ecommerce</span>
+<h3>Yunshang Qipao Store</h3>
+</div>
+<span class="project-view-link" aria-hidden="true">→</span>
+</div>
+</a>
+</div>
+</section>
 </div>
 </section>
 <!-- ==========================================================================
@@ -3402,20 +3295,6 @@
     document.getElementById('specCode').innerHTML = d.code;
     const pillBox = document.getElementById('specPills');
     pillBox.innerHTML = d.pills.map(p => `<span class="spec-pill">${p}</span>`).join('');
-  }
-
-  // Portfolio Filtering Engine
-  function filterPortfolio(category, btn) {
-    document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-      if (category === 'all' || card.dataset.category === category) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
   }
 
   // Copy WeChat Helper

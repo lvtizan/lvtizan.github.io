@@ -998,22 +998,6 @@
   .bento-cell.col-6 { grid-column: span 6; }
   .bento-cell.col-12 { grid-column: span 12; }
 
-  .platform-section { padding: clamp(60px, 8vw, 104px) 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
-  .platform-intro { max-width: 850px; margin-bottom: clamp(28px, 4vw, 48px); }
-  .platform-intro .section-headline { max-width: 20ch; }
-  .platform-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
-  .platform-visual { display: block; min-width: 0; overflow: hidden; border: 1px solid var(--border-medium); border-radius: 8px; background: var(--surface); }
-  .platform-visual img { display: block; width: 100%; height: auto; }
-  .platform-steps { margin: 0; padding: 0; list-style: none; }
-  .platform-steps li { display: grid; grid-template-columns: 32px 1fr; gap: 14px; padding: 18px 0; border-top: 1px solid var(--border-medium); }
-  .platform-steps li:last-child { border-bottom: 1px solid var(--border-medium); }
-  .platform-steps .num { font-family: var(--font-mono); font-size: 11px; color: var(--google-blue); padding-top: 4px; }
-  .platform-steps strong { display: block; color: var(--text-primary); font-size: 16px; margin-bottom: 5px; }
-  .platform-steps span:last-child { color: var(--text-tertiary); font-size: 13px; line-height: 1.6; }
-  .platform-link { display: inline-flex; margin-top: 24px; color: var(--google-blue); font-weight: 700; text-decoration: none; }
-  .platform-link:hover { text-decoration: underline; }
-  @media (max-width: 840px) { .platform-layout { grid-template-columns: 1fr; } }
-
   .bento-tag-line {
     display: flex;
     align-items: center;
@@ -2315,6 +2299,7 @@
     }
   }
 </style>
+<link rel="stylesheet" href="/assets/portfolio-gallery.css?v=20261120-6">
 </head>
 
 <body>
@@ -2701,28 +2686,6 @@
   </div>
 </section>
 
-<section class="platform-section" id="platform-capability">
-  <div class="wrap">
-    <div class="platform-intro">
-      <div class="google-chip">Platform Engineering · 建材家居</div>
-      <h2 class="section-headline">建材家居平台，从找供应商到收到询盘</h2>
-      <p class="section-desc">以 Tarmeer 为例，把业主、设计公司与建材供应商放进同一条业务路径：发现服务与产品、查看案例、联系商家，再由商家在后台维护展厅和处理线索。</p>
-    </div>
-    <div class="platform-layout">
-      <a class="platform-visual" href="/work/tarmeer/" aria-label="查看 Tarmeer 建材家居平台的设计与开发案例"><img src="./uploads/webp/tarmeer-hero-showcase.webp" alt="Tarmeer 建材家居平台的目录、展厅和后台界面" loading="lazy"></a>
-      <div>
-        <ol class="platform-steps">
-          <li><span class="num">01</span><div><strong>分类与发现</strong><span>公司、设计师、建材内容按城市和类型组织，让用户能从需求进入合适的结果。</span></div></li>
-          <li><span class="num">02</span><div><strong>企业展厅与项目证明</strong><span>把公司资料、作品案例和产品目录组织成可浏览、可联系的前台页面。</span></div></li>
-          <li><span class="num">03</span><div><strong>供应商自助后台</strong><span>入驻、资料完善、内容维护与询盘管理形成闭环，降低平台运营的手工成本。</span></div></li>
-          <li><span class="num">04</span><div><strong>多国家内容架构</strong><span>面向不同市场组织语言、目录与本地内容，支持平台持续扩展。</span></div></li>
-        </ol>
-        <a class="platform-link" href="/work/tarmeer/">查看 Tarmeer 的界面与工程过程 →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ==========================================================================
      PROVEN CASE STUDIES
      ========================================================================== -->
@@ -2730,254 +2693,171 @@
   <div class="wrap">
     
     <div class="section-header">
-      <div class="google-chip" style="margin-bottom: 14px;">Selected Engagements · 真实工程</div>
-      <h2 class="section-headline">做过的案例，且全部在线上稳定运转</h2>
-      <p class="section-desc">拒绝概念稿与虚构飞机稿。每一个作品皆包含端到端的产品设计、严谨代码交付与商业上线闭环。</p>
+      <h2 class="section-headline">精选项目</h2>
     </div>
 
-    <!-- Filter Control Dock -->
-    <div class="filter-dock">
-      <button class="filter-pill-btn active" onclick="filterPortfolio('all', this)">全部精选案例 (11)</button>
-      <button class="filter-pill-btn" onclick="filterPortfolio('app', this)">App · 软件系统 (5)</button>
-      <button class="filter-pill-btn" onclick="filterPortfolio('web', this)">品牌官网 · 出海独立站 (4)</button>
-      <button class="filter-pill-btn" onclick="filterPortfolio('mall', this)">小程序 · 品牌商城 (2)</button>
-    </div>
+    <!-- Project case studies -->
+    <div class="projects-stage">
 
-    <!-- 9 Case Grid -->
-    <div class="projects-stage" id="portfolioStage">
-      
-      <!-- 1. OTS (web) -->
-      <a href="/work/ots/" class="project-card" data-category="web">
-        <div class="project-viewport">
-          <span class="project-type-chip">国际工程交付官网 · B2B</span>
-          <img src="./uploads/webp/c-ots-airport-lg.webp" alt="OTS 国际电梯项目交付英文官网" onerror="this.src='./uploads/ots-airport-cover.png'">
-        </div>
+      <a href="/work/ots/" class="project-card">
         <div class="project-body">
           <div>
-            <h4>OTS — 国际电梯项目交付官网</h4>
+            <span class="project-type-chip">国际工程交付官网 · B2B</span>
+            <h3>OTS — 国际电梯项目交付官网</h3>
             <p>围绕机场、轨道交通与基础设施项目，重构从制造、物流到安装运维的国际工程交付叙事，并完成响应式开发与技术 SEO。</p>
           </div>
-          <div class="project-tag-row">
-            <span class="project-tag">英文 B2B</span>
-            <span class="project-tag">国际工程</span>
-            <span class="project-tag">内容架构</span>
-            <span class="project-tag">技术 SEO</span>
-          </div>
-          <div class="project-view-link">查看官网制作过程 <span>→</span></div>
+          <div class="project-view-link">查看官网制作过程 <span aria-hidden="true">→</span></div>
+        </div>
+        <div class="project-viewport">
+          <img loading="lazy" srcset="./uploads/webp/c-ots-airport-sm.webp 760w, ./uploads/webp/c-ots-airport-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="./uploads/webp/c-ots-airport-lg.webp" alt="OTS 国际电梯项目交付英文官网" onerror="this.src='./uploads/ots-airport-cover.png'">
         </div>
       </a>
 
-      <!-- 1. Epaifa (app) -->
-      <a href="/work/epaifa/" class="project-card" data-category="app">
-        <div class="project-viewport">
-          <span class="project-type-chip">B2B 商城 App + 仓储端</span>
-          <img src="./uploads/webp/c-epaifa-lg.webp" alt="Epaifa Mall B2B 跨境商城 App 案例" onerror="this.src='./uploads/avatar-home.png'">
-        </div>
+      <a href="/work/epaifa/" class="project-card">
         <div class="project-body">
           <div>
-            <h4>Epaifa Mall — 46 屏跨境供应链商城</h4>
+            <span class="project-type-chip">B2B 商城 App + 仓储端</span>
+            <h3>Epaifa Mall — 46 屏跨境供应链商城</h3>
             <p>打通采购入库、库存补货、多规格下单、拣货出库、COD 物流追踪与售后对账，将跨国复杂业务串成完整闭环。</p>
           </div>
-          <div class="project-tag-row">
-            <span class="project-tag">移动端 App</span>
-            <span class="project-tag">商家中台</span>
-            <span class="project-tag">多规格下单</span>
-            <span class="project-tag">国际化 i18n</span>
-          </div>
-          <div class="project-view-link">查看 46 屏案例详情 <span>→</span></div>
+          <div class="project-view-link">查看 46 屏案例详情 <span aria-hidden="true">→</span></div>
+        </div>
+        <div class="project-viewport">
+          <img loading="lazy" srcset="./uploads/webp/c-epaifa-portfolio-sm.webp?v=fulfillment-conveyor-20261121 760w, ./uploads/webp/c-epaifa-portfolio-lg.webp?v=fulfillment-conveyor-20261121 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="./uploads/webp/c-epaifa-portfolio-lg.webp?v=fulfillment-conveyor-20261121" alt="Epaifa Mall 仓储履约场景示意，商品目录显示在输送线旁的手机上">
         </div>
       </a>
 
-      <!-- 2. VeinScope (app) -->
-      <a href="/work/veinscope/" class="project-card" data-category="app">
-        <div class="project-viewport">
-          <span class="project-type-chip">工业设备端软件 · 3D 测量</span>
-          <img src="./uploads/webp/c-veinscope-lg.webp" alt="VeinScope 工业内窥镜软硬件检测测量界面" onerror="this.src='./uploads/veinscope-device.png'">
-        </div>
+      <a href="/work/veinscope/" class="project-card">
         <div class="project-body">
           <div>
-            <h4>VeinScope — 工业内窥镜检测测量系统</h4>
+            <span class="project-type-chip">工业设备端软件 · 3D 测量</span>
+            <h3>VeinScope — 工业内窥镜检测测量系统</h3>
             <p>手持终端工业软件：2D/3D 分屏、高精度点面测量、深度图伪彩分析与点云导出，针对户外强光作业深度调优。</p>
           </div>
-          <div class="project-tag-row">
-            <span class="project-tag">软硬件交互</span>
-            <span class="project-tag">2D/3D 测量</span>
-            <span class="project-tag">手持工控屏</span>
-            <span class="project-tag">现场作业调优</span>
-          </div>
-          <div class="project-view-link">查看工业软件案例 <span>→</span></div>
+          <div class="project-view-link">查看工业软件案例 <span aria-hidden="true">→</span></div>
+        </div>
+        <div class="project-viewport">
+          <img loading="lazy" srcset="./uploads/webp/c-veinscope-sm.webp 760w, ./uploads/webp/c-veinscope-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="./uploads/webp/c-veinscope-lg.webp" alt="VeinScope 工业内窥镜软硬件检测测量界面" onerror="this.src='./uploads/veinscope-device.png'">
         </div>
       </a>
 
-      <!-- 3. SUNVOLT (web) -->
-      <a href="/work/sunvolt/" class="project-card" data-category="web">
-        <div class="project-viewport">
-          <span class="project-type-chip">新能源出海官网 · 品牌站</span>
-          <img src="./uploads/webp/c-sv-lg.webp" alt="SUNVOLT 晟阳储能 工商业储能与新能源出海官网" onerror="this.src='./uploads/avatar-home.png'">
-        </div>
+      <a href="/work/avatar/" class="project-card">
         <div class="project-body">
           <div>
-            <h4>SUNVOLT 晟阳储能 — 工商业储能出海官网</h4>
-            <p>针对海外储能电站买家决策链：全案工业 3D 视觉语言、储能系统拓扑图解、多语言架构与毫秒级静态预渲染。</p>
-          </div>
-          <div class="project-tag-row">
-            <span class="project-tag">出海品牌站</span>
-            <span class="project-tag">新能源储能</span>
-            <span class="project-tag">全案 3D 视效</span>
-            <span class="project-tag">Lighthouse 99分</span>
-          </div>
-          <div class="project-view-link">查看储能出海案例 <span>→</span></div>
-        </div>
-      </a>
-
-      <!-- 4. AVATAR (app) -->
-      <a href="/work/avatar/" class="project-card" data-category="app">
-        <div class="project-viewport">
-          <span class="project-type-chip">移动 App · AI 情感伴聊</span>
-          <img src="./uploads/webp/c-avatar-lg.webp" alt="AVATAR AI 陪伴应用交互界面" onerror="this.src='./uploads/avatar-home3.png'">
-        </div>
-        <div class="project-body">
-          <div>
-            <h4>AVATAR — AI 角色情感陪伴移动应用</h4>
+            <span class="project-type-chip">移动 App · AI 情感伴聊</span>
+            <h3>AVATAR — AI 角色情感陪伴移动应用</h3>
             <p>沉浸式 AI 角色互动流：高保真聊天动效、好感度进阶系统、多档会员订阅付费与低延迟流式响应一体化落地。</p>
           </div>
-          <div class="project-tag-row">
-            <span class="project-tag">iOS / Android</span>
-            <span class="project-tag">AI 客户端</span>
-            <span class="project-tag">高保真动效</span>
-            <span class="project-tag">商业化订阅</span>
-          </div>
-          <div class="project-view-link">查看 AI App 案例 <span>→</span></div>
+          <div class="project-view-link">查看 AI App 案例 <span aria-hidden="true">→</span></div>
+        </div>
+        <div class="project-viewport">
+          <img loading="lazy" srcset="./uploads/webp/c-avatar-sm.webp 760w, ./uploads/webp/c-avatar-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="./uploads/webp/c-avatar-lg.webp" alt="AVATAR AI 陪伴应用交互界面" onerror="this.src='./uploads/avatar-home3.png'">
         </div>
       </a>
 
-      <!-- 5. RESON (mall) -->
-      <a href="/work/reson/" class="project-card" data-category="mall">
-        <div class="project-viewport">
-          <span class="project-type-chip">3C 硬件商城 · DTC 零售</span>
-          <img src="./uploads/webp/c-reson-lg.webp" alt="RESON 3C 智能硬件数码商城" onerror="this.src='./uploads/avatar-home.png'">
-        </div>
+      <a href="/work/tarmeer/" class="project-card" id="platform-capability">
         <div class="project-body">
           <div>
-            <h4>RESON — 3C 智能硬件数码品牌商城</h4>
-            <p>暗调极客美学数码商城：全品类多规格 SKU 矩阵、毫秒级购物车流转、商品详情与微信支付/Stripe 交易闭环。</p>
-          </div>
-          <div class="project-tag-row">
-            <span class="project-tag">品牌电商</span>
-            <span class="project-tag">小程序商城</span>
-            <span class="project-tag">多规格 SKU</span>
-            <span class="project-tag">支付闭环</span>
-          </div>
-          <div class="project-view-link">查看 3C 商城案例 <span>→</span></div>
-        </div>
-      </a>
-
-      <!-- 6. VITALINK (web) -->
-      <a href="/work/vitalink/" class="project-card" data-category="web">
-        <div class="project-viewport">
-          <span class="project-type-chip">医疗科技出海 · 全球官网</span>
-          <img src="./uploads/webp/c-med-lg.webp" alt="VITALINK 维立康 医疗器械与体外诊断全球官网" onerror="this.src='./uploads/avatar-home.png'">
-        </div>
-        <div class="project-body">
-          <div>
-            <h4>VITALINK 维立康 — 医疗器械全球官网</h4>
-            <p>体外诊断与精密医疗器械国际化品牌站：严谨合规的产品矩阵、学术文献资料库与海外代理商直联询盘系统。</p>
-          </div>
-          <div class="project-tag-row">
-            <span class="project-tag">医疗出海官网</span>
-            <span class="project-tag">合规设计体系</span>
-            <span class="project-tag">学术资料库</span>
-            <span class="project-tag">代理商询盘</span>
-          </div>
-          <div class="project-view-link">查看医疗出海案例 <span>→</span></div>
-        </div>
-      </a>
-
-      <!-- 7. Tarmeer (platform) -->
-      <a href="/work/tarmeer/" class="project-card" data-category="app">
-        <div class="project-viewport">
-          <span class="project-type-chip">建材家居平台 · 前台 + 后台</span>
-          <img src="./uploads/webp/c-tarmeer-lg.webp" alt="Tarmeer 多国室内设计业务平台" onerror="this.src='./uploads/tarmeer-home.png'">
-        </div>
-        <div class="project-body">
-          <div>
-            <h4>Tarmeer — 多国家建材家居平台</h4>
+            <span class="project-type-chip">建材家居平台 · 前台 + 后台</span>
+            <h3>Tarmeer — 多国家建材家居平台</h3>
             <p>连接业主、设计公司与建材供应商：按城市筛选服务，浏览企业展厅与产品目录，在线询盘；商家在后台自助管理内容和线索。</p>
           </div>
-          <div class="project-tag-row">
-            <span class="project-tag">全栈架构</span>
-            <span class="project-tag">建材选品</span>
-            <span class="project-tag">供应商后台</span>
-            <span class="project-tag">多国家目录</span>
-          </div>
-          <div class="project-view-link">查看平台设计与开发 <span>→</span></div>
+          <div class="project-view-link">查看平台设计与开发 <span aria-hidden="true">→</span></div>
+        </div>
+        <div class="project-viewport">
+          <img loading="lazy" srcset="./uploads/webp/c-tarmeer-sm.webp 760w, ./uploads/webp/c-tarmeer-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="./uploads/webp/c-tarmeer-lg.webp" alt="Tarmeer 多国室内设计业务平台" onerror="this.src='./uploads/tarmeer-home.png'">
         </div>
       </a>
 
-      <!-- 8. KST Oilfield (web) -->
-      <a href="/work/kst-oilfield/" class="project-card" data-category="web">
-        <div class="project-viewport">
-          <span class="project-type-chip">重工装备出海 · 双语官网</span>
-          <img src="./uploads/webp/c-oilfield-lg.webp" alt="KST Oilfield 石油装备与工业工程双语官网" onerror="this.src='./uploads/avatar-home.png'">
-        </div>
+      <a href="/work/kst-oilfield/" class="project-card">
         <div class="project-body">
           <div>
-            <h4>KST Oilfield — 石油工程双语全球官网</h4>
+            <span class="project-type-chip">重工装备出海 · 双语官网</span>
+            <h3>KST Oilfield — 石油工程双语全球官网</h3>
             <p>重工油气装备出海标杆站：中英双语国际化、严谨的产品技术参数表与 API 国际认证背书展厅，沉淀高价值海外工程大单。</p>
           </div>
-          <div class="project-tag-row">
-            <span class="project-tag">工业重工出海</span>
-            <span class="project-tag">中英双语</span>
-            <span class="project-tag">国际认证展厅</span>
-            <span class="project-tag">工程询盘转化</span>
-          </div>
-          <div class="project-view-link">查看重工出海案例 <span>→</span></div>
+          <div class="project-view-link">查看重工出海案例 <span aria-hidden="true">→</span></div>
+        </div>
+        <div class="project-viewport">
+          <img loading="lazy" srcset="./uploads/webp/c-oilfield-sm.webp 760w, ./uploads/webp/c-oilfield-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="./uploads/webp/c-oilfield-lg.webp" alt="KST Oilfield 石油装备与工业工程双语官网" onerror="this.src='./uploads/avatar-home.png'">
         </div>
       </a>
 
-      <!-- 9. 云裳珠宝 (mall) -->
-      <a href="/work/yunshang/" class="project-card" data-category="mall">
-        <div class="project-viewport">
-          <span class="project-type-chip">私域小程序 · 高端珠宝商城</span>
-          <img src="./uploads/webp/c-yun-lg.webp" alt="云裳珠宝 东方美学珠宝定制小程序商城" onerror="this.src='./uploads/avatar-home.png'">
-        </div>
+      <a href="/work/nanhai/" class="project-card">
         <div class="project-body">
           <div>
-            <h4>云裳珠宝 — 东方美学珠宝定制小程序商城</h4>
-            <p>高端珠宝定制与私域零售小程序：一物一证书鉴定查验、定制材质选配、私域 VIP 会员权益与微信商户号直连结算。</p>
-          </div>
-          <div class="project-tag-row">
-            <span class="project-tag">微信小程序</span>
-            <span class="project-tag">东方美学</span>
-            <span class="project-tag">一物一码</span>
-            <span class="project-tag">私域结算</span>
-          </div>
-          <div class="project-view-link">查看小程序商城案例 <span>→</span></div>
-        </div>
-      </a>
-
-      <!-- 10. 南海风物 (app) -->
-      <a href="/work/nanhai/" class="project-card" data-category="app">
-        <div class="project-viewport">
-          <span class="project-type-chip">软件 · 软硬件触屏互动装置</span>
-          <img src="./uploads/webp/c-nanhai-lg.webp" alt="南海风物 沉浸式文化互动装置" onerror="this.src='./uploads/avatar-home.png'">
-        </div>
-        <div class="project-body">
-          <div>
-            <h4>南海风物 — 沉浸式文化互动装置</h4>
+            <span class="project-type-chip">软件 · 软硬件触屏互动装置</span>
+            <h3>南海风物 — 沉浸式文化互动装置</h3>
             <p>佛山千灯湖魁星阁沉浸式互动装置：以岭南龙舟为叙事主线，触屏端控台与大屏多端联动，3 种关卡玩法现场稳定落地。</p>
           </div>
-          <div class="project-tag-row">
-            <span class="project-tag">软硬件交互</span>
-            <span class="project-tag">触屏大屏联动</span>
-            <span class="project-tag">3种玩法系统</span>
-            <span class="project-tag">现场部署</span>
-          </div>
-          <div class="project-view-link">查看互动装置案例 <span>→</span></div>
+          <div class="project-view-link">查看互动装置案例 <span aria-hidden="true">→</span></div>
+        </div>
+        <div class="project-viewport">
+          <img loading="lazy" srcset="./uploads/webp/c-nanhai-sm.webp 760w, ./uploads/webp/c-nanhai-lg.webp 1400w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1344px) calc(60vw - 39px), 767px" src="./uploads/webp/c-nanhai-lg.webp" alt="南海风物 沉浸式文化互动装置" onerror="this.src='./uploads/avatar-home.png'">
         </div>
       </a>
 
     </div>
+
+    <section id="industry-demos" aria-labelledby="industry-demos-title">
+      <div class="section-header">
+        <h2 class="section-headline" id="industry-demos-title">行业演示</h2>
+        <p class="section-desc">用虚拟项目展示不同行业的产品陈列、询盘与购物流程。</p>
+      </div>
+      <div class="industry-demo-grid">
+        <a href="/work/sunvolt/" class="project-card">
+          <div class="project-viewport">
+            <img loading="lazy" srcset="./uploads/webp/c-sv-sm.webp 760w, ./uploads/webp/c-sv-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="./uploads/webp/c-sv-lg.webp" alt="SUNVOLT 晟阳储能 工商业储能与新能源出海官网" onerror="this.src='./uploads/avatar-home.png'">
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-type-chip">新能源出海</span>
+              <h3>SUNVOLT 储能官网</h3>
+            </div>
+            <span class="project-view-link" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="/work/reson/" class="project-card">
+          <div class="project-viewport">
+            <img loading="lazy" srcset="./uploads/webp/c-reson-sm.webp 760w, ./uploads/webp/c-reson-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="./uploads/webp/c-reson-lg.webp" alt="RESON 数码音频品牌商城封面" onerror="this.src='./uploads/avatar-home.png'">
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-type-chip">数码电商</span>
+              <h3>RESON 音频商城</h3>
+            </div>
+            <span class="project-view-link" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="/work/vitalink/" class="project-card">
+          <div class="project-viewport">
+            <img loading="lazy" srcset="./uploads/webp/c-med-sm.webp 760w, ./uploads/webp/c-med-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="./uploads/webp/c-med-lg.webp" alt="VITALINK 医疗器械出海官网封面" onerror="this.src='./uploads/avatar-home.png'">
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-type-chip">医疗器械出海</span>
+              <h3>VITALINK 医疗器械官网</h3>
+            </div>
+            <span class="project-view-link" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="/work/yunshang/" class="project-card">
+          <div class="project-viewport">
+            <img loading="lazy" srcset="./uploads/webp/c-yun-sm.webp 760w, ./uploads/webp/c-yun-lg.webp 1400w" sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) calc(50vw - 26px), (max-width: 1023px) calc(50vw - 40px), (max-width: 1344px) calc(25vw - 28px), 308px" src="./uploads/webp/c-yun-lg.webp" alt="云裳国风服饰独立站封面，模特身穿红色旗袍" onerror="this.src='./uploads/avatar-home.png'">
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-type-chip">服饰电商</span>
+              <h3>云裳国风服饰商城</h3>
+            </div>
+            <span class="project-view-link" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
   </div>
 </section>
 
@@ -3464,20 +3344,6 @@
     document.getElementById('specCode').innerHTML = d.code;
     const pillBox = document.getElementById('specPills');
     pillBox.innerHTML = d.pills.map(p => `<span class="spec-pill">${p}</span>`).join('');
-  }
-
-  // Portfolio Filtering Engine
-  function filterPortfolio(category, btn) {
-    document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-      if (category === 'all' || card.dataset.category === category) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
   }
 
   // Copy WeChat Helper
