@@ -1,3 +1,4 @@
+.hero-atelier,
 #services,
 #cases {
   --homepage-section-gutter: 32px;
@@ -9,6 +10,7 @@
   padding: clamp(64px, 8vw, 112px) 0;
 }
 
+.hero-atelier > .wrap,
 #services > .wrap,
 #cases > .wrap {
   width: min(calc(100% - 2 * var(--homepage-section-gutter)), var(--max-w));
@@ -155,6 +157,7 @@
 }
 
 @media (max-width: 760px) {
+  .hero-atelier,
   #services,
   #cases { --homepage-section-gutter: 20px; }
   #cases .project-card { grid-template-columns: minmax(0, 1fr); }
