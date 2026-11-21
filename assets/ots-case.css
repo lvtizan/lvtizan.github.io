@@ -1,0 +1,108 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d0f14;
+  --surface: #161a23;
+  --ink: #f4f6fb;
+  --muted: #b3bece;
+  --line: #2a303d;
+  --accent: #b5c9ff;
+  --width: 1240px;
+  --gutter: clamp(16px, 4vw, 48px);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 Satoshi, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.14; text-wrap: balance; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.wrap { width: min(calc(100% - 2 * var(--gutter)), var(--width)); margin-inline: auto; }
+.case-nav { border-bottom: 1px solid var(--line); }
+.case-nav .wrap,
+.case-footer .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  min-height: 62px;
+}
+.case-brand { text-decoration: none; font-weight: 700; }
+.case-nav-links { display: flex; align-items: center; gap: 20px; }
+.case-nav-links a, .case-footer a { color: var(--muted); text-decoration: none; font-size: 14px; }
+.case-nav-links a:hover, .case-footer a:hover { color: var(--ink); }
+.case-nav-links .language-switch { color: var(--accent); }
+
+.case-hero { padding: clamp(54px, 8vw, 108px) 0 clamp(56px, 8vw, 106px); }
+.hero-copy { text-align: center; }
+.eyebrow { color: var(--accent); font-size: 14px; font-weight: 700; }
+.case-hero h1 {
+  font-size: clamp(36px, 6.6vw, 83px);
+  font-weight: 700;
+  letter-spacing: -0.047em;
+  margin: 12px auto 16px;
+}
+.lead { max-width: 41rem; margin-inline: auto; color: var(--muted); font-size: clamp(16px, 2.1vw, 22px); text-wrap: pretty; }
+.actions { display: flex; align-items: center; justify-content: center; gap: 12px 24px; flex-wrap: wrap; margin-top: 24px; }
+.action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 19px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.action:hover { background: var(--accent); }
+.text-link { color: var(--accent); text-underline-offset: 0.2em; font-size: 14px; }
+.case-hero figure { margin-top: clamp(28px, 5vw, 64px); }
+.case-hero img { width: 100%; aspect-ratio: 2.05; object-fit: cover; border-radius: 16px; }
+
+.highlights { padding-bottom: clamp(56px, 8vw, 106px); }
+.section-heading { font-size: clamp(29px, 4.4vw, 55px); letter-spacing: -0.038em; margin-bottom: 24px; }
+.highlight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.highlight {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.highlight-wide { grid-column: 1 / -1; }
+.highlight-copy { padding: clamp(20px, 4vw, 42px); }
+.highlight h3 { font-size: clamp(21px, 3.2vw, 36px); letter-spacing: -0.025em; margin-bottom: 8px; }
+.highlight p { color: var(--muted); max-width: 52ch; text-wrap: pretty; }
+.highlight-media { display: block; margin-top: auto; background: #1b2941; }
+.highlight-media:focus-visible { outline-offset: -5px; }
+.highlight-media img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; }
+.highlight-wide .highlight-media img { aspect-ratio: 2.2; object-fit: cover; object-position: top; }
+.highlight-enquiry .highlight-media { background: #ece7dc; }
+
+.case-delivery { padding: clamp(42px, 6vw, 74px) 0; background: var(--surface); }
+.delivery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.delivery-grid dt { font-size: 17px; font-weight: 700; }
+.delivery-grid dd { margin: 5px 0 0; color: var(--muted); }
+.case-next { text-align: center; padding: clamp(50px, 8vw, 100px) 0; }
+.case-next .section-heading { margin-bottom: 0; }
+.case-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+@media (max-width: 700px) {
+  .case-hero img { aspect-ratio: 1.35; }
+  .highlight-grid { grid-template-columns: minmax(0, 1fr); }
+  .highlight-wide .highlight-media img { aspect-ratio: 1.55; }
+  .delivery-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 390px) {
+  .case-nav-links { gap: 12px; }
+  .case-nav .text-link { display: none; }
+}

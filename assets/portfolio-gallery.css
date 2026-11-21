@@ -1,13 +1,17 @@
+#services,
 #cases {
-  --case-gutter: 32px;
-  --case-list-width: 1280px;
+  --homepage-section-gutter: 32px;
+}
+
+#cases {
   background: #0d0f14;
   color: #f4f6fb;
   padding: clamp(64px, 8vw, 112px) 0;
 }
 
+#services > .wrap,
 #cases > .wrap {
-  width: min(calc(100% - 2 * var(--case-gutter)), var(--case-list-width));
+  width: min(calc(100% - 2 * var(--homepage-section-gutter)), var(--max-w));
   max-width: none;
   padding: 0;
 }
@@ -151,7 +155,8 @@
 }
 
 @media (max-width: 760px) {
-  #cases { --case-gutter: 20px; }
+  #services,
+  #cases { --homepage-section-gutter: 20px; }
   #cases .project-card { grid-template-columns: minmax(0, 1fr); }
   #cases .project-body { padding: 24px; }
   #industry-demos .industry-demo-grid { gap: 12px; }
