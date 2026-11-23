@@ -1,0 +1,10 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/wp-admin/edit.php?post_type=fy_exhibit",
+  "login": true,
+  "steps": [
+    {"step":"setSiteLanguage","language":"zh_CN"},
+    {"step":"setSiteOptions","options":{"blogname":"方圆石光 · 演示展厅","blog_public":"0"}},
+    {"step":"installPlugin","pluginData":{"resource":"url","url":"https://yoyant.com/work/demo-fangyuan/wordpress/fangyuan.zip"},"options":{"activate":true}}
+  ]
+}

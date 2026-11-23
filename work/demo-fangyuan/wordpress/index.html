@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>方圆石光 · WordPress 后台演示</title>
+<style>*{box-sizing:border-box}body{margin:0;font:15px/1.6 system-ui,sans-serif;color:#282b22;background:#f6f3ed}header{padding:14px clamp(12px,3vw,40px);display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}h1{margin:0;font:600 21px/1.5 serif}p{margin:0;color:#58594d}a{color:inherit}iframe{display:block;background:#fff;width:100%;height:82vh;border:1px solid #d5d0c6}</style></head>
+<body><header><div><h1>方圆石光 · 后台演示</h1><p>打开 FYN1-1 可编辑资料、上传媒体和预览展品。试用数据仅保存在当前浏览器会话。</p></div><a id="full" target="_blank" rel="noopener">独立窗口打开</a></header>
+<iframe id="wp" title="WordPress 展品管理后台" allow="clipboard-write"></iframe>
+<script>
+const url = new URL('https://playground.wordpress.net/');
+url.searchParams.set('blueprint-url', new URL('blueprint.json', location.href).href);
+document.querySelector('#full').href = url.href;
+document.querySelector('#wp').src = url.href;
+</script></body></html>
