@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#191714">
+  <meta name="description" content="方圆石光空间换材演示。上传客厅照片，在指定区域试铺石材。">
+  <title>空间换材 · 方圆石光</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="studio">
+    <header class="top-bar">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="2"/><circle cx="16" cy="16" r="7"/><path d="M16 3v6m0 14v6M3 16h6m14 0h6"/></svg>
+        <span>方圆石光</span>
+      </div>
+      <span class="brand-context">展厅数字化体验</span>
+      <button class="action outline" id="export" type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg>
+        保存效果图
+      </button>
+    </header>
+
+    <section class="intro" aria-labelledby="title">
+      <div>
+        <h1 id="title">空间换材</h1>
+        <p>上传空间照片，圈定一处平面，再挑一款石材试铺。</p>
+      </div>
+      <button class="action primary" id="upload" type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 16v5h14v-5"/></svg>
+        上传客厅照片
+      </button>
+      <input id="photo-upload" type="file" accept="image/*" hidden>
+    </section>
+
+    <div class="workspace">
+      <section class="editor" aria-label="照片工作区">
+        <div class="toolbar">
+          <span class="scene-label" id="scene-label">样板客厅</span>
+          <div class="tools">
+            <button class="tool" type="button" id="edit" aria-pressed="false" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5m6 0h5v5m0 6v5h-5m-6 0H4v-5"/></svg>
+              选区域
+            </button>
+            <button class="tool" type="button" id="compare" aria-pressed="false" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H4v14h6m4-14h6v14h-6M12 3v18"/></svg>
+              前后对比
+            </button>
+          </div>
+        </div>
+        <div class="stage" id="stage">
+          <div class="picture" id="picture">
+            <img class="source-image" id="source" src="assets/living-room.webp" alt="样板客厅">
+            <canvas id="preview" aria-label="试铺效果预览" hidden></canvas>
+            <svg class="region" id="region" aria-hidden="true"><polyline id="outline" vector-effect="non-scaling-stroke"/></svg>
+            <div class="corners" id="corners"></div>
+            <div class="compare-label before" hidden>原图</div>
+            <div class="compare-label after" hidden>试铺</div>
+            <div class="divider" id="divider" tabindex="0" role="slider" aria-label="原图与试铺图分界" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48" hidden>
+              <span aria-hidden="true">‹ ›</span>
+            </div>
+          </div>
+        </div>
+        <div class="scene-footer">
+          <p id="status" role="status">正在加载样板客厅与石材…</p>
+          <div class="scene-actions">
+            <button id="undo" class="text-button" type="button" hidden>撤销一点</button>
+            <button id="reselect" class="text-button" type="button" hidden>重新选点</button>
+            <button id="sample" class="text-button" type="button" hidden>恢复样板</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="palette" aria-labelledby="palette-title">
+        <div class="palette-heading">
+          <h2 id="palette-title">石材库</h2>
+          <p>拖到选区，也可以点选试铺。</p>
+        </div>
+        <div class="materials" id="materials">
+          <button type="button" class="material" data-material="fyn" aria-pressed="false" draggable="true">
+            <img src="assets/fyn1-1.webp" alt="" draggable="false">
+            <span class="material-name">FYN1-1</span>
+            <span class="material-desc">灰白流纹</span>
+          </button>
+          <button type="button" class="material" data-material="sand" aria-pressed="false" draggable="true">
+            <img src="assets/sand.webp" alt="" draggable="false">
+            <span class="material-name">浅砂米纹</span>
+            <span class="material-desc">展厅实拍</span>
+          </button>
+          <button type="button" class="material" data-material="ivory" aria-pressed="false" draggable="true">
+            <img src="assets/ivory.webp" alt="" draggable="false">
+            <span class="material-name">米白黑纹</span>
+            <span class="material-desc">展厅实拍</span>
+          </button>
+          <button type="button" class="material" data-material="jade" aria-pressed="false" draggable="true">
+            <img src="assets/jade.webp" alt="" draggable="false">
+            <span class="material-name">翠绿金纹</span>
+            <span class="material-desc">展厅实拍</span>
+          </button>
+        </div>
+        <div class="layout-settings">
+          <h3 id="layout-label">铺贴方式</h3>
+          <div class="segmented" id="layouts" role="group" aria-labelledby="layout-label">
+            <button type="button" data-layout="slab" aria-pressed="true">整板</button>
+            <button type="button" data-layout="tile" aria-pressed="false">瓷砖</button>
+          </div>
+        </div>
+        <p class="photo-note">照片仅在当前浏览器处理。</p>
+      </aside>
+    </div>
+    <img id="sample-mask" src="assets/living-room-mask.webp" alt="" hidden>
+  </main>
+</body>
+</html>
