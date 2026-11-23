@@ -1,6 +1,6 @@
 const elements = Object.fromEntries(
   ['source', 'preview', 'picture', 'outline', 'corners', 'divider', 'status', 'scene-label',
-    'edit', 'compare', 'upload', 'photo-upload', 'sample', 'sample-mask', 'undo', 'reselect',
+    'edit', 'compare', 'photo-upload', 'upload-feedback', 'sample', 'sample-mask', 'undo', 'reselect',
     'export', 'layouts', 'materials'].map(id => [id, document.getElementById(id)])
 );
 const materialButtons = [...elements.materials.querySelectorAll('[data-material]')];
@@ -23,6 +23,18 @@ let pictureVersion = 0;
 let cornerDrag = null;
 let renderJob = 0;
 let draggedMaterial = null;
+
+function waitForImage(image) {
+  if (image.complete) {
+    return image.naturalWidth > 0 ? Promise.resolve(image) : Promise.reject(new Error('图片读取失败'));
+  }
+  return new Promise((resolve, reject) => {
+    image.addEventListener('load', () => resolve(image), { once: true });
+    image.addEventListener('error', () => reject(new Error('图片读取失败')), { once: true });
+  });
+}
+
+const sampleMask = waitForImage(elements['sample-mask']).catch(() => null);
 
 function readPixels(image, width = image.naturalWidth, height = image.naturalHeight) {
   const buffer = document.createElement('canvas');
@@ -221,7 +233,7 @@ function rebuildPins() {
 
 function update(message) {
   const hasQuad = validQuad(state.points);
-  const hasFinish = hasQuad && Boolean(state.material);
+  const hasFinish = hasQuad && textures.has(state.material);
   const showComparison = hasFinish && state.comparing && !state.editing;
   elements.preview.hidden = !hasFinish;
   elements.picture.classList.toggle('editing', state.editing);
@@ -233,7 +245,7 @@ function update(message) {
   elements.export.disabled = !hasFinish || state.editing;
   elements.divider.hidden = !showComparison;
   comparisonLabels.forEach(label => { label.hidden = !showComparison; });
-  materialButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.material === state.material)));
+  materialButtons.forEach(button => button.setAttribute('aria-pressed', String(hasFinish && button.dataset.material === state.material)));
   layoutButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.layout === state.layout)));
   elements.undo.hidden = !state.editing || state.points.length === 0;
   elements.reselect.hidden = !state.editing || state.points.length === 0;
@@ -267,7 +279,7 @@ function imagePoint(event) {
 }
 
 function addCorner(event) {
-  if (!state.editing || state.points.length >= 4 || event.target.closest('.corner')) return;
+  if (!state?.editing || state.points.length >= 4 || event.target.closest('.corner')) return;
   const point = imagePoint(event);
   const next = [...state.points, point];
   if (state.points.some(p => Math.hypot(p.x - point.x, p.y - point.y) < 0.018)) {
@@ -321,12 +333,12 @@ function clearDrag() {
   if (state) drawRegion();
 }
 
-async function openPhoto(url, label, isSample) {
-  const version = ++pictureVersion;
+async function openPhoto(url, label, isSample, version) {
   const image = new Image();
   image.src = url;
-  await image.decode();
-  if (version !== pictureVersion) return;
+  await waitForImage(image);
+  const maskImage = isSample ? await sampleMask : null;
+  if (version !== pictureVersion) return false;
   const limitSize = Math.min(1, 1800 / Math.max(image.naturalWidth, image.naturalHeight));
   const width = Math.max(1, Math.round(image.naturalWidth * limitSize));
   const height = Math.max(1, Math.round(image.naturalHeight * limitSize));
@@ -341,8 +353,6 @@ async function openPhoto(url, label, isSample) {
   reduced.height = Math.max(1, Math.round(height * 0.025));
   reduced.getContext('2d').drawImage(original, 0, 0, reduced.width, reduced.height);
   lightContext.drawImage(reduced, 0, 0, width, height);
-  const maskImage = elements['sample-mask'];
-
   state = {
     sample: isSample,
     editing: !isSample,
@@ -350,50 +360,53 @@ async function openPhoto(url, label, isSample) {
     layout: 'extend',
     points: isSample ? [...sampleCorners] : [],
     material: isSample ? 'fyn' : null,
-    mask: isSample ? readPixels(maskImage, width, height) : null,
+    mask: maskImage ? readPixels(maskImage, width, height) : null,
     lighting: lightContext.getImageData(0, 0, width, height)
   };
+  const previousUrl = elements.source.src;
   elements.source.src = url;
+  if (previousUrl.startsWith('blob:') && previousUrl !== url) URL.revokeObjectURL(previousUrl);
   elements.source.alt = label;
   elements['scene-label'].textContent = label;
   elements.picture.style.setProperty('--photo-ratio', width / height);
   setSplit(0.48);
   update();
+  return true;
 }
 
-function openSample() {
-  return openPhoto(samplePhoto, '样板客厅', true);
+async function openSample(version) {
+  try {
+    await openPhoto(samplePhoto, '样板客厅', true, version);
+  } catch {
+    if (version === pictureVersion) elements.status.textContent = '样板客厅加载失败。你仍可以上传自己的照片。';
+  }
 }
 
-function showPhotoError() {
-  elements.status.textContent = '无法读取这张照片。请换用 JPG、PNG 或 WebP 图片。';
-}
-
-elements.upload.addEventListener('click', () => elements['photo-upload'].click());
 elements['photo-upload'].addEventListener('change', async ({ target }) => {
   const photo = target.files[0];
   target.value = '';
   if (!photo) return;
-  const previousUrl = elements.source.src;
+  const version = ++pictureVersion;
+  elements['upload-feedback'].textContent = '正在读取照片…';
   const url = URL.createObjectURL(photo);
   try {
-    await openPhoto(url, '我的空间', false);
-    if (elements.source.src === url && previousUrl.startsWith('blob:')) URL.revokeObjectURL(previousUrl);
+    if (await openPhoto(url, '我的空间', false, version)) {
+      elements['upload-feedback'].textContent = '照片已就绪。请依次点选四角。';
+    }
   } catch {
-    showPhotoError();
+    if (version !== pictureVersion) return;
+    elements['upload-feedback'].textContent = /heic|heif/i.test(photo.type) || /\.hei[cf]$/i.test(photo.name)
+      ? '无法读取这张 HEIC 照片。请试用 Safari，或换一张 JPG。'
+      : '无法读取这张照片。请换用 JPG、PNG 或 WebP 图片。';
+    if (!state) openSample(version);
   } finally {
     if (elements.source.src !== url) URL.revokeObjectURL(url);
   }
 });
 
-elements.sample.addEventListener('click', async () => {
-  const previousUrl = elements.source.src;
-  try {
-    await openSample();
-    if (previousUrl.startsWith('blob:') && elements.source.src !== previousUrl) URL.revokeObjectURL(previousUrl);
-  } catch {
-    showPhotoError();
-  }
+elements.sample.addEventListener('click', () => {
+  elements['upload-feedback'].textContent = '';
+  openSample(++pictureVersion);
 });
 
 elements.edit.addEventListener('click', () => {
@@ -510,19 +523,15 @@ new ResizeObserver(() => {
   if (state) drawRegion();
 }).observe(elements.picture);
 
-async function start() {
-  await Promise.all([
-    elements['sample-mask'].decode(),
-    ...materialButtons.map(async button => {
-      const image = button.querySelector('img');
-      await image.decode();
-      textures.set(button.dataset.material, { source: readPixels(image) });
-    })
-  ]);
-  await openSample();
-  elements.upload.disabled = false;
-}
-
-start().catch(() => {
-  elements.status.textContent = '演示素材加载失败，请刷新页面后重试。';
+openSample(pictureVersion);
+materialButtons.forEach(async button => {
+  const id = button.dataset.material;
+  try {
+    const image = await waitForImage(button.querySelector('img'));
+    textures.set(id, { source: readPixels(image) });
+    button.disabled = false;
+    if (state?.material === id) update();
+  } catch {
+    button.querySelector('.material-desc').textContent = '素材暂未加载';
+  }
 });

@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#191714">
   <meta name="description" content="方圆石光空间换材演示。上传客厅照片，在指定区域试铺石材。">
   <title>空间换材 · 方圆石光</title>
-  <link rel="stylesheet" href="styles.css?v=2">
-  <script src="app.js?v=3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script src="app.js?v=4" defer></script>
 </head>
 <body>
   <main class="studio">
@@ -29,11 +29,14 @@
         <h1 id="title">空间换材</h1>
         <p>上传空间照片，圈定一处平面，再挑一款石材试铺。</p>
       </div>
-      <button class="action primary" id="upload" type="button" disabled>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 16v5h14v-5"/></svg>
-        上传客厅照片
-      </button>
-      <input id="photo-upload" type="file" accept="image/*" hidden>
+      <div class="upload-control">
+        <label class="action primary" id="upload">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 16v5h14v-5"/></svg>
+          上传客厅照片
+          <input id="photo-upload" type="file" accept="image/*,.heic,.heif" aria-describedby="upload-feedback">
+        </label>
+        <p class="upload-feedback" id="upload-feedback" role="status"></p>
+      </div>
     </section>
 
     <div class="workspace">
@@ -80,22 +83,22 @@
           <p>拖到选区，也可以点选试铺。</p>
         </div>
         <div class="materials" id="materials">
-          <button type="button" class="material" data-material="fyn" aria-pressed="false" draggable="true">
+          <button type="button" class="material" data-material="fyn" aria-pressed="false" draggable="true" disabled>
             <img src="assets/fyn1-1.webp" alt="" draggable="false">
             <span class="material-name">FYN1-1</span>
             <span class="material-desc">灰白流纹</span>
           </button>
-          <button type="button" class="material" data-material="sand" aria-pressed="false" draggable="true">
+          <button type="button" class="material" data-material="sand" aria-pressed="false" draggable="true" disabled>
             <img src="assets/sand.webp" alt="" draggable="false">
             <span class="material-name">浅砂米纹</span>
             <span class="material-desc">展厅实拍</span>
           </button>
-          <button type="button" class="material" data-material="ivory" aria-pressed="false" draggable="true">
+          <button type="button" class="material" data-material="ivory" aria-pressed="false" draggable="true" disabled>
             <img src="assets/ivory.webp" alt="" draggable="false">
             <span class="material-name">米白黑纹</span>
             <span class="material-desc">展厅实拍</span>
           </button>
-          <button type="button" class="material" data-material="jade" aria-pressed="false" draggable="true">
+          <button type="button" class="material" data-material="jade" aria-pressed="false" draggable="true" disabled>
             <img src="assets/jade.webp" alt="" draggable="false">
             <span class="material-name">翠绿金纹</span>
             <span class="material-desc">展厅实拍</span>
