@@ -265,9 +265,10 @@ h1 {
 .material-desc { margin-top: 2px; color: var(--muted); font-size: 11px; }
 .layout-settings { border-top: 1px solid var(--edge); margin-top: 16px; padding-top: 14px; }
 .layout-settings h3 { font-size: 12px; margin-bottom: 8px; font-weight: 600; }
-.segmented { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; border: 1px solid var(--edge); border-radius: 5px; background: #191714; }
+.segmented { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; padding: 3px; border: 1px solid var(--edge); border-radius: 5px; background: #191714; }
 .segmented button { min-height: 32px; border: 0; border-radius: 3px; background: transparent; color: var(--muted); font-size: 12px; }
 .segmented button[aria-pressed="true"] { color: var(--accent-bright); background: #44372c; }
+.layout-note { color: var(--muted); font-size: 11px; margin-top: 7px; line-height: 1.5; }
 .photo-note { margin-top: 14px; }
 @media (max-width: 850px) {
   .studio { padding-inline: 18px; }

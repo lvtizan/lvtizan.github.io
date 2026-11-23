@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#191714">
   <meta name="description" content="方圆石光空间换材演示。上传客厅照片，在指定区域试铺石材。">
   <title>空间换材 · 方圆石光</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="app.js?v=2" defer></script>
 </head>
 <body>
   <main class="studio">
@@ -104,9 +104,11 @@
         <div class="layout-settings">
           <h3 id="layout-label">铺贴方式</h3>
           <div class="segmented" id="layouts" role="group" aria-labelledby="layout-label">
-            <button type="button" data-layout="slab" aria-pressed="true">整板</button>
+            <button type="button" data-layout="extend" aria-pressed="true" aria-describedby="layout-note">自动延伸</button>
+            <button type="button" data-layout="slab" aria-pressed="false">整板</button>
             <button type="button" data-layout="tile" aria-pressed="false">瓷砖</button>
           </div>
+          <p class="layout-note" id="layout-note">保持纹理比例，连续铺满选区。</p>
         </div>
         <p class="photo-note">照片仅在当前浏览器处理。</p>
       </aside>

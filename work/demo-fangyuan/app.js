@@ -33,6 +33,34 @@ function readPixels(image, width = image.naturalWidth, height = image.naturalHei
   return context.getImageData(0, 0, width, height);
 }
 
+function makeSeamlessTexture(source) {
+  const overlap = Math.round(Math.min(source.width, source.height) * 0.15);
+  const width = source.width - overlap;
+  const height = source.height - overlap;
+  const output = new ImageData(width, height);
+  const smooth = t => t * t * (3 - 2 * t);
+  for (let y = 0; y < height; y++) {
+    const blendY = smooth(Math.min(1, y / overlap));
+    const top = y * source.width * 4;
+    const otherRow = y < overlap ? top + height * source.width * 4 : top;
+    for (let x = 0; x < width; x++) {
+      const offset = x * 4;
+      const otherOffset = x < overlap ? offset + width * 4 : offset;
+      const blendX = smooth(Math.min(1, x / overlap));
+      const index = (y * width + x) * 4;
+      for (let channel = 0; channel < 3; channel++) {
+        const topColor = source.data[top + offset + channel] * blendX
+          + source.data[top + otherOffset + channel] * (1 - blendX);
+        const bottomColor = source.data[otherRow + offset + channel] * blendX
+          + source.data[otherRow + otherOffset + channel] * (1 - blendX);
+        output.data[index + channel] = bottomColor + (topColor - bottomColor) * blendY;
+      }
+      output.data[index + 3] = 255;
+    }
+  }
+  return output;
+}
+
 function validQuad(points) {
   if (points.length !== 4) return false;
   const turns = points.map((point, i) => cross(point, points[(i + 1) % 4], points[(i + 2) % 4]));
@@ -72,8 +100,10 @@ function inverseProjection([topLeft, topRight, bottomRight, bottomLeft]) {
 }
 
 function renderMaterial() {
-  const texture = textures.get(state.material);
-  if (!texture || !validQuad(state.points)) return;
+  const material = textures.get(state.material);
+  if (!material || !validQuad(state.points)) return;
+  const isExtended = state.layout === 'extend';
+  const texture = isExtended ? (material.seamless ??= makeSeamlessTexture(material.source)) : material.source;
   const { width, height } = original;
   const points = state.points.map(p => ({ x: p.x * width, y: p.y * height }));
   const [a, b, c, d, e, f, g, h, j] = inverseProjection(points);
@@ -85,16 +115,23 @@ function renderMaterial() {
   const tw = texture.width;
   const th = texture.height;
   const length = (p, q) => Math.hypot(p.x - q.x, p.y - q.y);
-  const ratio = (length(points[0], points[1]) + length(points[3], points[2]))
-    / (length(points[0], points[3]) + length(points[1], points[2]));
-  const tilesX = state.layout === 'tile' ? limit(Math.round(ratio * 2), 1, 6) : 1;
-  const tilesY = state.layout === 'tile' ? 2 : 1;
-  const cellRatio = ratio * tilesY / tilesX;
+  const planeWidth = (length(points[0], points[1]) + length(points[3], points[2])) / 2;
+  const planeHeight = (length(points[0], points[3]) + length(points[1], points[2])) / 2;
+  const ratio = planeWidth / planeHeight;
+  const isTiled = state.layout === 'tile';
+  // Scale both axes uniformly relative to the photo so a larger region shows
+  // more texture rather than magnifying the same portion of the material.
+  const texturePixelsPerPhotoPixel = Math.min(tw, th) / (Math.min(width, height) * 0.38);
+  const repeatsX = isExtended ? planeWidth * texturePixelsPerPhotoPixel / tw
+    : isTiled ? limit(Math.round(ratio * 2), 1, 6) : 1;
+  const repeatsY = isExtended ? planeHeight * texturePixelsPerPhotoPixel / th : isTiled ? 2 : 1;
+  const originU = isExtended ? (1 - repeatsX) / 2 : 0;
+  const originV = isExtended ? (1 - repeatsY) / 2 : 0;
+  const cellRatio = ratio * repeatsY / repeatsX;
   const cropWidth = Math.min(tw, th * cellRatio);
   const cropHeight = Math.min(th, tw / cellRatio);
   const textureLeft = (tw - cropWidth) / 2;
   const textureTop = (th - cropHeight) / 2;
-  const isTiled = state.layout === 'tile';
   const rawTexture = texture.data;
   const occlusion = state.mask?.data;
   const light = state.lighting.data;
@@ -113,13 +150,15 @@ function renderMaterial() {
       const opacity = occlusion ? 1 - occlusion[originalIndex] / 255 : 1;
       if (opacity <= 0) continue;
 
-      const tileX = Math.floor(u * tilesX);
-      const tileY = Math.floor(v * tilesY);
-      const localX = u * tilesX - tileX;
-      const localY = v * tilesY - tileY;
+      const textureU = originU + u * repeatsX;
+      const textureV = originV + v * repeatsY;
+      const tileX = Math.floor(textureU);
+      const tileY = Math.floor(textureV);
+      const localX = textureU - tileX;
+      const localY = textureV - tileY;
       const grout = isTiled && ((tileX > 0 && localX < 0.011) || (tileY > 0 && localY < 0.011));
-      const sampleX = tileX % 2 ? 1 - localX : localX;
-      const sampleY = tileY % 2 ? 1 - localY : localY;
+      const sampleX = isTiled && tileX % 2 ? 1 - localX : localX;
+      const sampleY = isTiled && tileY % 2 ? 1 - localY : localY;
       const tx = Math.min(tw - 1, Math.floor(textureLeft + sampleX * cropWidth));
       const ty = Math.min(th - 1, Math.floor(textureTop + sampleY * cropHeight));
       const index = (ty * tw + tx) * 4;
@@ -211,7 +250,8 @@ function update(message) {
   } else if (hasFinish) {
     const material = materialButtons.find(button => button.dataset.material === state.material);
     const name = material.querySelector('.material-name').textContent;
-    elements.status.textContent = showComparison ? '拖动中线，比较原图和试铺效果。' : `已应用 ${name} · ${state.layout === 'tile' ? '瓷砖' : '整板'}`;
+    const layout = layoutButtons.find(button => button.dataset.layout === state.layout).textContent;
+    elements.status.textContent = showComparison ? '拖动中线，比较原图和试铺效果。' : `已应用 ${name} · ${layout}`;
   } else {
     elements.status.textContent = hasQuad ? '拖入或点选一款石材，即可试铺。' : '点击「选区域」，为照片圈定一个平面。';
   }
@@ -305,7 +345,7 @@ async function openPhoto(url, label, isSample) {
     sample: isSample,
     editing: !isSample,
     comparing: isSample,
-    layout: 'slab',
+    layout: 'extend',
     points: isSample ? [...sampleCorners] : [],
     material: isSample ? 'fyn' : null,
     mask: isSample ? readPixels(maskImage, width, height) : null,
@@ -475,7 +515,7 @@ async function start() {
     ...materialButtons.map(async button => {
       const image = button.querySelector('img');
       await image.decode();
-      textures.set(button.dataset.material, readPixels(image));
+      textures.set(button.dataset.material, { source: readPixels(image) });
     })
   ]);
   await openSample();
