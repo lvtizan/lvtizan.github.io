@@ -279,6 +279,9 @@ function addCorner(event) {
     return;
   }
   state.points = next.length === 4 ? orderQuad(next) : next;
+  if (next.length === 4) {
+    setSplit(next.reduce((total, corner) => total + corner.x, 0) / 4);
+  }
   update();
 }
 
@@ -301,7 +304,6 @@ function applyMaterial(id) {
   }
   state.material = id;
   state.editing = false;
-  state.comparing = false;
   update();
   elements.picture.scrollIntoView({ block: 'nearest' });
 }
@@ -344,7 +346,7 @@ async function openPhoto(url, label, isSample) {
   state = {
     sample: isSample,
     editing: !isSample,
-    comparing: isSample,
+    comparing: true,
     layout: 'extend',
     points: isSample ? [...sampleCorners] : [],
     material: isSample ? 'fyn' : null,
@@ -487,7 +489,6 @@ elements.picture.addEventListener('drop', event => {
 layoutButtons.forEach(button => button.addEventListener('click', () => {
   if (!state) return;
   state.layout = button.dataset.layout;
-  state.comparing = false;
   update();
 }));
 
